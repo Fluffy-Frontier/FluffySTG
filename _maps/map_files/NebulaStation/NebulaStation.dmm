@@ -45112,6 +45112,18 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/grass,
 /area/station/security/checkpoint/customs)
+"gFS" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/sign/poster/random/directional/north,
+/obj/machinery/gizmo/toggle/tucker_tubes,
+/turf/open/floor/iron/dark,
+/area/station/science/explab)
 "gFU" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 4
@@ -87577,6 +87589,15 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
+"mWy" = (
+/obj/machinery/bouldertech/refinery{
+	dir = 1
+	},
+/obj/machinery/conveyor{
+	id = "mining"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/cargo/miningfoundry)
 "mWG" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "circuitprivacy";
@@ -99943,6 +99964,15 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/cargo/sorting)
+"oNC" = (
+/obj/machinery/conveyor{
+	id = "mining"
+	},
+/obj/machinery/bouldertech/refinery/smelter{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/cargo/miningfoundry)
 "oNT" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp{
@@ -118433,18 +118463,6 @@
 /obj/effect/mapping_helpers/airlock/access/any/science/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"rwd" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/dark,
-/obj/machinery/light/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/sign/poster/random/directional/north,
-/obj/machinery/gizmo/toggle/tucker_tubes,
-/turf/open/floor/iron/dark,
-/area/station/science/explab)
 "rwe" = (
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/machinery/recharge_station,
@@ -140653,14 +140671,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/wood/large,
 /area/station/service/library)
-"uNx" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/spawner/random/gizmo,
-/turf/open/floor/engine,
-/area/station/science/explab)
 "uNz" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -142213,13 +142223,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
-"uYW" = (
-/obj/machinery/conveyor{
-	id = "mining"
-	},
-/obj/machinery/bouldertech/refinery/smelter,
-/turf/open/floor/iron/dark/textured_large,
-/area/station/cargo/miningfoundry)
 "uYZ" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark/corner,
 /obj/effect/turf_decal/siding/thinplating_new/dark/corner{
@@ -153963,15 +153966,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
-"wLi" = (
-/obj/machinery/bouldertech/refinery{
-	dir = 4
-	},
-/obj/machinery/conveyor{
-	id = "mining"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/cargo/miningfoundry)
 "wLk" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/machinery/chem_dispenser,
@@ -160109,6 +160103,14 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
+"xIA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/spawner/random/gizmo,
+/turf/open/floor/engine,
+/area/station/science/explab)
 "xIE" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/corner,
 /turf/open/floor/iron/dark/textured_corner,
@@ -195778,8 +195780,8 @@ dew
 rnW
 nbS
 pVC
-wLi
-uYW
+mWy
+oNC
 uOS
 kFj
 tqY
@@ -197623,7 +197625,7 @@ wFC
 cxB
 cWw
 ubb
-uNx
+xIA
 lgA
 ejt
 kbN
@@ -199417,7 +199419,7 @@ vCm
 elB
 dsE
 gIQ
-rwd
+gFS
 hUG
 aPh
 vOa
