@@ -10043,6 +10043,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
+"cLe" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/maintenance/port/aft)
 "cLf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -16202,6 +16206,7 @@
 	id = "forestarboard";
 	name = "Fore-Starboard Solar Array"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/aft)
 "ezU" = (
@@ -24914,7 +24919,8 @@
 	},
 /area/station/science/circuits)
 "hjb" = (
-/turf/open/floor/iron/solarpanel/airless,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating/airless,
 /area/station/solars/starboard)
 "hjc" = (
 /obj/effect/spawner/random/trash/mess,
@@ -31072,6 +31078,7 @@
 	name = "Fore-Starboard Solar Array"
 	},
 /obj/effect/mapping_helpers/broken_floor,
+/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/aft)
 "iVh" = (
@@ -48293,7 +48300,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/window/reinforced/tinted/spawner/directional/east,
-/obj/structure/window/reinforced/tinted/spawner/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/greater)
 "nPS" = (
@@ -61051,6 +61057,7 @@
 	id = "forestarboard";
 	name = "Fore-Starboard Solar Array"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard)
 "reW" = (
@@ -79629,6 +79636,8 @@
 	location = "hall27"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -82849,6 +82858,7 @@
 	id = "forestarboard";
 	name = "Fore-Starboard Solar Array"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/aft)
 "xwL" = (
@@ -113689,7 +113699,7 @@ eHc
 xBY
 xBY
 dTs
-eIK
+hjb
 nJP
 png
 psh
@@ -114206,8 +114216,8 @@ dTs
 uGw
 eIK
 stb
-eIK
-eIK
+hjb
+hjb
 stb
 nJP
 eIK
@@ -114461,10 +114471,10 @@ dTs
 xBY
 dTs
 uGw
-eIK
+hjb
 stb
-eIK
-eIK
+hjb
+hjb
 stb
 nJP
 qCR
@@ -115745,14 +115755,14 @@ xBY
 xBY
 xBY
 dTs
-eIK
+hjb
 eIK
 dTs
 nJP
 reT
 dTs
 eIK
-hjb
+uGw
 dTs
 xBY
 eLS
@@ -116002,7 +116012,7 @@ xBY
 xBY
 xBY
 dTs
-eIK
+hjb
 qCR
 stb
 reT
@@ -116687,7 +116697,7 @@ xOU
 oGA
 mqE
 mqE
-hFG
+mqE
 hFG
 hFG
 uLE
@@ -120506,7 +120516,7 @@ xBY
 stb
 dTs
 xBY
-gCB
+cLe
 dur
 dur
 cxK
@@ -120763,7 +120773,7 @@ xBY
 smD
 dTs
 dTs
-gCB
+cLe
 fbI
 vVi
 ioE
