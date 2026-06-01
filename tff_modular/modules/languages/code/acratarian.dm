@@ -1,7 +1,7 @@
 /datum/language/acratarian
 	name = "Acratarian"
 	desc = "A main language across the globe of Acratar, the planet of Acradors in Trios system. Primary spoken by all nations, like Rohai Empire, Irellian Republic and Norn. A form with much of gang-slang could be found in Corvex. (Используйте русскую букву для префикса)."
-	icon = 'tff_modular/modules/species/icons/language.dmi'
+	icon = 'tff_modular/modules/languages/icons/language.dmi'
 	icon_state = "acratarian"
 	key = "2"
 	space_chance = 65
