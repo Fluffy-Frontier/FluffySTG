@@ -69,7 +69,11 @@ export const title_labels = {
   },
   // FLUFFY FRONTIER ADDITION START
   "Upstream PR Batch": {
-    keywords: ["[Batch]", "Batch of Upstream PRs"],
+    keywords: ["[batch]", "batch of upstream prs"],
+	add_only: true,
+  },
+  "Manual Mirror": {
+	keywords: ["[early mirror]", "[manual mirror]", "[mirror]"],
 	add_only: true,
   },
   // FLUFFY FRONTIER ADDITION END
