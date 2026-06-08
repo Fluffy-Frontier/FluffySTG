@@ -9,3 +9,14 @@
 	)
 	crate_name = "medical crate"
 	crate_type = /obj/structure/closet/crate/deforest
+
+/datum/supply_pack/medical/afad
+	name = "AFAD"
+	desc = "Contains AFAD"
+	cost = CARGO_CRATE_VALUE * 3
+	access = ACCESS_MEDICAL
+	contains = list(
+		/obj/item/gun/medbeam/afad
+	)
+	crate_name = "medical crate"
+	crate_type = /obj/structure/closet/crate/deforest
