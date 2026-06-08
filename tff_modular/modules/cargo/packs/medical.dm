@@ -16,7 +16,7 @@
 	cost = CARGO_CRATE_VALUE * 3
 	access = ACCESS_MEDICAL
 	contains = list(
-		/obj/item/gun/medbeam/afad_return
+		/obj/item/gun/medbeam/afad
 	)
 	crate_name = "medical crate"
 	crate_type = /obj/structure/closet/crate/deforest
