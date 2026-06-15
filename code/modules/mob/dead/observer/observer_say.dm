@@ -87,4 +87,4 @@
 	to_chat(src,
 		html = "[link] [message]",
 		avoid_highlighting = speaker == src)
-	return TRUE
+	return HEAR_HEARD | HEAR_UNDERSTOOD
