@@ -63,7 +63,7 @@
 		else
 			to_chat(human_victim, span_warning(target_msg))
 		owner.visible_message(span_warning("[owner] presses his thumb onto [victim]s forehead."),
-							  span_notice("You press your thumb onto [victim]s forehead and begin reading them."))
+							span_notice("You press your thumb onto [victim]s forehead and begin reading them."))
 		to_chat(victim, span_danger("[owner] presses a thumb onto your forehead and holds it there. It burns sligthly!"))
 		if(do_after(mendicant, 6 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
 			read_psyonic_level(human_victim)
@@ -80,10 +80,10 @@
 	if(patient.ispsyonic())
 		var/datum/quirk/psyonic/target_quirk = patient.get_quirk(/datum/quirk/psyonic)
 		owner.visible_message(span_notice("[owner] backs off from [patient]."),
-							  span_cyan("Target is a psyonic from the school of [target_quirk.school]. [patient.p_Their()] class is [target_quirk.psyonic_level_string]"))
+						  span_cyan("Target is a psyonic from the school of [target_quirk.school]. [patient.p_Their()] class is [target_quirk.psyonic_level_string]"))
 	else
 		owner.visible_message(span_notice("[owner] backs off from [patient]."),
-							  span_cyan("Target is not a psyonic."))
+						  span_cyan("Target is not a psyonic."))
 
 // Лечим мозги и брейнтравмы.
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus
@@ -118,7 +118,7 @@
 		to_chat(cast_on, span_warning(target_msg))
 	owner.Beam(cast_on, icon_state = "blood_light", time = 5 SECONDS)
 	owner.visible_message(span_warning("[owner] seems to concentrate on something."),
-						  span_notice("You start concentrating your energy to heal [cast_on]s brains."))
+					  span_notice("You start concentrating your energy to heal [cast_on]s brains."))
 	if(!do_after(owner, 5 SECONDS, cast_on, IGNORE_SLOWDOWNS | IGNORE_TARGET_LOC_CHANGE, TRUE))
 		accident_harm(cast_on)
 	else
@@ -415,7 +415,7 @@
 		else
 			to_chat(human_victim, span_warning(target_msg))
 		owner.visible_message(span_warning("[owner] firmly grabs [victim]s and begins creepely staring onto them."),
-							  span_notice("You grab [victim]s head and begin implanting a thought into them."))
+						  span_notice("You grab [victim]s head and begin implanting a thought into them."))
 		var/player_input = tgui_input_text(mendicant, "Hypnophrase", "Input the hypnophrase", max_length = MAX_MESSAGE_LEN)
 		if(!player_input)
 			return FALSE

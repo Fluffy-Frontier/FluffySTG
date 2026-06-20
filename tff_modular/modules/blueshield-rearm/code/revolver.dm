@@ -1,5 +1,5 @@
 /*
-*	 The SR-8.
+*	The SR-8.
 */
 
 /obj/item/gun/energy/blueshield
@@ -51,7 +51,7 @@
 	balloon_alert(user, "cell ejected")
 
 
-/obj/item/gun/energy/blueshield/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, var/mob/user)
+/obj/item/gun/energy/blueshield/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, mob/user)
 	if(!new_cell)
 		return FALSE
 	if(!has_empty_cell())

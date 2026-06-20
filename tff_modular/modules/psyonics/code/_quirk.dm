@@ -107,10 +107,10 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 				whom_to_give.try_add_energistics_school(0, 0)
 
 	var/fluff_text = span_cyan("Current psionic factors:") + "<br>" + \
-					 "[fluff_1 ? "Current star position is aligned to your soul." : "The stars do not precede luck to you."]" + "<br>" + \
-					 "[fluff_2 ? "Other realms are unusually active this shift." : "Other realms are quiet today."]" + "<br>" + \
-					 "[fluff_3 ? "Time-bluespace continuum seems to be stable today." : "Time-bluespace continuum is not giving you energy today."]" + "<br>" + \
-					 "[fluff_4 ? "Your mind is clearly open to otherwordly energy." : "Something clouds your connection to otherworld energy."]"
+					"[fluff_1 ? "Current star position is aligned to your soul." : "The stars do not precede luck to you."]" + "<br>" + \
+					"[fluff_2 ? "Other realms are unusually active this shift." : "Other realms are quiet today."]" + "<br>" + \
+					"[fluff_3 ? "Time-bluespace continuum seems to be stable today." : "Time-bluespace continuum is not giving you energy today."]" + "<br>" + \
+					"[fluff_4 ? "Your mind is clearly open to otherwordly energy." : "Something clouds your connection to otherworld energy."]"
 	to_chat(quirk_holder, boxed_message(span_infoplain(jointext(fluff_text, "\n&bull; "))))
 	psyonic_level -= 1 // Обязаловка, иначе выдаст спеллы которые нельзя кастануть
 

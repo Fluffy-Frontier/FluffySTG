@@ -49,8 +49,8 @@
 		return FALSE
 	if(istype(victim, /obj/item/stock_parts/power_store) || istype(victim, /obj/machinery/power/apc))
 		owner.visible_message(span_warning("[owner] presses his hands against [victim]."),
-							  span_notice("You press your hands against [victim]."),
-							  blind_message = span_hear("You hear electrical crackling."))
+						  span_notice("You press your hands against [victim]."),
+						  blind_message = span_hear("You hear electrical crackling."))
 		if(do_after(mendicant, 2.5 SECONDS, victim, IGNORE_SLOWDOWNS, TRUE))
 			var/datum/quirk/psyonic/quirk_holder = mendicant.get_quirk(/datum/quirk/psyonic)
 			if(!quirk_holder)
@@ -145,7 +145,7 @@
 // Даёт мутацию Shock Touch
 /datum/action/cooldown/spell/psyonic/psionic_electrocute
 	name = "Psyonic Shock Touch"
-	desc = "Force yourself to recieve shock touch mutation."
+	desc = "Force yourself to receive shock touch mutation."
 	cooldown_time = 60 SECONDS
 	mana_cost = 60
 	stamina_cost = 60

@@ -23,15 +23,15 @@
 		return	FALSE
 
 	if(isdead(nabber) || nabber.incapacitated)
-		nabber.balloon_alert(nabber, "Incapacitated!")
+		nabber.balloon_alert(nabber, "incapacitated!")
 		return FALSE
 
 	if(nabber.on_fire)
-		nabber.balloon_alert(nabber, "On fire!")
+		nabber.balloon_alert(nabber, "on fire!")
 		return	FALSE
 
 	if(nabber.alpha < 255)
-		nabber.balloon_alert(nabber, "Can't now!")
+		nabber.balloon_alert(nabber, "can't now!")
 		return	FALSE
 
 	if(active)
@@ -49,7 +49,7 @@
 	var/mob/living/carbon/human/nabber = owner
 
 	nabber.visible_message(span_warning("[nabber] makes its chitin shimmer colorfully. Emitting threat."), span_notice("You made your chitin, hostile shimmer!"), span_hear("You hear a low hiss."))
-	nabber.balloon_alert(nabber, "Threat on!")
+	nabber.balloon_alert(nabber, "threat on!")
 	nabber.apply_status_effect(/datum/status_effect/nabber_combat)
 	button_icon_state = "nabber_threat_on"
 	nabber.update_action_buttons()
@@ -63,7 +63,7 @@
 	if(force == TRUE)
 		nabber.Stun(2 SECONDS)
 
-	nabber.balloon_alert(nabber, "Threat off!")
+	nabber.balloon_alert(nabber, "threat off!")
 	nabber.remove_status_effect(/datum/status_effect/nabber_combat)
 	button_icon_state = "nabber_threat_off"
 	nabber.update_action_buttons()
@@ -74,13 +74,13 @@
 /datum/action/cooldown/nabber_threat/proc/on_fire()
 	SIGNAL_HANDLER
 
-	owner.balloon_alert(owner, "On fire!")
+	owner.balloon_alert(owner, "on fire!")
 	return remove_effect(force = TRUE)
 
 /datum/action/cooldown/nabber_threat/proc/on_incapacitated()
 	SIGNAL_HANDLER
 
-	owner.balloon_alert(owner, "Incapacitated!")
+	owner.balloon_alert(owner, "incapacitated!")
 	return remove_effect(force = TRUE)
 
 /datum/action/cooldown/nabber_threat/proc/on_death()

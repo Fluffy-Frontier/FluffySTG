@@ -145,7 +145,7 @@
 										span_warning("[patient] twitches, gags and vomits a living creqture with blood! Gross!"),
 										span_bolddanger("Suddenly you feel sharp pain in your chest, then something starts moving up your throat. \
 														Before you can react somethign slips past your lips with a mix of vomit and blood!"),
-									  )
+								  )
 		var/atom/drop_loc = parasite.drop_location()
 		parasite.Remove(parasite.owner)
 		if(drop_loc)
@@ -270,9 +270,9 @@
 		var/synth_check = (secondary_school == "Psychokinesis" || !issynthetic(human_victim))
 		if(human_victim.stat == DEAD && synth_check)
 			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins meditating."),
-								  span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
-								  get disturbed, or else..."),
-								  blind_message = span_hear("You hear a low hum."))
+							  span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
+							  get disturbed, or else..."),
+							  blind_message = span_hear("You hear a low hum."))
 			var/obj/effect/abstract/particle_holder/particle_effect = new(human_victim, /particles/droplets/psyonic)
 			if(!do_after(mendicant, 25 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
 				accident_harm(owner) // Ауч. Больно бьёт по псионику
@@ -366,8 +366,8 @@
 			if(need_mob_update)
 				patient.updatehealth()
 			owner.visible_message(span_warning("[owner] suddenly hits [patient]s chest!"),
-								  span_green("Another saved life on your count."),
-								  span_hear("You hear a slap."))
+							  span_green("Another saved life on your count."),
+							  span_hear("You hear a slap."))
 			playsound(src, 'sound/effects/ghost.ogg', 40, FALSE)
 			patient.set_heartattack(FALSE)
 			if(defib_result == DEFIB_POSSIBLE)

@@ -180,4 +180,4 @@ GLOBAL_LIST_EMPTY(startup_messages)
 
 	return dat
 
-#undef MAX_STARTUP_MESSAGES
+// #undef MAX_STARTUP_MESSAGES // FLUFFY FRONTIER REMOVAL

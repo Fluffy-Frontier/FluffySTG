@@ -38,7 +38,7 @@
 		if(M.tier > 3)
 			max_potency = 95
 		else
-			max_potency = initial(max_potency) + (M.tier**3) // 53,59,77,95 	 Clamps at 100
+			max_potency = initial(max_potency) + (M.tier**3) // 53,59,77,95  Clamps at 100
 
 		max_yield = initial(max_yield) + (M.tier*2) // 4,6,8,10 	Clamps at 10
 

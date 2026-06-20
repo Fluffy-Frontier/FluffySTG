@@ -23,3 +23,5 @@
 		)
 		to_chat(attacker, span_danger("You grab [defender] in your scythes!"))
 	return MARTIAL_ATTACK_SUCCESS
+
+#undef MARTIALART_NABBER

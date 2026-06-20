@@ -86,10 +86,12 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		LAZYADD(key_tags, "emoji-heart")
 	if(visible_unlock)
 		LAZYADD(key_tags, "byond_member")
+	/* // FLUFFY FRONTIER REMOVAL START
 	// NOVA EDIT ADDITION START - Donator icons in OOC
 	if(SSplayer_ranks.is_donator(src) && prefs.read_preference(/datum/preference/toggle/display_donator_status))
 		LAZYADD(key_tags, "nova_donator")
 	// NOVA EDIT ADDITION END
+	*/ // FLUFFY FRONTIER REMOVAL END
 
 	if(LAZYLEN(key_tags))
 		var/datum/asset/spritesheet_batched/chat/sheet = get_asset_datum(/datum/asset/spritesheet_batched/chat)

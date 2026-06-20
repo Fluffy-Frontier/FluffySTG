@@ -38,3 +38,5 @@
 					/obj/item/organ/internal/cyberimp/brain/pro_psyonic = 1)
 	crate_name = "Psyonic implant crate"
 	discountable = SUPPLY_PACK_RARE_DISCOUNTABLE
+
+#undef ORGAN_SLOT_BRAIN_PSYONIC

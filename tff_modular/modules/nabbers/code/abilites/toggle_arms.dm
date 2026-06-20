@@ -76,17 +76,17 @@
 
 	if(isdead(nabber) || nabber.incapacitated)
 		if(!nabber.handcuffed)
-			nabber.balloon_alert(nabber, "Incapacitated!")
+			nabber.balloon_alert(nabber, "incapacitated!")
 			return FALSE
 
 	if(nabber.num_hands < 2)
-		nabber.balloon_alert(nabber, "Need both hands!")
+		nabber.balloon_alert(nabber, "need both hands!")
 		return FALSE
 
 	var/obj/item/item_in_hands = nabber.get_active_held_item() || nabber.get_inactive_held_item()
 
 	if((item_in_hands && !nabber.drop_all_held_items()) && !(istype(item_in_hands, /obj/item/melee/nabber_blade)))
-		nabber.balloon_alert(nabber, "Hands occupied!")
+		nabber.balloon_alert(nabber, "hands occupied!")
 		return FALSE
 
 	else if(istype(item_in_hands, /obj/item/melee/nabber_blade))
@@ -101,7 +101,7 @@
 /datum/action/cooldown/toggle_arms/proc/rise_arms()
 	var/mob/living/carbon/human/nabber = owner
 
-	nabber.balloon_alert(nabber, "Begin pumping blood in!")
+	nabber.balloon_alert(nabber, "begin pumping blood in!")
 	nabber.visible_message(span_warning("[nabber] starts to pump blood into their mantis arms!"), span_warning("You start pumping blood into your mantis arms and emmitting defensive screech! Stay still!"), span_hear("You hear ramping up screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
@@ -118,7 +118,7 @@
 			nabber.buckled.unbuckle_mob(nabber)
 		nabber.update_handcuffed()
 
-	nabber.balloon_alert(nabber, "Arms rised!")
+	nabber.balloon_alert(nabber, "arms rised!")
 	nabber.visible_message(span_warning("[nabber] raised their mantis arms ready for combat!"), span_warning("You raise your mantis arms, ready for combat."), span_hear("You hear terrible a screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
@@ -154,7 +154,7 @@
 		nabber.update_action_buttons()
 		return FALSE
 
-	nabber.balloon_alert(nabber, "Starting pumping blood out!")
+	nabber.balloon_alert(nabber, "starting pumping blood out!")
 
 	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
 		return FALSE
@@ -166,7 +166,7 @@
 
 	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
 	martial_to_learn.unlearn(nabber)
-	nabber.balloon_alert(nabber, "Arms down!")
+	nabber.balloon_alert(nabber, "arms down!")
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
 
@@ -184,7 +184,7 @@
 
 	nabber.visible_message(span_notice("[nabber] starts to pump blood out their mantis arms!"), span_notice("You start pumping blood out your mantis arms. Stay still!"), span_hear("You hear ramping up screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
-	nabber.balloon_alert(nabber, "Lose hand!")
+	nabber.balloon_alert(nabber, "lose hand!")
 	nabber.Stun(5 SECONDS)
 	for(var/obj/item/held in nabber.held_items)
 		if(istype(held, /obj/item/melee/nabber_blade))

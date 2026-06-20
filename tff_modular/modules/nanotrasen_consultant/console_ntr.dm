@@ -1,8 +1,5 @@
 // Just copypaste of communications.dm + SolFed Police, thx Nova dev.
 
-#define NT_POLICE_AMT "amount"
-#define NT_POLICE_VOTES "votes"
-#define NT_POLICE_DECLARED "declared"
 
 #define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
 #define CALL_POLICE_COOLDOWN (360 SECONDS)

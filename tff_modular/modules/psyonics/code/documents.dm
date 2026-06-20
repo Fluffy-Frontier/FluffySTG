@@ -1,6 +1,6 @@
 /obj/item/card/psyonic_license
 	name = "psyonic license"
-	desc = "An official license given to psyonic users by the NanoTrasen Psyonics and Eugenics Division itself."
+	desc = "An official license given to psyonic users by the Nanotrasen Psyonics and Eugenics Division itself."
 	icon = 'tff_modular/modules/psyonics/icons/card.dmi'
 	icon_state = "card_psy"
 	inhand_icon_state = "card-id"
@@ -19,7 +19,7 @@
 
 /obj/item/card/psyonic_license/ui_interact(mob/user, datum/tgui/ui)
 	if(!owner_info)
-		balloon_alert(user, "The card isn't bound to anyone!")
+		balloon_alert(user, "the card isn't bound to anyone!")
 		return
 
 	ui = SStgui.try_update_ui(user, src, ui)

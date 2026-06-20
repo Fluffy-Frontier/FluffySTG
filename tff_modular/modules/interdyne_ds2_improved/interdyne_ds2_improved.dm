@@ -287,4 +287,4 @@
 
 ////// suit storage unit //////
 /obj/machinery/suit_storage_unit/syndicate/elite_admiral
-    mod_type = /obj/item/mod/control/pre_equipped/traitor_elite
+	mod_type = /obj/item/mod/control/pre_equipped/traitor_elite

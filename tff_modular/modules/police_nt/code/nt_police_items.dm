@@ -108,8 +108,8 @@
 GLOBAL_LIST_EMPTY(nt_reporter_list)
 
 /obj/item/nt_reporter
-	name = "NanoTrasen reporter"
-	desc = "Use this in-hand to vote to call NanoTrasen backup. If half your team votes for it, SWAT will be dispatched."
+	name = "Nanotrasen reporter"
+	desc = "Use this in-hand to vote to call Nanotrasen backup. If half your team votes for it, SWAT will be dispatched."
 	icon = 'tff_modular/modules/police_nt/icons/reporter.dmi'
 	icon_state = "reporter_off"
 	w_class = WEIGHT_CLASS_SMALL
@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 
 /obj/item/nt_reporter/swat_caller
 	name = "S.W.A.T. backup caller"
-	desc = "Use this in-hand to vote to call NanoTrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
+	desc = "Use this in-hand to vote to call Nanotrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
 	requested_team = "swat"
 
 /obj/item/nt_reporter/swat_caller/questions(mob/user)
@@ -249,7 +249,7 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 
 /*
-    NTIS-SWAT WEAPONRY
+	NTIS-SWAT WEAPONRY
 
 	ВАЖНО!
 
@@ -323,7 +323,7 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 	new /obj/item/storage/pouch/ammo(src)
 
 /*
-    NTIS TROOPERS WEAPONRY
+	NTIS TROOPERS WEAPONRY
 */
 
 /obj/item/choice_beacon/nt_police/trooper

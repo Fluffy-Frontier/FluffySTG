@@ -17,7 +17,7 @@
 	create_storage(storage_type = /datum/storage/cqd_holster_storage)
 
 // Тут на всякий случай будет проверка на наличие хранилища у формы, чтобы не сломать ничего.
-/obj/item/clothing/accessory/cqd_holster/attach(obj/item/clothing/under/attach_to, mob/living/attacher)
+/obj/item/clothing/accessory/cqd_holster/try_attach(obj/item/clothing/under/attach_to, mob/living/attacher)
 	if(attach_to.atom_storage)
 		return FALSE
 	return ..()
