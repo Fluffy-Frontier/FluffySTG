@@ -150,6 +150,8 @@
 /obj/item/radio/intercom/Hear(atom/movable/speaker, message_langs, raw_message, radio_freq, radio_freq_name, radio_freq_color, list/spans, list/message_mods = list(), message_range)
 	if(message_mods[RADIO_EXTENSION] == MODE_INTERCOM)
 		return  // Avoid hearing the same thing twice
+	if(!istype(get_area(src), /area/event/office/can_talk))
+		return
 	return ..()
 
 /obj/item/radio/intercom/emp_act(severity)

@@ -19,12 +19,15 @@
 	sound_environment = SOUND_ENVIRONMENT_ROOM
 
 /area/event/sublocation/corridor
+	base_lighting_color = "#5d5d5d"
 
 /area/event/sublocation/fun
 	static_lighting = FALSE
+	base_lighting_color = "#edff94"
 
 /area/event/sublocation/ozero
 	static_lighting = FALSE
+	base_lighting_color = "#727152"
 
 /area/event/sublocation/parking
 
@@ -37,6 +40,8 @@
 /area/event/sublocation/archive
 
 /area/event/sublocation/hospital
+	base_lighting_color = "#94efff"
+
 
 
 /area/event/levelo
@@ -66,6 +71,8 @@
 
 	var/generator_on = FALSE
 
+/area/event/office/can_talk
+
 /area/event/hotel
 	base_lighting_alpha = 235
 	sound_environment = SOUND_ENVIRONMENT_ROOM
@@ -76,7 +83,10 @@
 
 /area/event/run
 	static_lighting = TRUE
+	requires_power = FALSE
 	//base_lighting_color = COLOR_RED_LIGHT
+//ТРЯСКА ЭКРАНА И ТЕМНЕЕ ЛОКАЦИЮ,
+
 
 /area/event/generators
 	base_lighting_alpha = 155
@@ -118,9 +128,23 @@
 	sound_environment = SOUND_ENVIRONMENT_ROOM
 
 /area/event/field
+	base_lighting_color = "#fffd90"
 	sound_environment = SOUND_ENVIRONMENT_PLAIN
 	min_ambience_cooldown = 6 SECONDS
 	max_ambience_cooldown = 7 SECONDS
 	ambientsounds = list('tff_modular/modules/asdasvasdqwe/sounds/wind.mp3', 'tff_modular/modules/asdasvasdqwe/sounds/field.mp3')
 
+/area/event/field/hangar
+	base_lighting_color = "#523c27"
+
+/area/event/field/bees
+	base_lighting_color = "#ffee6f"
+
+/area/event/field/village
+	base_lighting_color = "#BC9E82"
+
 /area/event/library
+
+/area/event/laboratory_entrance
+
+/area/event/laboratory_final

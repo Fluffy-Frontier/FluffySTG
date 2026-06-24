@@ -34,6 +34,26 @@ SUBSYSTEM_DEF(job)
 	var/list/latejoin_start = list()
 	var/list/latejoin_post = list()
 	var/list/latejoin_unlucky = list()
+	var/list/return_points = list(
+		1 = list(),
+		2 = list(),
+		3 = list(),
+		4 = list(),
+		5 = list(),
+		6 = list()
+	)
+	var/return_level = 0
+
+
+	var/list/sublocations = list(
+		1 = list(),
+		2 = list(),
+		3 = list(),
+		4 = list(),
+		5 = list(),
+		6 = list()
+	)
+
 
 	var/list/firsto_randoms = list()
 
@@ -566,7 +586,15 @@ SUBSYSTEM_DEF(job)
 
 	if(LAZYLEN(latejoin_start))
 		// It's got a job, spawn in a human and shove it in the human.
-		var/mob/living/carbon/human/character = new(pick(latejoin_start))
+
+		var/turf/target_turf
+
+		if(5 MINUTES <= world.time - SSticker.round_start_time)
+			target_turf = prob(70) ? pick(latejoin_start) : pick(latejoin_post + latejoin_unlucky)
+		else
+			target_turf = prob(70) ? pick(latejoin_post) : pick(latejoin_unlucky)
+
+		var/mob/living/carbon/human/character = new(target_turf)
 		character.name = player.mind.name
 		player.mind.transfer_to(character)
 		qdel(player)

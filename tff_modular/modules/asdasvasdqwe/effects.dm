@@ -3,9 +3,8 @@
 
 	icon = 'tff_modular/modules/asdasvasdqwe/ship/map_backgrounds.dmi'
 
-	icon_state = "oxydamageoverlay1"
+	icon_state = "oxydamageoverlay"
 
-	alpha = 100
 
 	layer = FULLSCREEN_LAYER
 
@@ -13,14 +12,13 @@
 
 
 /atom/movable/screen/fullscreen/mrak/update_for_view(client_view)
-	animate(src, flags = ANIMATION_END_NOW) //Stop all animations.
+	//animate(src, flags = ANIMATION_END_NOW) //Stop all animations.
 
 	. = ..()
 
 	alpha = 255
 
-	animate(src, alpha = 0, time = 1 SECONDS)
-	hud.mymob.clear_fullscreen("mrak", 3)
+	hud.mymob.clear_fullscreen("mrak", 3 SECONDS)
 
 /atom/movable/screen/fullscreen/vhs
 
@@ -104,6 +102,6 @@
 /obj/effect/turf_decal/huge_corn
 	name = "corn"
 	desc = ""
-	icon = 'tff_modular/modules/asdasvasdqwe/mobs/cron.dmi'
+	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x32.dmi'
 	icon_state = "huge"
 	layer = ABOVE_ALL_MOB_LAYER

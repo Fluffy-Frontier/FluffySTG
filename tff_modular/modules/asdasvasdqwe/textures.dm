@@ -1,5 +1,3 @@
-GLOBAL_VAR_INIT(sea_start_teleporter, null)
-
 /turf/open/floor/iron/levelo
 	name = "floor"
 	desc = ""
@@ -89,20 +87,8 @@ GLOBAL_VAR_INIT(sea_start_teleporter, null)
 	icon = 'icons/turf/floors/chasms.dmi'
 	icon_state = "chasms-255"
 
-/turf/open/indestructible/sea_teleporter/Initialize(mapload)
-	. = ..()
-	var/static/list/loc_connections = list(COMSIG_ATOM_ENTERED = PROC_REF(on_entered))
-	AddComponent(/datum/component/connect_loc_behalf, src, loc_connections)
-
-/turf/open/indestructible/sea_teleporter/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	SIGNAL_HANDLER
-
-	do_teleport(arrived, GLOB.sea_start_teleporter, 7)
-	return
-
-/obj/effect/sea_start_teleporter
-
-/obj/effect/sea_start_teleporter/Initialize(mapload)
-	. = ..()
-	GLOB.sea_start_teleporter = loc
-	return INITIALIZE_HINT_QDEL
+/turf/closed/indestructible/bookcase
+	name = "bookcase"
+	icon = 'icons/obj/service/library.dmi'
+	desc = "A great place for storing knowledge."
+	icon_state = "book-5"
