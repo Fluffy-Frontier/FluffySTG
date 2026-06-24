@@ -364,21 +364,38 @@
 /obj/structure/wreck_stuff/ab
 	icon_state = "computer_broken"
 
+/obj/structure/bookcase/event
+	icon_state = "book-5"
+	anchored = TRUE
 
+/obj/structure/bookcase/event/nontransparent
+	opacity = TRUE
 
+/turf/structure/bookcase/event/crowbar_act(mob/living/user, obj/item/tool)
+	return FALSE
 
+/turf/structure/bookcase/event/wrench_act(mob/living/user, obj/item/tool)
+	return FALSE
 
-
-
-
-
-/obj/machinery/quantumpad/special
+/obj/machinery/quantu
+	name = "Аномальное устройство"
+	desc = ""
 	icon = 'icons/obj/machines/destructive_scanner.dmi'
 	icon_state = "tube_open"
+	opacity = FALSE
+	anchored = TRUE
 
-/obj/machinery/quantumpad/special/doteleport(mob/user = null, obj/machinery/quantumpad/target_pad)
-	var/target_turf = pick(SSjob.firsto_randoms)
+	var/telep = FALSE
 
+/obj/machinery/quantu/wrench_act(mob/living/user, obj/item/tool)
+	return FALSE
+
+/obj/machinery/quantu/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(!. || telep)
+		return
+
+	telep = TRUE
 	var/atom/pickup_zone = drop_location()
 	for(var/atom/movable/to_pickup in pickup_zone)
 		if(to_pickup == src)
@@ -388,27 +405,20 @@
 			player.addmrak()
 			player.add_fov_trait(src, FOV_270_DEGREES)
 		to_pickup.forceMove(src)
-	teleporting = TRUE
+
 	flick("tube_down", src)
+	icon_state = "tube_on"
+	update_icon()
 	playsound(get_turf(src), 'sound/items/weapons/flash.ogg', 25, TRUE)
 	playsound(src, 'sound/machines/destructive_scanner/TubeDown.ogg', 100)
-	addtimer(CALLBACK(src, PROC_REF(teleport_contents), user, target_turf), teleport_speed)
-
-/obj/machinery/quantumpad/special/teleport_contents(mob/user, turf/target_turf)
-	teleporting = FALSE
-	if(machine_stat & NOPOWER)
-		if(user)
-			to_chat(user, span_warning("[src] is unpowered!"))
-		return
-
-	last_teleport = world.time
-
-	// use a lot of power
-	use_energy(active_power_usage / power_efficiency)
-	sparks()
+	addtimer(CALLBACK(src, PROC_REF(teleport)), 1.5 SECONDS)
 
 	playsound(get_turf(src), 'sound/items/weapons/emitter2.ogg', 25, TRUE)
-	playsound(target_turf, 'sound/items/weapons/emitter2.ogg', 25, TRUE)
+
+
+
+/obj/machinery/quantu/proc/teleport()
+	var/turf/target_turf
 
 	for(var/atom/movable/ROI in get_turf(src))
 		if(QDELETED(ROI))
@@ -424,11 +434,17 @@
 			if(living_subject.buckled && living_subject.buckled.anchored)
 				continue
 
+			target_turf = pick(SSjob.firsto_randoms)
+
+			ROI.forceMove(target_turf)
+			playsound(target_turf, 'sound/items/weapons/emitter2.ogg', 25, TRUE)
 			living_subject.addvhs()
 			living_subject.removemrak()
-		do_teleport(ROI, target_turf, no_effects = TRUE, channel = TELEPORT_CHANNEL_QUANTUM)
 
-		CHECK_TICK
+	telep = FALSE
+	flick("tube_up", src)
+	icon_state = "tube_open"
+	update_icon()
 
 
 
@@ -454,7 +470,6 @@ GLOBAL_LIST_EMPTY(mainlocation_random_teleporters)
 //LOCATION = LIST()
 GLOBAL_LIST_EMPTY(global_id_teleporters)
 
-GLOBAL_LIST_EMPTY(after_death_teleporters)
 
 
 /obj/effect/teleporter
@@ -529,17 +544,6 @@ GLOBAL_LIST_EMPTY(after_death_teleporters)
 	var/turf/target_turf = get_turf(pick(GLOB.global_teleporters_entrance[target_id]))
 
 	victim.forceMove(target_turf)
-
-/obj/effect/teleporter/death
-	name = "deathToB"
-
-	var/level = 1
-
-/obj/effect/teleporter/death/Initialize(mapload)
-	. = ..()
-	if(!islist(GLOB.after_death_teleporters[level]))
-		GLOB.after_death_teleporters[level] = list()
-	GLOB.after_death_teleporters[level] += src
 
 /*
 /obj/machinery/quantumpad/special/doteleport(mob/user = null, obj/machinery/quantumpad/target_pad = linked_pad)
@@ -639,9 +643,9 @@ GLOBAL_LIST_EMPTY(after_death_teleporters)
 
 	if(!materials_collected)
 		. += "Для полного ремонта необходимо собрать:"
-		. += "Железо: [span_red(iron_needed)] шт."
-		. += "Серебро: [span_red(silver_needed)] шт."
-		. += "Титаниум: [span_red(titanium_needed)] шт."
+		. += "Железо: [iron_needed] шт."
+		. += "Серебро: [silver_needed] шт."
+		. += "Титанит: [titanium_needed] шт."
 	else
 		. += "Осталось закрутить детали [span_red("гаечным ключом")] и готово!"
 
@@ -706,7 +710,7 @@ GLOBAL_LIST_EMPTY(after_death_teleporters)
 
 
 
-/obj/structure/monitor/office
+/obj/structure/monitor/hotel
 
 	desc = "Похоже, что нужно ввести голосовую команду. На правом нижнем углу экрана приклеен листок бумаги с текстом - 'Не забудь о шифре Цезаря.'"
 
@@ -732,8 +736,55 @@ GLOBAL_LIST_EMPTY(after_death_teleporters)
 	else
 		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "Неверный пароль.")
 
+/obj/machinery/door/airlock/old_red/run
+
+/obj/machinery/door/airlock/old_red/run/open(forced)
+	if(!forced)
+		return FALSE
+
+/obj/machinery/light_switch/event_run
+
+/obj/machinery/light_switch/event_run/interact(mob/user)
+	var/area/my_area = get_area(src)
 
 
+	set_lights(FALSE)
+	my_area.set_base_lighting("#4b4b4b")
+
+	addtimer(CALLBACK(src, PROC_REF(set_lights), TRUE), 1.5 SECONDS)
+	addtimer(CALLBACK(my_area, TYPE_PROC_REF(/area, set_base_lighting), "#e6e6e6"), 1.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(set_lights), FALSE), 2.3 SECONDS)
+	addtimer(CALLBACK(my_area, TYPE_PROC_REF(/area, set_base_lighting), "#4b4b4b"), 2.3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(set_lights), TRUE), 3.8 SECONDS)
+	addtimer(CALLBACK(my_area, TYPE_PROC_REF(/area, set_base_lighting), "#e6e6e6"), 3.8 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(set_lights), FALSE), 4.3 SECONDS)
+	addtimer(CALLBACK(my_area, TYPE_PROC_REF(/area, set_base_lighting), "#4b4b4b"), 4.3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(set_lights), TRUE), 6.5 SECONDS)
+	addtimer(CALLBACK(my_area, TYPE_PROC_REF(/area, set_base_lighting), "#FF0000"), 6.5 SECONDS)
+
+
+
+	for(var/mob/living/carbon/human/player in my_area)
+		addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/living, addmrak)), 4.5 SECONDS)
+		addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/living/carbon/human, hallun)), 4.7 SECONDS)
+
+
+
+
+///datum/status_effect/hallucination CLEAR
+
+
+
+/mob/living/carbon/human/proc/hallun()
+	cause_hallucination( \
+		/datum/hallucination/delusion/preset/nothing, \
+		"event status", \
+		duration = 30 MINUTES, \
+		affects_us = FALSE, \
+		affects_others = TRUE, \
+		skip_nearby = FALSE, \
+		play_wabbajack = FALSE, \
+	)
 
 /obj/machinery/computer/office_spec
 	name = "Консоль"
