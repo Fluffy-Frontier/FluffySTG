@@ -5,15 +5,11 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	var/death_count = 0
 
 /mob/living/carbon/human/death(gibbed)
-	if(!LAZYLEN(GLOB.after_death_teleporters))
+	if(!LAZYLEN(SSjob.firsto_randoms))
 		return ..()
 	client.death_count++
 
-	var/target_level = clamp(client.death_count, 1, LAZYLEN(GLOB.after_death_teleporters))
-
-	var/turf/target_turf = get_turf(GLOB.after_death_teleporters[target_level])
-
-	forceMove(target_turf)
+	forceMove(pick(SSjob.sublocations[clamp(client.death_count, 1, 6)]))
 
 
 /datum/job/special_researcher
@@ -63,34 +59,51 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	return INITIALIZE_HINT_QDEL
 
 
-/obj/effect/landmark/latejoin_unlucky/archive
-
-
-
 
 /obj/effect/landmark/sublocation_teleporter
+	var/level = 0
 
-
-/obj/effect/landmark/firsto_random
-
-/obj/effect/landmark/firsto_random/Initialize(mapload)
+/obj/effect/landmark/sublocation_teleporter/Initialize(mapload)
 	. = ..()
 
-	SSjob.firsto_randoms += loc
+	SSjob.sublocations[level] += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
 
-/mob/living/carbon/human/proc/swap_skintaker()
-	var/mob/living/carbon/human/copycat = src
 
-	var/target_level = clamp(client.death_count, 1, LAZYLEN(GLOB.after_death_teleporters))
+/obj/effect/step_trigger/firsto_random
+	mobs_only = TRUE
 
-	var/turf/target_turf = get_turf(GLOB.after_death_teleporters[target_level])
+/obj/effect/step_trigger/firsto_random/Initialize(mapload)
+	SSjob.firsto_randoms += get_turf(src)
+	return ..()
 
-	new copycat(target_turf)
+/obj/effect/step_trigger/firsto_random/Trigger(atom/movable/A)
+	A.forceMove(pick(SSjob.firsto_randoms))
 
-	copycat.PossessByPlayer(ckey)
 
+/obj/effect/step_trigger/teleporter/offset/looped
+	mobs_only = TRUE
+
+/obj/effect/step_trigger/teleporter/offset/looped/Trigger(atom/movable/poor_soul)
+	if(prob(70))
+		return ..()
+	else
+		poor_soul.forceMove(SSjob.return_points[SSjob.return_level])
+
+/obj/effect/step_trigger/teleporter/returner
+
+/obj/effect/step_trigger/teleporter/returner/Trigger(atom/movable/A)
+	A.forceMove(SSjob.return_points[SSjob.return_level])
+
+
+/obj/effect/landmark/return_point
+	var/level = 0
+
+/obj/effect/landmark/return_point/Initialize(mapload)
+	. = ..()
+	SSjob.return_points[level] += get_turf(src)
+	return INITIALIZE_HINT_QDEL
 
 ADMIN_VERB_AND_CONTEXT_MENU(onetwo_announce, R_DEBUG, "12nd_announce", "", ADMIN_CATEGORY_DEBUG)
 
@@ -167,8 +180,8 @@ ADMIN_VERB_AND_CONTEXT_MENU(nineth_announce, R_DEBUG, "9th_announce", "", ADMIN_
 //ADMIN_VERB_AND_CONTEXT_MENU(name, R_DEBUG, "name", "", ADMIN_CATEGORY_DEBUG)
 
 	//priority_announce("", "", '')
-
-ADMIN_VERB_AND_CONTEXT_MENU(set_passwords, R_DEBUG, "set_passwords", "", ADMIN_CATEGORY_DEBUG)
+/*
+ADMIN_VERB_AND_CONTEXT_MENU(set_passwords, R_DEBUG, "0set_passwords", "", ADMIN_CATEGORY_DEBUG)
 	var/index = 1
 	var/area/old
 	for(var/atom/a in GLOB.event_passwords)
@@ -178,9 +191,16 @@ ADMIN_VERB_AND_CONTEXT_MENU(set_passwords, R_DEBUG, "set_passwords", "", ADMIN_C
 		else
 			index = 1
 		old = current
-		var/target = "Nr. [index] - [current.name] - [name]"
-		var/input = tgui_input_text(user, target, "Ввод паролей", encode = FALSE)
+		var/mob/player = user.mob
+		player.forceMove(get_turf(a))
+		var/input = tgui_input_text(user, "ХЫХ", "Ввод паролей", encode = FALSE)
 
 		if(input)
 			a.desc += input
-	//Инпуты для паролей в офисе и тп
+
+ADMIN_VERB_AND_CONTEXT_MENU(return_level, R_DEBUG, "0return_level", "", ADMIN_CATEGORY_DEBUG)
+	if(SSjob.return_level < 6)
+		SSjob.return_level++
+	else
+		to_chat(user, "max")
+*/

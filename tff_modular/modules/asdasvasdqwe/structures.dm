@@ -88,6 +88,16 @@
 	anchored = TRUE
 	density = TRUE
 
+/obj/structure/cavein/field
+	name = "Спуск вниз"
+	desc = "Дна не видно."
+
+/obj/structure/cavein/field/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+
+	user.addmrak()
+	user.forceMove(locate(3, 237, user.z))
+
 /obj/structure/wall_vent
 	icon = 'tff_modular/modules/asdasvasdqwe/structures/lc13_structures.dmi'
 	icon_state = "wall_vent"
@@ -949,3 +959,25 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/64x48.dmi'
 	icon_state = "green_dusk"
 	var/static/list/randoms = list("green_dusk", "green_dusk_dead",  "green_dusk_1", "green_dusk_2", "green_dusk_3")
+
+
+
+
+
+
+/obj/structure/mineral_door/wood/field_exit
+	name = "Старая дверь"
+	desc = "Она заперта на ключ"
+	var/open = FALSE
+
+/obj/structure/mineral_door/wood/field_exit/Open()
+	if(!open)
+		return FALSE
+	return ..()
+
+/obj/structure/mineral_door/wood/field_exit/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+
+	if(istype(tool, /obj/item/field_key))
+		open = TRUE
+		qdel(tool)
+	return ..()

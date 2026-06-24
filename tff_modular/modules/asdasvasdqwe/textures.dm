@@ -92,3 +92,17 @@
 	icon = 'icons/obj/service/library.dmi'
 	desc = "A great place for storing knowledge."
 	icon_state = "book-5"
+
+
+
+/obj/effect/special_smoke
+	name = "smoke"
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "smoke"
+	pixel_x = -32
+	pixel_y = -32
+	opacity = TRUE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

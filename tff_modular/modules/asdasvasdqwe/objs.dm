@@ -85,3 +85,12 @@
 		to_chat(user, "нашол")
 	else
 		to_chat(user, "не нашол")
+
+/obj/item/field_key
+	icon_state = "access_key"
+	inhand_icon_state = "access_key"
+	icon = 'icons/obj/service/janitor.dmi'
+	lefthand_file = 'icons/mob/inhands/items/keys_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items/keys_righthand.dmi'
+	hitsound = 'sound/items/rattling_keys_attack.ogg'
+
