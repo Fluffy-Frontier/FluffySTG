@@ -70,9 +70,8 @@
 
 
 /obj/item/analyzer_event
-	desc = "Сканер для поиска существ вокруг."
 	name = "Биодетектор"
-	custom_price = PAYCHECK_LOWER * 0.9
+	desc = "Сканер для поиска существ вокруг. Используйте его в руках, чтобы просканировать окружение."
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "analyzer"
 	inhand_icon_state = "analyzer"
@@ -80,9 +79,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/analyzer_event/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
-	var/mobs_found = 0
-	for(var/mob/living/simple_animal/hostile/mob in oview(4, get_turf(interacting_with)))
-		mobs_found++
-
-	to_chat(user, "Обнаружено сущностей: [span_red(mobs_found)]")
+/obj/item/analyzer_event/attack_self(mob/user, modifiers)
+	to_chat(user, "старт скана")
+	if(locate(/mob/living/simple_animal/hostile) in oview(4, get_turf(src)))
+		to_chat(user, "нашол")
+	else
+		to_chat(user, "не нашол")

@@ -18,6 +18,8 @@
 /mob/living/simple_animal/shadow
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x32.dmi'
 	icon_state = "shadow"
+	alpha = 80
+	pass_flags = PASSCLOSEDTURF
 
 /mob/living/simple_animal/bill
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x32.dmi'
@@ -108,6 +110,11 @@
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/48x48.dmi'
 	icon_state = "bunnyman"
 	//_enraged
+
+/mob/living/simple_animal/bunnyman/Initialize(mapload)
+	. = ..()
+	var/datum/action/innate/bunny_enrage/skill = new()
+	skill.Grant(src)
 
 /mob/living/simple_animal/eris
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/48x48.dmi'
@@ -243,3 +250,25 @@
 /mob/living/simple_animal/ishak
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/IT.dmi'
 	icon_state = "palehorse_hungry"
+
+
+
+
+/datum/action/innate/bunny_enrage
+
+
+/datum/action/innate/bunny_enrage/Activate()
+	. = ..()
+
+	var/mob/parent = owner
+
+	parent.icon_state = parent.icon_state == "bunnyman" ? "bunnyman_enraged" : "bunnyman"
+
+
+/datum/action/innate/toggle_hide
+
+/datum/action/innate/toggle_hide/Activate()
+	. = ..()
+
+	var/mob/parent = owner
+	parent.alpha = parent.alpha == 0 ? 255 : 0
