@@ -3,11 +3,11 @@
 #define DIALOG_RESUME "resume"
 
 #define DIALOG_AUTOLOG_COOLDOWN 3 SECONDS
-
+/*
 #define DIALOG_MOB_DAMAGED_WEAK (1 << 0)
 #define DIALOG_MOB_DAMAGED_MEDIUM (1 << 1)
 #define DIALOG_MOB_DAMAGED_CRITICAL (1 << 2)
-
+*/
 /datum/dialog
 	//CONST NODES?
 	var/datum/dialog_options/default_node = /datum/dialog_options/mogeoko_real
@@ -261,6 +261,9 @@
 /datum/dialog/proc/on_damaged()
 	SIGNAL_HANDLER
 
+	return //TODO: obnovit
+
+	/*
 	if(last_autolog_time > world.time)
 		return
 	last_autolog_time = world.time + DIALOG_AUTOLOG_COOLDOWN
@@ -271,6 +274,7 @@
 			execute_text(option = default_node.get_damaged_entry(DIALOG_MOB_DAMAGED_MEDIUM))
 		if(-100 to -40)
 			execute_text(option = default_node.get_damaged_entry(DIALOG_MOB_DAMAGED_CRITICAL))
+*/
 
 /datum/dialog/proc/update_relationship(datum/current_dialog/dialog)
 	var/change = dialog.current_node.relationship_change

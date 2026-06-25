@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(event_passwords)
 		return ..()
 	client.death_count++
 
-	forceMove(pick(SSjob.sublocations[clamp(client.death_count, 1, 6)]))
+	forceMove(pick(SSjob.sublocations[num2text(clamp(client.death_count, 1, 6))]))
 
 
 /datum/job/special_researcher
@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(event_passwords)
 /obj/effect/landmark/sublocation_teleporter/Initialize(mapload)
 	. = ..()
 
-	SSjob.sublocations[level] += get_turf(src)
+	SSjob.sublocations[num2text(level)] += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
 
@@ -89,12 +89,12 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	if(prob(70))
 		return ..()
 	else
-		poor_soul.forceMove(SSjob.return_points[SSjob.return_level])
+		poor_soul.forceMove(SSjob.return_points[num2text(SSjob.return_level)])
 
 /obj/effect/step_trigger/teleporter/returner
 
 /obj/effect/step_trigger/teleporter/returner/Trigger(atom/movable/A)
-	A.forceMove(SSjob.return_points[SSjob.return_level])
+	A.forceMove(SSjob.return_points[num2text(SSjob.return_level)])
 
 
 /obj/effect/landmark/return_point
@@ -102,7 +102,7 @@ GLOBAL_LIST_EMPTY(event_passwords)
 
 /obj/effect/landmark/return_point/Initialize(mapload)
 	. = ..()
-	SSjob.return_points[level] += get_turf(src)
+	SSjob.return_points[num2text(level)] += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
 ADMIN_VERB_AND_CONTEXT_MENU(onetwo_announce, R_DEBUG, "12nd_announce", "", ADMIN_CATEGORY_DEBUG)

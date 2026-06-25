@@ -35,23 +35,23 @@ SUBSYSTEM_DEF(job)
 	var/list/latejoin_post = list()
 	var/list/latejoin_unlucky = list()
 	var/list/return_points = list(
-		1 = list(),
-		2 = list(),
-		3 = list(),
-		4 = list(),
-		5 = list(),
-		6 = list()
+		"1" = list(),
+		"2" = list(),
+		"3" = list(),
+		"4" = list(),
+		"5" = list(),
+		"6" = list()
 	)
 	var/return_level = 0
 
 
 	var/list/sublocations = list(
-		1 = list(),
-		2 = list(),
-		3 = list(),
-		4 = list(),
-		5 = list(),
-		6 = list()
+		"1" = list(),
+		"2" = list(),
+		"3" = list(),
+		"4" = list(),
+		"5" = list(),
+		"6" = list()
 	)
 
 

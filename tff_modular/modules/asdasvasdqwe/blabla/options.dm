@@ -21,6 +21,7 @@
 	var/list/choices = list()
 
 	var/list/damaged_callouts = list(
+		/*
 		DIALOG_MOB_DAMAGED_WEAK = list(
 			"say Ouch",
 			"say Это было больно",
@@ -35,7 +36,7 @@
 			"say НЕ НАДО ДЯДЯ",
 			"say БЛЯЯЯЯЯЯЯЯЯЯЯТЬ",
 			"say МОЯ НОГА!",
-		)
+		)*/
 	)
 
 	var/list/area_entry = list(
