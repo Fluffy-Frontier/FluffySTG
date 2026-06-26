@@ -689,9 +689,6 @@
 /turf/closed/wall/r_wall/plastitanium/syndicate/shielded,
 /area/ruin/interdyne_planetary_base/cargo)
 "cN" = (
-/obj/machinery/cryo_cell{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
 	},
@@ -770,7 +767,10 @@
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/cerulean,
-/obj/item/storage/medkit/tactical/premium/interdyne,
+/obj/item/storage/medkit/tactical/premium/interdyne{
+	pixel_y = 13
+	},
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "cY" = (
@@ -1963,12 +1963,8 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/ruin/interdyne_planetary_base)
 "ib" = (
-/obj/machinery/oven/range{
-	color = "#9d9ddd";
-	name = "Interdyne range";
-	light_color = "#9d9ddd"
-	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/oven/range,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "ie" = (
@@ -2035,6 +2031,7 @@
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
 	},
+/obj/machinery/defibrillator_mount/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "iL" = (
@@ -3290,13 +3287,19 @@
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "oO" = (
-/obj/structure/table/optable,
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
 	},
 /obj/structure/marker_beacon/cerulean,
+/obj/machinery/iv_drip{
+	pixel_x = -10
+	},
+/obj/machinery/anesthetic_machine{
+	pixel_x = 10
+	},
+/obj/item/tank/internals/anesthetic,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "oP" = (
@@ -3849,15 +3852,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "rD" = (
-/obj/machinery/anesthetic_machine{
-	pixel_x = 10
-	},
-/obj/machinery/iv_drip{
-	pixel_x = -10
-	},
-/obj/item/tank/internals/anesthetic,
-/obj/effect/turf_decal/stripes/blue,
-/obj/effect/turf_decal/tile/dark/full,
+/obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "rG" = (
@@ -4120,6 +4117,7 @@
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
 	},
+/obj/machinery/defibrillator_mount/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "td" = (
@@ -5170,12 +5168,8 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "xY" = (
-/obj/machinery/griddle{
-	color = "#9d9ddd";
-	name = "Interdyne griddle";
-	light_color = "#9d9ddd"
-	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/griddle,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "ya" = (
@@ -5923,6 +5917,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 4
 	},
+/obj/structure/sink/directional/south,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "CB" = (
@@ -6587,9 +6582,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
 "Fu" = (
-/obj/machinery/stasis{
-	dir = 8
-	},
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
@@ -6630,10 +6622,7 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/structure/marker_beacon/cerulean,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/defibrillator/loaded{
-	pixel_x = 3;
-	pixel_y = 6
-	},
+/obj/item/storage/medkit/tactical/premium/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Fz" = (
@@ -6874,10 +6863,15 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/dark/full,
-/obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/defibrillator/loaded{
-	pixel_x = 3;
-	pixel_y = 6
+/obj/machinery/iv_drip{
+	pixel_x = -10
+	},
+/obj/machinery/anesthetic_machine{
+	pixel_x = 10
+	},
+/obj/item/tank/internals/anesthetic,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/north{
+	name = "Interdyne Pharmaceutics"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -7246,7 +7240,11 @@
 	},
 /obj/structure/marker_beacon/cerulean,
 /obj/machinery/light/directional/north,
-/obj/machinery/defibrillator_mount/directional/north,
+/obj/item/defibrillator/loaded{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/machinery/vitals_reader/advanced/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Im" = (
@@ -7352,17 +7350,17 @@
 /turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base)
 "IM" = (
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/autopsy_scanner{
-	pixel_y = 10
-	},
-/obj/item/healthanalyzer/advanced,
 /obj/effect/turf_decal/stripes/blue,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 4
 	},
-/obj/machinery/defibrillator_mount/directional/east,
+/obj/structure/table/optable,
+/obj/machinery/vitals_reader/advanced/directional/east,
+/obj/item/defibrillator/loaded{
+	pixel_x = 3;
+	pixel_y = 6
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "IP" = (
@@ -7588,12 +7586,14 @@
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Km" = (
-/obj/structure/sink/directional/east,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
+/obj/machinery/cryo_cell{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Kn" = (
@@ -7858,12 +7858,8 @@
 	dir = 6
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/recharge_station{
-	name = "Interdyne recharging station";
-	color = "#adadcd";
-	light_color = "#adadcd"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharge_station,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Lh" = (
@@ -7928,9 +7924,7 @@
 	pixel_x = -10;
 	pixel_y = 5
 	},
-/obj/item/storage/medkit/tactical/premium/interdyne{
-	pixel_x = 13
-	},
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Lw" = (
@@ -8831,6 +8825,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "PW" = (
@@ -9122,6 +9117,9 @@
 /obj/item/gun/syringe/rapidsyringe{
 	pixel_y = 8
 	},
+/obj/item/autopsy_scanner{
+	pixel_y = 10
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "RQ" = (
@@ -9412,6 +9410,13 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med)
+"Tj" = (
+/obj/effect/turf_decal/trimline/dark/filled/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Tk" = (
@@ -13157,7 +13162,7 @@ yQ
 Ij
 sR
 pK
-dS
+rD
 RN
 Mt
 ed
@@ -13216,7 +13221,7 @@ yQ
 GA
 gA
 cN
-Rv
+Tj
 yd
 JA
 as
@@ -13334,7 +13339,7 @@ ab
 Rb
 ds
 qa
-rD
+sR
 Kg
 BC
 Lt
