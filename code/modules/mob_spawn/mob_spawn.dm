@@ -181,20 +181,39 @@
 		var/prompt = "Become [prompt_name]?"
 		if(!temp_body && user.can_reenter_corpse && user.mind)
 			prompt += " (Warning, You can no longer be revived!)"
-		var/ghost_role = tgui_alert(usr, prompt, buttons = list("Yes", "No"), timeout = 10 SECONDS)
-		if(ghost_role != "Yes" || !loc || QDELETED(user))
-			LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-			return
+		prompt_fail = tgui_alert(user, prompt, buttons = list("Yes", "No"), timeout = 10 SECONDS) != "Yes"
 
-	if(!(GLOB.ghost_role_flags & GHOSTROLE_SPAWNER) && !(flags_1 & ADMIN_SPAWNED_1))
-		to_chat(user, span_warning("An admin has temporarily disabled non-admin ghost roles!"))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
-	if(uses <= 0 && !infinite_use) //just in case
-		to_chat(user, span_warning("This spawner is out of charges!"))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
+	/* // NOVA EDIT REMOVAL START: handled below
+	var/species_pref = user.client.prefs.read_preference(/datum/preference/choiced/species) || /datum/species/human
+	if(!prompt_fail && user.started_as_observer && allow_custom_character && (GLOB.species_prototypes[species_pref].get_breath_type() == GAS_O2))
+		var/static_prompt = "Because you haven't taken a role so far, you may spawn in as \
+			[((allow_custom_character & GHOSTROLE_TAKE_PREFS_SPECIES) || species_pref == /datum/species/human) ? "" : "a human version of"] \
+			your customized character with a random name. Would you like to?"
+		apply_prefs = tgui_alert(user, static_prompt, "Custom Character", list("Yes", "No"), 10 SECONDS) == "Yes"
+	*/ // NOVA EDIT REMOVAL END
+	// NOVA EDIT ADDITION START
+	//if we can load our own appearance and it's not restricted, try
+	if(!prompt_fail && (allow_custom_character & GHOSTROLE_TAKE_PREFS_APPEARANCE) && user.client)
+		//if we have gotten to this point, they have already waived their species pref.-- they were told they need to use the specific species already
+		if(!apply_prefs && (restricted_species && (user.client?.prefs?.read_preference(/datum/preference/choiced/species) in restricted_species)) || !restricted_species)
+			apply_prefs = tgui_alert(user, "Use currently loaded character preferences?", "Appearance Type", list("Yes", "No"), 10 SECONDS) == "Yes"
+	// NOVA EDIT ADDITION END
 
+	if(!prompt_fail && !pre_ghost_take(user))
+		prompt_fail = TRUE
+
+	if(prompt_fail || !can_ghost_take(user) || !create_from_ghost(user, apply_prefs, subtract_uses = FALSE))
+		uses += 1
+	LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
+
+/// Allows for modifications before the ghost is turned into a mob.
+/// You can put sleeps or inputs in here, sanity checking is done for you after this proc returns.
+/// Returning FALSE will cancel the spawn process.
+/obj/effect/mob_spawn/ghost_role/proc/pre_ghost_take(mob/dead/observer/user)
+	return TRUE
+
+/// Checks if a ghost can take this ghost role.
+/obj/effect/mob_spawn/ghost_role/proc/can_ghost_take(mob/dead/observer/user)
 	if(is_banned_from(user.ckey, role_ban))
 		to_chat(user, span_warning("You are banned from this role!"))
 		return FALSE
