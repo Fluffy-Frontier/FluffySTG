@@ -5,11 +5,18 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	var/death_count = 0
 
 /mob/living/carbon/human/death(gibbed)
-	if(!LAZYLEN(SSjob.firsto_randoms))
+	if(!LAZYLEN(SSjob.firsto_randoms) || !client)
 		return ..()
+
+	var/area/my_area = get_area(src)
+	if(istype(my_area, /area/event/sublocation/fun) && prob(80))
+		revive(ADMIN_HEAL_ALL)
+		return
+
 	client.death_count++
 
-	forceMove(pick(SSjob.sublocations[num2text(clamp(client.death_count, 1, 6))]))
+	forceMove(pick(SSjob.sublocations[pizda(clamp(client.death_count, 1, 6))]))
+	revive(ADMIN_HEAL_ALL)
 
 
 /datum/job/special_researcher
@@ -38,7 +45,6 @@ GLOBAL_LIST_EMPTY(event_passwords)
 /obj/effect/landmark/latejoin_start/Initialize(mapload)
 	. = ..()
 	SSjob.latejoin_start += loc
-	return INITIALIZE_HINT_QDEL
 
 
 
@@ -48,7 +54,6 @@ GLOBAL_LIST_EMPTY(event_passwords)
 /obj/effect/landmark/latejoin_post/Initialize(mapload)
 	. = ..()
 	SSjob.latejoin_post += loc
-	return INITIALIZE_HINT_QDEL
 
 
 /obj/effect/landmark/latejoin_unlucky
@@ -56,18 +61,15 @@ GLOBAL_LIST_EMPTY(event_passwords)
 /obj/effect/landmark/latejoin_unlucky/Initialize(mapload)
 	. = ..()
 	SSjob.latejoin_unlucky += loc
-	return INITIALIZE_HINT_QDEL
 
 
 
 /obj/effect/landmark/sublocation_teleporter
-	var/level = 0
+	var/level = 1
 
 /obj/effect/landmark/sublocation_teleporter/Initialize(mapload)
 	. = ..()
-
-	SSjob.sublocations[num2text(level)] += get_turf(src)
-	return INITIALIZE_HINT_QDEL
+	SSjob.sublocations[pizda(level)] += get_turf(src)
 
 
 
@@ -79,7 +81,8 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	return ..()
 
 /obj/effect/step_trigger/firsto_random/Trigger(atom/movable/A)
-	A.forceMove(pick(SSjob.firsto_randoms))
+	if(prob(25))
+		A.forceMove(pick(SSjob.firsto_randoms))
 
 
 /obj/effect/step_trigger/teleporter/offset/looped
@@ -89,12 +92,53 @@ GLOBAL_LIST_EMPTY(event_passwords)
 	if(prob(70))
 		return ..()
 	else
-		poor_soul.forceMove(SSjob.return_points[num2text(SSjob.return_level)])
+		poor_soul.forceMove(pick(SSjob.return_points[pizda(SSjob.return_level)]))
 
 /obj/effect/step_trigger/teleporter/returner
+	mobs_only = TRUE
 
 /obj/effect/step_trigger/teleporter/returner/Trigger(atom/movable/A)
-	A.forceMove(SSjob.return_points[num2text(SSjob.return_level)])
+	A.forceMove(pick(SSjob.return_points[pizda(SSjob.return_level)]))
+
+/obj/effect/step_trigger/library_left
+	mobs_only = TRUE
+	var/offset_x = 0
+	var/offset_y = 0
+
+/obj/effect/step_trigger/library_left/Trigger(atom/movable/A)
+	var/turf/target_turf = pick(SSjob.library_right)
+	if(prob(10))
+		A.forceMove(pick(SSjob.library_pre_exit))
+	else
+		A.forceMove(locate(target_turf.x + offset_x, target_turf.y + offset_y, target_turf.z))
+
+
+/obj/effect/step_trigger/library_right
+	mobs_only = TRUE
+	var/offset_x = 0
+	var/offset_y = 0
+
+/obj/effect/step_trigger/library_right/Trigger(atom/movable/A)
+	var/turf/target_turf = pick(SSjob.library_left)
+	if(prob(10))
+		A.forceMove(pick(SSjob.library_pre_exit))
+	else
+		A.forceMove(locate(target_turf.x + offset_x, target_turf.y + offset_y, target_turf.z))
+
+/obj/effect/landmark/library_pre_exit
+
+
+/obj/effect/landmark/library_pre_exit/Initialize(mapload)
+	. = ..()
+
+	SSjob.library_pre_exit += loc
+
+/obj/effect/landmark/library_exit
+
+/obj/effect/landmark/library_exit/Initialize(mapload)
+	. = ..()
+
+	SSjob.library_exit += loc
 
 
 /obj/effect/landmark/return_point
@@ -102,8 +146,7 @@ GLOBAL_LIST_EMPTY(event_passwords)
 
 /obj/effect/landmark/return_point/Initialize(mapload)
 	. = ..()
-	SSjob.return_points[num2text(level)] += get_turf(src)
-	return INITIALIZE_HINT_QDEL
+	SSjob.return_points[pizda(level)] += get_turf(src)
 
 ADMIN_VERB_AND_CONTEXT_MENU(onetwo_announce, R_DEBUG, "12nd_announce", "", ADMIN_CATEGORY_DEBUG)
 
@@ -177,10 +220,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(nineth_announce, R_DEBUG, "9th_announce", "", ADMIN_
 		Может потребоваться повторная проверка.", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce9.wav')
 
 
-//ADMIN_VERB_AND_CONTEXT_MENU(name, R_DEBUG, "name", "", ADMIN_CATEGORY_DEBUG)
 
-	//priority_announce("", "", '')
-/*
 ADMIN_VERB_AND_CONTEXT_MENU(set_passwords, R_DEBUG, "0set_passwords", "", ADMIN_CATEGORY_DEBUG)
 	var/index = 1
 	var/area/old
@@ -203,4 +243,30 @@ ADMIN_VERB_AND_CONTEXT_MENU(return_level, R_DEBUG, "0return_level", "", ADMIN_CA
 		SSjob.return_level++
 	else
 		to_chat(user, "max")
-*/
+
+/proc/pizda(level)
+	switch(level)
+		if(0)
+			return "a"
+		if(1)
+			return "b"
+		if(2)
+			return "c"
+		if(3)
+			return "d"
+		if(4)
+			return "e"
+		if(5)
+			return "f"
+		if(6)
+			return "g"
+
+/obj/effect/step_trigger/finall
+	mobs_only = TRUE
+
+/obj/effect/step_trigger/finall/Initialize(mapload)
+	new /obj/effect/event_smoke(get_turf(src))
+	return ..()
+
+/obj/effect/step_trigger/finall/Trigger(atom/movable/A)
+	A.forceMove(pick(SSjob.library_exit))

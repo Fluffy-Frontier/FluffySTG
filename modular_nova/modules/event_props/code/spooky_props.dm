@@ -19,7 +19,6 @@
 	icon = 'modular_nova/modules/event_props/icons/spooky2025.dmi'
 	icon_state = "cornwall_passthrough"
 	desc = "Tall rustling stalks form a wall of corn. It seems to part slightly."
-	opacity = TRUE
 	density = FALSE
 	layer = WALL_OBJ_LAYER
 

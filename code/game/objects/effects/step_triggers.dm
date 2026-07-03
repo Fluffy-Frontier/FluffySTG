@@ -131,11 +131,18 @@
 	var/teleport_z_offset = 0
 
 /obj/effect/step_trigger/teleporter/random/Trigger(atom/movable/A)
+	teleport_z = A.z
+	teleport_z_offset = A.z
 	if(teleport_x && teleport_y && teleport_z)
 		if(teleport_x_offset && teleport_y_offset && teleport_z_offset)
 
 			var/turf/T = locate(rand(teleport_x, teleport_x_offset), rand(teleport_y, teleport_y_offset), rand(teleport_z, teleport_z_offset))
 			if (T)
+				if(iscarbon(A))
+					var/mob/living/carbon/human/player = A
+					player.addmrak()
+					addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/living/carbon/human, removemrak)), 1.5 SECONDS)
+					player.remove_fov_trait("event", FOV_REVERSE_270_DEGRESS)
 				A.forceMove(T)
 
 /* Teleports atoms directly to an offset, no randomness, looping hallways! */

@@ -55,8 +55,13 @@
 	overlays_file = null
 	icon = 'tff_modular/modules/asdasvasdqwe/ship/ancient.dmi'
 
+/obj/machinery/door/airlock/old_red/archive
 
-
+/obj/machinery/door/airlock/old_red/archive/open(forced)
+	var/area/event/sublocation/archive/my_area = get_area(src)
+	if(!my_area.passO || !my_area.passT)
+		return
+	return ..()
 
 /obj/structure/mirrorr
 	icon = 'tff_modular/modules/asdasvasdqwe/structures/toolabnormalities.dmi'
@@ -65,10 +70,14 @@
 	density = TRUE
 
 /obj/structure/vivavoce
+	name = "Телефон"
 	icon = 'tff_modular/modules/asdasvasdqwe/structures/toolabnormalities.dmi'
 	icon_state = "vivavoce"
 	anchored = TRUE
 	density = TRUE
+
+/obj/structure/vivavoce/proc/activate()
+	playsound(get_turf(src), 'tff_modular/modules/asdasvasdqwe/sounds/soundy/radio 1.wav', 60, FALSE, ignore_walls = TRUE)
 
 /obj/structure/wishwell
 	icon = 'tff_modular/modules/asdasvasdqwe/structures/toolabnormalities.dmi'
@@ -95,8 +104,10 @@
 /obj/structure/cavein/field/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 
-	user.addmrak()
-	user.forceMove(locate(3, 237, user.z))
+	if(do_after(user, 1 SECONDS, src))
+		user.addmrak()
+		user.forceMove(locate(3, 237, user.z))
+		addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon/human, removemrak)), 1 SECONDS)
 
 /obj/structure/wall_vent
 	icon = 'tff_modular/modules/asdasvasdqwe/structures/lc13_structures.dmi'
@@ -402,7 +413,7 @@
 
 /obj/machinery/quantu/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	if(!. || telep)
+	if(telep)
 		return
 
 	telep = TRUE
@@ -413,8 +424,9 @@
 		if(istype(to_pickup, /mob/living/carbon/human))
 			var/mob/living/carbon/human/player = to_pickup
 			player.addmrak()
-			player.add_fov_trait(src, FOV_270_DEGREES)
+			player.add_fov_trait("event", FOV_270_DEGREES)
 		to_pickup.forceMove(src)
+
 
 	flick("tube_down", src)
 	icon_state = "tube_on"
@@ -430,7 +442,7 @@
 /obj/machinery/quantu/proc/teleport()
 	var/turf/target_turf
 
-	for(var/atom/movable/ROI in get_turf(src))
+	for(var/atom/movable/ROI in contents)
 		if(QDELETED(ROI))
 			continue //sleeps in CHECK_TICK
 
@@ -439,7 +451,7 @@
 			continue
 
 		if(isliving(ROI))
-			var/mob/living/living_subject = ROI
+			var/mob/living/carbon/human/living_subject = ROI
 			//only TP living mobs buckled to non anchored items
 			if(living_subject.buckled && living_subject.buckled.anchored)
 				continue
@@ -457,8 +469,40 @@
 	update_icon()
 
 
+/obj/sctructure/scarecrow
+	name = "Пугало"
+	desc = "Оно смотрит прямо на тебя."
+	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x48.dmi'
+	icon_state = "scarecrow"
+	//_breach _dead
 
+	var/applied_status_effect = /datum/status_effect/eldritch_painting
+	/// The text that shows up when you cross the paintings path
+	var/text_to_display = "Some things should not be seen by mortal eyes..."
+	/// The range of the paintings effect
+	var/range = 7
 
+	anchored = TRUE
+	density = TRUE
+
+/obj/sctructure/scarecrow/Initialize(mapload)
+	. = ..()
+	if(ispath(applied_status_effect))
+		var/static/list/connections = list(COMSIG_ATOM_ENTERED = PROC_REF(apply_status_effect))
+		AddComponent(/datum/component/connect_range, tracked = src, connections = connections, range = range, works_in_containers = FALSE)
+
+/obj/sctructure/scarecrow/wrench_act(mob/living/user, obj/item/tool)
+	return FALSE
+
+/obj/sctructure/scarecrow/proc/apply_status_effect(datum/source, mob/living/carbon/viewer)
+	SIGNAL_HANDLER
+	if(!isliving(viewer) || !can_see(viewer, src, range))
+		return
+	if(isnull(viewer.mind) || isnull(viewer.mob_mood) || viewer.stat != CONSCIOUS || viewer.is_blind())
+		return
+	if(viewer.has_status_effect(applied_status_effect))
+		return
+	viewer.apply_status_effect(applied_status_effect)
 
 
 
@@ -696,6 +740,7 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x32.dmi'
 	icon_state = "monitor1"
 	var/answer = ""
+	var/open = FALSE
 	anchored = TRUE
 
 
@@ -709,12 +754,17 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 
 /obj/structure/monitor/archive/attack_hand(mob/living/user, list/modifiers)
 	var/input = tgui_input_text(user, "Введи пароль:", "Ввод пароля")
+	var/area/event/sublocation/archive/my_area = get_area(src)
+	if(input == answer)
+		my_area.passO = TRUE
 
 /obj/structure/monitor/archive/inside
 
 /obj/structure/monitor/archive/inside/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	if(.)
+	var/input = tgui_input_text(user, "Введи пароль:", "Ввод пароля")
+	var/area/event/sublocation/archive/my_area = get_area(src)
+	if(input == answer)
+		my_area.passT = TRUE
 		priority_announce("Внимание!\n\
 			Где-то внутри офисных помещений обнаружен зашифрованный сигнал. Найдите источник и зафиксируйте аномалию.", "Исследовательский центр")
 
@@ -741,8 +791,6 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 		if(door)
 			door.set_bolt(FALSE)
 			INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/machinery/door/airlock/multi_tile/metal, open))
-		else
-			to_chat(world, "failed to open mainlocation HOTEL")
 	else
 		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "Неверный пароль.")
 
@@ -967,8 +1015,9 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 
 /obj/structure/mineral_door/wood/field_exit
 	name = "Старая дверь"
-	desc = "Она заперта на ключ"
+	desc = "В ней видно три замка"
 	var/open = FALSE
+	var/keys = 0
 
 /obj/structure/mineral_door/wood/field_exit/Open()
 	if(!open)
@@ -978,6 +1027,59 @@ GLOBAL_LIST_EMPTY(global_id_teleporters)
 /obj/structure/mineral_door/wood/field_exit/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 
 	if(istype(tool, /obj/item/field_key))
-		open = TRUE
+		keys++
 		qdel(tool)
+	if(keys < 2)
+		return
+	open = TRUE
 	return ..()
+
+
+/obj/structure/statue_library
+	name = "Стеклянная статуя"
+	desc = "Довольно хрупкая статуя"
+	icon_state = "ai1"
+	desc = "Placeholder. Yell at Firecage if you SOMEHOW see this."
+	icon = 'icons/obj/art/statue.dmi'
+
+/obj/structure/statue_library/Destroy(force)
+	new /obj/effect/spawner/random/glass_debris(loc)
+	playsound(src, 'sound/effects/glass/glassbr2.ogg', 75, TRUE)
+	var/area/event/library/my_area = get_area(src)
+	my_area.statues_broken++
+	return ..()
+
+
+/obj/structure/mineral_door/wood/library_first
+
+/obj/structure/mineral_door/wood/library_first/Open()
+	var/area/event/library/my_area = get_area(src)
+	if(my_area.statues_broken < 5)
+		return FALSE
+	return ..()
+
+/obj/structure/mineral_door/wood/library_second
+	desc = "Для открытия двери нужно найти ключи и особую карту."
+
+/obj/structure/mineral_door/wood/library_second/Open()
+	var/area/event/library/my_area = get_area(src)
+	if(!my_area.key || !my_area.pass)
+		return FALSE
+	return ..()
+
+/obj/structure/mineral_door/wood/library_second/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/library_key))
+		var/area/event/library/my_area = get_area(src)
+		my_area.key = TRUE
+		qdel(tool)
+	else if(istype(tool, /obj/item/library_pass))
+		var/area/event/library/my_area = get_area(src)
+		my_area.pass = TRUE
+		qdel(tool)
+	return ITEM_INTERACT_FAILURE
+
+
+
+/obj/structure/slab/library
+	name = "Каменные останки"
+	desc = "Текст выбитый на мраморе еле читаем: '§7@7µµ p3ш@7 β¢ё. п0$7@βµβ §7@7µµ н@ µх цβ37@ 7ы ¢м0ж3шь з@β3pшµ7ь pµ7µ@л'"

@@ -274,23 +274,19 @@
 /datum/status_effect/eldritch_painting
 	id = "eldritch_painting"
 	alert_type = /atom/movable/screen/alert/status_effect/eldritch_painting
-	duration = 10 MINUTES
+	duration = 1 MINUTES
 	status_type = STATUS_EFFECT_UNIQUE
 	remove_on_fullheal = TRUE
 
 /datum/status_effect/eldritch_painting/on_apply()
-	if(IS_HERETIC_OR_MONSTER(owner))
-		return FALSE
 	if(!ishuman(owner))
-		return FALSE
-	if(owner.reagents.has_reagent(/datum/reagent/water/holywater))
 		return FALSE
 	return TRUE
 
 /atom/movable/screen/alert/status_effect/eldritch_painting
-	name = "Rick Roll'd"
-	desc = "Fucking coders are at it again."
-	icon_state = "eldritch_painting_debug"
+	name = "Ужасное зрелище"
+	desc = ""
+	icon_state = "wounded"
 
 //"The Sister and He Who Wept": /obj/structure/sign/painting/eldritch
 /datum/status_effect/eldritch_painting/weeping

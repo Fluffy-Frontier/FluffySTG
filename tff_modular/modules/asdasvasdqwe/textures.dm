@@ -106,3 +106,49 @@
 	layer = FLY_LAYER
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/turf/closed/indestructible/ash_rock
+	name = "rock"
+	icon = 'icons/turf/mining.dmi'
+	icon = MAP_SWITCH('icons/turf/walls/rock_wall.dmi', 'icons/turf/mining.dmi')
+	icon_state = "rock2"
+	base_icon_state = "rock_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = SMOOTH_GROUP_CLOSED_TURFS
+	baseturfs = /turf/open/misc/ashplanet/wateryrock
+	initial_gas_mix = OPENTURF_LOW_PRESSURE
+	rust_resistance = RUST_RESISTANCE_ORGANIC
+
+/turf/closed/indestructible/sandy_dirt
+	gender = PLURAL
+	name = "dirt"
+	desc = "Upon closer examination, it's still dirt."
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "sand"
+	base_icon_state = "sand"
+
+
+/turf/closed/indestructible/pesok_a
+	name = "coastline"
+	desc = "Tide's high tonight. Charge your batons."
+	icon = 'icons/turf/beach.dmi'
+	icon_state = "beach"
+	base_icon_state = "beach"
+	dir = 4
+
+/turf/closed/indestructible/pesok_b
+	name = "coastline"
+	desc = "Tide's high tonight. Charge your batons."
+	icon = 'icons/turf/beach.dmi'
+	icon_state = "beach"
+	base_icon_state = "beach"
+	dir = 8
+
+/turf/closed/indestructible/pesok_c
+	gender = PLURAL
+	name = "sand"
+	desc = "Surf's up."
+	icon = 'icons/turf/sand.dmi'
+	icon_state = "sand"
+	base_icon_state = "sand"
+	baseturfs = /turf/open/misc/beach/sand

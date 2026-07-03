@@ -559,7 +559,6 @@
 
 /// Finds a valid latejoin spawn point, checking for events and special conditions.
 /datum/job/proc/get_latejoin_spawn_point()
-	to_chat(world, "AASD")
 	if(LAZYLEN(SSjob.latejoin_start))
 		if(LAZYLEN(SSjob.latejoin_start) && prob(100))
 			return pick(SSjob.latejoin_start)

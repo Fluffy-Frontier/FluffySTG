@@ -400,10 +400,10 @@
 
 /obj/item/bombcore/syndicate/large
 	name = "Donk Co. Super-Stable Bomb Payload XL"
-	range_heavy = 5
-	range_medium = 10
-	range_light = 20
-	range_flame = 20
+	range_heavy = 2
+	range_medium = 3
+	range_light = 5
+	range_flame = 10
 
 /obj/item/bombcore/training
 	name = "dummy payload"

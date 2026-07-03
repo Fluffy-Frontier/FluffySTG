@@ -18,7 +18,6 @@
 
 	alpha = 255
 
-	hud.mymob.clear_fullscreen("mrak", 3 SECONDS)
 
 /atom/movable/screen/fullscreen/vhs
 
@@ -35,8 +34,9 @@
 /mob/living/proc/addmrak()
 	overlay_fullscreen("mrak", /atom/movable/screen/fullscreen/mrak, 1)
 
-/mob/living/proc/removemrak()
-	overlay_fullscreen("mrak", /atom/movable/screen/fullscreen/mrak, 1)
+/mob/living/carbon/human/proc/removemrak()
+	clear_fullscreen("mrak")
+
 
 /mob/living/proc/addvhs()
 	overlay_fullscreen("vhs", /atom/movable/screen/fullscreen/vhs, 1)
@@ -105,3 +105,17 @@
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/32x32.dmi'
 	icon_state = "huge"
 	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/effect/event_smoke
+	name = ""
+	color = "#383838"
+	opacity = FALSE
+	name = "smoke"
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "smoke"
+	pixel_x = -32
+	pixel_y = -32
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

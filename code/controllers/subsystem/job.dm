@@ -35,23 +35,29 @@ SUBSYSTEM_DEF(job)
 	var/list/latejoin_post = list()
 	var/list/latejoin_unlucky = list()
 	var/list/return_points = list(
-		"1" = list(),
-		"2" = list(),
-		"3" = list(),
-		"4" = list(),
-		"5" = list(),
-		"6" = list()
+		"a" = list(),
+		"b" = list(),
+		"c" = list(),
+		"d" = list(),
+		"e" = list(),
+		"f" = list(),
+		"g" = list()
 	)
-	var/return_level = 0
+	var/return_level = 1
 
 
+	var/list/library_left = list()
+	var/list/library_right = list()
+	var/list/library_exit = list()
+	var/list/library_pre_exit = list()
 	var/list/sublocations = list(
-		"1" = list(),
-		"2" = list(),
-		"3" = list(),
-		"4" = list(),
-		"5" = list(),
-		"6" = list()
+		"a" = list(),
+		"b" = list(),
+		"c" = list(),
+		"d" = list(),
+		"e" = list(),
+		"f" = list(),
+		"g" = list()
 	)
 
 
@@ -116,6 +122,8 @@ SUBSYSTEM_DEF(job)
 	## Best of luck editing!\n"
 
 /datum/controller/subsystem/job/Initialize()
+	SStitle.change_title_screen('tff_modular/0703.mp4')
+
 	setup_job_lists()
 	job_config_datum_singletons = generate_config_singletons() // we set this up here regardless in case someone wants to use the verb to generate the config file.
 	if(!length(all_occupations))

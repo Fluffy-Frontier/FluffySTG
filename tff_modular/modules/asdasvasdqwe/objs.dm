@@ -94,3 +94,37 @@
 	righthand_file = 'icons/mob/inhands/items/keys_righthand.dmi'
 	hitsound = 'sound/items/rattling_keys_attack.ogg'
 
+/obj/item/library_key
+	name = "Ключ"
+	icon_state = "access_key"
+	inhand_icon_state = "access_key"
+	icon = 'icons/obj/service/janitor.dmi'
+	lefthand_file = 'icons/mob/inhands/items/keys_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items/keys_righthand.dmi'
+	hitsound = 'sound/items/rattling_keys_attack.ogg'
+
+/obj/item/library_pass
+	name = "Карта доступа"
+	name = "door keycard"
+	icon = 'icons/obj/fluff/puzzle_small.dmi'
+	icon_state = "keycard"
+
+
+/obj/item/notes/cave
+	name = "Старые записки"
+	desc = "Единственный путь наружу это завал в конце туннеля, а тележка со взрывчаткой - ключ к решению загадки"
+
+/obj/item/notes/library_first
+	name = "Старые записки"
+	desc = "Эти статуи меня напрягают. Они будто связаны между собой... Будто они что-то сдерживают, но ломать их слишком опасно... точнее слишком громко... Может я найду другой путь отсюда."
+
+
+/obj/item/notes/library_second
+	name = "Старые записки"
+	desc = "КТО БЫ ЭТО НЕ ЧИТАЛ, НЕ ОТКРЫВАЙ ЗАКРЫТУЮ ДВЕРЬ НА СЕВЕРЕ. ТЕБЕ НЕ НУЖНО ИСКАТЬ ДВА КЛЮЧА. НЕ ИЩИ В СТАРОЙ ПОДСОБКЕ ФАЛЬШИВУЮ СТЕНУ. ТЫ ПОНЯЛ ЭТО? НИЧЕГО НЕ ДЕЛАЙ ИЛИ ОНО УСЛЫШИТ ТЕБЯ!!!"
+
+
+/obj/machinery/syndicatebomb
+	icon = 'icons/obj/devices/assemblies.dmi'
+	name = "syndicate bomb"
+	icon_state = "syndicate-bomb"

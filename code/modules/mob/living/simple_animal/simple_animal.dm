@@ -122,7 +122,7 @@
 	///List of things spawned at mob's loc when it dies.
 	var/list/loot = list()
 	///Causes mob to be deleted on death, useful for mobs that spawn lootable corpses.
-	var/del_on_death = 0
+	var/del_on_death = 1
 
 	var/allow_movement_on_non_turfs = FALSE
 

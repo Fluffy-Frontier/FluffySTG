@@ -51,11 +51,17 @@ SUBSYSTEM_DEF(title)
 	check_progress_reference_time()
 	load_progress_json()
 
+	ASSERT(fexists('tff_modular/0703.gif'))
+
+	startup_splash = new(fcopy_rsc('tff_modular/0703.gif'))
+
+	change_title_screen()
+	/*
 	if(startup_splash)
 		change_title_screen(startup_splash)
 	else
 		change_title_screen(DEFAULT_TITLE_LOADING_SCREEN)
-
+	*/
 	if(length(local_title_screens))
 		for(var/i in local_title_screens)
 			var/file_path = "[global.config.directory]/title_screens/images/[i]"

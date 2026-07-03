@@ -29,6 +29,19 @@
 	static_lighting = FALSE
 	base_lighting_color = "#727152"
 
+/area/event/sublocation/ozero/Entered(atom/movable/arrived, area/old_area)
+	. = ..()
+	if(ishuman(arrived))
+		var/mob/living/carbon/human/player = arrived
+		ADD_TRAIT(player, TRAIT_MUTE, TRAUMA_TRAIT)
+
+/area/event/sublocation/ozero/Exited(atom/movable/gone, direction)
+	. = ..()
+	if(ishuman(gone))
+		var/mob/living/carbon/human/player = gone
+		REMOVE_TRAIT(player, TRAIT_MUTE, TRAUMA_TRAIT)
+
+
 /area/event/sublocation/parking
 
 /area/event/sublocation/waiting
@@ -38,6 +51,9 @@
 	static_lighting = FALSE
 
 /area/event/sublocation/archive
+	var/passO = FALSE
+	var/passT = FALSE
+	base_lighting_color = "#BBBBBB"
 
 /area/event/sublocation/hospital
 	base_lighting_color = "#94efff"
@@ -144,6 +160,38 @@
 	base_lighting_color = "#BC9E82"
 
 /area/event/library
+	var/key = FALSE
+	var/pass = FALSE
+	var/statues_broken = 0
+
+/area/event/library/proc/end()
+	for(var/mob/living/carbon/human/player in src)
+		to_chat(world, "[player.name]")
+
+		//player.forceMove(pick(SSjob.library_exit))
+
+/area/event/library/finall
+
+/area/event/library/finall/proc/finalize()
+	for(var/mob/living/carbon/human/player in GLOB.alive_player_list)
+		shake_camera(player, 30 SECONDS, 1)
+	addtimer(CALLBACK(src, PROC_REF(end_finalize)), 30 SECONDS)
+
+/area/event/library/finall/proc/sec_finalize()
+	for(var/mob/living/carbon/human/player in GLOB.alive_player_list)
+		shake_camera(player, 20 SECONDS, 2)
+	addtimer(CALLBACK(src, PROC_REF(end_finalize)), 20 SECONDS)
+
+/area/event/library/finall/proc/third_finalize()
+	for(var/mob/living/carbon/human/player in GLOB.alive_player_list)
+		shake_camera(player, 12 SECONDS, 3)
+	addtimer(CALLBACK(src, PROC_REF(end_finalize)), 12 SECONDS)
+
+/area/event/library/finall/proc/end_finalize()
+	for(var/mob/living/carbon/human/player in GLOB.alive_player_list)
+		player.addmrak()
+		player.forceMove(pick(SSjob.library_exit))
+		addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/living/carbon/human, removemrak)), 1.5 SECONDS)
 
 /area/event/laboratory_entrance
 
