@@ -451,7 +451,7 @@
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/IT.dmi'
 	icon_state = "palehorse_hungry"
 
-	/mob/living/simple_animal/hostile/talos
+/mob/living/simple_animal/hostile/talos
 	name = "..."
 	desc = "..."
 	icon = 'tff_modular/modules/asdasvasdqwe/mobs/tormentor.dmi'
