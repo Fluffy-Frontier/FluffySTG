@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(job)
 		"f" = list(),
 		"g" = list()
 	)
-	var/return_level = 1
+	var/return_level = 0
 
 
 	var/list/library_left = list()
