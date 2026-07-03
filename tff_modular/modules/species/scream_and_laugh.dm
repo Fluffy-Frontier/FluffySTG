@@ -1,9 +1,9 @@
 /datum/scream_type/teshari
 	name = "Teshari Scream"
-	male_screamsounds = list('tff_modular/modules/species/sounds/teshariscream.ogg')
-	female_screamsounds = null
+	scream_sounds = list('tff_modular/modules/species/sounds/teshariscream.ogg')
+	female_scream_type = null
 
 /datum/laugh_type/teshari
 	name = "Teshari Laugh"
-	male_laughsounds = list('tff_modular/modules/species/sounds/tesharilaugh.ogg')
-	female_laughsounds = null
+	laugh_sounds = list('tff_modular/modules/species/sounds/tesharilaugh.ogg')
+	female_laugh_type = null

@@ -5,6 +5,7 @@
 	//So it shows up in the map editor
 	icon = 'icons/effects/mapping_helpers.dmi'
 	icon_state = "mobspawner"
+	abstract_type = /obj/effect/mob_spawn
 	/// Can this spawner be used up?
 	var/infinite_use = FALSE
 	///A forced name of the mob, though can be overridden if a special name is passed as an argument
@@ -196,13 +197,11 @@
 
 	if(is_banned_from(user.ckey, role_ban))
 		to_chat(user, span_warning("You are banned from this role!"))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
+		return FALSE
 	// NOVA EDIT ADDITION START
 	if(is_banned_from(user.ckey, BAN_GHOST_ROLE_SPAWNER)) // Ghost role bans
 		to_chat(user, span_warning("Error, you are banned from playing ghost roles!"))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
+		return FALSE
 	// NOVA EDIT ADDITION END
 	if(!allow_spawn(user, silent = FALSE))
 		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)

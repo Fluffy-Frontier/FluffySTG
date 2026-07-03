@@ -29,32 +29,66 @@
 /datum/outfit/interdyne_planetary_base/shaftminer/deckofficer
 	l_pocket = /obj/item/melee/energy/sword/saber/green/dyne
 
-// меняем трим карт на НОРМАЛЬНЫЙ, базово-ТГшный вариант. прописываем каждое - ибо тут проблемы с наследованием.
-/datum/id_trim/syndicom/nova/interdyne
-	trim_icon = 'icons/obj/card.dmi'
+// Trim //
+/datum/id_trim/interdyne
+	trim_icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
 	assignment = "Interdyne Scientist"
-	trim_state = "trim_medicaldoctor"
-	department_color = COLOR_SYNDIE_RED
-	subdepartment_color = COLOR_SYNDIE_RED
+	trim_state = "trim_interdyne"
+	department_color = COLOR_GREEN
+	department_state = "department"
+	subdepartment_color = COLOR_PURPLE
 	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE
+	access = list(ACCESS_SYNDICATE)
+	threat_modifier = 2
 
-/datum/id_trim/syndicom/nova/interdyne/shaftminer
-	trim_icon = 'icons/obj/card.dmi'
-	assignment = "Interdyne Scientist"
-	trim_state = "trim_medicaldoctor"
+/datum/id_trim/interdyne/shaftminer
 	assignment = "Interdyne Shaft Miner"
-	department_color = COLOR_SYNDIE_RED
-	subdepartment_color = COLOR_SYNDIE_RED
-	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE
+	department_color = COLOR_GREEN
+	subdepartment_color = COLOR_CARGO_BROWN
 
-/datum/id_trim/syndicom/nova/interdyne/deckofficer
-	trim_icon = 'icons/obj/card.dmi'
-	assignment = "Interdyne Scientist"
-	trim_state = "trim_medicaldoctor"
+/datum/id_trim/interdyne/deckofficer
 	assignment = "Interdyne Deck Officer"
-	department_color = COLOR_SYNDIE_RED
+	trim_state = "trim_deckofficer"
+	department_color = COLOR_CARP_DARK_GREEN
 	subdepartment_color = COLOR_SYNDIE_RED
 	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE_HEAD
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+// ID Cards
+/obj/item/card/id/advanced/interdyne/medical
+	icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
+	icon_state = "card_interdyne"
+	name = "\improper Interdyne access card"
+	desc = "An Interdyne Pharmaceuticals corporate access card. This person knows how to cook and is happy to bill you for it."
+	trim = /datum/id_trim/interdyne
+
+/obj/item/card/id/advanced/interdyne/shaftminer
+	icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
+	icon_state = "card_interdyne"
+	name = "\improper Interdyne shaft miner's access card"
+	desc = "An Interdyne Pharmaceuticals access card designated for mining personnel. This person knows its rocks"
+	trim = /datum/id_trim/interdyne/shaftminer
+
+/obj/item/card/id/advanced/interdyne/deck
+	icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
+	icon_state = "card_interdyne"
+	name = "\improper Interdyne deck officer's access card"
+	desc = "An Interdyne Pharmaceuticals access card designated for the deck officer."
+	assigned_icon_state = "assigned_interdyne"
+	trim = /datum/id_trim/interdyne/deckofficer
+
+// OUTFITS
+/datum/outfit/interdyne_planetary_base
+	id = /obj/item/card/id/advanced/interdyne/medical
+	id_trim = /datum/id_trim/interdyne
+
+/datum/outfit/interdyne_planetary_base/shaftminer
+	id = /obj/item/card/id/advanced/interdyne/shaftminer
+	id_trim = /datum/id_trim/interdyne/shaftminer
+
+/datum/outfit/interdyne_planetary_base/shaftminer/deckofficer
+	id = /obj/item/card/id/advanced/interdyne/deck
+	id_trim = /datum/id_trim/interdyne/deckofficer
 
 // Переписываем законы для пози-мозга ДС-2
 /datum/ai_laws/syndicate_override_ds2

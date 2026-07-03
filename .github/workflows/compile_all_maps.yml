@@ -46,7 +46,7 @@ jobs:
           tools/build/build.sh --ci dm -DCIBUILDING -DCITESTING -DALL_TEMPLATES
 
   compile_nova_templates:
-    name: Compile Nova Templates
+    name: Compile Nova and Fluffy Templates #  FLUFFY FRONTIER EDIT - ORIGINAL: name: Compile Nova Templates
     runs-on: ubuntu-24.04
     timeout-minutes: 5
 

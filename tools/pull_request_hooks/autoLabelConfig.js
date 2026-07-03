@@ -67,6 +67,16 @@ export const title_labels = {
   "Test Merge Only": {
     keywords: ["[tm only]", "[test merge only]"],
   },
+  // FLUFFY FRONTIER ADDITION START
+  "Upstream PR Batch": {
+    keywords: ["[batch]", "batch of upstream prs"],
+	add_only: true,
+  },
+  "Manual Mirror": {
+	keywords: ["[early mirror]", "[manual mirror]", "[mirror]"],
+	add_only: true,
+  },
+  // FLUFFY FRONTIER ADDITION END
 };
 
 // Changelog Labels

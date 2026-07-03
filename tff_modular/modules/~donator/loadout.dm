@@ -177,3 +177,8 @@
 	name = "Tactical Catcrin Gasmask"
 	item_path = /obj/item/clothing/mask/gas/catcrin
 	ckeywhitelist = list("oni3288", "sutulayapsina")
+
+/datum/loadout_item/suit/sailorlongcoat
+	name = "Sailor's longcoat"
+	item_path = /obj/item/clothing/suit/jacket/leather/sailorlongcoat
+	ckeywhitelist = list("Your Own Enemy")

@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(dynamic)
 	name = "Dynamic"
-	flags = SS_NO_INIT
+	ss_flags = SS_NO_INIT
 	wait = 5 MINUTES
 
 	// These vars just exist for admins interfacing with dynamic
@@ -278,9 +278,9 @@ SUBSYSTEM_DEF(dynamic)
 		log_dynamic("Roundstart: Ruleset [picked_ruleset.config_tag] (Chance: [round(rulesets_weighted[picked_ruleset] / total_weight * 100, 0.01)]%)")
 		if(picked_ruleset.solo)
 			log_dynamic("Roundstart: Ruleset is a solo ruleset. Cancelling other picks.")
-			QDEL_LIST(picked_rulesets)
+			picked_rulesets.Cut()
 			rulesets_weighted -= picked_ruleset
-			picked_rulesets += picked_ruleset
+			picked_rulesets += picked_ruleset.type
 			break
 		if(current_tier.tier != DYNAMIC_TIER_HIGH && (picked_ruleset.ruleset_flags & RULESET_HIGH_IMPACT))
 			for(var/datum/dynamic_ruleset/roundstart/high_impact_ruleset as anything in rulesets_weighted)
@@ -290,7 +290,7 @@ SUBSYSTEM_DEF(dynamic)
 				rulesets_weighted -= high_impact_ruleset
 		if(!picked_ruleset.repeatable)
 			rulesets_weighted -= picked_ruleset
-			picked_rulesets += picked_ruleset
+			picked_rulesets += picked_ruleset.type
 			continue
 
 		rulesets_weighted[picked_ruleset] -= picked_ruleset.repeatable_weight_decrease
@@ -605,6 +605,7 @@ SUBSYSTEM_DEF(dynamic)
 	if(num_dead + num_alive <= 0)
 		return 0
 
+	/* // FLUFFY FRONTIER EDIT START - dynamic changes - ORIGINAL:
 	chance += 100 - (200 * (num_dead / (num_alive + num_dead)))
 	if(num_antags < 0)
 		chance += 50
@@ -612,6 +613,13 @@ SUBSYSTEM_DEF(dynamic)
 	// Reduced chance before lights start
 	if(!COOLDOWN_FINISHED(src, light_ruleset_start))
 		chance *= 0.2
+	*/
+	// У нас мало людей с включенными префами на антагов, поэтому каждый подобный человек на вес золота и ваниальная формула не подходит
+	var/num_sec_alive = length(SSjob.get_living_sec())
+	chance = clamp(100 - 40 * (2 * num_antags - num_sec_alive), 0, 100)
+	if(num_antags <= 0)
+		chance = 100
+	// FLUFFY FRONTIER EDIT END
 
 	return chance
 

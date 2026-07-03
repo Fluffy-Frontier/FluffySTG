@@ -1,5 +1,7 @@
 /// A single reagent
 /datum/reagent
+	abstract_type = /datum/reagent
+
 	/// datums don't have names by default
 	var/name = ""
 	/// nor do they have descriptions
@@ -95,6 +97,8 @@
 	var/fallback_icon_state
 	/// When ordered in a restaurant, what custom order do we create?
 	var/restaurant_order = /datum/custom_order/reagent/drink
+	/// How we interact with random generators
+	var/randomized_spawns = REAGENT_SPAWN_NO_RANDOM
 
 /datum/reagent/New()
 	SHOULD_CALL_PARENT(TRUE)
@@ -228,12 +232,12 @@
 /datum/reagent/proc/on_mob_metabolize(mob/living/affected_mob)
 	SHOULD_CALL_PARENT(TRUE)
 	if(metabolized_traits)
-		affected_mob.add_traits(metabolized_traits, "metabolize:[type]")
+		affected_mob.add_traits(metabolized_traits, METABOLIZATION_TRAIT(type))
 
 /// Called when this reagent stops being metabolized by a liver
 /datum/reagent/proc/on_mob_end_metabolize(mob/living/affected_mob, metabolization_ratio)
 	SHOULD_CALL_PARENT(TRUE)
-	REMOVE_TRAITS_IN(affected_mob, "metabolize:[type]")
+	REMOVE_TRAITS_IN(affected_mob, METABOLIZATION_TRAIT(type))
 
 /**
  * Called when a reagent is inside of a mob when they are dead if the reagent has the REAGENT_DEAD_PROCESS flag

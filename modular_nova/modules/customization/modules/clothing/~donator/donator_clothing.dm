@@ -613,9 +613,9 @@
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
 	icon_state = "avipilotup"
 	inhand_icon_state = "rus_ushanka"
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEHAIR
 	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT //about as warm as an ushanka
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT //about as warm as a ushanka
 	actions_types = list(/datum/action/item_action/adjust)
 	supports_variations_flags = NONE
 	var/goggles = FALSE
@@ -1244,6 +1244,9 @@
 
 /// We need to do a bit of code duplication here to ensure that we do the right kind of ui_action_click(), while keeping it modular.
 /datum/action/item_action/toggle_steampunk_goggles_welding_protection/Trigger(trigger_flags)
+	. = ..()
+	if(!.)
+		return
 	if(!IsAvailable())
 		return FALSE
 	if(SEND_SIGNAL(src, COMSIG_ACTION_TRIGGER, src) & COMPONENT_ACTION_BLOCK_TRIGGER)

@@ -281,11 +281,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/xray, 0)
 	src.view_range = num
 	SScameras.update_visibility(src)
 
-/obj/machinery/camera/proc/shock(mob/living/user)
-	if(!istype(user))
-		return
-	user.electrocute_act(10, src)
-
 /obj/machinery/camera/singularity_pull(atom/singularity, current_size)
 	if (camera_enabled && current_size >= STAGE_FIVE) // If the singulo is strong enough to pull anchored objects and the camera is still active, turn off the camera as it gets ripped off the wall.
 		toggle_cam(null, 0)
@@ -339,19 +334,27 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/xray, 0)
 	if(proximity_monitor)
 		drop_upgrade(proximity_monitor)
 
-/obj/machinery/camera/update_icon_state() //TO-DO: Make panel open states, xray camera, and indicator lights overlays instead.
-	var/xray_module
-	if(isXRay(TRUE))
-		xray_module = "xray"
-
-	if(!camera_enabled)
+/obj/machinery/camera/update_icon_state()
+	var/xray_module = isXRay(TRUE) ? "xray" : ""
+	if(!camera_enabled || (machine_stat & EMPED))
 		icon_state = "[xray_module][base_icon_state]_off"
 		return ..()
-	if(machine_stat & EMPED)
-		icon_state = "[xray_module][base_icon_state]_emp"
-		return ..()
-	icon_state = "[xray_module][base_icon_state][in_use_lights ? "_in_use" : ""]"
+	icon_state = "[xray_module][base_icon_state]"
 	return ..()
+
+/obj/machinery/camera/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += "[base_icon_state]_panel"
+
+	var/xray_module = isXRay(TRUE) ? "xray" : ""
+	if(machine_stat & EMPED)
+		. += "[xray_module][base_icon_state]_emp"
+		. += emissive_appearance(icon, "[xray_module][base_icon_state]_emp", src, alpha = src.alpha)
+		return
+	if(camera_enabled)
+		. += "[xray_module][base_icon_state]_[in_use_lights ? "in_use" : "on"]"
+		. += emissive_appearance(icon, "[xray_module][base_icon_state]_[in_use_lights ? "in_use" : "on"]", src, alpha = src.alpha)
 
 /obj/machinery/camera/proc/toggle_cam(mob/user, displaymessage = TRUE)
 	camera_enabled = !camera_enabled

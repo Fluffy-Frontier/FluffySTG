@@ -110,7 +110,7 @@
 
 /obj/item/stack/update_name(updates)
 	. = ..()
-	maptext = (ismob(loc) || loc?.atom_storage) ? MAPTEXT("<font color='white'>[amount]</font>") : ""
+	maptext = (ismob(loc) || loc?.atom_storage) ? MAPTEXT("<font color='white'>[get_amount()]</font>") : ""
 
 /obj/item/stack/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change)
 	. = ..()
@@ -467,8 +467,8 @@
 	builder.investigate_log("crafted [recipe.title]", INVESTIGATE_CRAFTING)
 
 	// Apply mat datums
-	if(LAZYLEN(mats_per_unit) && !(recipe.crafting_flags & CRAFT_NO_MATERIALS))
-		var/list/result_mats = mats_per_unit.Copy()
+	if(LAZYLEN(used_stack.mats_per_unit) && !(recipe.crafting_flags & CRAFT_NO_MATERIALS))
+		var/list/result_mats = used_stack.mats_per_unit.Copy()
 		for(var/mat in recipe.removed_mats)
 			var/to_remove = recipe.removed_mats[mat]
 			var/datum/material/ref_mat = locate(mat) in result_mats
@@ -481,8 +481,12 @@
 
 		if(isstack(created))
 			var/obj/item/stack/crafted_stack = created
+			if(recipe.res_amount > 0 && recipe.req_amount != recipe.res_amount)
+				var/scale = recipe.req_amount / recipe.res_amount
+				for(var/mat in result_mats)
+					result_mats[mat] *= scale
 			crafted_stack.mats_per_unit = SSmaterials.get_material_set_cache(result_mats)
-			update_custom_materials()
+			crafted_stack.update_custom_materials()
 		else
 			created.set_custom_materials(result_mats, recipe.req_amount * multiplier)
 
@@ -577,7 +581,10 @@
 	if(check && is_zero_amount(delete_if_zero = TRUE))
 		return FALSE
 	if(is_cyborg)
-		return source.use_charge(used * cost)
+		if(source.use_charge(used * cost))
+			update_appearance(UPDATE_NAME)
+			return TRUE
+		return FALSE
 	if (amount < used)
 		return FALSE
 	amount -= used

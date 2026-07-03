@@ -10,6 +10,7 @@ $include interviews.txt
 $include lua.txt
 $include auxtools.txt
 $include map_vote.txt
+$include tff/config_tff.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
@@ -662,5 +663,6 @@ TGUI_MAX_CHUNK_COUNT 32
 ## It increases initialization time significantly so you'll want to disable this in live environments.
 GENERATE_ASSETS_IN_INIT
 
-## Minimum time before a heretic can ascend, in minutes
-# MINIMUM_ASCENSION_TIME 3
+## Path from the config folder to the policy json
+POLICY_JSON_PATH policy.json
+

@@ -209,23 +209,6 @@ GLOBAL_VAR(call_NTIS_msg)
 	random_names = TRUE
 	leader_experience = TRUE
 
-/datum/antagonist/ert/nt_police/apply_innate_effects(mob/living/mob_override)
-	..()
-	var/mob/living/M = mob_override || owner.current
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		var/atom/movable/screen/wanted/giving_wanted_lvl = new /atom/movable/screen/wanted(null, H)
-		H.wanted_lvl = giving_wanted_lvl
-		H.infodisplay += giving_wanted_lvl
-		H.mymob.client.screen += giving_wanted_lvl
-
-/datum/antagonist/ert/nt_police/remove_innate_effects(mob/living/mob_override)
-	var/mob/living/M = mob_override || owner.current
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		H.infodisplay -= H.wanted_lvl
-		QDEL_NULL(H.wanted_lvl)
-	..()
 /*
 *	POLICE
 */
