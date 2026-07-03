@@ -103,41 +103,6 @@ var/static/list/female_yawn = list(
 			)
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/datum/laugh_type/human
-	name = "Human Laugh"
-	male_laughsounds = list('tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_1.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_2.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_3.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_4.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_5.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_6.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_male_7.ogg')
-	female_laughsounds = list('tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_1.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_2.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_3.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_4.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_5.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_6.ogg',
-						'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/laugh_female_7.ogg')
-
-/datum/scream_type/human
-	name = "Human Scream"
-	male_screamsounds = list(
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_male_1.ogg',
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_male_2.ogg',
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_male_3.ogg',
-	)
-	female_screamsounds = list(
-		'modular_nova/modules/emotes/sound/voice/scream_f1.ogg',
-		'modular_nova/modules/emotes/sound/voice/scream_f2.ogg',
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_female_1.ogg',
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_female_2.ogg',
-		'tff_modular/modules/asdasvasdqwe/sounds-renewal/sound/emotes/scream_female_3.ogg',
-	)
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/emote/living/cough
