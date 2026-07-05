@@ -16,7 +16,7 @@
 		return FALSE
 
 	if(isdead(owner) || owner.incapacitated)
-		owner.balloon_alert(owner, "Incapacitated!")
+		owner.balloon_alert(owner, "incapacitated!")
 		return FALSE
 
 	if(active)
@@ -24,7 +24,7 @@
 		return TRUE
 
 	if(owner.has_status_effect(/datum/status_effect/nabber_combat))
-		owner.balloon_alert(owner, "Can't now!")
+		owner.balloon_alert(owner, "can't now!")
 		return FALSE
 
 	RegisterSignals(owner, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_HITBY, COMSIG_ATOM_HULK_ATTACK, COMSIG_ATOM_ATTACK_PAW, COMSIG_CARBON_CUFF_ATTEMPTED, COMSIG_ATOM_BULLET_ACT, COMSIG_LIVING_EARLY_UNARMED_ATTACK, COMSIG_LIVING_MOB_BUMP, COMSIG_HUMAN_BURNING), PROC_REF(remove_camouflage))

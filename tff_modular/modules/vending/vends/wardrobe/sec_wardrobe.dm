@@ -24,4 +24,4 @@
 		/obj/item/clothing/head/playbunnyears/warden = 3,
 		/obj/item/clothing/head/playbunnyears/brig_phys = 3,
 		/obj/item/clothing/head/playbunnyears/prisoner = 3,
-    )
+	)

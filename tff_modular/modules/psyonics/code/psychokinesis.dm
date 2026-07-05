@@ -130,7 +130,7 @@
 // Даёт мутацию телекинеза
 /datum/action/cooldown/spell/psyonic/psionic_telekinesis
 	name = "Telekinesis"
-	desc = "Force yourself to recieve telekinesis mutation."
+	desc = "Force yourself to receive telekinesis mutation."
 	cooldown_time = 60 SECONDS
 	mana_cost = 80
 	stamina_cost = 80
@@ -171,7 +171,7 @@
 		if((to_fix.get_integrity() >= to_fix.max_integrity) || !to_fix.uses_integrity)
 			return FALSE
 		owner.visible_message(span_warning("[owner] presses his hands onto [victim]."),
-							  span_notice("You grab [victim], trying to repair it."))
+						  span_notice("You grab [victim], trying to repair it."))
 		if(do_after(mendicant, 6 SECONDS, victim, IGNORE_SLOWDOWNS, TRUE))
 			to_fix.update_integrity(clamp(to_fix.get_integrity()+(50*cast_power), 1, to_fix.max_integrity))
 			drain_mana()

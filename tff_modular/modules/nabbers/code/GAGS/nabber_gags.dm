@@ -74,3 +74,6 @@
 /datum/greyscale_config/nabber/belt
 	name = "Nabber Belt"
 	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/belt.json'
+
+#undef BASE_CLOTH_X_1
+#undef BASE_CLOTH_Y_1

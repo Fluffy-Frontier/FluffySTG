@@ -104,7 +104,7 @@
 
 /mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
 	if(fortify)
-		balloon_alert(src, "Cannot while fortified")
+		balloon_alert(src, "cannot while fortified")
 		return FALSE
 	return ..()
 

@@ -78,6 +78,8 @@
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 
+	RegisterSignal(C, COMSIG_LIVING_LIFE, PROC_REF(on_life))
+
 	arms = new(C)
 	arms.Grant(C)
 	camouflage = new(C)
@@ -98,6 +100,8 @@
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 
+	UnregisterSignal(C, COMSIG_LIVING_LIFE)
+
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
 	QDEL_NULL(threat_mod)
@@ -108,13 +112,14 @@
 	QDEL_NULL(imp_in)
 
 
-/datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
-	. = ..()
-	if(isdead(H))
+/datum/species/nabber/proc/on_life(mob/living/carbon/human/source, seconds_per_tick)
+	SIGNAL_HANDLER
+
+	if(isdead(source))
 		return
 	//Огонь вызывает у ГБС асфиксию. Им лучше не гореть.
-	if(H.on_fire)
-		H.apply_damage(NABBER_DAMAGE_ONBURNING, OXY)
+	if(source.on_fire)
+		source.apply_damage(NABBER_DAMAGE_ONBURNING, OXY)
 
 /datum/species/nabber/randomize_features(mob/living/carbon/human/human_mob)
 	var/list/features = ..()

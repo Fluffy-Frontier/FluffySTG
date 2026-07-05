@@ -59,7 +59,7 @@
 			too_much_clicks = 0
 		else
 			too_much_clicks += 1
-		clicker.balloon_alert(clicker, "Not ready!")
+		clicker.balloon_alert(clicker, "not ready!")
 		return FALSE
 
 	too_much_clicks = 0

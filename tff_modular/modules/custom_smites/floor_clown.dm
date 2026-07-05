@@ -62,7 +62,7 @@
 	qdel(floorcluwne)
 	qdel(clowns_dinner)
 
-/proc/animate_slide(var/atom/to_animate, var/px, var/py, var/time_to_sleep = 10, var/ease = SINE_EASING)
+/proc/animate_slide(atom/to_animate,  px, py, time_to_sleep = 10, ease = SINE_EASING)
 	if(!istype(to_animate))
 		return
 
@@ -89,7 +89,7 @@
 	layer = 0
 	move_resist = MOVE_RESIST_DEFAULT * 1000
 
-/mob/living/carbon/human/floor_clown/Initialize()
+/mob/living/carbon/human/floor_clown/Initialize(mapload)
 	. = ..()
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)

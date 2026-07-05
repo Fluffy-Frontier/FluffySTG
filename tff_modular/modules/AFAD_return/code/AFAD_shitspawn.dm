@@ -20,3 +20,4 @@
 	if(need_mob_update)
 		target.updatehealth()
 	return
+#undef DAMAGE_HEALING_SHTSPWN
