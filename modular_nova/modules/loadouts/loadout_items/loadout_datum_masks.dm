@@ -130,6 +130,14 @@
 	name = "Half Mask Respirator"
 	item_path = /obj/item/clothing/mask/gas/respirator
 
+/datum/loadout_item/mask/cyborg_mask
+	name = "Cyborg Mask"
+	item_path = /obj/item/clothing/mask/gas/cyborg
+
+/datum/loadout_item/mask/gasmask_gags
+	name = "Gas Mask (Colorable)"
+	item_path = /obj/item/clothing/mask/gas/gags
+
 /*
 *	COSTUME
 */
