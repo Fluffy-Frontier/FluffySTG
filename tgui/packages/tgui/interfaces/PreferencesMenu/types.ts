@@ -230,6 +230,7 @@ export type CharacterPreferencesData = {
 
   names: Record<string, string>;
   vocals: Record<string, string>; // NOVA EDIT ADDITION
+  erp: Record<string, unknown>; // NOVA EDIT ADDITION
 
   misc: {
     gender: Gender;
