@@ -1,8 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	dir = 8
-	},
 /obj/effect/turf_decal/vg_decals/atmos/oxygen,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /turf/open/floor/engine/o2,
@@ -106,9 +103,6 @@
 /turf/open/floor/plating/elevatorshaft,
 /area/ruin/tarkon_ship/mainhall)
 "bE" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	dir = 8
-	},
 /turf/open/floor/engine/n2,
 /area/ruin/tarkon_ship/atmos)
 "bJ" = (
@@ -1241,6 +1235,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden,
 /obj/machinery/light/directional/east,
 /obj/structure/sign/poster/contraband/ff_contest/cursed_love/directional/east,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/atmos)
 "oW" = (
@@ -1259,9 +1254,6 @@
 /turf/open/floor/carpet/red,
 /area/ruin/tarkon_ship/mainhall/dorm)
 "pf" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	dir = 8
-	},
 /obj/effect/turf_decal/vg_decals/atmos/nitrogen,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /turf/open/floor/engine/n2,
@@ -2029,6 +2021,7 @@
 /area/ruin/tarkon_ship/atmos)
 "zu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/atmos)
 "zK" = (
@@ -2757,6 +2750,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/east,
 /obj/structure/sign/poster/contraband/ff_contest/melty_mel/directional/east,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/atmos)
 "JU" = (
@@ -3090,12 +3084,10 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
 	dir = 1
 	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/atmos)
 "OK" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	dir = 8
-	},
 /turf/open/floor/engine/o2,
 /area/ruin/tarkon_ship/atmos)
 "OS" = (
@@ -3358,6 +3350,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1
 	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/atmos)
 "Tb" = (
@@ -3406,6 +3399,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/tarkon_ship/mainhall/dorm)
+"UF" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
 "UN" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -4066,7 +4063,7 @@ SX
 OC
 zu
 zu
-BL
+UF
 JO
 zK
 Ln
