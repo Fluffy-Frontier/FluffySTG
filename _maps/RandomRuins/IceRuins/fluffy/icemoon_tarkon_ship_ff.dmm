@@ -477,10 +477,9 @@
 /area/icemoon/underground/explored)
 "fR" = (
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/light/directional/north,
 /obj/structure/dresser,
 /turf/open/floor/wood/large,
-/area/ruin/tarkon_ship/mainhall)
+/area/ruin/tarkon_ship/mainhall/dorm)
 "fX" = (
 /obj/machinery/power/turbine/turbine_outlet{
 	dir = 8
@@ -630,6 +629,12 @@
 /obj/structure/curtain/cloth,
 /obj/structure/fans/tiny,
 /turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"ih" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/mainhall)
 "ik" = (
 /obj/machinery/door/airlock/public/glass{
@@ -957,7 +962,6 @@
 	dir = 4
 	},
 /obj/structure/ore_box,
-/obj/machinery/light/directional/north,
 /obj/structure/sign/warning/doors/directional/north,
 /turf/open/floor/iron/smooth_large,
 /area/ruin/tarkon_ship/mainhall)
@@ -1689,8 +1693,9 @@
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/bin,
 /obj/structure/sign/poster/official/no_erp/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/large,
-/area/ruin/tarkon_ship/mainhall/dorm)
+/area/ruin/tarkon_ship/mainhall)
 "uR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
 /turf/open/floor/iron/dark/smooth_large,
@@ -1963,6 +1968,7 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/large,
 /area/ruin/tarkon_ship/mainhall)
 "yG" = (
@@ -2377,6 +2383,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth_large,
 /area/ruin/tarkon_ship/mainhall)
 "EL" = (
@@ -2490,7 +2497,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/machinery/light/directional/south,
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/vending/autodrobe{
 	onstation = 0;
@@ -2544,6 +2550,11 @@
 "GF" = (
 /obj/machinery/suit_storage_unit/industrial/tarkon,
 /obj/structure/sign/warning/doors/directional/south,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"GX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth_large,
 /area/ruin/tarkon_ship/mainhall)
 "Hc" = (
@@ -2976,12 +2987,9 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/rnd)
 "ML" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/smooth_large,
-/area/ruin/tarkon_ship/mainhall)
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
 "MW" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/bodycontainer/morgue,
@@ -3366,8 +3374,8 @@
 "Tw" = (
 /obj/effect/turf_decal/trimline/brown/line,
 /obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/south,
-/obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/tarkon_ship/mainhall)
 "TL" = (
@@ -3399,10 +3407,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/tarkon_ship/mainhall/dorm)
-"UF" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
-/turf/open/floor/iron/dark/smooth_large,
-/area/ruin/tarkon_ship/atmos)
 "UN" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -4063,7 +4067,7 @@ SX
 OC
 zu
 zu
-UF
+ML
 JO
 zK
 Ln
@@ -4296,7 +4300,7 @@ fl
 cl
 bD
 ME
-iQ
+GX
 yt
 Zt
 AH
@@ -4312,7 +4316,7 @@ uG
 Fs
 Zt
 yt
-iQ
+GX
 wP
 wj
 vj
@@ -4324,7 +4328,7 @@ bh
 bD
 HU
 Rx
-ML
+ns
 tq
 zU
 uG
@@ -4493,7 +4497,7 @@ sE
 RW
 Mu
 hm
-bM
+ih
 Zp
 iy
 mV
@@ -4628,7 +4632,7 @@ af
 cP
 Mu
 ft
-Tw
+JD
 Zp
 Zp
 BG
@@ -4655,7 +4659,7 @@ Mu
 Mu
 Mu
 hm
-CH
+Tw
 Js
 MH
 jy
