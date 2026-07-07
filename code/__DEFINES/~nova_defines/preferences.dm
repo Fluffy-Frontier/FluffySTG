@@ -24,3 +24,13 @@
 // Playtime is tracked in minutes
 /// Have any less hours than listed below and you get access to a pin indicating you're new
 #define PLAYTIME_GREEN 6000 // 100 hours
+
+#define VOICE_TYPE_TTS "Text-to-speech"
+#define VOICE_TYPE_BARK "Vocal Barks"
+
+#define PREFERENCE_CATEGORY_VOCALS "vocals"
+
+/// Max save slots for people not subscribed to BYOND and not a donator
+#define MAX_SAVE_SLOTS_NORMAL 45
+/// Max save slots for people who are subscribed to BYOND or a donator
+#define MAX_SAVE_SLOTS_SUBSCRIBER 100
