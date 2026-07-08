@@ -91,3 +91,387 @@
 	name = "Holocigar"
 	item_path = /obj/item/holocigarette/masvedishcigar
 	// Asked it to be public, and as such has no whitelist.
+
+/datum/loadout_item/suit/lt3_armor
+	name = "Silver Jacket Mk II"
+	item_path = /obj/item/clothing/suit/armor/skyy
+	ckeywhitelist = list("lt3")
+	restricted_roles = list(JOB_HEAD_OF_PERSONNEL, JOB_NT_REP)
+
+/datum/loadout_item/suit/lt3_jacket
+	name = "Silver Jacket"
+	item_path = /obj/item/clothing/suit/jacket/skyy
+	ckeywhitelist = list("lt3")
+
+/datum/loadout_item/under/miscellaneous/lt3_jeans
+	name = "Silver Jeans"
+	item_path = /obj/item/clothing/under/pants/skyy
+	ckeywhitelist = list("lt3")
+
+/datum/loadout_item/gloves/lt3_gloves
+	name = "Charcoal Fingerless Gloves"
+	item_path = /obj/item/clothing/gloves/skyy
+	ckeywhitelist = list("lt3")
+
+/datum/loadout_item/toys/switchcomb
+	name = "Switchblade Comb"
+	item_path = /obj/item/hairbrush/switchblade
+	ckeywhitelist = list("stonetear")
+
+/datum/loadout_item/suit/colorblockhoodie
+	name = "Color-Block Hoodie"
+	item_path = /obj/item/clothing/suit/hooded/colorblockhoodie
+	ckeywhitelist = list("lolpopomg101")
+
+/datum/loadout_item/inhand/officialcat
+	name = "Official Cat Stamp"
+	item_path = /obj/item/stamp/cat
+	ckeywhitelist = list("kathrinbailey")
+
+/datum/loadout_item/inhand/sqn_box
+	name = "A curious box of things."
+	item_path = /obj/item/storage/box/donator/sqn
+	ckeywhitelist = list("sqnztb")
+
+/datum/loadout_item/under/jumpsuit/noble_gambeson
+	name = "Noble Gambeson"
+	item_path = /obj/item/clothing/under/rank/civilian/chaplain/divine_archer/noble
+	ckeywhitelist = list("grasshand")
+
+/datum/loadout_item/shoes/noble_boots
+	name = "Noble Boots"
+	item_path = /obj/item/clothing/shoes/jackboots/noble
+	ckeywhitelist = list("grasshand")
+
+/datum/loadout_item/suit/nobility_dresscoat
+	name = "Nobility Dresscoat"
+	item_path = /obj/item/clothing/suit/toggle/labcoat/vic_dresscoat_donator
+	ckeywhitelist = list("nikotheguydude")
+
+/datum/loadout_item/suit/anubite_headpiece
+	name = "Anubite Headpiece"
+	item_path = /obj/item/clothing/head/anubite
+	ckeywhitelist = list("vexcint")
+
+/datum/loadout_item/under/formal/dragon_maid
+	name = "Dragon Maid Uniform"
+	item_path = /obj/item/clothing/under/costume/dragon_maid
+	ckeywhitelist = list("sigmaralkahest")
+
+/datum/loadout_item/head/catear_headphone
+	name = "Cat-Ear Headphones"
+	item_path = /obj/item/instrument/piano_synth/headphones/catear_headphone
+	ckeywhitelist = list("dtfe")
+
+/datum/loadout_item/neck/trenchcoat
+	name = "Secure Trenchcoat"
+	item_path = /obj/item/clothing/neck/trenchcoat
+	ckeywhitelist = list("Smol42")
+
+/datum/loadout_item/under/jumpsuit/old_qm_jumpskirt
+	name = "Old Quartermaster's Jumpskirt"
+	item_path = /obj/item/clothing/under/rank/cargo/qm/skirt/old
+	ckeywhitelist = list("jasohavents")
+
+/datum/loadout_item/pocket_items/toaster_implant
+	name = "Toaster Implant"
+	item_path = /obj/item/implanter/toaster
+	ckeywhitelist = list("jasohavents")
+
+/datum/loadout_item/pocket_items/theurgic_crystal
+	name = "Theurgic Stone"
+	item_path = /obj/item/organ/cyberimp/arm/toolkit/shard/donator/theurgic_crystal
+	ckeywhitelist = list("sciamach")
+
+/datum/loadout_item/toys/plush/delphic_synth
+	name = "Surgery Synth Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/delphic_synth
+
+/datum/loadout_item/under/miscellaneous/rem
+	name = "M.I.A. Limiter"
+	item_path = /obj/item/clothing/under/rem
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/shoes/rem
+	name = "M.I.A. Heels"
+	item_path = /obj/item/clothing/shoes/rem_shoes
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/under/miscellaneous/bwake
+	name = "Compression Bodysuit"
+	item_path = /obj/item/clothing/under/bwake
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/under/jumpsuit/ig_harness
+	name = "Body Harness"
+	item_path = /obj/item/clothing/under/ig_harness
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/neck/ig_cloak
+	name = "Kiara's Cloak"
+	item_path = /obj/item/clothing/neck/ig_cloak
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/inhand/pet/mrfluff_mothroach
+	name = "Mr. Fluff"
+	item_path = /obj/item/mob_holder/pet/donator/centralsmith
+	ckeywhitelist = list("centralsmith")
+
+/datum/loadout_item/under/jumpsuit/techpants
+	name = "Techwear Pants"
+	item_path = /obj/item/clothing/under/techpants
+	ckeywhitelist = list("alvcyktor", "snakebittenn")
+
+/datum/loadout_item/inhand/drop_pouch
+	name = "Drop Pouch"
+	item_path = /obj/item/storage/backpack/satchel/drop_pouch
+	ckeywhitelist = list("alvcyktor", "snakebittenn")
+
+/datum/loadout_item/pocket_items/melonseva
+	name = "Sundowner SEVA"
+	item_path = /obj/item/clothing/suit/hooded/seva/melon
+	ckeywhitelist = list("deadmonwonderland")
+	restricted_roles = list(JOB_SHAFT_MINER)
+
+
+/datum/loadout_item/suit/desminus
+	name = "Jómsvíking Coat"
+	item_path = /obj/item/clothing/suit/toggle/desminus
+	ckeywhitelist = list("desminus", "junglerat", "deadmonwonderland")
+
+/datum/loadout_item/suit/desminus2
+	name = "Elderwood Garment"
+	item_path = /obj/item/clothing/suit/toggle/desminus2
+	ckeywhitelist = list("desminus", "junglerat", "deadmonwonderland")
+
+/datum/loadout_item/pocket_items/akarimod
+	name = "Akari's MOD Refitter"
+	item_path = /obj/item/mod/skin_applier/akari
+	ckeywhitelist = list("samman166", "cainedclxvi")
+
+/datum/loadout_item/pocket_items/mrsanderp_cookbook
+	name = "Riva Family Cookbook"
+	item_path = /obj/item/book/granter/crafting_recipe/mrsanderp_donator_cookbook
+	ckeywhitelist = list("mrsanderp")
+
+/datum/loadout_item/under/jumpsuit/half_leotard
+	name = "One-Sleeved Leotard"
+	item_path = /obj/item/clothing/under/pants/half_leotard_cosmiclaer
+	ckeywhitelist = list("cosmiclaer")
+
+/datum/loadout_item/under/jumpsuit/shendyt
+	name = "Shendyt"
+	item_path = /obj/item/clothing/under/costume/shendyt
+	ckeywhitelist = list("hyperhazel")
+
+/datum/loadout_item/pocket_items/jumperbox
+	name = "Jumper Conversation Kit Box"
+	item_path = /obj/item/mod/construction/plating/jumper
+	ckeywhitelist = list("bonkaitheroris")
+
+/datum/loadout_item/pocket_items/starfruit_seed
+	name = "Primidine Starfruit Seed"
+	item_path = /obj/item/seeds/starfruit
+	ckeywhitelist = list("snailomi", "thedragmeme", "DayDream21", "Sketchy_Axoltol", "Tesla825")
+
+/datum/loadout_item/suit/butter
+	name = "Butter Costume"
+	item_path = /obj/item/clothing/suit/costume/butter
+	ckeywhitelist = list("drpmstr", "pyritechimera")
+
+/datum/loadout_item/neck/tattered
+	name = "Worn Corporate Cloak"
+	item_path = /obj/item/clothing/neck/tattered
+	ckeywhitelist = list("jaklz")
+
+/datum/loadout_item/toys/plush/commandant
+	name = "Commandant Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/commandant
+// ckeywhitelist = list("bonkaitheroris") // Asked it to be public
+
+/datum/loadout_item/neck/noble_cloak
+	name = "Noble Cloak"
+	item_path = /obj/item/clothing/neck/noble_mantle
+	ckeywhitelist = list("sharkoink")
+
+/datum/loadout_item/pocket_items/comvest
+	name = "Command Armor Vest"
+	item_path = /obj/item/clothing/suit/armor/hos/trenchcoat/melon
+	ckeywhitelist = list("deadmonwonderland")
+	restricted_roles = list(JOB_HEAD_OF_SECURITY)
+
+/datum/loadout_item/pocket_items/amps
+	name = "Anomalous Materials Protection Suit"
+	item_path = /obj/item/clothing/suit/hooded/explorer/melon
+	ckeywhitelist = list("deadmonwonderland")
+	restricted_roles = list(JOB_SHAFT_MINER)
+
+/datum/loadout_item/under/formal/ambassadordagmar
+	name = "Ambassador's Dress"
+	item_path = /obj/item/clothing/under/dress/ambassadordagmar
+	ckeywhitelist = list("spookyrotini")
+
+/datum/loadout_item/under/formal/neoflapper
+	name = "Neo-Flapper Dress"
+	item_path = /obj/item/clothing/under/dress/neoflapperdagmar
+	ckeywhitelist = list("spookyrotini")
+
+/datum/loadout_item/under/formal/heirloomdagmar
+	name = "Heirloom Dress"
+	item_path = /obj/item/clothing/under/dress/heirloomdagmar
+	ckeywhitelist = list("spookyrotini")
+
+/datum/loadout_item/pocket_items/ahabs_spear
+	name = "Ahab's Spear Retool Kit"
+	item_path = /obj/item/crusher_trophy/retool_kit/ahab
+	ckeywhitelist = list("tamaya")
+	restricted_roles = list(JOB_SHAFT_MINER)
+
+/datum/loadout_item/under/jumpsuit/ecologist
+	name = "Ecologist's Garb"
+	item_path = /obj/item/clothing/under/ecologist
+	ckeywhitelist = list("deadmonwonderland", "pyritechimera", "darkinite", "wivernshy")
+
+/datum/loadout_item/shoes/ecologist
+	name = "Ecologist's Boots"
+	item_path = /obj/item/clothing/shoes/ecologist
+	ckeywhitelist = list("deadmonwonderland", "pyritechimera", "darkinite", "wivernshy")
+
+/datum/loadout_item/suit/ecologist
+	name = "Ecologist's Coat"
+	item_path = /obj/item/clothing/suit/hooded/ecologist
+	ckeywhitelist = list("deadmonwonderland", "pyritechimera", "darkinite", "wivernshy")
+
+/datum/loadout_item/gloves/ecologist
+	name = "Ecologist's Gloves"
+	item_path = /obj/item/clothing/gloves/ecologist
+	ckeywhitelist = list("deadmonwonderland", "pyritechimera", "darkinite", "wivernshy")
+
+/datum/loadout_item/suit/admiral_coat
+	name = "Admiral's Coat"
+	item_path = /obj/item/clothing/suit/admiral_coat
+	ckeywhitelist = list("pyritechimera", "sirbillyblacksmith", "darkinite")
+
+/datum/loadout_item/head/gabney
+	name = "Triumvirate Officer's Cap"
+	item_path = /obj/item/clothing/head/gabeny
+	ckeywhitelist = list("pyritechimera", "gabenyfox", "draegonlore")
+
+/datum/loadout_item/under/gabney
+	name = "Triumvirate Officer's Formal Uniform"
+	item_path = /obj/item/clothing/under/gabeny
+	ckeywhitelist = list("pyritechimera", "gabenyfox", "draegonlore")
+
+/datum/loadout_item/suit/labcoat_gabney
+	name = "Triumvirate MedSci Officer's Labcoat"
+	item_path = /obj/item/clothing/suit/toggle/labcoat/gabeny
+	ckeywhitelist = list("pyritechimera", "gabenyfox", "draegonlore")
+
+/datum/loadout_item/suit/gabney
+	name = "Triumvirate Officer's Great Coat"
+	item_path = /obj/item/clothing/suit/jacket/gabeny
+	ckeywhitelist = list("pyritechimera", "gabenyfox", "draegonlore")
+
+/datum/loadout_item/suit/merctac
+	name = "MercTac Hoodie"
+	item_path = /obj/item/clothing/suit/hooded/merctac_hoodie
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/gloves/merctac
+	name = "MercTac Glove"
+	item_path = /obj/item/clothing/gloves/merctac_glove
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/under/miscellaneous/merctac
+	name = "MercTac Pants"
+	item_path = /obj/item/clothing/under/pants/merctac_pants
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/mask/merctac
+	name = "Gambit's Mask"
+	item_path = /obj/item/clothing/mask/merctac_mask
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/inhand/merctac
+	name = "Xplore Go! Bag"
+	item_path = /obj/item/storage/backpack/merctac_backpack
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/suit/elysiancoat
+	name = "Bovinæ Overcoat"
+	item_path = /obj/item/clothing/suit/brownbattlecoat/elysiancoat
+	ckeywhitelist = list("courierasy")
+
+/datum/loadout_item/under/noble_enforcer
+	name = "Swashbuckler Suit"
+	item_path = /obj/item/clothing/under/rank/civilian/curator/treasure_hunter/noble_enforcer
+	ckeywhitelist = list("courierasy")
+
+/datum/loadout_item/toys/ak105_kit
+	name = "AK-105 SBR Conversion Kit"
+	item_path = /obj/item/device/custom_kit/ak105
+	ckeywhitelist = list("latinfishy", "hollandaisesauce", "orbisa")
+
+/datum/loadout_item/pocket_items/paragon_box
+	name = "The Homo Ludens Flag suit, nicknamed 'Paragon'"
+	item_path = /obj/item/mod/construction/plating/paragon
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/pocket_items/paragon_box_skinapplier
+	name = "The Homo Ludens Flag suit, nicknamed 'Paragon' (Skinapplier)"
+	item_path = /obj/item/mod/skin_applier/paragon
+	ckeywhitelist = list("kaynite")
+
+/datum/loadout_item/pocket_items/jumperbox_skinapplier
+	name = "Jumper Conversation Kit Box"
+	item_path = /obj/item/mod/skin_applier/jumper
+	ckeywhitelist = list("bonkaitheroris")
+
+/datum/loadout_item/toys/plush/plushe_vethonk
+	name = "Veteran Clown Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/vethonk
+
+/datum/loadout_item/toys/plush/plushe_percy
+	name = "Dr. Percival Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/percy
+
+/datum/loadout_item/toys/plush/plushie_bon
+	name = "Bon Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/bon
+
+/datum/loadout_item/pocket_items/bon_cape
+	name = "Bon's Cape"
+	item_path = /obj/item/sign/flag/pride/bon
+	ckeywhitelist = list("bonbyte")
+
+/datum/loadout_item/pocket_items/espatier
+	name = "dated Espatier holster"
+	item_path = /obj/item/storage/belt/espatier
+	ckeywhitelist = list("pyriteChimera", "darkinite", "deadmon_wonderland", "nonplayer775", "rilomatic")
+
+/datum/loadout_item/pocket_items/joissuit_skinapplier
+	name = "Java Operated Intelligence Suit Modification Kit 'JOISuit' (Skinapplier)"
+	item_path = /obj/item/mod/skin_applier/joisuit
+	ckeywhitelist = list("hisakaki", "darkinite", "rilomatic")
+
+/datum/loadout_item/pocket_items/joissuit_plates
+	name = "JOISuit Modification Core"
+	item_path = /obj/item/mod/construction/plating/joisuit
+	ckeywhitelist = list("hisakaki", "darkinite", "rilomatic")
+
+/datum/loadout_item/head/stachelm
+	name = "Stachelm"
+	item_path = /obj/item/clothing/head/helmet/donator/stachelm
+	ckeywhitelist = list("ghostof93")
+	restricted_roles = list(JOB_CAPTAIN, JOB_BLUESHIELD)
+
+/datum/loadout_item/suit/duke_armored_coat
+	name = "Duke's Armored Coat"
+	item_path = /obj/item/clothing/suit/armor/donator/duke_armored_coat
+	ckeywhitelist = list("ambermane")
+	restricted_roles = list(JOB_CAPTAIN)
+
+/datum/loadout_item/under/viper_suit
+	name = "Viper Suit"
+	item_path = /obj/item/clothing/under/rank/civilian/viper_suit
+	ckeywhitelist = list("ghostof93")
