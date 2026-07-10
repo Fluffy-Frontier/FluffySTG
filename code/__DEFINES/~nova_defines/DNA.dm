@@ -129,6 +129,7 @@
 #define FEATURE_TESTICLES "testicles"
 #define FEATURE_BREASTS "breasts"
 #define FEATURE_ANUS "anus"
+#define FEATURE_BUTT "butt"
 
 
 #define MANDATORY_FEATURE_LIST list(\
@@ -155,6 +156,9 @@
 	"vagina_uses_skincolor" = TRUE,\
 	"breasts_uses_skintones" = TRUE,\
 	"breasts_uses_skincolor" = TRUE,\
+	"butt_size" = 1,\
+	"butt_uses_skintones" = TRUE,\
+	"butt_uses_skincolor" = TRUE,\
 )
 
 #define AROUSAL_CANT 0
