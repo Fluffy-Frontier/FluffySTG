@@ -88,7 +88,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		LAZYADD(key_tags, "byond_member")
 	/* // FLUFFY FRONTIER REMOVAL START
 	// NOVA EDIT ADDITION START - Donator icons in OOC
-	if(SSplayer_ranks.is_donator(src) && prefs.read_preference(/datum/preference/toggle/display_donator_status))
+	var/is_donator = SSplayer_ranks.is_donator(src)
+	if(is_donator && prefs.read_preference(/datum/preference/toggle/display_donator_status))
 		LAZYADD(key_tags, "nova_donator")
 	// NOVA EDIT ADDITION END
 	*/ // FLUFFY FRONTIER REMOVAL END
@@ -101,7 +102,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	keyname = "[key_prefix][keyname]"
 
-	if(visible_unlock)
+	if(visible_unlock || is_donator) // NOVA EDIT CHANGE - ORIGINAL: if(visible_unlock)
 		keyname = "<font color='[prefs.read_preference(/datum/preference/color/ooc_color) || GLOB.normal_ooc_colour]'>[keyname]</font>"
 
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
