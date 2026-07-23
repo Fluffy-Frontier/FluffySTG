@@ -6,7 +6,7 @@
 	special_characters = null
 	default_priority = 70
 
-	flags = NO_STUTTER | TONGUELESS_SPEECH
+	flags = LANGUAGE_NO_STUTTER | LANGUAGE_TONGUELESS_SPEECH
 	always_use_default_namelist = TRUE
 	icon_state = "animal"
 	secret = TRUE
@@ -106,6 +106,7 @@
 /obj/item/implantcase/gas_sol_speaker
 	name = "implant case - 'GAS Sol speaker'"
 	desc = "A glass case containing a sol speaker, designed for GAS."
+	custom_materials = list(/datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass = HALF_SHEET_MATERIAL_AMOUNT)
 	imp_type = /obj/item/implant/gas_sol_speaker
 
 /datum/design/implant_gassolspeaker

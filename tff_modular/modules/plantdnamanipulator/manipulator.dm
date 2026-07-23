@@ -425,7 +425,7 @@
 	name = "plant data disk"
 	desc = "A disk for storing plant genetic data."
 	icon_state = "datadisk11"
-	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
+	custom_materials = list(/datum/material/biomass = SMALL_MATERIAL_AMOUNT)
 	var/datum/plant_gene/gene
 	read_only = 0 //Well, it's still a floppy disk
 	obj_flags = UNIQUE_RENAME

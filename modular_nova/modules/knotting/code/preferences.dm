@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL START
 /// Abstract base for knotting prefs.
 /datum/preference/toggle/knotting
 	abstract_type = /datum/preference/toggle/knotting
@@ -49,3 +50,4 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "knotting_receive"
 	default_value = FALSE
+*/ // FLUFFY FRONTIER REMOVAL END

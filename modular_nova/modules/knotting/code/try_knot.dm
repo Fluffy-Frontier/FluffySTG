@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL START
 /// Call on the knotter after they finish inside a partner.
 /mob/living/proc/try_knot(mob/living/partner, climax_into_choice)
 	var/static/list/knottable_climax_targets = list(
@@ -28,3 +29,4 @@
 		return
 
 	knotter.AddComponent(/datum/component/knotted, partner, climax_into_choice)
+*/ // FLUFFY FRONTIER REMOVAL END

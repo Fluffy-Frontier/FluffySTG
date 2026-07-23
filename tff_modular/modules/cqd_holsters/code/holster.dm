@@ -23,7 +23,7 @@
 	return ..()
 
 // Этот прок вызываеться при успешном надевании аксессуара, а также при надевании формы. Его я использую для перехвата разных ситуаций специфичных. Например чтобы скрыть внешний спрайтик для набберов и тешари.
-/obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user)
+/obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user, update)
 	/*
 	Следующий код работает по принципу того, что он перед вызовом родительского прока проверяет носителя формы на определённые факторы. Если владелец попадает под определённые факторы - спрайт-состояние меняется на альтернативное (в нашем случае на скрытое).
 
@@ -42,7 +42,7 @@
 	// Вызываем родительский прок после проверок.
 	return ..()
 
-/obj/item/clothing/accessory/cqd_holster/detach(obj/item/clothing/under/U)
+/obj/item/clothing/accessory/cqd_holster/detach(obj/item/clothing/under/U, update)
 	// А это костыльный обход багули, который я подглядел у кармашка для ручек.
 	var/drop_loc = drop_location()
 	for(var/atom/movable/held as anything in src)

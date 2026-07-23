@@ -9826,6 +9826,7 @@
 /area/station/ai/upload/chamber)
 "bdg" = (
 /obj/structure/cable,
+/obj/machinery/ai_law_rack/base/core,
 /turf/open/floor/circuit,
 /area/station/ai/upload/chamber)
 "bdi" = (
@@ -10030,9 +10031,6 @@
 /turf/open/floor/circuit,
 /area/station/ai/upload/chamber)
 "bee" = (
-/obj/machinery/computer/upload/ai{
-	dir = 1
-	},
 /obj/machinery/flasher{
 	id = "AI";
 	pixel_y = -21
@@ -10040,9 +10038,6 @@
 /turf/open/floor/circuit,
 /area/station/ai/upload/chamber)
 "bef" = (
-/obj/machinery/computer/upload/borg{
-	dir = 1
-	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/circuit,
 /area/station/ai/upload/chamber)
@@ -10056,7 +10051,6 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/effect/spawner/random/aimodule/harmful,
-/obj/item/ai_module/reset/purge,
 /turf/open/floor/iron/dark,
 /area/station/ai/upload/chamber)
 "beh" = (
@@ -16847,7 +16841,6 @@
 "bEX" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/ai_module/reset,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage/tech)
 "bEY" = (
@@ -23139,9 +23132,9 @@
 /obj/item/food/grown/cocoapod,
 /obj/item/food/grown/grapes,
 /obj/item/food/grown/citrus/orange,
-/obj/item/food/grown/watermelon,
-/obj/item/food/grown/watermelon,
-/obj/item/food/grown/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
 /obj/item/food/grown/wheat,
 /obj/structure/table/glass,
 /obj/effect/turf_decal/tile/green/full,
@@ -35681,8 +35674,8 @@
 /area/station/command/heads_quarters/nt_rep)
 "gPR" = (
 /obj/structure/table/glass,
-/obj/item/food/grown/poppy,
-/obj/item/food/grown/harebell,
+/obj/item/food/grown/flower/poppy,
+/obj/item/food/grown/flower/harebell,
 /turf/open/floor/iron/dark,
 /area/station/service/chapel)
 "gQz" = (
@@ -41992,7 +41985,6 @@
 /obj/structure/table,
 /obj/item/storage/briefcase/secure,
 /obj/structure/secure_safe/directional/south,
-/obj/item/ai_module/core,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/rd)
 "kfE" = (
@@ -43370,7 +43362,7 @@
 "kRB" = (
 /obj/structure/sink/kitchen/directional/south,
 /obj/effect/landmark/generic_maintenance_landmark,
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/effect/spawner/random/food_or_drink/keg,
 /turf/open/floor/iron/dark/smooth_large{
 	icon_state = "textured_dark_large"
 	},
@@ -48992,7 +48984,7 @@
 /area/station/service/hydroponics)
 "oac" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/effect/spawner/random/food_or_drink/keg,
 /turf/open/floor/wood,
 /area/station/maintenance/abandon_cafeteria)
 "oaO" = (

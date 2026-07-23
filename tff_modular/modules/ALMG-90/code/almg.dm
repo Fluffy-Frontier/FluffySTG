@@ -9,6 +9,7 @@
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot laser burst."
 	icon = 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi'
 	icon_state = "mecha_amlg90"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 2, /datum/material/diamond = SHEET_MATERIAL_AMOUNT)
 	equip_cooldown = 10
 	projectile = /obj/projectile/beam/laser/rapid
 	fire_sound = 'tff_modular/modules/ALMG-90/sound/gunshot_lascarbine.ogg'

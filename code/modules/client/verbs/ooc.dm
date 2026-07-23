@@ -99,9 +99,10 @@ GAME_VERB(/client, ooc, VERB_OOC, null, msg as text)
 		key_prefix = "<span style='vertical-align: text-top; padding-right: 0.2em'>[key_prefix]</span>"
 
 	keyname = "[key_prefix][keyname]"
-
+	/* // FLUFFY FRONTIER REMOVAL START
 	if(visible_unlock || is_donator) // NOVA EDIT CHANGE - ORIGINAL: if(visible_unlock)
 		keyname = "<font color='[prefs.read_preference(/datum/preference/color/ooc_color) || GLOB.normal_ooc_colour]'>[keyname]</font>"
+	*/ // FLUFFY FRONTIER REMOVAL END
 
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/receiver as anything in GLOB.clients)

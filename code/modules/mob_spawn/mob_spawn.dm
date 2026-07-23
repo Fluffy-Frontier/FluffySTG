@@ -5,6 +5,7 @@
 	//So it shows up in the map editor
 	icon = 'icons/effects/mapping_helpers.dmi'
 	icon_state = "mobspawner"
+	abstract_type = /obj/effect/mob_spawn
 	/// Can this spawner be used up?
 	var/infinite_use = FALSE
 	///A forced name of the mob, though can be overridden if a special name is passed as an argument
@@ -66,8 +67,12 @@
 		spawned_mob = new mob_type(get_turf(src)) //living mobs only
 	special(spawned_mob, mob_possessor, apply_prefs)
 	name_mob(spawned_mob, newname)
-	special(spawned_mob, mob_possessor)
-	equip(spawned_mob)
+	//equip(spawned_mob) // NOVA EDIT REMOVAL
+	// NOVA EDIT ADDITION START
+	// Only run equip logic if this is NOT a ghost_role spawner, as we already solve equip with loadout there.
+	if (!apply_prefs)
+		equip(spawned_mob)
+	// NOVA EDIT ADDITION END
 	spawned_mob_ref = WEAKREF(spawned_mob)
 	return spawned_mob
 
@@ -145,9 +150,6 @@
 	var/uses = 1
 	/// Does the spawner delete itself when it runs out of uses?
 	var/deletes_on_zero_uses_left = TRUE
-	/// A list of the ckeys that currently are trying to access this spawner, so that they can't try to spawn more than once (in case there's sleeps).
-	/// Static because you only really want to be able to spawn in one spawner at a time, obviously.
-	var/static/list/ckeys_trying_to_spawn
 	///bitflag that determines if players can spawn in as their statics
 	var/allow_custom_character = NONE
 
@@ -188,13 +190,20 @@
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/ghost_role/attack_ghost(mob/dead/observer/user)
-	if(!SSticker.HasRoundStarted() || !loc)
+	if(!SSticker.HasRoundStarted() || isnull(loc) || QDELETED(src))
 		return
 
-	// We don't open the prompt more than once at a time.
+	// Lazylist of the ckeys that currently are trying to access any spawner, so that they can't try to spawn more than once (in case there's sleeps).
+	var/static/list/ckeys_trying_to_spawn
 	if(LAZYFIND(ckeys_trying_to_spawn, user.ckey))
 		return
+	if(uses <= 0 && !infinite_use)
+		to_chat(user, span_warning("This spawner is out of charges!"))
+		return FALSE
+	if(!can_ghost_take(user))
+		return FALSE
 
+	uses -= 1 // Remove a use EARLY to account for sleep / inputs
 	var/user_ckey = user.ckey // Just in case shenanigans happen, we always want to remove it from the list.
 	LAZYADD(ckeys_trying_to_spawn, user_ckey)
 	// NOVA EDIT ADDITION START
@@ -205,6 +214,8 @@
 			return
 	// NOVA EDIT ADDITION END
 
+	var/prompt_fail = FALSE
+	var/apply_prefs = FALSE
 	if(prompt_ghost)
 		var/prompt = "Become [prompt_name]?"
 		if(!temp_body && user.can_reenter_corpse && user.mind)
@@ -213,7 +224,7 @@
 
 	/* // NOVA EDIT REMOVAL START: handled below
 	var/species_pref = user.client.prefs.read_preference(/datum/preference/choiced/species) || /datum/species/human
-	if(!prompt_fail && user.started_as_observer && allow_custom_character && (GLOB.species_prototypes[species_pref].inherent_respiration_type & RESPIRATION_OXYGEN))
+	if(!prompt_fail && user.started_as_observer && allow_custom_character && (GLOB.species_prototypes[species_pref].get_breath_type() == GAS_O2))
 		var/static_prompt = "Because you haven't taken a role so far, you may spawn in as \
 			[((allow_custom_character & GHOSTROLE_TAKE_PREFS_SPECIES) || species_pref == /datum/species/human) ? "" : "a human version of"] \
 			your customized character with a random name. Would you like to?"
@@ -244,25 +255,20 @@
 /obj/effect/mob_spawn/ghost_role/proc/can_ghost_take(mob/dead/observer/user)
 	if(is_banned_from(user.ckey, role_ban))
 		to_chat(user, span_warning("You are banned from this role!"))
-		return FALL_STOP_INTERCEPTING
+		return FALSE
 	// NOVA EDIT ADDITION START
 	if(is_banned_from(user.ckey, BAN_GHOST_ROLE_SPAWNER)) // Ghost role bans
 		to_chat(user, span_warning("Error, you are banned from playing ghost roles!"))
-		return FALL_STOP_INTERCEPTING
+		return FALSE
 	// NOVA EDIT ADDITION END
-	if(!allow_spawn(user, silent = FALSE))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
+	if(!(GLOB.ghost_role_flags & GHOSTROLE_SPAWNER) && !(flags_1 & ADMIN_SPAWNED_1))
+		to_chat(user, span_warning("An admin has temporarily disabled non-admin ghost roles!"))
+		return FALSE
 	if(QDELETED(src) || QDELETED(user))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
-
-	if(uses <= 0 && !infinite_use) // Just in case something took longer than it should've and we got here after the uses went below zero.
-		to_chat(user, span_warning("This spawner is out of charges!"))
-		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
-		return
-
-	create_from_ghost(user)
+		return FALSE
+	if(!allow_spawn(user, silent = FALSE))
+		return FALSE
+	return TRUE
 
 /**
  * Uses a use and creates a mob from a passed ghost
@@ -271,13 +277,18 @@
  *
  * If you are manually forcing a player into this mob spawn,
  * you should be using this and not directly calling [proc/create].
+ *
+ * * * user - The ghost/mob that is possessing this mob
+ * * * apply_prefs - Whether we should apply the possessor's preferences to the mob
+ * * * subtract_uses - Whether to subtract a use from the spawner.
+ * Set to FALSE if you want to handle uses manually elsewhere.
  */
-/obj/effect/mob_spawn/ghost_role/proc/create_from_ghost(mob/dead/observer/user, use_loadout = FALSE) // NOVA EDIT CHANGE - ORIGINAL: /obj/effect/mob_spawn/ghost_role/proc/create_from_ghost(mob/dead/observer/user)
+/obj/effect/mob_spawn/ghost_role/proc/create_from_ghost(mob/dead/observer/user, apply_prefs, subtract_uses = TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	SHOULD_NOT_SLEEP(TRUE)
 	ASSERT(istype(user))
-	var/user_ckey = user.ckey // We need to do it before everything else, because after the create() the ckey will already have been transferred.
 
 	user.log_message("became a [prompt_name].", LOG_GAME)
-	uses -= 1 // Remove a use before trying to spawn to prevent strangeness like the spawner trying to spawn more mobs than it should be able to
 	if(!temp_body)
 		//NOVA EDIT ADDITION START - DNR TRAIT
 		//Makes your body ACTUALLY unrevivable (as the prompt suggests with "Warning, You can no longer be revived!")
@@ -286,33 +297,19 @@
 			user_ghost.stay_dead()
 		//NOVA EDIT ADDITION END
 		user.mind = null // dissassociate mind, don't let it follow us to the next life
-	/*//NOVA EDIT REMOVAL START: handled modularly. kind of? this could be useful for... pirate spawns in the future? handled modularly for about every other ghostrole otherwise.
-	var/species_pref = user.client.prefs.read_preference(/datum/preference/choiced/species)
-	var/datum/species/user_species = GLOB.species_prototypes[species_pref]
-	if(user_species.inherent_respiration_type == RESPIRATION_PLASMA) // Stupid flammable skeletons...
-		user.started_as_observer = null
-	else if(user.started_as_observer && allow_custom_character)
-		var/static_prompt = "Because you haven't taken a role so far, you may spawn in as [(allow_custom_character & GHOSTROLE_ALLOW_SPECIES || user_species == /datum/species/human) ? "" : "a human version of"] your customized character with a random name. Would you like to?"
-		var/static_prompt_result = tgui_alert(user, static_prompt, "Custom Character", list("Yes", "No"), 10 SECONDS)
-		if(static_prompt_result != "Yes")
-			user.started_as_observer = null
-	*///NOVA EDIT REMOVAL END
 
-	var/created = create(user, /* newname */, use_loadout) // NOVA EDIT CHANGE - ORIGINAL: var/created = create(user)
-	LAZYREMOVE(ckeys_trying_to_spawn, user_ckey) // We do this AFTER the create() so that we're basically sure that the user won't be in their ghost body anymore, so they can't click on the spawner again.
-
-	if(!created)
-		uses += 1 // Refund use because we didn't actually spawn anything
-
-		if(isnull(created)) // If we explicitly return FALSE instead of just not returning a mob, we don't want to spam the admins
-			CRASH("An instance of [type] didn't return anything when creating a mob, this might be broken!")
-
-	SEND_SIGNAL(src, COMSIG_GHOSTROLE_SPAWNED, created)
-	check_uses() // Now we check if the spawner should delete itself or not
+	var/mob/created = create(user, apply_prefs = apply_prefs)
+	if(ismob(created))
+		SEND_SIGNAL(src, COMSIG_GHOSTROLE_SPAWNED, created)
+		if(subtract_uses)
+			uses -= 1
+		check_uses()
+	else if(isnull(created)) // null instead of explicit CANCEL_SPAWN means something went wrong
+		CRASH("An instance of [type] didn't return anything when creating a mob, this might be broken!")
 
 	return created
 
-/obj/effect/mob_spawn/ghost_role/create(mob/mob_possessor, newname)
+/obj/effect/mob_spawn/ghost_role/create(mob/mob_possessor, newname, apply_prefs)
 	if(!mob_possessor.key) // This is in the scenario that the server is somehow lagging, or someone fucked up their code, and we try to spawn the same person in twice. We'll simply not spawn anything and CRASH(), so that we report what happened.
 		CRASH("Attempted to create an instance of [type] with a mob that had no ckey attached to it, which isn't supported by ghost role spawners!")
 
@@ -338,6 +335,7 @@
 			mob_possessor.mind.transfer_to(spawned_mob, force_key_move = TRUE)
 		else
 			spawned_mob.PossessByPlayer(mob_possessor.key)
+
 	var/datum/mind/spawned_mind = spawned_mob.mind
 	if(spawned_mind)
 		spawned_mob.mind.set_assigned_role_with_greeting(SSjob.get_job_type(spawner_job_path))
@@ -390,16 +388,16 @@
 			if(mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))
 				INVOKE_ASYNC(src, PROC_REF(create))
 
-/obj/effect/mob_spawn/corpse/special(mob/living/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/corpse/special(mob/living/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	spawned_mob.death(TRUE)
-	spawned_mob.adjustOxyLoss(oxy_damage)
-	spawned_mob.adjustBruteLoss(brute_damage)
-	spawned_mob.adjustFireLoss(burn_damage)
+	spawned_mob.adjust_oxy_loss(oxy_damage)
+	spawned_mob.adjust_brute_loss(brute_damage)
+	spawned_mob.adjust_fire_loss(burn_damage)
 	if (corpse_description)
 		spawned_mob.AddComponent(/datum/component/temporary_description, corpse_description, naive_corpse_description)
 
-/obj/effect/mob_spawn/corpse/create(mob/mob_possessor, newname)
+/obj/effect/mob_spawn/corpse/create(mob/mob_possessor, newname, apply_prefs)
 	. = ..()
 	qdel(src)
 
@@ -419,7 +417,7 @@
 	///husks the corpse if true.
 	var/husk = FALSE
 
-/obj/effect/mob_spawn/corpse/human/special(mob/living/carbon/human/spawned_human)
+/obj/effect/mob_spawn/corpse/human/special(mob/living/carbon/human/spawned_human, mob/mob_possessor, apply_prefs)
 	. = ..()
 	if(husk)
 		spawned_human.Drain()

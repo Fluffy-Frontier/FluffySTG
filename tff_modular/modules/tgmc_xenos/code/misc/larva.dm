@@ -8,7 +8,7 @@
 	for(var/mob/victim in range(range, src))
 		if(!CanHug(victim))
 			continue
-		return Leap(victim)
+		return leap_to(victim)
 	return FALSE
 
 /obj/item/clothing/mask/facehugger/tgmc/attempt_pickup(mob/living/user, skip_grav)

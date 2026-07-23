@@ -14,7 +14,6 @@
 /*
 *	ITEMS BELOW HERE
 */
-
 /datum/loadout_item/suit/dagger_mantle
 	name = "'Dagger' Designer Mantle"
 	item_path = /obj/item/clothing/suit/dagger_mantle

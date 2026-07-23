@@ -111,7 +111,7 @@
 		span_hear("You hear a metallic creaking from [src]."))
 
 	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
+		if(!user || user.stat != STABLE || user.loc != src || state_open)
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
 			span_notice("You successfully break out of [src]!"))

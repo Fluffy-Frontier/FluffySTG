@@ -61,7 +61,7 @@
 	item_path = /obj/item/toy/plush/nova/donator/plushie_star
 
 //Chunko Fops were donated by SlippyJoe, who requested they are usable by everyone
-
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/loadout_item/toys/plush/CFBonnie
 	name = "Chunko Fop: Blue Bunny Plushie"
 	item_path = /obj/item/toy/plush/nova/donator/chunko/bonnie
@@ -475,3 +475,4 @@
 	name = "Viper Suit"
 	item_path = /obj/item/clothing/under/rank/civilian/viper_suit
 	ckeywhitelist = list("ghostof93")
+*/ // FLUFFY FRONTIER REMOVAL END

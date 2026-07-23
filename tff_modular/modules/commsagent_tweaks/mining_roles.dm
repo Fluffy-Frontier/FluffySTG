@@ -1,7 +1,7 @@
 /obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms
 	loadout_enabled = TRUE
 	quirks_enabled = TRUE
-	random_appearance = FALSE
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 
 /obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/special(mob/living/new_spawn)
 	. = ..()
@@ -12,10 +12,6 @@
 	flavour_text = "Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!"
 	important_text = "DO NOT abandon the base."
 	outfit = /datum/outfit/lavaland_syndicate/comms/space
-	loadout_enabled = TRUE
-	quirks_enabled = TRUE
-	random_appearance = FALSE
-	//No 85% chance to spawn a simplemob (which is just unneeded for a rare ruin) - so instead of butchering the original sleeper, we change this one
 
 /obj/item/radio/headset/syndicate/alt/synd_and_dyne
 	keyslot2 = /obj/item/encryptionkey/headset_syndicate/interdyne
