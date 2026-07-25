@@ -44,23 +44,50 @@
 		QDEL_NULL(outfit)
 	return ..()
 
-/// Creates whatever mob the spawner makes. Return FALSE if we want to exit from here without doing that, returning NULL will be logged to admins.
-/obj/effect/mob_spawn/proc/create(mob/mob_possessor, newname)
-	var/mob/living/spawned_mob = new mob_type(get_turf(src)) //living mobs only
+/**
+ * Creates whatever mob the spawner makes.
+ *
+ * * mob_possessor - The ghost/mob that is possessing this mob, if applicable
+ * * newname - A forced name for the mob, if applicable
+ * * apply_prefs - Whether we should apply the possessor's preferences to the mob, if applicable
+ *
+ * Returns
+ * - the created mob
+ * - CANCEL_SPAWN if the spawn process should be stopped
+ * - null if the spawn failed (and something went wrong)
+ */
+/obj/effect/mob_spawn/proc/create(mob/mob_possessor, newname, apply_prefs)
+	SHOULD_NOT_SLEEP(TRUE)
+
+	var/mob/living/spawned_mob
+	if(ispath(mob_type, /mob/living/carbon/human))
+		spawned_mob = new mob_type(get_turf(src), get_mob_species(mob_possessor, apply_prefs))
+	else
+		spawned_mob = new mob_type(get_turf(src)) //living mobs only
+	special(spawned_mob, mob_possessor, apply_prefs)
 	name_mob(spawned_mob, newname)
 	special(spawned_mob, mob_possessor)
 	equip(spawned_mob)
 	spawned_mob_ref = WEAKREF(spawned_mob)
 	return spawned_mob
 
-/obj/effect/mob_spawn/proc/special(mob/living/spawned_mob, mob/mob_possessor, use_loadout) // NOVA EDIT CHANGE - ORIGINAL: /obj/effect/mob_spawn/proc/special(mob/living/spawned_mob, mob/mob_possessor)
+/// Returns the species typepath a human spawned by this spawner should be initialized with.
+/obj/effect/mob_spawn/proc/get_mob_species(mob/mob_possessor, apply_prefs)
+	return mob_species
+
+/**
+ * Any special behavior that needs to be done to the mob after it's created but before it's equipped.
+ *
+ * * spawned_mob - The mob that was created
+ * * mob_possessor - The ghost/mob that is possessing this mob, if applicable
+ * * apply_prefs - Whether we should apply the possessor's preferences to the mob, if applicable
+ */
+/obj/effect/mob_spawn/proc/special(mob/living/spawned_mob, mob/mob_possessor, apply_prefs)
 	SHOULD_CALL_PARENT(TRUE)
 	if(faction)
 		spawned_mob.faction = faction
 	if(ishuman(spawned_mob))
 		var/mob/living/carbon/human/spawned_human = spawned_mob
-		if(mob_species)
-			spawned_human.set_species(mob_species, pref_load = use_loadout) // NOVA EDIT CHANGE - ORIGINAL: spawned_human.set_species(mob_species)
 		spawned_human.dna.species.give_important_for_life(spawned_human) // for preventing plasmamen from combusting immediately upon spawning
 		spawned_human.underwear = "Nude"
 		spawned_human.undershirt = "Nude"
@@ -289,19 +316,21 @@
 
 	return ..()
 
+/obj/effect/mob_spawn/ghost_role/get_mob_species(mob/mob_possessor, apply_prefs)
+	if(mob_possessor?.client && apply_prefs && (allow_custom_character & GHOSTROLE_TAKE_PREFS_SPECIES))
+		return mob_possessor.client.prefs.read_preference(/datum/preference/choiced/species)
+	return ..()
 
-/obj/effect/mob_spawn/ghost_role/special(mob/living/spawned_mob, mob/mob_possessor, use_loadout) // NOVA EDIT CHANGE - ORIGINAL: /obj/effect/mob_spawn/ghost_role/special(mob/living/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/special(mob/living/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	if(mob_possessor)
 		/* NOVA EDIT REMOVAL START: equivalent handled modularly with loadout support
-		var/mob/dead/observer/observer_possessor = mob_possessor
-		if(observer_possessor.started_as_observer)
-			var/old_name = spawned_mob.real_name
-			if(allow_custom_character & GHOSTROLE_ALLOW_OTHER)
-				mob_possessor.client.prefs.safe_transfer_prefs_to(spawned_mob)
-				spawned_mob.fully_replace_character_name(newname = old_name)
-			if(!(allow_custom_character & GHOSTROLE_ALLOW_SPECIES || ishumanbasic(spawned_mob)))
-				spawned_mob.set_species(/datum/species/human)
+		if(mob_possessor.client && apply_prefs && allow_custom_character && ishuman(spawned_mob))
+			var/mob/living/carbon/human/spawned_human = spawned_mob
+			if(allow_custom_character & GHOSTROLE_TAKE_PREFS_APPEARANCE)
+				mob_possessor.client.prefs.apply_prefs_to(spawned_human, icon_updates = TRUE, do_not_apply = typesof(/datum/preference/name, /datum/preference/choiced/species))
+			if(allow_custom_character & GHOSTROLE_TAKE_PREFS_SPECIES)
+				spawned_human.fully_replace_character_name(spawned_human.real_name, spawned_human.generate_random_mob_name())
 		*///NOVA EDIT REMOVAL END
 		if(mob_possessor.mind)
 			mob_possessor.mind.transfer_to(spawned_mob, force_key_move = TRUE)
