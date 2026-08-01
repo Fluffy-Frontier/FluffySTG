@@ -178,7 +178,7 @@
 	spawner_job_path = /datum/job/shiptarkon
 	loadout_enabled = TRUE
 	quirks_enabled = TRUE
-	random_appearance = FALSE
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 
 /datum/outfit/shiptarkon
 	name = "default port tarkon outfit"
@@ -369,7 +369,7 @@
 	spawner_job_path = /datum/job/shiptarkon/command
 	loadout_enabled = TRUE
 	quirks_enabled = TRUE
-	random_appearance = FALSE
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 
 /datum/outfit/shiptarkon/captain
 	name = "Tarkon Ship Captain Outfit"
