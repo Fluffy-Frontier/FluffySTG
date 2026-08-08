@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 /proc/init_custom_objectives()
 	. = list()
 
-	for(var/antag_name as anything in GLOB.antags_to_names)
+	for(var/antag_name in GLOB.antags_to_names)
 		var/antag_path = GLOB.antags_to_names[antag_name]
 		.[antag_path] = list()
 
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 		return
 	var/list/config_json = json_decode(config_text)
 
-	for(var/list/json_objective as anything in config_json)
+	for(var/list/json_objective in config_json)
 		if(!islist(json_objective))
 			continue
 		var/datum/custom_objective/custom_obj_to_add = new()
@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 
 /datum/antagonist/proc/add_custom_objectives()
 	var/list/glob_custom_objs
-	for(var/antag_path as anything in GLOB.custom_objectives)
+	for(var/antag_path in GLOB.custom_objectives)
 		if(istype(src, antag_path))
 			glob_custom_objs = GLOB.custom_objectives[antag_path]
 			break
@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 
 /datum/team/proc/add_custom_objectives()
 	var/list/glob_custom_objs
-	for(var/antag_path as anything in GLOB.custom_objectives)
+	for(var/antag_path in GLOB.custom_objectives)
 		if(istype(src, antag_path))
 			glob_custom_objs = GLOB.custom_objectives[antag_path]
 			break

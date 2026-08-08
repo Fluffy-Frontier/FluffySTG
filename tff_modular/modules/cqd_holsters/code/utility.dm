@@ -36,7 +36,7 @@
 	if(!u)
 		return
 	var/obj/item/clothing/accessory/cqd_holster/holster
-	for(var/accessory in u.attached_accessories) 
+	for(var/accessory in u.attached_accessories)
 		if(istype(accessory, /obj/item/clothing/accessory/cqd_holster))
 			holster = accessory
 			break
@@ -52,6 +52,7 @@
 				visible_message(span_notice("[src] takes [I] out of [src]."), span_notice("You take [I] out of [holster]."))
 		else
 			to_chat(src, span_warning("You are not holding anything and the holster is empty!"))
-			return	
-		
-		
+			return
+
+
+#undef COMSIG_KB_HUMAN_CQD_HOLSTER_ACTION_DOWN

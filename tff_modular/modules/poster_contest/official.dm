@@ -132,7 +132,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/dont_
 
 /obj/structure/sign/poster/official/ff_contest/chelusti_3d
 	name = "Chelusti 3D"
-	desc = "NanoTrasen and 26th Century Fox presents. Chelusti. The most popular movie in NRI."
+	desc = "Nanotrasen and 26th Century Fox presents. Chelusti. The most popular movie in NRI."
 	icon_state = "chelusti_3d"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/chelusti_3d, 32)
@@ -314,7 +314,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/drink
 
 /obj/structure/sign/poster/official/ff_contest/join_nt_employees
 	name = "Join the ranks of NT employees!"
-	desc = "Working for NanoTrasen Corporation guarantees you a better life, free health insurance, food, housing, and a salary a little more than you can spend in a lifetime! Freedom and maximum success - that's what separates us from others!"
+	desc = "Working for Nanotrasen Corporation guarantees you a better life, free health insurance, food, housing, and a salary a little more than you can spend in a lifetime! Freedom and maximum success - that's what separates us from others!"
 	icon_state = "join_nt_employees"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/join_nt_employees, 32)

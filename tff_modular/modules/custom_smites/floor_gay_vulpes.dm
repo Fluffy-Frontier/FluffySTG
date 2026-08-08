@@ -120,7 +120,7 @@
 	layer = 0
 	move_resist = MOVE_RESIST_DEFAULT * 1000
 
-/mob/living/carbon/human/species/vulpkanin/gib_vulp/Initialize()
+/mob/living/carbon/human/species/vulpkanin/gib_vulp/Initialize(mapload)
 	. = ..()
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)

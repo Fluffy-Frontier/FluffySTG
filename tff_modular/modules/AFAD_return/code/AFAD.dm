@@ -22,3 +22,6 @@
 	if(need_mob_update)
 		target.updatehealth()
 	return
+
+#undef PHYSICAL_DAMAGE_HEALING
+#undef EXOTIC_DAMAGE_HEALING

@@ -18,7 +18,7 @@
 
 /obj/item/toy/plush/mironov
 	name = "Anatoly Mironov plushie"
-	desc = "You see before you a plush representative of the Tajaran race, shaped like a NanoTrasen Central Command officer. It is roughly large in size."
+	desc = "You see before you a plush representative of the Tajaran race, shaped like a Nanotrasen Central Command officer. It is roughly large in size."
 	icon = 'tff_modular/master_files/icons/donator/obj/toys/plushie.dmi'
 	icon_state = "plush_mironov"
 	attack_verb_continuous = list("attacks", "bites", "scratches")

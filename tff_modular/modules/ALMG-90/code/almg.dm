@@ -1,7 +1,7 @@
 // Вшиваем в существующий спрайтшит наши спрайты, т.к. UI меха берет спрайты именно оттуда
 /datum/asset/spritesheet_batched/mecha_equipment/create_spritesheets()
-    . = ..()
-    insert_all_icons("", 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi')
+	. = ..()
+	insert_all_icons("", 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi')
 
 // Добавляем лазерный аналог Ultra AC 2 для мехов
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/amlg90

@@ -65,13 +65,13 @@
 		flash_protect = FLASH_PROTECTION_WELDER
 		tint = 2
 		owner.update_tint()
-		owner.balloon_alert(owner, "Welder eyelids shut!")
+		owner.balloon_alert(owner, "welder eyelids shut!")
 		return
 
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	tint = 0
 	owner.update_tint()
-	owner.balloon_alert(owner, "Welder eyelids open!")
+	owner.balloon_alert(owner, "welder eyelids open!")
 
 /obj/item/organ/eyes/nabber/on_mob_remove(mob/living/carbon/eye_owner, special, movement_flags)
 	. = ..()

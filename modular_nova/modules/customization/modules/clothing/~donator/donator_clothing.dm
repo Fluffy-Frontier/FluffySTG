@@ -2058,7 +2058,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	playsound(imp_in, 'sound/machines/ding.ogg', vol = 75, vary = FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	toast.throw_at(get_turf(imp_in), 2, 3)
 	COOLDOWN_START(src, toast_cooldown, TOASTER_IMPLANT_COOLDOWN)
-
+#undef TOASTER_IMPLANT_COOLDOWN // FLUFFY FRONTIER ADIITION - из-за большого количества пропущенных коммитов с Новы мы случайно когда-то давно пропустили этот андеф
 /obj/item/implanter/toaster
 	name = "implanter (toaster)"
 	imp_type = /obj/item/implant/toaster

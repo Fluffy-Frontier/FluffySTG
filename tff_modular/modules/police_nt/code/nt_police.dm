@@ -47,7 +47,7 @@ GLOBAL_VAR(call_NTIS_msg)
 	// Инициализация спавнящейся группы!
 	var/ghost_poll_msg = "The NTIS have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
 	var/amount_to_summon = 5
-	var/announcement_source = "NanoTrasen Internal Security"
+	var/announcement_source = "Nanotrasen Internal Security"
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	var/type_to_summon = /datum/antagonist/ert/nt_police/swat
 	var/leader_to_summon = /datum/antagonist/ert/nt_police/swat/leader
@@ -62,7 +62,7 @@ GLOBAL_VAR(call_NTIS_msg)
 		if("agents")
 			ghost_poll_msg = "The station has called for the NT Internal Security. Will you respond?"
 			amount_to_summon = 3
-			announcement_source = "NanoTrasen Internal Security"
+			announcement_source = "Nanotrasen Internal Security"
 			jobban_to_check = ROLE_DEATHSQUAD
 			type_to_summon = /datum/antagonist/ert/nt_police/agent
 			leader_to_summon = /datum/antagonist/ert/nt_police/agent/leader
@@ -86,13 +86,13 @@ GLOBAL_VAR(call_NTIS_msg)
 			"Обеспечьте безопасность представителей корпорации на станции.",
 			"Эвакуируйте агентов и представителя/командования, если станция не признаёт в вас власти; активно используя офицеров и взбунтовавшихся представителей власти против корпорации!")
 		if("troopers")
-			ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
+			ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the Nanotrasen Military?"
 			amount_to_summon = 8
 			type_to_summon = /datum/antagonist/ert/nt_police/trooper
 			leader_to_summon = /datum/antagonist/ert/nt_police/trooper/leader
 			summoned_type = "nt_police_trooper"
 			sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_third.ogg'
-			announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the NanoTrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
+			announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the Nanotrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
 			missions = list(
 			"Уничтожьте атакующие вас враждебных элементы на станции!",
 			"Избавьтесь от трупов дефектных сотрудников, захватив те на ЦК.",
