@@ -112,7 +112,6 @@
 /datum/design/implant_gassolspeaker
 	name = "GAS Sol speaker Implant Case"
 	desc = "Makes GAS able to speak normally."
-	id = "implant_gasspeech"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/glass =SMALL_MATERIAL_AMOUNT*5, /datum/material/silver =SMALL_MATERIAL_AMOUNT*5)
 	build_path = /obj/item/implantcase/gas_sol_speaker

@@ -70,6 +70,7 @@ SUBSYSTEM_DEF(research)
 	new /datum/techweb/science()
 	new /datum/techweb/tarkon() // NOVA EDIT ADDITION
 	new /datum/techweb/interdyne() // FLUFFY FRONTIER ADDITION
+	new /datum/techweb/ds2()
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/research/fire()

@@ -571,7 +571,6 @@
 /datum/design/board/plantgenes
 	name = "Plant DNA Manipulator Board"
 	desc = "The circuit board for a plant gene editing machine."
-	id = "plantgene"
 	build_path = /obj/item/circuitboard/machine/plantgenes
 	category = list(
 		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_BOTANY
@@ -580,20 +579,18 @@
 
 /datum/design/diskplantgene
 	name = "Plant Data Disk"
-	id = "diskplantgene"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 10)
 	build_path = /obj/item/disk/plantgene
 	category = list(RND_CATEGORY_INITIAL, RND_CATEGORY_BIO_MATERIALS)
 
 /datum/techweb_node/botanygene
-	id = TECHWEB_NODE_BOTANY_ADV
 	display_name = "Experimental Botanical Engineering"
 	description = "Further advancement in plant cultivation techniques and machinery, enabling careful manipulation of plant DNA."
-	prereq_ids = list(TECHWEB_NODE_PARTS_ADV, TECHWEB_NODE_SELECTION)
-	design_ids = list(
-		"diskplantgene",
-		"plantgene",
+	prerequisite_nodes = list(/datum/techweb_node/parts_adv, /datum/techweb_node/selection)
+	unlocked_designs = list(
+		/datum/design/diskplantgene,
+		/datum/design/board/plantgenes
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
 

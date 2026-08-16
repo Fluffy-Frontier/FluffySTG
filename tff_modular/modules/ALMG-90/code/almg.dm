@@ -25,7 +25,6 @@
 /datum/design/mech_amlg90
 	name = "AMLG-90"
 	desc = "Allows for the construction of AMLG-90 Laser Cannon."
-	id = "mech_amlg90"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/amlg90
 	materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT*5, /datum/material/diamond=SHEET_MATERIAL_AMOUNT, /datum/material/titanium=SHEET_MATERIAL_AMOUNT*2)
@@ -44,4 +43,4 @@
 // Добавляем AMLG-90 в ветку с лазерным оружием РНД
 /datum/techweb_node/mech_energy_guns/New()
 	. = ..()
-	design_ids += "mech_amlg90"
+	unlocked_designs += /datum/design/mech_amlg90
