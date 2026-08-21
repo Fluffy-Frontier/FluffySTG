@@ -3,19 +3,19 @@
 	icon_state = "chemnaga"
 	taur_mode = STYLE_TAUR_SNAKE
 	organ_type = /obj/item/organ/taur_body/serpentine
-	icon = 'tff_modular\modules\zubber_taurs\icons\mam_taur.dmi'
+	icon = 'tff_modular/modules/zubber_taurs/icons/mam_taur.dmi'
 	color_src = USE_MATRIXED_COLORS
 
 /datum/sprite_accessory/taur/leopardseal
 	name = "Leopard Seal"
 	icon_state = "leopardseal"
-	icon = 'tff_modular\modules\zubber_taurs\icons\mam_taur.dmi'
+	icon = 'tff_modular/modules/zubber_taurs/icons/mam_taur.dmi'
 	color_src = USE_MATRIXED_COLORS
 
 /datum/sprite_accessory/taur/bunny
 	name = "Bunny"
 	icon_state = "bigbunny"
-	icon = 'tff_modular\modules\zubber_taurs\icons\taur.dmi'
+	icon = 'tff_modular/modules/zubber_taurs/icons/taur.dmi'
 	can_lay_down = TRUE
 	laydown_offset = -4
 
@@ -23,10 +23,10 @@
 	name = "Insect"
 	icon_state = "ant"
 	organ_type = /obj/item/organ/taur_body/spider
-	icon = 'tff_modular\modules\zubber_taurs\icons\taur.dmi'
+	icon = 'tff_modular/modules/zubber_taurs/icons/taur.dmi'
 
 /datum/sprite_accessory/taur/wingedinsect
 	name = "Winged Insect"
 	icon_state = "antwings"
 	organ_type = /obj/item/organ/taur_body/spider
-	icon = 'tff_modular\modules\zubber_taurs\icons\taur.dmi'
+	icon = 'tff_modular/modules/zubber_taurs/icons/taur.dmi'
