@@ -64,6 +64,9 @@
 		/mob/living/basic/raptor/yellow = 25,
 		/mob/living/basic/raptor/blue = 25,
 		/mob/living/basic/raptor/black = 1,
+		//FLUFFY FRONTIER ADDITION START
+		/mob/living/basic/chokobo = 20,
+		//FLUFFY FRONTIER ADDITION END
 	)
 
 /obj/effect/spawner/random/lavaland_mob/raptor/young

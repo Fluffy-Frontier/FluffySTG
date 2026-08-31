@@ -1,0 +1,59 @@
+{
+	"base": [
+		{
+			"type": "icon_state",
+			"icon_state": "chocofeathers_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocobeak_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [2]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocoeyeslegs",
+			"blend_mode": "overlay"
+		}
+	],
+	"base_rest": [
+		{
+			"type": "icon_state",
+			"icon_state": "chocofeathers_rest_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocobeak_rest_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [2]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocolegs_rest",
+			"blend_mode": "overlay"
+		}
+	],
+	"base_dead": [
+		{
+			"type": "icon_state",
+			"icon_state": "chocofeathers_dead_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocobeak_dead_greyscale",
+			"blend_mode": "overlay",
+			"color_ids": [2]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "chocoeyeslegs_dead_greyscale",
+			"blend_mode": "overlay"
+		}
+	]
+}
