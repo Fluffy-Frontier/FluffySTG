@@ -41,6 +41,20 @@
 	return MODULAR_SAVEFILE_UP_TO_DATE
 
 
+/**
+ * Hook to reset nova-specific vars before the base switch_to_slot runs.
+ * If load_character() fails for the new slot, load_character_nova() is never called
+ * and body_markings/augments would still reference the previous slot's tree data.
+ * save_character() would then write those stale references into the new slot, causing
+ * markings and prosthetics to bleed across character slots.
+ */
+/datum/preferences/switch_to_slot(new_slot)
+	if(new_slot != default_slot)
+		body_markings = list()
+		augments = list()
+		augment_limb_styles = list()
+	return ..()
+
 /// Loads the modular customizations of a character from the savefile
 /datum/preferences/proc/load_character_nova(list/save_data)
 	if(!save_data)
@@ -50,12 +64,16 @@
 
 	load_augments(SANITIZE_LIST(save_data["augments"]), needs_nova_update)
 
-	augment_limb_styles = SANITIZE_LIST(save_data["augment_limb_styles"])
+	// Use Copy() to avoid aliasing augment_limb_styles to the tree entry.
+	augment_limb_styles = SANITIZE_LIST(save_data["augment_limb_styles"]).Copy()
 	for(var/key in augment_limb_styles)
 		if(!GLOB.robotic_styles_list[augment_limb_styles[key]])
 			augment_limb_styles -= key
 
-	body_markings = update_markings(SANITIZE_LIST(save_data["body_markings"]))
+	// Use deep_copy_list to avoid aliasing body_markings to the tree entry.
+	// Without this, body_markings IS tree["characterN"]["body_markings"], so saving a
+	// different slot would store the same list object there (cross-slot aliasing).
+	body_markings = update_markings(deep_copy_list(SANITIZE_LIST(save_data["body_markings"])))
 	mismatched_customization = save_data["mismatched_customization"]
 	allow_advanced_colors = save_data["allow_advanced_colors"]
 
@@ -341,7 +359,7 @@
 
 /datum/preferences/proc/load_augments(list/augments_prefs, current_version)
 	if(!length(augments_prefs))
-		augments = augments_prefs
+		augments = list()
 		return
 	if(current_version != MODULAR_SAVEFILE_UP_TO_DATE && current_version < VERSION_AUGMENT_ITEMS_PATH_CHANGE)
 		migrate_augment_items(augments_prefs)
