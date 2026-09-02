@@ -115,10 +115,6 @@
 		return FALSE // Don't modify speech
 	if(HAS_TRAIT(source, TRAIT_SIGN_LANG)) // No modifiers for signers - I hate this but I simply cannot get these to combine into one statement
 		return FALSE // Don't modify speech
-	// FLUFFY FRONTIER EDIT START. ADDITION - autoaccent
-	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
-		return FALSE //accent disabled by user.
-	// FLUFFY FRONTIER EDIT END.
 	return TRUE
 
 /obj/item/organ/tongue/proc/modify_speech(datum/source, list/speech_args)
@@ -147,8 +143,6 @@
 		RegisterSignal(receiver, COMSIG_MOB_EMOTE_SOUND(key), PROC_REF(get_tongue_emote_sound))
 	if(modifies_speech)
 		RegisterSignal(receiver, COMSIG_MOB_SAY, PROC_REF(handle_speech))
-		//FF add: verb to modify auto-accent
-		receiver.verbs += /mob/living/proc/toggle_autoaccent
 	receiver.voice_filter = voice_filter
 	/* This could be slightly simpler, by making the removal of the
 	* NO_TONGUE_TRAIT conditional on the tongue's `sense_of_taste`, but
@@ -164,7 +158,6 @@
 	for(var/key in emote_sounds)
 		UnregisterSignal(organ_owner, COMSIG_MOB_EMOTE_SOUND(key))
 	UnregisterSignal(organ_owner, COMSIG_MOB_SAY)
-	organ_owner.verbs -= /mob/living/proc/toggle_autoaccent	//FF add: verb to modify auto-accent
 	// Carbons by default start with NO_TONGUE_TRAIT caused TRAIT_AGEUSIA
 	ADD_TRAIT(organ_owner, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
 	organ_owner.voice_filter = initial(organ_owner.voice_filter)
