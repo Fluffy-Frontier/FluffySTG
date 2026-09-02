@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/tiny_unicode
 	name = "TinyUnicode"
-	font_family = 'interface/fonts/TinyUnicode.ttf'
+	//	font_family = 'interface/fonts/TinyUnicode.ttf'	FLUFFY FRONTIER REMOVAL reffer to tff_upstream_fonts_override.dm for font overrides
 
 /// For icon overlays
 /// TinyUnicode 12pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)
