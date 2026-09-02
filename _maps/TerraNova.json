@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"map_name": "TerraNova",
+	"map_path": "map_files\TerraNova",
+	"map_file": "TerraNova.dmm",
+	"planetary": 1,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"height_autosetup": 0,
+	"shuttles": {
+		"cargo": "cargo_nova",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_box",
+		"emergency": "emergency_box"
+	},
+	"traits": [
+		{
+			"Linkage": null,
+			"Gravity": true,
+			"Baseturf": "/turf/open/misc/dirt/forest",
+			"Jungle Ruins": true,
+			"No Parallax": true,
+			"Weather_Rainstorm": true
+		}
+	],
+	"minetype": "lavaland",
+	"blacklist_file": "jungleruinblacklist.txt"
+}
