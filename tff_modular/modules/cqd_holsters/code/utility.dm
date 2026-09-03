@@ -16,15 +16,8 @@
 	if(.)
 		return
 	var/mob/living/carbon/human/H = user.mob
-	H.cqd_holster_action()
+	H.execute_cqd_holster_action()
 	return TRUE
-
-/mob/living/carbon/human/verb/cqd_holster_action()
-	set name = "cqd-holster-action"
-	set hidden = TRUE
-
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_cqd_holster_action)))
-
 /*
 	Proc
 */

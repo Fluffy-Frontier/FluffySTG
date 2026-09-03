@@ -500,3 +500,92 @@
 /obj/item/clothing/head/cone_of_shame/update_icon_state()
 	worn_icon_state = "[base_icon_state]_[toggle_state]"
 	return ..()
+
+// Kaynite Donor Item
+/obj/item/storage/backpack/merctac_backpack
+	name = "\improper Xplore Go! bag"
+	desc = "A versatile, single strap backpack from the survival outfitter Xplore. A 20 litre pack coupled with a detachable thermal water bottle and O2 cannister, for trekking amongst the stars."
+	icon_state = "xplore_go_bag"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/back.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/back.dmi'
+	inhand_icon_state = "backpack"
+
+// Latinfishy & HollandaiseSauce Donor Item
+/obj/item/device/custom_kit/ak105
+	name = "\improper AK-105 modernization kit"
+	desc = "Old gun parts to convert the Miezc into an AK-105."
+	from_obj = /obj/item/gun/ballistic/automatic/miecz
+	to_obj = /obj/item/gun/ballistic/automatic/miecz/ak105
+
+/obj/item/gun/ballistic/automatic/miecz/ak105
+	name = "\improper AK-105 SBR"
+	desc = "A light-weight assault rifle modernized to be chambered in .27-54 Cesarzowa with a high rate of fire."
+	lore_blurb = "An ancient design that has routes in the old sol nation of the Russian Federation, this rifle has been heavily modified with a modified barrel for extended firefights \
+		alongside a modified grip allowing it to be used most form of combat gloves alongside being able to have a good grip with wet hands, the stock has been swapped for a completely \
+		polymer design giving it a good form."
+	icon = 'modular_nova/master_files/icons/donator/obj/guns48x.dmi'
+	icon_state = "ak105sbr"
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/worn/weapons.dmi'
+	worn_icon_state = "ak105sbr"
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	inhand_icon_state = "ak105sbr"
+	suppressor_x_offset = 7
+	suppressor_y_offset = 0
+
+/obj/item/gun/ballistic/automatic/miecz/ak105/no_mag
+	//Made this one for completion, the thing is, the kit doesnt affect no_mag, so, the day we change the paradigm of the miecz to spawn with no_mag, likely we want this one. (alternatively we do somethiing better thhan to use subtypes.)
+	spawnwithmagazine = FALSE
+
+//Tora's Body Pillow (DarkRilo)
+/obj/item/toy/pillow/torapillow
+	name = "\improper Shork.INC Body Pillow"
+	desc = "A poofy, soft looking pillow depicting a certain sharkette. One side a little less scandalous than the other. At the bottom is a small tag label |DarkRilo Apparels|."
+	icon_state = "torapillbod"
+	inhand_icon_state = null
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/torabod_pillow.dmi'
+	throw_range = 1
+
+	// Keep track of the original transform matrix
+	var/matrix/original_transform
+
+/obj/item/toy/pillow/torapillow/Initialize(mapload)
+	. = ..()
+	if(!original_transform)
+		original_transform = matrix(transform)
+
+	// Optional: If the pillow spawns on the ground (not in a mob's inventory),
+	// this makes it start at 50% size immediately.
+	if(!istype(loc, /mob))
+		transform = matrix(original_transform).Scale(0.5)
+
+/obj/item/toy/pillow/torapillow/pickup(mob/user)
+	. = ..()
+	// Restore to original full size over 0.2 seconds
+	animate(src, transform = original_transform, time = 2, loop = 0)
+
+/obj/item/toy/pillow/torapillow/dropped(mob/user)
+	. = ..()
+	// Shrink the item to 50% size over 0.2 seconds
+	animate(src, transform = matrix(original_transform).Scale(0.5), time = 2)
+
+/obj/item/toy/pillow/torapillow/attack_self(mob/user)
+	adjust_item_style(user)
+
+/obj/item/toy/pillow/torapillow/click_alt(mob/user)
+	adjust_item_style(user)
+	return CLICK_ACTION_SUCCESS
+
+/obj/item/toy/pillow/torapillow/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click [src] to flip it. It currently shows the '[src.icon_state]' side.")
+
+/// Toggles between flipped/non-flipped
+/obj/item/toy/pillow/torapillow/proc/adjust_item_style(mob/user)
+	if (icon_state == "torapillbod")
+		icon_state = "torapillbod-t"
+	else
+		icon_state = "torapillbod"
+	user.visible_message(span_notice("[user] flips the [src]."))

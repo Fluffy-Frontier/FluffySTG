@@ -9,6 +9,7 @@
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot laser burst."
 	icon = 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi'
 	icon_state = "mecha_amlg90"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 2, /datum/material/diamond = SHEET_MATERIAL_AMOUNT)
 	equip_cooldown = 10
 	projectile = /obj/projectile/beam/laser/rapid
 	fire_sound = 'tff_modular/modules/ALMG-90/sound/gunshot_lascarbine.ogg'
@@ -24,7 +25,6 @@
 /datum/design/mech_amlg90
 	name = "AMLG-90"
 	desc = "Allows for the construction of AMLG-90 Laser Cannon."
-	id = "mech_amlg90"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/amlg90
 	materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT*5, /datum/material/diamond=SHEET_MATERIAL_AMOUNT, /datum/material/titanium=SHEET_MATERIAL_AMOUNT*2)
@@ -43,4 +43,4 @@
 // Добавляем AMLG-90 в ветку с лазерным оружием РНД
 /datum/techweb_node/mech_energy_guns/New()
 	. = ..()
-	design_ids += "mech_amlg90"
+	unlocked_designs += /datum/design/mech_amlg90

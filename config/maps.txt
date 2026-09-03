@@ -50,9 +50,9 @@ map nebulastation
 	votable
 endmap
 
-map wawastation
+map kilostation
 	votable
-	minplayers 40
+	maxplayers 40
 endmap
 
 # Debug-only maps.
@@ -92,10 +92,6 @@ map serenitystation
 endmap
 
 ##FF MAPS##
-map kilostation2
-	maxplayers 50
-	votable
-endmap
 
 map nssjourney
 	maxplayers 100
@@ -104,4 +100,7 @@ endmap
 
 map oceanpubby
     votable
+endmap
+
+map runtimestation_minimal
 endmap

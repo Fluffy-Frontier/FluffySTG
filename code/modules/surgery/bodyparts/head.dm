@@ -21,7 +21,7 @@
 	unarmed_attack_effect = ATTACK_EFFECT_BITE
 	unarmed_attack_sound = 'sound/items/weapons/bite.ogg'
 	unarmed_miss_sound = 'sound/items/weapons/bite.ogg'
-	unarmed_damage_low = 1 // Yeah, biteing is pretty weak, blame the monkey super-nerf
+	unarmed_damage_low = 1 // Yeah, biting is pretty weak, blame the monkey super-nerf
 	unarmed_damage_high = 3
 	unarmed_effectiveness = 0
 	bodypart_trait_source = HEAD_TRAIT
@@ -84,7 +84,7 @@
 	var/datum/worn_feature_offset/worn_face_offset
 
 	/// Can this head be dismembered normally?
-	VAR_PROTECTED/can_dismember = TRUE //FLUFFY FRONTIER EDIT - ORIGINAL: VAR_PROTECTED/can_dismember = FALSE
+	var/can_dismember = TRUE // FLUFFY FRONTIER EDIT - ORIGINAL: var/can_dismember = FALSE
 
 /obj/item/bodypart/head/Initialize(mapload)
 	. = ..()
@@ -100,12 +100,11 @@
 	return ..()
 
 /obj/item/bodypart/head/get_butcher_drops()
-	if(butcher_drops)
-		return butcher_drops
-	var/datum/species/species = GLOB.species_list[limb_id]
-	if (!species || !species.skinned_type)
-		return null
-	return list(species.skinned_type = 1)
+	. = ..()
+	var/datum/species/species = GLOB.species_list[species_id || limb_id]
+	if (!isnull(species?.skinned_type))
+		. ||= list()
+		.[species.skinned_type] = 1
 
 /obj/item/bodypart/head/animate_atom_living(mob/living/owner)
 	var/mob/living/basic/animated = ..()
@@ -175,7 +174,7 @@
 	. = ..()
 	if(isnull(owner))
 		return
-	if(is_husked)
+	if(is_husked && is_husked != HUSKED_ZOMBIE)
 		ADD_TRAIT(src, TRAIT_DISFIGURED, HUSK_TRAIT)
 	else
 		REMOVE_TRAIT(src, TRAIT_DISFIGURED, HUSK_TRAIT)
@@ -214,59 +213,3 @@
 	if (ishuman(owner))
 		var/mob/living/carbon/human/as_human = owner
 		as_human?.update_visible_name()
-
-/obj/item/bodypart/head/monkey
-	icon = 'icons/mob/human/species/monkey/bodyparts.dmi'
-	icon_static = 'icons/mob/human/species/monkey/bodyparts.dmi'
-	icon_husk = 'icons/mob/human/species/monkey/bodyparts.dmi'
-	husk_type = "monkey"
-	icon_state = "default_monkey_head"
-	limb_id = SPECIES_MONKEY
-	bodyshape = BODYSHAPE_MONKEY
-	should_draw_greyscale = FALSE
-	dmg_overlay_type = SPECIES_MONKEY
-	is_dimorphic = FALSE
-	head_flags = HEAD_LIPS|HEAD_DEBRAIN
-
-/obj/item/bodypart/head/monkey/Initialize(mapload)
-	worn_head_offset = new(
-		attached_part = src,
-		feature_key = OFFSET_HEAD,
-		offset_y = list("south" = 1),
-	)
-	worn_glasses_offset = new(
-		attached_part = src,
-		feature_key = OFFSET_GLASSES,
-		offset_y = list("south" = 1),
-	)
-	return ..()
-
-/obj/item/bodypart/head/alien
-	icon = 'icons/mob/human/species/alien/bodyparts.dmi'
-	icon_static = 'icons/mob/human/species/alien/bodyparts.dmi'
-	icon_state = "alien_head"
-	limb_id = BODYPART_ID_ALIEN
-	is_dimorphic = FALSE
-	should_draw_greyscale = FALSE
-	px_x = 0
-	px_y = 0
-	bodypart_flags = BODYPART_UNREMOVABLE
-	max_damage = LIMB_MAX_HP_ALIEN_CORE
-	burn_modifier = LIMB_ALIEN_BURN_DAMAGE_MULTIPLIER
-	bodytype = BODYTYPE_ALIEN | BODYTYPE_ORGANIC
-	bodyshape = BODYSHAPE_HUMANOID
-	biological_state = BIO_STANDARD_ALIEN
-
-/obj/item/bodypart/head/larva
-	icon = 'icons/mob/human/species/alien/bodyparts.dmi'
-	icon_static = 'icons/mob/human/species/alien/bodyparts.dmi'
-	icon_state = "larva_head"
-	limb_id = BODYPART_ID_LARVA
-	is_dimorphic = FALSE
-	should_draw_greyscale = FALSE
-	px_x = 0
-	px_y = 0
-	bodypart_flags = BODYPART_UNREMOVABLE
-	max_damage = LIMB_MAX_HP_ALIEN_LARVA
-	burn_modifier = LIMB_ALIEN_BURN_DAMAGE_MULTIPLIER
-	bodytype = BODYTYPE_LARVA_PLACEHOLDER | BODYTYPE_ORGANIC

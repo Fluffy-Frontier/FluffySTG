@@ -10,12 +10,11 @@
 	timeout = 3 MINUTES
 
 /datum/techweb_node/custom_rev_deconvert_device
-	id = "custom_rev_deconvert_device_node"
 	display_name = "Activism Countermeasures"
 	description = "Surplus activism countermeasure technologies for the moments when things got outta control."
-	prereq_ids = list("riot_supression")
-	design_ids = list(
-		"custom_rev_deconvert_device",
+	prerequisite_nodes = list(/datum/techweb_node/riot_supression)
+	unlocked_designs = list(
+		/datum/design/board/custom_rev_deconvert_device
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
 
@@ -23,7 +22,6 @@
 /datum/design/board/custom_rev_deconvert_device
 	name = "Machine Design (ActiviZero2000 Device)"
 	desc = "The circuit board for a ActiviZero2000 Device by Mind-CTRL."
-	id = "custom_rev_deconvert_device"
 	build_path = /obj/item/circuitboard/machine/custom_rev_deconvert_device
 	category = list(RND_CATEGORY_INITIAL + RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SECURITY)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
@@ -111,7 +109,7 @@
 		span_hear("You hear a metallic creaking from [src]."))
 
 	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
+		if(!user || user.stat != STABLE || user.loc != src || state_open)
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
 			span_notice("You successfully break out of [src]!"))

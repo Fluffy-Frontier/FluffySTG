@@ -10,12 +10,13 @@
 	flavour_text = "Your patrol vessel is conducting a Standard Compliance and Inspection operation on this remote facility. Your mandate, derived from Coalition Accords, grants you the authority to inspect, seize contraband, and use necessary force to protect Coalition interests. Vigilance is paramount; these stations are self-governing and not inherently trustworthy. Adhere to the Standard Operating Procedures at all times."
 	important_text = "Follow the chain of command. Your patrol leader's callsign is appended with 'Actual'. Maintain professional discipline and be prepared to escalate appropriately as the situation demands."
 	outfit = /datum/outfit/hc_officer
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 	quirks_enabled = TRUE
 	show_flavor = TRUE
 	/// To know whether or not we have an officer already, keep a ref to them
 	var/static/first_officer
 
-/obj/effect/mob_spawn/ghost_role/human/hc_officer/proc/apply_codename(mob/living/carbon/human/spawned_mob)
+/obj/effect/mob_spawn/ghost_role/human/hc_officer/proc/apply_codename(mob/living/spawned_mob, mob/mob_possessor, apply_prefs)
 	var/callsign = pick(GLOB.callsigns_nri)
 	var/number = pick(GLOB.phonetic_alphabet_numbers)
 	var/full_name = "[callsign] [number]"

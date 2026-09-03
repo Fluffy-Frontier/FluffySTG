@@ -38,7 +38,6 @@
 	target.dna.mutant_bodyparts["ears"] = list(MUTANT_INDEX_NAME = ears_name, MUTANT_INDEX_COLOR_LIST = list(main_color, second_color, second_color))
 	target.set_species(/datum/species/vulpkanin)
 	target.update_body()
-	target.update_mutations_overlay()
 
 	to_chat(target, span_boldnotice("Something is r-r-rya~"))
 	playsound(get_turf(target), 'modular_nova/modules/modular_items/lewd_items/sounds/under_moan_f4.ogg', 50, TRUE, -1)
