@@ -89,6 +89,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 /mob/living/basic/mining/tendril/Destroy()
 	GLOB.tendrils -= src
 	QDEL_NULL(soundloop)
+	QDEL_NULL(tendril_melee) // FLUFFY FRONTIER ADDITION
 	infected_turfs.Cut()
 
 	if(!SSachievements.achievements_enabled || (flags_1 & ADMIN_SPAWNED_1))
