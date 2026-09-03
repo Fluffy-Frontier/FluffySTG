@@ -65,7 +65,8 @@
 	load_augments(SANITIZE_LIST(save_data["augments"]), needs_nova_update)
 
 	// Use Copy() to avoid aliasing augment_limb_styles to the tree entry.
-	augment_limb_styles = SANITIZE_LIST(save_data["augment_limb_styles"]).Copy()
+	var/list/raw_styles = SANITIZE_LIST(save_data["augment_limb_styles"])
+	augment_limb_styles = raw_styles.Copy()
 	for(var/key in augment_limb_styles)
 		if(!GLOB.robotic_styles_list[augment_limb_styles[key]])
 			augment_limb_styles -= key
