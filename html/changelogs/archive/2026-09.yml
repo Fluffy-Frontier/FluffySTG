@@ -99,3 +99,42 @@
       is a fool's errand to try and eat it.
   sqnztb:
   - rscadd: Underwear can now be adjusted via the ctrl-shift-click interaction menu.
+2026-09-07:
+  Maia-J:
+  - bugfix: Pod dropped mobs no longer have broken AI that's stuck trying to resist
+      forever.
+  Melbert:
+  - sound: Modsuits now have footstep sounds
+  - sound: Magboots now have footstep sounds
+  - sound: Robotic limbs now have footstep sounds (only applies when barefoot)
+  - sound: When punching, kicking, or smashing someone's robotic limbs, an alternate
+      hitsound is played
+  - bugfix: Fix DNA consoles being able to print anomalous mutations
+  - bugfix: Fix weird issue where mutation list in the DNA console would go to 1 wide
+  - rscdel: Revenant can no longer affect emergency shuttle console with Malfunction
+  - balance: Mobs subjected to time stop are now slightly more stopped (chems will
+      no longer metabolize, bleeding will pause, etc).
+  - balance: Syndicate bombs no longer tick towards detonation when time stopped
+  - refactor: Refactored timestop a teeny bit, primarily its interaction with holoparasites,
+      report any issues next time you jojo larp
+  - qol: Tails auto-stop wagging when its owner falls unconscious or into crit, rather
+      than when their owner dies.
+  Neocloudy:
+  - bugfix: '[NOVA] MOD hardlight overlays would be applied to ears, antennae or other
+      sprite accessories on the head when the helmet wasn''t deployed or active.'
+  - bugfix: '[NOVA] MOD hardlight overlays would clash with the mesh bodypart textures
+      recently added upstream.'
+  PapaMichael:
+  - bugfix: Setting SHIFT+number keybinds now works
+  - bugfix: Icemoon tiles no longer count towards the blob's victory
+  Richard Blonski:
+  - rscadd: Photocopier, Added General Records Format.
+  - rscadd: Photocopier, Added Security Records Format.
+  - qol: ' Photocopier, Edited Medical Records Format, to explain some complex terms.'
+  SmArtKar:
+  - bugfix: Fixed luminetworked MODsuit cores sometimes not charging from the network
+  - qol: Made Candela LoS checks a bit more forgiving
+  TheBoondock:
+  - code_imp: optimize compare() by adding total moles check
+  sqnztb:
+  - bugfix: buckled people can look around again.
