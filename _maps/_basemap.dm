@@ -21,7 +21,9 @@
 	#include "map_files\Ouroboros\Ouroboros.dmm"
 	#include "map_files\SerenityStation\SerenityStation.dmm"
 	#include "map_files\Snowglobe\snowglobe.dmm"
-	// NOVA EDIT END
+	#include "map_files\oceanpubby\oceanpubby.dmm"
+	#include "map_files\NorthStar\north_star.dmm"
+	// NOVA EDIT ADDITION END
 	// FLUFFY FRONTIER ADDITION START
 	#include "map_files\NSSJourney\NSSJourney.dmm"
 	// FLUFFY FRONTIER ADDITION END
