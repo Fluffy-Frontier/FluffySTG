@@ -117,3 +117,6 @@
 /// Gets called on the target, with (hiding, play_feedback = TRUE) as its args.
 /// Used for `/datum/element/can_hide`
 #define COMSIG_MOVABLE_TOGGLE_HIDING "movable_toggle_hiding"
+
+/// When the RBMK2 reactor starts to melt down
+#define COMSIG_RBMK2_MELTDOWN "rbmk2_meltdown"
