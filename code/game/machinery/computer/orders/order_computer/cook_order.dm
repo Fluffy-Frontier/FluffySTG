@@ -25,6 +25,18 @@
 	qdel(tool)
 	return ITEM_INTERACT_SUCCESS
 
+/obj/machinery/computer/order_console/cook/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!istype(tool, /obj/item/cooking_voucher))
+		return ..()
+	if(!user.temporarilyRemoveItemFromInventory(tool))
+		return ITEM_INTERACT_BLOCKING
+
+	playsound(src, 'sound/machines/card_slide.ogg', 33, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	balloon_alert(user, "redeemed voucher")
+	free_uses += 10
+	qdel(tool)
+	return ITEM_INTERACT_SUCCESS
+
 /obj/machinery/computer/order_console/cook/order_groceries(mob/living/purchaser, obj/item/card/id/card, list/groceries)
 	say("Thank you for your purchase! It will arrive on the next cargo shuttle!")
 	aas_config_announce(/datum/aas_config_entry/order_console, list(), src, list(radio_channel), capitalize(blackbox_key))
