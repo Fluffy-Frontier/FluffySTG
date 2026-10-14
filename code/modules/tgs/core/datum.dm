@@ -11,8 +11,6 @@ TGS_DEFINE_AND_SET_GLOBAL(tgs, null)
 	src.event_handler = event_handler
 	src.version = version
 
-// chumbis
-
 /datum/tgs_api/proc/TerminateWorld()
 	while(TRUE)
 		TGS_DEBUG_LOG("About to terminate world. Tick: [world.time], sleep_offline: [world.sleep_offline]")
@@ -74,3 +72,6 @@ TGS_PROTECT_DATUM(/datum/tgs_api)
 
 /datum/tgs_api/proc/TriggerEvent(event_name, list/parameters, wait_for_completion)
 	return FALSE
+
+/datum/tgs_api/proc/TriggerDeployment()
+	return TGS_UNIMPLEMENTED
