@@ -2,21 +2,25 @@
 	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/under/medical_digi.dmi'
 
 /obj/item/clothing/under/rank/medical/doctor/nurse
-	can_adjust = FALSE
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/medical.dmi'
 	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/under/medical_digi.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
 	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/rank/medical/doctor/nurse/seriouser
-	can_adjust = FALSE
 	icon_state = "nursesuit_alt"
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/medical.dmi'
 	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/under/medical_digi.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
-	alternate_worn_layer = ABOVE_SHOES_LAYER
+	gets_cropped_on_taurs = FALSE
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/medical/doctor/nova
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'
@@ -25,6 +29,7 @@
 /obj/item/clothing/under/syndicate/scrubs
 	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/under/medical_digi.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	bodyshapes_with_variations = NONE
 
 /obj/item/clothing/under/rank/medical/scrubs/nova
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'
@@ -32,6 +37,7 @@
 	icon_state = "scrubswhite" // Because for some reason TG's scrubs dont have an icon on their basetype
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one seems to be the original Scrub."
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	bodyshapes_with_variations = NONE
 
 /obj/item/clothing/under/rank/medical/chemist/nova
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'

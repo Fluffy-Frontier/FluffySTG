@@ -276,9 +276,24 @@
 /datum/loadout_item/toys/plush/fushi
 	name = "Fluffy Dragon"
 	item_path = /obj/item/toy/plush/nova/fushi
-
-
 /* // FLUFFY FRONTIER REMOVAL START
+/datum/loadout_item/toys/plush/plush_hemlock
+	name = "Silly Snuppy Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/plush_hemlock
+
+/datum/loadout_item/toys/plush/plush_celica
+	name = "Researcher Serpent Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/plush_celica
+
+/datum/loadout_item/toys/plush/plush_lasti
+	name = "Espatier Captain Fox Plushie"
+	item_path = /obj/item/toy/plush/nova/donator/plush_lasti
+*/ // FLUFFY FRONTIER REMOVAL END
+
+/datum/loadout_item/toys/plush/pillow_towa
+	name = "Shork.INC Body Pillow"
+	item_path = /obj/item/toy/pillow/torapillow
+
 /*
 *	STAFF
 */
@@ -298,4 +313,3 @@
 /datum/loadout_item/toys/plush/plush_skaag
 	name = "Skaag Plushie"
 	item_path = /obj/item/toy/plush/nova/skaag
-*/ // FLUFFY FRONTIER REMOVAL END

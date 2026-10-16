@@ -1,14 +1,26 @@
-/mob/living/proc/toggle_autoaccent()
-	set name = "Toggle Auto-Accent"
-	set desc = "Toggle automatic accents for your species"
-	set category = "IC"
+/datum/action/item_action/organ_action/toggle/toggle_autoaccent
+	button_icon = 'icons/mob/actions/actions_items.dmi'
+	button_icon_state = "neckchop"
+	desc = "Toggle automatic accents for your species"
 
-	if (HAS_TRAIT(src, TRAIT_NO_ACCENT))
-		REMOVE_TRAIT(src, TRAIT_NO_ACCENT, "ooc_verb")
-		to_chat(src.client, "Auto-accent is now on")
+/datum/action/item_action/organ_action/toggle/toggle_autoaccent/New(Target)
+	..()
+	name = "Toggle Auto-Accent"
+/datum/action/item_action/organ_action/toggle/toggle_autoaccent/do_effect(trigger_flags)
+	. = ..()
+	var/obj/item/organ/tongue/tongue = target
+	if(!tongue)
+		return FALSE
+	var/mob/living/carbon/human/holder = tongue.owner
+	if(!holder)
+		return FALSE
+	if (HAS_TRAIT(holder, TRAIT_NO_ACCENT))
+		REMOVE_TRAIT(holder, TRAIT_NO_ACCENT, "toggle_autoaccent")
+		to_chat(holder.client, "Auto-accent is now on")
 	else
-		ADD_TRAIT(src, TRAIT_NO_ACCENT, "ooc_verb")
-		to_chat(src.client, "Auto-accent is now off")
+		ADD_TRAIT(holder, TRAIT_NO_ACCENT, "toggle_autoaccent")
+		to_chat(holder.client, "Auto-accent is now off")
+	return TRUE
 
 //If there is build-in func?
 /proc/text_mult(text, count)

@@ -2,7 +2,7 @@
 	name = "Selestial"
 	desc = "A human language of the Romance group, the basis of which is highly modified and transformed French. The largest number of native speakers resides on the Moon, where it is spoken by all the indigenous inhabitants."
 	key = "L"
-	flags = TONGUELESS_SPEECH
+	flags = LANGUAGE_TONGUELESS_SPEECH
 	space_chance = 65
 	// слоги взяты из французского
 	syllables = list(

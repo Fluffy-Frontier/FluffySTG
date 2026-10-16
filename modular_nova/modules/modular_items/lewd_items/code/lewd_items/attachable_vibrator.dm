@@ -12,7 +12,6 @@
 	lefthand_file = 'modular_nova/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_left.dmi'
 	righthand_file = 'modular_nova/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_right.dmi'
 	lewd_slot_flags = LEWD_SLOT_PENIS | LEWD_SLOT_VAGINA | LEWD_SLOT_NIPPLES | LEWD_SLOT_ANUS
-	clothing_flags = INEDIBLE_CLOTHING
 	/// Is the toy currently on
 	var/toy_on = FALSE
 	/// The current color of the toy, affects sprite
@@ -190,7 +189,7 @@
 
 /obj/item/clothing/sextoy/eggvib/signalvib/click_alt(mob/user)
 	if(!color_changed)
-		var/choice = show_radial_menu(user, src, vib_designs, custom_check = CALLBACK(src, /obj/item/clothing/sextoy/proc/check_menu, user), radius = 36, require_near = TRUE)
+		var/choice = show_radial_menu(user, src, vib_designs, custom_check = CALLBACK(src, TYPE_PROC_REF(/obj/item/clothing/sextoy, check_menu), user), radius = 36, require_near = TRUE)
 		if(!choice)
 			return CLICK_ACTION_BLOCKING
 		current_color = choice
