@@ -182,3 +182,8 @@
 	name = "Sailor's longcoat"
 	item_path = /obj/item/clothing/suit/jacket/leather/sailorlongcoat
 	ckeywhitelist = list("Your Own Enemy")
+
+/datum/loadout_item/neck/urscloak
+    name = "Project: Urs-W"
+    item_path = /obj/item/clothing/suit/hooded/cloak/urscloak
+    ckeywhitelist = list("BCFiks")
