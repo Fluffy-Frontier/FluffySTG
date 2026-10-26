@@ -1,4 +1,24 @@
 // TFF Донаторские плащи и капюшоны
+/obj/item/clothing/suit/hooded/cloak/urscloak
+	name = "Project: Urs-W"
+	desc = "A standard version of a prototype cloak given out by Nanotrasen higher ups. It's surprisingly thick and heavy for a cloak despite having most of its tech stripped. It also comes with a bluespace trinket which calls its accompanying hat onto the user. A worn inscription on the inside of the cloak reads 'Vanguard' ...the rest is faded away."
+	icon_state = "BCFiks_urscloak"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/urscloak
+	body_parts_covered = CHEST|GROIN|ARMS
+	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
+	supports_variations_flags = NONE
+
+/obj/item/clothing/head/hooded/cloakhood/urscloak
+	name = "Vanguard special issue"
+	desc = "This hat is unquestionably the best one, bluespaced to and from CentCom. It smells of Fox and 24 Volt Energy with a hint of antagonism"
+	icon_state = "BCFiks_urscap"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	flags_inv = null
+	supports_variations_flags = NONE
+
 /datum/atom_skin/officer_cloak
 	abstract_type = /datum/atom_skin/officer_cloak
 /datum/atom_skin/officer_cloak/Nanotrasen
