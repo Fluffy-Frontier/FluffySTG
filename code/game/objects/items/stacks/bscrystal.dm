@@ -41,7 +41,7 @@
 	SEND_SIGNAL(user, COMSIG_MOB_CRUSHED_BLUESPACE_CRYSTAL, src)
 	user.visible_message(span_warning("[user] crushes [src]!"), span_danger("You crush [src]!"))
 	new /obj/effect/particle_effect/sparks(loc)
-	playsound(loc, SFX_PORTAL_ENTER, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	playsound(loc, /datum/sound_effect/portal_enter, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	blink_mob(user)
 	user.adjust_disgust(15) // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301
 	use(1)
@@ -54,7 +54,7 @@
 		visible_message(span_notice("[src] fizzles and disappears upon impact!"))
 		var/turf/T = get_turf(hit_atom)
 		new /obj/effect/particle_effect/sparks(T)
-		playsound(loc, SFX_PORTAL_ENTER, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+		playsound(loc, /datum/sound_effect/portal_enter, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		if(isliving(hit_atom))
 			var/mob/living/our_living = hit_atom // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301
 			our_living.adjust_disgust(15) // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301

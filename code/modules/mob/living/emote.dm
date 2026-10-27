@@ -518,8 +518,8 @@
 	vary = TRUE
 	sounds_by_mobtype = list(
 		/mob/living/carbon/human = list(
-			MALE = SFX_MALE_SIGH,
-			FEMALE = SFX_FEMALE_SIGH,
+			MALE = /datum/sound_effect/male_sigh,
+			FEMALE = /datum/sound_effect/female_sigh,
 		),
 	)
 
@@ -568,8 +568,8 @@
 	can_use_flags = EMOTE_CANUSE_UNCONSCIOUS
 	sounds_by_mobtype = list(
 		/mob/living/carbon/human = list(
-			MALE = SFX_SNORE_MALE,
-			FEMALE = SFX_SNORE_FEMALE,
+			MALE = /datum/sound_effect/assoc/snore_male,
+			FEMALE = /datum/sound_effect/assoc/snore_female,
 		),
 	)
 
@@ -949,7 +949,7 @@
 	message = "meows!"
 	message_mime = "meows silently."
 	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
-	sound = SFX_CAT_MEOW
+	sound = /datum/sound_effect/assoc/cat_meow
 
 /datum/emote/living/cat/purr
 	key = "purr"
@@ -957,7 +957,7 @@
 	vary = TRUE
 	message = "purrs."
 	emote_type = EMOTE_AUDIBLE
-	sound = SFX_CAT_PURR
+	sound = /datum/sound_effect/cat_purr
 
 ///Abstract type for emotes that can be run by mothroaches and those with a moth tongue
 /datum/emote/living/moth
