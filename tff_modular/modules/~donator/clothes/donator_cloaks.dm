@@ -115,3 +115,11 @@
 	. = ..()
 	AddComponent(/datum/component/toggle_icon, "over shoulder")
 
+
+/obj/item/clothing/neck/cloak/tattered_cloak
+	name = "Tattered Cloak"
+	desc = "A worn, battle-torn cloak. Complete with light red trimmings, tears, burns, and even some holes through out it's design, it clearly has seen better days. You can practically smell the despair, a hint of gunpowder, and a bit of a blood smell. On the surviving part, the inside is embroidered with silver thread and initals of \"R.A.\""
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "tattered_cloak"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	supports_variations_flags = NONE
