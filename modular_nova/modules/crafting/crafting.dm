@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/crafting_recipe/sm_sword/New()
 	..()
 	crafting_flags |= CRAFT_MUST_BE_LEARNED
@@ -10,7 +11,7 @@
 /datum/design/beamrifle/New()
 	..()
 	build_type  = AWAY_LATHE
-
+*/ // FLUFFY FRONTIER REMOVAL END
 /datum/crafting_recipe/armband/cargo
 	name = "Brown Armband"
 	reqs = list(/obj/item/stack/sheet/cloth = 1)
