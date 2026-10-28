@@ -14,9 +14,11 @@
 	you_are_text = "You are a space pirate."
 	flavour_text = "The station refused to pay for your protection. Protect the ship, siphon the credits from the station, and raid it for even more loot."
 	spawner_job_path = /datum/job/space_pirate
-	allow_custom_character = GHOSTROLE_ALLOW_OTHER
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 	///Rank of the pirate on the ship, it's used in generating pirate names!
 	var/rank = "Deserter"
+	///Leader spawners are filled before the rest of the crew.
+	var/is_leader = FALSE
 	///Path of the structure we spawn after creating a pirate.
 	var/fluff_spawn = /obj/structure/showcase/machinery/oldpod/used
 
@@ -26,7 +28,7 @@
 	///json key to pirate names, the last part ("fish" in "Cometfish")
 	var/name_endings = "generic_endings"
 
-/obj/effect/mob_spawn/ghost_role/human/pirate/special(mob/living/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/pirate/special(mob/living/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	spawned_mob.fully_replace_character_name(spawned_mob.real_name, generate_pirate_name(spawned_mob.gender))
 	spawned_mob.mind.add_antag_datum(/datum/antagonist/pirate)
@@ -36,7 +38,7 @@
 	var/endings = strings(PIRATE_NAMES_FILE, name_endings)
 	return "[rank ? rank + " " : ""][pick(beggings)][pick(endings)]"
 
-/obj/effect/mob_spawn/ghost_role/human/pirate/create(mob/mob_possessor, newname)
+/obj/effect/mob_spawn/ghost_role/human/pirate/create(mob/mob_possessor, newname, apply_prefs)
 	if(fluff_spawn)
 		new fluff_spawn(drop_location())
 	return ..()
@@ -44,6 +46,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/captain
 	rank = "Renegade Leader"
 	outfit = /datum/outfit/pirate/space/captain
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/gunner
 	rank = "Rogue"
@@ -64,6 +67,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/skeleton/captain
 	rank = "Captain"
 	outfit = /datum/outfit/pirate/captain/skeleton
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/skeleton/gunner
 	rank = "Gunner"
@@ -94,6 +98,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/silverscale/captain
 	rank = "Old-guard"
 	outfit = /datum/outfit/pirate/silverscale/captain
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/silverscale/gunner
 	rank = "Top-drawer"
@@ -125,6 +130,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/interdyne/senior
 	rank = "Pharmacist Director"
 	outfit = /datum/outfit/pirate/interdyne/captain
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/interdyne/junior
 	rank = "Pharmacist"
@@ -173,6 +179,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/irs/auditor
 	rank = "Head Auditor"
 	outfit = /datum/outfit/pirate/irs/auditor
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/lustrous
 	name = "lustrous crystal"
@@ -192,6 +199,7 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/lustrous/captain
 	rank = "Radiant"
 	outfit = /datum/outfit/pirate/lustrous/captain
+	is_leader = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/lustrous/gunner
 	rank = "Coruscant"
@@ -209,7 +217,7 @@
 	outfit = /datum/outfit/pirate/medieval
 	rank = "Footsoldier"
 
-/obj/effect/mob_spawn/ghost_role/human/pirate/medieval/special(mob/living/carbon/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/pirate/medieval/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	if(rank == "Footsoldier")
 		spawned_mob.add_traits(list(TRAIT_NOGUNS, TRAIT_TOSS_GUN_HARD), INNATE_TRAIT)
@@ -220,8 +228,9 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/medieval/warlord
 	rank = "Warlord"
 	outfit = /datum/outfit/pirate/medieval/warlord
+	is_leader = TRUE
 
-/obj/effect/mob_spawn/ghost_role/human/pirate/medieval/warlord/special(mob/living/carbon/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/pirate/medieval/warlord/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	spawned_mob.dna.add_mutation(/datum/mutation/hulk/superhuman, MUTATION_SOURCE_GHOST_ROLE)
 	spawned_mob.dna.add_mutation(/datum/mutation/gigantism, MUTATION_SOURCE_GHOST_ROLE)

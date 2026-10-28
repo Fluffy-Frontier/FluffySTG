@@ -14,7 +14,7 @@
 
 /datum/techweb/interdyne/New()
 	. = ..()
-	research_node_id(TECHWEB_NODE_OLDSTATION_SURGERY, TRUE, TRUE, FALSE)
+	research_node(/datum/techweb_node/oldstation_surgery, TRUE, TRUE, FALSE)
 
 // создаём сервер под сеть
 /obj/item/circuitboard/machine/rdserver/interdyne
@@ -158,7 +158,7 @@
 
 /datum/techweb/ds2/New()
 	. = ..()
-	research_node_id(TECHWEB_NODE_OLDSTATION_SURGERY, TRUE, TRUE, FALSE)
+	research_node(/datum/techweb_node/oldstation_surgery, TRUE, TRUE, FALSE)
 
 // создаём сервер под сеть
 /obj/item/circuitboard/machine/rdserver/ds2

@@ -36,7 +36,7 @@
 
 /mob/living/carbon/alien/adult/tgmc/defender/set_stat()
 	. = ..()
-	if(. == CONSCIOUS && fortify)
+	if(. == STABLE && fortify)
 		var/datum/action/cooldown/alien/fortify/fortify_action = locate() in actions
 		fortify_action.set_fortify(FALSE)
 

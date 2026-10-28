@@ -6,6 +6,8 @@
 
 /datum/outfit/player_loadout/equip(mob/living/carbon/human/user, visualsOnly)
 	. = ..()
+	if(!user.client)
+		return // no client to pull a loadout from (e.g. a preview dummy) - nothing to equip
 	user.equip_outfit_and_loadout(new /datum/outfit(), user.client.prefs)
 
 /*
@@ -64,7 +66,7 @@
 
 		briefcase.name = "[preference_source.read_preference(/datum/preference/name/real_name)]'s travel suitcase"
 		equipOutfit(equipped_outfit, visuals_only)
-		put_in_hands(briefcase)
+		INVOKE_ASYNC(src, PROC_REF(put_in_hands), briefcase)
 	else
 		for(var/datum/loadout_item/item as anything in loadout_datums)
 			if (erp_enabled && item.erp_box)

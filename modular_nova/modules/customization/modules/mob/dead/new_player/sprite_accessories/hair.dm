@@ -3,9 +3,11 @@
 /datum/sprite_accessory/hair/nova
 	icon = 'modular_nova/master_files/icons/mob/sprite_accessory/hair.dmi'
 
-/datum/sprite_accessory/hair/nova/pigtails4
-	name = "Pigtails 4"
-	icon_state = "hair_pigtailss"
+/datum/sprite_accessory/hair/nova/pigtails_girly
+	name = "Pigtails (Girly)"
+	icon_state = "hair_pigtails_girly"
+	hair_appendages_inner = list("hair_pigtails_girly_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_pigtails_girly_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
 
 /datum/sprite_accessory/hair/nova/bedhead_long
 	name = "Longer Bedhead"
@@ -733,6 +735,60 @@
 /datum/sprite_accessory/hair/nova/slimetails
 	name = "Slime Tails"
 	icon_state = "hair_slime_tails"
+
+/datum/sprite_accessory/hair/nova/slimefringelong
+	name = "Slime Fringe Long"
+	icon_state = "hair_slime_fringe_long"
+
+/datum/sprite_accessory/hair/nova/slimetails2
+	name = "Slime Tails 2"
+	icon_state = "hair_slime_tails_2"
+	hair_appendages_inner = list("hair_slime_tails_2_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_slime_tails_2_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+
+/datum/sprite_accessory/hair/nova/slimeponytaillow
+	name = "Slime Ponytail Low"
+	icon_state = "hair_slime_ponytail_low"
+	hair_appendages_outer = list("hair_slime_ponytail_low_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+
+/datum/sprite_accessory/hair/nova/slimeblobby
+	name = "Slime Blobby"
+	icon_state = "hair_slime_blobby"
+
+/datum/sprite_accessory/hair/nova/slimeponytailhigh
+	name = "Slime Ponytail High"
+	icon_state = "hair_slime_ponytail_high"
+	hair_appendages_inner = list("hair_slime_ponytail_high_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_slime_ponytail_high_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+
+/datum/sprite_accessory/hair/nova/slimejelly
+	name = "Slime Jelly"
+	icon_state = "hair_slime_jelly"
+
+/datum/sprite_accessory/hair/nova/biggertails
+	name = "Bigger Tails"
+	icon_state = "hair_bigger_tails"
+	hair_appendages_inner = list("hair_bigger_tails_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_bigger_tails_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+
+/datum/sprite_accessory/hair/nova/ponytailscythe
+	name = "Ponytail Scythe"
+	icon_state = "hair_ponytail_scythe"
+	hair_appendages_inner = list("hair_ponytail_scythe_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_ponytail_scythe_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+	y_offset = 4
+
+/datum/sprite_accessory/hair/nova/gorgon
+	name = "Gorgon"
+	icon_state = "hair_gorgon"
+	hair_appendages_inner = list("hair_gorgon_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_gorgon_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
+
+/datum/sprite_accessory/hair/nova/tetodrills
+	name = "Teto Drills"
+	icon_state = "hair_teto_drills"
+	hair_appendages_inner = list("hair_teto_drills_a1" = HAIR_APPENDAGE_HANGING_FRONT)
+	hair_appendages_outer = list("hair_teto_drills_a1o" = HAIR_APPENDAGE_HANGING_FRONT)
 
 // Facial hair
 

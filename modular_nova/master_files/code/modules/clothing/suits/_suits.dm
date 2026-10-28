@@ -1,10 +1,9 @@
-/obj/item/clothing/suit
-	/// Does this object get cropped when worn by a taur on their suit or uniform slot?
-	var/gets_cropped_on_taurs = TRUE
-
 // taur suit blood overlays
-/obj/item/clothing/suit/get_blood_overlay(blood_state, mutant_styles)
-	if(!(mutant_styles & STYLE_TAUR_ALL))
+/obj/item/clothing/suit/get_blood_overlay(blood_state, bodyshape)
+	// worn_x_offset is only set to -16 when we're actually drawing a taur-fitted (64x32) worn icon.
+	// Suits without a taur-specific sprite fall back to the cropped generic icon and stay at offset 0,
+	// so using the wide blood overlay for them makes the blood render shifted off to the side.
+	if(!(bodyshape & BODYSHAPE_TAUR) || !worn_x_offset)
 		return ..()
 	if(!GET_ATOM_BLOOD_DNA_LENGTH(src))
 		return
