@@ -27,3 +27,8 @@
 	name = "Futuristic Jacket (Worn)"
 	icon_file = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
 	json_config = 'tff_modular/modules/greyscale/json_configs/clothing/fjacket_worn.json'
+
+/datum/greyscale_config/chokobo
+	name = "Chokobo"
+	icon_file = 'tff_modular/modules/chokobo/icons/chokobo.dmi'
+	json_config = 'tff_modular/modules/greyscale/json_configs/mob/chokobo.json'
