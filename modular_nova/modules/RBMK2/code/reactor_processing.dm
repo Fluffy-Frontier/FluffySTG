@@ -84,8 +84,8 @@
 		playsound(src, 'sound/misc/metal_creak.ogg', 50, TRUE, extrarange = -3)
 
 	if(!jammed && safety && (last_power_generation >= safeties_max_power_generation || rod_mix_pressure > stored_rod.pressure_limit*0.9)) //The safety system is very strict. Nanotrasen wants employees to feel safe!
-		var/health_percent = atom_integrity/max_integrity
-		var/jam_chance = 80 - (health_percent * 100) - (venting ? 0 : 40)
+		var/health_percent = get_health_percent()
+		var/jam_chance = 80 - health_percent - (venting ? 0 : 40)
 		if(jam_chance > 0 && SPT_PROB(jam_chance*0.5, seconds_per_tick))
 			jam(desired_state = TRUE)
 		else
@@ -98,6 +98,7 @@
 			log_game("[src] triggered a meltdown at [AREACOORD(turf_loc)]")
 			investigate_log("triggered a meltdown at [AREACOORD(turf_loc)]", INVESTIGATE_ENGINE)
 			meltdown = TRUE
+			SEND_SIGNAL(src, COMSIG_RBMK2_MELTDOWN)
 		var/chosen_sound = pick(
 			'modular_nova/modules/RBMK2/sounds/failure01.ogg',
 			'modular_nova/modules/RBMK2/sounds/failure02.ogg',
