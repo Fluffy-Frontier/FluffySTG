@@ -15,8 +15,6 @@
 			24-round magazine and is compatible with suppressors."
 	item = /obj/item/gun/ballistic/automatic/c20r/unrestricted
 	cost = /datum/uplink_item/medium_cost/weaponry::cost
-	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-	progression_minimum = 30 MINUTES
 
 /datum/uplink_item/dangerous/shotgun_traitor
 	name = "Bulldog Shotgun"
@@ -24,7 +22,6 @@
 			quarter anti-personnel engagements."
 	item = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	cost = /datum/uplink_item/medium_cost/weaponry::cost
-	progression_minimum = 50 MINUTES
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 
 

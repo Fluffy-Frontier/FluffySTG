@@ -44,7 +44,7 @@
 	user.put_in_hands(cell)
 	cell = no_cell
 
-	playsound(usr, SFX_REVOLVER_SPIN, 30, FALSE)
+	playsound(usr, /datum/sound_effect/revolver_spin, 30, FALSE)
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
 
@@ -63,7 +63,7 @@
 		return FALSE
 	cell = new_cell
 
-	playsound(usr, SFX_REVOLVER_SPIN, 30, FALSE)
+	playsound(usr, /datum/sound_effect/revolver_spin, 30, FALSE)
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
 	balloon_alert(user, "cell inserted")
@@ -72,7 +72,7 @@
 
 /obj/item/gun/energy/blueshield/click_alt(mob/user)
 	select_fire(user)
-	playsound(usr, SFX_REVOLVER_SPIN, 30, FALSE)
+	playsound(usr, /datum/sound_effect/revolver_spin, 30, FALSE)
 	return CLICK_ACTION_SUCCESS
 
 /obj/item/gun/energy/blueshield/attack_self(mob/living/user)

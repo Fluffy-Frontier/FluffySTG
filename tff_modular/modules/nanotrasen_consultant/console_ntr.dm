@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			if (!(params["state"] in approved_states))
 				return
 			set_state(usr, params["state"])
-			playsound(src, SFX_TERMINAL_TYPE, 50, FALSE)
+			playsound(src, /datum/sound_effect/terminal_type, 50, FALSE)
 		if ("callThePolice")
 			if(COOLDOWN_FINISHED(src, call_police_cooldown))
 				calling_NTIS(usr)
