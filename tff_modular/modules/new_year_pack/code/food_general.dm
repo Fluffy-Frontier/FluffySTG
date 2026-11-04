@@ -149,7 +149,7 @@
 
 /obj/item/food/christmas_ham/make_processable()
 	if(slice_type)
-		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, slice_yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Carve", sound_to_play = SFX_KNIFE_SLICE)
+		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, slice_yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Carve", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/christmas_ham/slice
 	name = "slice of Christmas ham"

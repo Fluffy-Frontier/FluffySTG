@@ -4,6 +4,5 @@
 	item = /obj/item/book/granter/martial/cqc
 	cost = /datum/uplink_item/medium_cost/martial_arts::cost
 	surplus = 17
-	progression_minimum = 30 MINUTES
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	cant_discount = TRUE

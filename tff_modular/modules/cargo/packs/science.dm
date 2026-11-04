@@ -41,8 +41,8 @@
 	access = ACCESS_SCIENCE
 	access_view = ACCESS_SCIENCE
 	contains = list(
-		/obj/item/relic = 5,
-		/obj/item/relic/lavaland = 1,
+		/obj/item/assembly/relic = 5,
+		/obj/item/assembly/relic/lavaland = 1,
 	)
 	crate_name = "experimentor relics"
 	crate_type = /obj/structure/closet/crate/secure/science

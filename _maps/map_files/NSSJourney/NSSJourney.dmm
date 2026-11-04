@@ -12260,7 +12260,7 @@
 	id = "kitchen";
 	name = "Kitchen Shutters"
 	},
-/obj/structure/displaycase/forsale/kitchen,
+/obj/structure/tipjar/prefilled,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "bnm" = (
@@ -12666,9 +12666,9 @@
 "boG" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/item/mmi,
-/obj/item/mmi,
-/obj/item/mmi,
+/obj/item/brain_processor/organic,
+/obj/item/brain_processor/organic,
+/obj/item/brain_processor/organic,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "boH" = (
@@ -55158,9 +55158,7 @@
 /area/station/service/hydroponics)
 "rEY" = (
 /obj/structure/table/reinforced,
-/obj/structure/displaycase/forsale/kitchen{
-	pixel_y = 8
-	},
+/obj/structure/tipjar/prefilled,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/service/bar)
 "rFq" = (
@@ -66050,7 +66048,7 @@
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "xBu" = (
-/obj/structure/sign/plaques/kiddie{
+/obj/structure/plaque/kiddie/developer{
 	pixel_x = 32
 	},
 /obj/machinery/porta_turret/ai{
