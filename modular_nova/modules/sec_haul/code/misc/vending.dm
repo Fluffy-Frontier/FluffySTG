@@ -87,6 +87,12 @@
 				/obj/item/clothing/suit/armor/vest/armadyne/armor = 6,
 				/obj/item/clothing/gloves/color/black/security/armadyne = 6,
 				/obj/item/clothing/shoes/jackboots/armadyne = 6,
+				/obj/item/clothing/under/rank/security/skinsuit_n = 6,
+				/obj/item/clothing/under/rank/security/skinsuit_n/orange = 6,
+				/obj/item/clothing/suit/armor/vest/skinvest = 6,
+				/obj/item/clothing/suit/armor/vest/skinvest/orange = 6,
+				/obj/item/clothing/head/helmet/skinhelm = 6,
+				/obj/item/clothing/head/helmet/skinhelm/orange = 6,
 				// FLUFFY FRONTIER ADDITION END
 			),
 		),
