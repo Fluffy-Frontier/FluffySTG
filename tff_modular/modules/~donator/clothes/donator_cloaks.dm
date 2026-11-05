@@ -123,3 +123,24 @@
 	icon_state = "tattered_cloak"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	supports_variations_flags = NONE
+
+/obj/item/clothing/neck/cloak/meowcloak
+	name = "Nanotrasen 'Kitty' Replica Greatcoat"
+	desc = "An award replica of HoS greatcoat with colourable NT logo! The label states that it was manufactured at the infamous factory that used the labor of tajaran kittens, ugh."
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/meowcloak"
+	post_init_icon_state = "meowcloak"
+	greyscale_config = /datum/greyscale_config/meowcloak
+	greyscale_config_worn = /datum/greyscale_config/meowcloak/worn
+	greyscale_colors = "#FFFFFF"
+	flags_1 = IS_PLAYER_COLORABLE_1
+	resistance_flags = FIRE_PROOF //Cause yes.
+
+/datum/greyscale_config/meowcloak
+	name = "Meowcloak"
+	icon_file = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/cloak/meowcloak.json'
+
+/datum/greyscale_config/meowcloak/worn
+	name = "Meowcloak (Worn)"
+	icon_file = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
