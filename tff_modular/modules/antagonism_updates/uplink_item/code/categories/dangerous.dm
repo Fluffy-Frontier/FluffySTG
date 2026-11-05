@@ -18,16 +18,6 @@
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 	progression_minimum = 30 MINUTES
 
-/datum/uplink_item/dangerous/shotgun_traitor
-	name = "Bulldog Shotgun"
-	desc = "A fully-loaded semi-automatic drum-fed shotgun. Compatible with all 12g rounds. Designed for close \
-			quarter anti-personnel engagements."
-	item = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
-	cost = /datum/uplink_item/medium_cost/weaponry::cost
-	progression_minimum = 50 MINUTES
-	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-
-
 /datum/uplink_item/role_restricted/mail_counterfeit_kit
 	name = "GLA Brand Mail Counterfeit Kit"
 	desc = "A box containing five devices capable of counterfeiting NT's mail. Can be used to store items within as an easy means of smuggling contraband. \
