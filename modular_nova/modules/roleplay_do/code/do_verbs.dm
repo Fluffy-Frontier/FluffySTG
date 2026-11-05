@@ -1,20 +1,41 @@
-/mob/verb/do_verb(message as message)
-	set name = "Do"
-	set category = "IC"
-	set instant = TRUE
-
+GAME_VERB(/mob, do_verb, "Do", "IC")
+	VERB_ARG(message, VERB_ARG_TYPE_MESSAGE, VERB_ARG_SOURCE_INPUT)
 	if(GLOB.say_disabled)
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	if(message)
-		QUEUE_OR_CALL_VERB_FOR(VERB_CALLBACK(src, TYPE_VERB_REF(/mob/living, do_actual_verb), message), SSspeech_controller)
+		QUEUE_OR_CALL_VERB_FOR(VERB_CALLBACK(src, TYPE_PROC_REF(/mob/living, do_actual_verb), message), SSspeech_controller)
 
-/mob/living/verb/do_actual_verb(message as message)
+/mob/living/proc/do_actual_verb(message as message)
 	if (!message || !doverb_checks(message))
 		return
 
-	if (!try_speak(message)) // ensure we pass the vibe check (filters, etc)
+	if(!CAN_BYPASS_FILTER(usr))
+		var/list/filter_result = is_ic_filtered(message)
+
+		if(filter_result)
+			to_chat(usr, span_warning("That emote contained a word prohibited in IC emotes! Consider reviewing the server rules.\n\"[message]\""))
+			REPORT_CHAT_FILTER_TO_USER(usr, filter_result)
+			log_filter("IC Emote", message, filter_result)
+			SSblackbox.record_feedback("tally", "ic_blocked_words", 1, LOWER_TEXT(config.ic_filter_regex.match))
+			return FALSE
+
+		filter_result = is_soft_ic_filtered(message)
+
+		if(filter_result)
+			if(tgui_alert(usr, "Your emote contains \"[filter_result[CHAT_FILTER_INDEX_WORD]]\". \"[filter_result[CHAT_FILTER_INDEX_REASON]]\", Are you sure you want to emote it?", "Soft Blocked Word", list("Yes", "No")) != "Yes")
+				SSblackbox.record_feedback("tally", "soft_ic_blocked_words", 1, LOWER_TEXT(config.soft_ic_filter_regex.match))
+				log_filter("Soft IC Emote", message, filter_result)
+				return FALSE
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] has passed the soft filter for emote \"[filter_result[CHAT_FILTER_INDEX_WORD]]\" they may be using a disallowed term. Emote: \"[html_encode(message)]\"")
+			log_admin_private("[key_name(usr)] has passed the soft filter for emote \"[filter_result[CHAT_FILTER_INDEX_WORD]]\" they may be using a disallowed term. Emote: \"[message]\"")
+			SSblackbox.record_feedback("tally", "passed_soft_ic_blocked_words", 1, LOWER_TEXT(config.soft_ic_filter_regex.match))
+			log_filter("Soft IC Emote (Passed)", message, filter_result)
+
+	if(usr.client?.prefs?.muted & MUTE_IC)
+		to_chat(usr, span_boldwarning("You cannot send IC messages (muted)."))
 		return
 
 	var/name_stub = " (<b>[usr]</b>)"

@@ -1,4 +1,5 @@
-ADMIN_VERB(cmd_eventmaker_say, R_NONE, "ESay", "Send a message to eventmakes", ADMIN_CATEGORY_MAIN, message as text)
+ADMIN_VERB(cmd_eventmaker_say, R_NONE, "ESay", "Send a message to eventmakes", ADMIN_CATEGORY_MAIN)
+	VERB_ARG(message, VERB_ARG_TYPE_TEXT, VERB_ARG_SOURCE_INPUT)
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	if(!message)
 		return

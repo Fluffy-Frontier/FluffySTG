@@ -109,8 +109,8 @@
 		var/damage = obj_damage
 		if(ismecha(target))
 			damage = mecha_damage
-			var/obj/vehicle/sealed/mecha/target_mecha = target
-			if(target_mecha.defense_mode)
+			var/obj/vehicle/sealed/mecha/durand/durand = target
+			if(istype(durand) && durand.defense_mode)
 				damage /= 2
 		else if(istype(target, /obj/machinery/door/airlock))
 			damage = 1000 // Нужно сломать за 1 раз
@@ -136,8 +136,8 @@
 			var/dist_from_source = get_dist(target, source)
 			if(throw_mecha && (target.max_integrity < 400) && (dist_from_source <= 1))
 				target_mecha.safe_throw_at(throwtarget, 1, 1, source, spin = FALSE, force = MOVE_FORCE_EXTREMELY_STRONG)
-
-			if(target_mecha.defense_mode)
+			var/obj/vehicle/sealed/mecha/durand/durand = target_mecha
+			if(istype(durand) && durand.defense_mode)
 				target_mecha.use_energy(damage * (STANDARD_CELL_CHARGE / 50))
 				for(var/O in target_mecha.occupants)
 					var/mob/living/occupant = O

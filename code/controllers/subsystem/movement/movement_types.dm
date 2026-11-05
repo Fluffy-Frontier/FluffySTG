@@ -129,12 +129,11 @@
 	owner?.processing_move_loop_flags = flags
 	var/result = move() //Result is an enum value. Enums defined in __DEFINES/movement.dm
 
-	if(result)
-		EVLOG_PATH(moving, EVLOG_CATEGORY_MOVELOOPS, "Moved using [src]", list(old_loc, moving.loc)) //You might think, this runs a lot; but if not logging, it only does a lookup on the event logger.
-
 	if(moving)
 		var/direction = get_dir(old_loc, moving.loc)
 		SEND_SIGNAL(moving, COMSIG_MOVABLE_MOVED_FROM_LOOP, src, old_dir, direction)
+		if(result)
+			EVLOG_PATH(moving, EVLOG_CATEGORY_MOVELOOPS, "Moved using [src]", list(old_loc, moving.loc)) //You might think, this runs a lot; but if not logging, it only does a lookup on the event logger.
 	owner?.processing_move_loop_flags = NONE
 
 	SEND_SIGNAL(src, COMSIG_MOVELOOP_POSTPROCESS, result, delay * visual_delay)
@@ -422,6 +421,8 @@
 
 /datum/move_loop/has_target/jps/Destroy()
 	avoid = null
+	// Pending pathfinds share this list so we need to clear it to release their callbacks to us
+	on_finish_callbacks.Cut()
 	on_finish_callbacks = null
 	return ..()
 
@@ -438,7 +439,8 @@
 /datum/move_loop/has_target/jps/proc/on_finish_pathing(list/path)
 	movement_path = path
 	is_pathing = FALSE
-	EVLOG_PATH(moving, EVLOG_CATEGORY_JPS, "Planned AI path", movement_path)
+	if(moving)
+		EVLOG_PATH(moving, EVLOG_CATEGORY_JPS, "Planned AI path", movement_path)
 	SEND_SIGNAL(src, COMSIG_MOVELOOP_JPS_FINISHED_PATHING, path)
 
 /datum/move_loop/has_target/jps/move()
@@ -757,6 +759,9 @@
 
 /datum/move_loop/has_target/move_towards/proc/handle_move(source, atom/OldLoc, Dir, Forced = FALSE)
 	SIGNAL_HANDLER
+	if(QDELETED(src))
+		return
+
 	if(moving.loc != moving_towards && home) //If we didn't go where we should have, update slope to account for the deviation
 		update_slope()
 
@@ -777,6 +782,8 @@
 **/
 /datum/move_loop/has_target/move_towards/proc/update_slope()
 	SIGNAL_HANDLER
+	if(QDELETED(src))
+		return
 
 	//You'll notice this is rise over run, except we flip the formula upside down depending on the larger number
 	//This is so we never move more then one tile at once

@@ -6,7 +6,7 @@
 		/obj/item/food/pickle = 1,
 		/obj/item/food/boiledegg = 1,
 		/obj/item/food/grown/potato = 1,
-		/obj/item/food/grown/carrot = 1,
+		/obj/item/food/grown/carrotlike/carrot = 1,
 		/obj/item/food/sausage = 1,
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
@@ -19,7 +19,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/cup/bowl = 1,
 		/obj/item/food/grown/redbeet = 1,
-		/obj/item/food/grown/carrot = 1,
+		/obj/item/food/grown/carrotlike/carrot = 1,
 		/obj/item/food/onion_slice/red = 2,
 		/obj/item/food/grown/peas = 1,
 		/datum/reagent/consumable/nutriment/fat/oil/olive = 5,
@@ -49,7 +49,7 @@
 		/obj/item/food/fishmeat/carp = 2,
 		/obj/item/food/boiledegg = 1,
 		/obj/item/food/grown/potato = 1,
-		/obj/item/food/grown/carrot = 1,
+		/obj/item/food/grown/carrotlike/carrot = 1,
 		/obj/item/food/grown/redbeet = 1,
 		/obj/item/food/grown/onion = 1,
 		/datum/reagent/consumable/mayonnaise = 10,
@@ -64,7 +64,7 @@
 	reqs = list(
 		/obj/item/food/headcheese = 1,
 		/obj/item/food/grown/onion = 1,
-		/obj/item/food/grown/carrot = 1,
+		/obj/item/food/grown/carrotlike/carrot = 1,
 		/obj/item/food/grown/herbs = 1,
 	)
 	result = /obj/item/food/cake/kholodetz
