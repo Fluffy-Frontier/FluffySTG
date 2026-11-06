@@ -72,17 +72,17 @@
 /datum/loadout_item/under/jumpsuit/skinsuit_ward
 	name = "Warden Skinsuit"
 	item_path = /obj/item/clothing/under/rank/security/skinsuit_n/ward
-	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER, JOB_BLUESHIELD, JOB_DETECTIVE)
+	restricted_roles = list(JOB_WARDEN)
 	group = "Job-Locked"
 
 /datum/loadout_item/head/skinhelm_ward
 	name = "Warden Skinhelm"
 	item_path = /obj/item/clothing/head/helmet/skinhelm/ward
-	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER, JOB_BLUESHIELD, JOB_DETECTIVE)
+	restricted_roles = list(JOB_WARDEN)
 	group = "Job-Locked"
 
 /datum/loadout_item/suit/skinvest_ward
 	name = "Warden Skinvest"
 	item_path = /obj/item/clothing/suit/armor/vest/skinvest/ward
-	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER, JOB_BLUESHIELD, JOB_DETECTIVE)
+	restricted_roles = list(JOB_WARDEN)
 	group = "Job-Locked"
