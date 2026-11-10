@@ -35,11 +35,13 @@
 		user.changeNext_move(penalty) // cooldown to simulate having to fumble for another round
 		balloon_alert(user, "[num_loaded] [cartridge_wording]\s loaded (delayed [penalty * 0.1]s)!")
 
+/* //FLUFFY FRONTIER EDIT - TG have better muzzle flash
 /obj/effect/temp_visual/dir_setting/firing_effect
 	light_system = OVERLAY_LIGHT
 	light_range = 2
 	light_power = 1
 	light_color = LIGHT_COLOR_FIRE
+*/ //FLUFFY FRONTIER EDIT
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	projectile_damage_multiplier = 1.35 //original 1.5
