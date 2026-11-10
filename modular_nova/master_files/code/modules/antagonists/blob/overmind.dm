@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL START
 /mob/eye/blob
 	end_round_on_victory = FALSE
 
@@ -8,3 +9,4 @@
 /mob/eye/blob/victory()
 		. = ..()
 		SSsecurity_level.set_level(SEC_LEVEL_RED)
+*/ // FLUFFY FRONTIER REMOVAL END

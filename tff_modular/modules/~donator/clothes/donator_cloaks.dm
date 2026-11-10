@@ -1,4 +1,24 @@
 // TFF Донаторские плащи и капюшоны
+/obj/item/clothing/suit/hooded/cloak/urscloak
+	name = "Project: Urs-W"
+	desc = "A standard version of a prototype cloak given out by Nanotrasen higher ups. It's surprisingly thick and heavy for a cloak despite having most of its tech stripped. It also comes with a bluespace trinket which calls its accompanying hat onto the user. A worn inscription on the inside of the cloak reads 'Vanguard' ...the rest is faded away."
+	icon_state = "BCFiks_urscloak"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/urscloak
+	body_parts_covered = CHEST|GROIN|ARMS
+	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
+	supports_variations_flags = NONE
+
+/obj/item/clothing/head/hooded/cloakhood/urscloak
+	name = "Vanguard special issue"
+	desc = "This hat is unquestionably the best one, bluespaced to and from CentCom. It smells of Fox and 24 Volt Energy with a hint of antagonism"
+	icon_state = "BCFiks_urscap"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	flags_inv = null
+	supports_variations_flags = NONE
+
 /datum/atom_skin/officer_cloak
 	abstract_type = /datum/atom_skin/officer_cloak
 /datum/atom_skin/officer_cloak/Nanotrasen
@@ -95,3 +115,32 @@
 	. = ..()
 	AddComponent(/datum/component/toggle_icon, "over shoulder")
 
+
+/obj/item/clothing/neck/cloak/tattered_cloak
+	name = "Tattered Cloak"
+	desc = "A worn, battle-torn cloak. Complete with light red trimmings, tears, burns, and even some holes through out it's design, it clearly has seen better days. You can practically smell the despair, a hint of gunpowder, and a bit of a blood smell. On the surviving part, the inside is embroidered with silver thread and initals of \"R.A.\""
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "tattered_cloak"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	supports_variations_flags = NONE
+
+/obj/item/clothing/neck/cloak/meowcloak
+	name = "Nanotrasen 'Kitty' Replica Greatcoat"
+	desc = "An award replica of HoS greatcoat with colourable NT logo! The label states that it was manufactured at the infamous factory that used the labor of tajaran kittens, ugh."
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/meowcloak"
+	post_init_icon_state = "meowcloak"
+	greyscale_config = /datum/greyscale_config/meowcloak
+	greyscale_config_worn = /datum/greyscale_config/meowcloak/worn
+	greyscale_colors = "#FFFFFF"
+	flags_1 = IS_PLAYER_COLORABLE_1
+	resistance_flags = FIRE_PROOF //Cause yes.
+
+/datum/greyscale_config/meowcloak
+	name = "Meowcloak"
+	icon_file = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/cloak/meowcloak.json'
+
+/datum/greyscale_config/meowcloak/worn
+	name = "Meowcloak (Worn)"
+	icon_file = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
