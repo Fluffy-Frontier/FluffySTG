@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           # NOVA EDIT CHANGE - Adds modular_nova to the list
+          # FLUFFY FRONTIER ADDITION - Adds tff_modular to the list
           sparse-checkout: |
             _maps
             .github
@@ -49,6 +50,7 @@ jobs:
             dependencies.sh
             SQL/tgstation_schema.sql
             SQL/tgstation_schema_prefixed.sql
+            tff_modular
             tools/ci/install_byond.sh
             tools/ci/install_dreamluau.sh
             tools/ci/install_rust_g.sh
