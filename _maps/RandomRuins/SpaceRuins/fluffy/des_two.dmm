@@ -2334,13 +2334,6 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/table,
-/obj/item/choice_beacon/ingredient{
-	pixel_y = 11
-	},
-/obj/item/choice_beacon/ingredient{
-	pixel_x = -5;
-	pixel_y = 2
-	},
 /obj/item/storage/belt/military/snack{
 	pixel_x = -9;
 	pixel_y = 0
@@ -14886,7 +14879,7 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/medical/syndicate{
 	onstation = 0;
-	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/mmi/syndie/interdyne=3);
+	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/brain_processor/organic/syndie/interdyne=3);
 	extended_inventory = 1;
 	color = "#adadcd";
 	light_color = "#adadcd"
