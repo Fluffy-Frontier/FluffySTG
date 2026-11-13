@@ -332,7 +332,7 @@
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 		/datum/reagent/consumable/caramel = 3,
-		/datum/reagent/consumable/liquidelectricity/enriched = 3,
+		/datum/reagent/consumable/liquidelectricity = 3,
 	)
 	tastes = list("cake" = 3, "caramel" = 2, "zap" = 1)
 	foodtypes = GRAIN|DAIRY|VEGETABLES|SUGAR
@@ -449,7 +449,8 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("raw brownie batter" = 1)
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR|BREAKFAST
+	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR
+	foodtypes_added_when_cooked = BREAKFAST
 	crafting_complexity = FOOD_COMPLEXITY_1
 
 /obj/item/food/raw_brownie_batter/make_bakeable()
@@ -470,7 +471,7 @@
 	crafting_complexity = FOOD_COMPLEXITY_2
 
 /obj/item/food/brownie_sheet/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/brownie
 	name = "brownie"
@@ -497,7 +498,8 @@
 		/datum/reagent/consumable/peanut_butter = 4,
 	)
 	tastes = list("raw brownie batter" = 1)
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR|BREAKFAST|NUTS
+	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR|NUTS
+	foodtypes_added_when_cooked = BREAKFAST
 	crafting_complexity = FOOD_COMPLEXITY_1
 
 /obj/item/food/peanut_butter_brownie_batter/make_bakeable()
@@ -519,7 +521,7 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/peanut_butter_brownie_sheet/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/peanut_butter_brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/peanut_butter_brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/peanut_butter_brownie
 	name = "peanut butter brownie"

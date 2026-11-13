@@ -82,6 +82,7 @@
 	icon_state = "airbag_safe"
 	base_icon_state = "airbag"
 	max_integrity = 10
+	custom_materials = list(/datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT)
 	/// The time in which we deploy
 	var/detonate_time = 2 SECONDS
 	/// The item we drop on detonation
@@ -166,9 +167,9 @@
 /obj/item/airbag/proc/blow_up_arm(mob/living/carbon/human/victim)
 	var/datum/wound_pregen_data/pregen_data = GLOB.all_wound_pregen_data[/datum/wound/blunt/bone/moderate]
 	var/obj/item/bodypart/arm/limb = victim.get_bodypart(pick(GLOB.arm_zones))
-	if(victim.held_items[LEFT_HANDS] == src)
+	if(victim.get_item_for_held_index(LEFT_HANDS) == src)
 		limb = victim.get_bodypart(BODY_ZONE_L_ARM)
-	else if(victim.held_items[RIGHT_HANDS] == src)
+	else if(victim.get_item_for_held_index(RIGHT_HANDS) == src)
 		limb = victim.get_bodypart(BODY_ZONE_R_ARM)
 	if(pregen_data.can_be_applied_to(limb, random_roll = FALSE) && (limb.biological_state & BIO_JOINTED))
 		limb.force_wound_upwards(/datum/wound/blunt/bone/moderate)
@@ -181,7 +182,6 @@
 /datum/design/airbag
 	name = "Airbag"
 	desc = "Keep that vacuum of space from sucking!"
-	id = "airbag"
 	build_type = PROTOLATHE | AWAY_LATHE | AUTOLATHE | COLONY_FABRICATOR
 	materials = list(/datum/material/plastic = SMALL_MATERIAL_AMOUNT * 5)
 	build_path = /obj/item/airbag

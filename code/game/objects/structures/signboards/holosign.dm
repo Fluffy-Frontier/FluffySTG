@@ -11,7 +11,7 @@
 	light_power = 0.3
 	light_color = COLOR_CARP_TEAL
 	light_on = FALSE
-	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5.05, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.7)
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5.15, /datum/material/glass = SMALL_MATERIAL_AMOUNT)
 	/// If set, only IDs with this name can (un)lock the sign.
 	var/registered_owner
 	/// The current color of the sign.
@@ -135,7 +135,7 @@
 /obj/structure/signboard/holosign/emag_act(mob/user, obj/item/card/emag/emag_card)
 	if(obj_flags & EMAGGED)
 		return FALSE
-	playsound(src, SFX_SPARKS, vol = 100, vary = TRUE, extrarange = SHORT_RANGE_SOUND_EXTRARANGE)
+	playsound(src, /datum/sound_effect/sparks, vol = 100, vary = TRUE, extrarange = SHORT_RANGE_SOUND_EXTRARANGE)
 	do_sparks(3, cardinal_only = FALSE, source = src)
 	balloon_alert(user, "lock broken")
 	investigate_log("was emagged by [key_name(user)] (previous owner: [registered_owner || "(none)"])", INVESTIGATE_SIGNBOARD)

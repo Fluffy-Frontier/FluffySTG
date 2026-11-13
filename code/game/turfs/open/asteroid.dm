@@ -31,6 +31,41 @@
 	/// Percentage chance of receiving a bonus worm
 	var/worm_chance = 30
 
+// This is a visual depression, not an already-dug /asteroid/dug turf.
+/turf/open/misc/asteroid/crater
+	icon_state = "asteroid_dug"
+	floor_variance = 0
+
+/turf/open/misc/asteroid/variant_0
+	icon_state = "asteroid0"
+
+/turf/open/misc/asteroid/variant_2
+	icon_state = "asteroid2"
+
+/turf/open/misc/asteroid/variant_3
+	icon_state = "asteroid3"
+
+/turf/open/misc/asteroid/variant_5
+	icon_state = "asteroid5"
+
+/turf/open/misc/asteroid/variant_6
+	icon_state = "asteroid6"
+
+/turf/open/misc/asteroid/variant_7
+	icon_state = "asteroid7"
+
+/turf/open/misc/asteroid/variant_8
+	icon_state = "asteroid8"
+
+/turf/open/misc/asteroid/variant_9
+	icon_state = "asteroid9"
+
+/turf/open/misc/asteroid/variant_10
+	icon_state = "asteroid10"
+
+/turf/open/misc/asteroid/variant_11
+	icon_state = "asteroid11"
+
 /turf/open/misc/asteroid/broken_states()
 	if(initial(dug))
 		return list(icon_state)
@@ -62,29 +97,36 @@
 /turf/open/misc/asteroid/ex_act(severity, target)
 	return FALSE
 
-/turf/open/misc/asteroid/attackby(obj/item/attack_item, mob/user, list/modifiers)
+/turf/open/misc/asteroid/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
-	if(.)
-		return TRUE
+	if(ITEM_INTERACT_ANY_BLOCKER & .)
+		return .
 
-	if(attack_item.tool_behaviour == TOOL_SHOVEL || attack_item.tool_behaviour == TOOL_MINING)
-		if(!can_dig(user))
-			return TRUE
-
-		if(!isturf(user.loc))
-			return
-
-		balloon_alert(user, "digging...")
-
-		if(attack_item.use_tool(src, user, 4 SECONDS, volume = 50))
-			if(!can_dig(user))
-				return TRUE
-			getDug()
-			SSblackbox.record_feedback("tally", "pick_used_mining", 1, attack_item.type)
-			return TRUE
-	else if(istype(attack_item, /obj/item/storage/bag/ore))
+	if(istype(tool, /obj/item/storage/bag/ore))
 		for(var/obj/item/stack/ore/dropped_ore in src)
-			SEND_SIGNAL(attack_item, COMSIG_ATOM_ATTACKBY, dropped_ore)
+			SEND_SIGNAL(tool, COMSIG_ATOM_ATTACKBY, dropped_ore)
+		return ITEM_INTERACT_SUCCESS
+
+	if(tool.tool_behaviour != TOOL_SHOVEL && tool.tool_behaviour != TOOL_MINING)
+		return . // it still could be SKIP_TO_ATTACK and we don't want to step on that
+
+	if(!can_dig(user))
+		return ITEM_INTERACT_BLOCKING
+
+	if(!isturf(user.loc))
+		return ITEM_INTERACT_BLOCKING
+
+	balloon_alert(user, "digging...")
+
+	if(!tool.use_tool(src, user, 4 SECONDS, volume = 50))
+		return ITEM_INTERACT_BLOCKING
+
+	if(!can_dig(user))
+		return ITEM_INTERACT_BLOCKING
+
+	getDug()
+	SSblackbox.record_feedback("tally", "pick_used_mining", 1, tool.type)
+	return ITEM_INTERACT_SUCCESS
 
 /// Drops itemstack when dug and changes icon
 /turf/open/misc/asteroid/proc/getDug()
@@ -142,6 +184,15 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	dig_result = /obj/item/stack/ore/glass/basalt
 	smoothing_groups = SMOOTH_GROUP_FLOOR_BASALT
 
+/turf/open/misc/asteroid/basalt/variant_1
+	icon_state = "basalt1"
+
+/turf/open/misc/asteroid/basalt/variant_6
+	icon_state = "basalt6"
+
+/turf/open/misc/asteroid/basalt/variant_8
+	icon_state = "basalt8"
+
 /turf/open/misc/asteroid/basalt/getDug()
 	. = ..()
 	if(!.)
@@ -184,6 +235,10 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	skip_minimap_rendering = TRUE
 
+/turf/open/misc/asteroid/basalt/lava_land_surface/crater
+	icon_state = "basalt_dug"
+	floor_variance = 0
+
 /// Used for the lavaland icemoon ruin.
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins
 	turf_flags = NO_RUINS
@@ -217,6 +272,10 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	if(cur_flags & NO_RUINS)
 		new_turf.turf_flags |= NO_RUINS
 
+/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace/normal_atmos
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/misc/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/misc/asteroid/lowpressure
@@ -228,11 +287,52 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	turf_type = /turf/open/misc/asteroid/airless
 	worm_chance = 0
 
+/turf/open/misc/asteroid/airless/variant_0
+	icon_state = "asteroid0"
+
+/turf/open/misc/asteroid/airless/variant_1
+	icon_state = "asteroid1"
+
+/turf/open/misc/asteroid/airless/variant_2
+	icon_state = "asteroid2"
+
+/turf/open/misc/asteroid/airless/variant_3
+	icon_state = "asteroid3"
+
+/turf/open/misc/asteroid/airless/variant_4
+	icon_state = "asteroid4"
+
+/turf/open/misc/asteroid/airless/variant_5
+	icon_state = "asteroid5"
+
+/turf/open/misc/asteroid/airless/variant_6
+	icon_state = "asteroid6"
+
+/turf/open/misc/asteroid/airless/variant_7
+	icon_state = "asteroid7"
+
+/turf/open/misc/asteroid/airless/variant_8
+	icon_state = "asteroid8"
+
+/turf/open/misc/asteroid/airless/variant_9
+	icon_state = "asteroid9"
+
+/turf/open/misc/asteroid/airless/variant_10
+	icon_state = "asteroid10"
+
+/turf/open/misc/asteroid/airless/variant_11
+	icon_state = "asteroid11"
+
+/turf/open/misc/asteroid/airless/variant_12
+	icon_state = "asteroid12"
+
 /turf/open/misc/asteroid/basalt/smooth
 	smoothing_flags = SMOOTH_BITMASK
 	layer = MID_TURF_LAYER
 	floor_variance = 0
 	transform = MAP_SWITCH(TRANSLATE_MATRIX(-8, -8), matrix())
+	smooth_broken = TRUE
+	has_floor_variance = FALSE
 	/// DMI used by unsmoothed turfs for variance
 	var/variant_dmi = null
 	/// Amount of variants this turf has
@@ -258,6 +358,12 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	if(!smoothing_flags)
 		return
 	underlay_appearance.transform = transform
+
+/turf/open/misc/asteroid/basalt/smooth/refill_dug()
+	dug = FALSE
+	broken = FALSE
+	set_smoothed_icon_state(smoothing_junction)
+	update_appearance()
 
 /turf/open/misc/asteroid/basalt/smooth/siderite
 	name = "siderite floor"
@@ -455,6 +561,10 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 /turf/open/misc/asteroid/snow/snow_cabin
 	temperature = ICEBOX_MIN_TEMPERATURE
 
+/turf/open/misc/asteroid/snow/snow_cabin/trampled
+	icon_state = "snow_dug"
+	floor_variance = 0
+
 /turf/open/misc/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = FALSE
@@ -471,6 +581,7 @@ GLOBAL_LIST_EMPTY(dug_up_basalt)
 	base_icon_state = "moon"
 	floor_variance = 40
 	dig_result = /obj/item/stack/ore/glass/basalt
+	initial_gas_mix = MOONBASE19_ATMOS
 
 /turf/open/misc/asteroid/moon/dug //When you want one of these to be already dug.
 	dug = TRUE

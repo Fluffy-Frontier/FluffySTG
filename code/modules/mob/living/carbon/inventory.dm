@@ -25,14 +25,6 @@
 
 /mob/living/carbon/get_item_by_slot(slot_id)
 	switch(slot_id)
-		if(ITEM_SLOT_BACK)
-			return back
-		if(ITEM_SLOT_MASK)
-			return wear_mask
-		if(ITEM_SLOT_NECK)
-			return wear_neck
-		if(ITEM_SLOT_HEAD)
-			return head
 		if(ITEM_SLOT_HANDCUFFED)
 			return handcuffed
 		if(ITEM_SLOT_LEGCUFFED)
@@ -41,18 +33,6 @@
 	return ..()
 
 /mob/living/carbon/get_slot_by_item(obj/item/looking_for)
-	if(looking_for == back)
-		return ITEM_SLOT_BACK
-
-	if(looking_for == wear_mask)
-		return ITEM_SLOT_MASK
-
-	if(looking_for == wear_neck)
-		return ITEM_SLOT_NECK
-
-	if(looking_for == head)
-		return ITEM_SLOT_HEAD
-
 	if(looking_for == handcuffed)
 		return ITEM_SLOT_HANDCUFFED
 
@@ -97,71 +77,21 @@
 		qdel(equipping)
 	return null
 
-//This is an UNSAFE proc. Use mob_can_equip() before calling this one! Or rather use equip_to_slot_if_possible() or advanced_equip_to_slot_if_possible()
-/mob/living/carbon/equip_to_slot(obj/item/equipping, slot, initial = FALSE, redraw_mob = FALSE, indirect_action = FALSE)
-	if(!slot)
+/mob/living/carbon/handle_set_item_in_slot(obj/item/equipping, slot)
+	. = ..()
+	if(.)
 		return
-
-	if(!istype(equipping))
-		return
-
-	var/index = get_held_index_of_item(equipping)
-	if(index)
-		held_items[index] = null
-
-	if(equipping.pulledby)
-		equipping.pulledby.stop_pulling()
-
-	equipping.screen_loc = null
-	client?.screen -= equipping
-
-	for(var/mob/dead/observe as anything in observers)
-		observe.client?.screen -= equipping
-
-	equipping.forceMove(src) //This has to come before has_equipped is called.
-	SET_PLANE_EXPLICIT(equipping, ABOVE_HUD_PLANE, src)
-	equipping.appearance_flags |= NO_CLIENT_COLOR
-	var/not_handled = FALSE
 
 	switch(slot)
-		if(ITEM_SLOT_BACK)
-			if(back)
-				return
-			back = equipping
-			update_worn_back()
-		if(ITEM_SLOT_MASK)
-			if(wear_mask)
-				return
-			wear_mask = equipping
-			update_worn_mask()
-		if(ITEM_SLOT_HEAD)
-			if(head)
-				return
-			head = equipping
-			update_worn_head()
-		if(ITEM_SLOT_NECK)
-			if(wear_neck)
-				return
-			wear_neck = equipping
-			update_worn_neck(equipping)
 		if(ITEM_SLOT_HANDCUFFED)
 			set_handcuffed(equipping)
 		if(ITEM_SLOT_LEGCUFFED)
 			legcuffed = equipping
 			update_worn_legcuffs()
-		if(ITEM_SLOT_HANDS)
-			put_in_hands(equipping)
-			update_held_items()
 		else
-			not_handled = TRUE
+			return FALSE
 
-	//Item has been handled at this point and equipped callback can be safely called
-	//We cannot call it for items that have not been handled as they are not yet correctly
-	//in a slot (handled further down inheritance chain, probably living/carbon/human/equip_to_slot
-	if(!not_handled && slot != ITEM_SLOT_HANDS) // put in hands calls equipped on its own, annoyingly
-		has_equipped(equipping, slot, initial)
-
-	return not_handled
+	return TRUE
 
 /mob/living/carbon/has_equipped(obj/item/item, slot, initial = FALSE)
 	. = ..()
@@ -194,23 +124,7 @@
 	if(!. || !item_dropping) //We don't want to set anything to null if the parent returned 0.
 		return
 
-	if(item_dropping == head)
-		head = null
-		if(!QDELETED(src))
-			update_worn_head()
-	else if(item_dropping == back)
-		back = null
-		if(!QDELETED(src))
-			update_worn_back()
-	else if(item_dropping == wear_mask)
-		wear_mask = null
-		if(!QDELETED(src))
-			update_worn_mask()
-	else if(item_dropping == wear_neck)
-		wear_neck = null
-		if(!QDELETED(src))
-			update_worn_neck(item_dropping)
-	else if(item_dropping == handcuffed)
+	if(item_dropping == handcuffed)
 		set_handcuffed(null)
 		if(buckled?.buckle_requires_restraints)
 			buckled.unbuckle_mob(src)
@@ -260,7 +174,10 @@
  * * removed_slots - slots that were removed from obscured_slots
  */
 /mob/living/carbon/proc/item_coverage_changed(added_slots, removed_slots)
+	SEND_SIGNAL(src, COMSIG_CARBON_ITEM_COVERAGE_CHANGED, added_slots, removed_slots)
 	update_clothing(hidden_slots_to_inventory_slots(added_slots|removed_slots))
+	if((added_slots|removed_slots) & HIDESNOUT)
+		synchronize_bodyshapes()
 	if((added_slots|removed_slots) & (HIDEHAIR|HIDEFACIALHAIR))
 		update_hair()
 	if((added_slots|removed_slots) & HIDEEYES)
@@ -270,23 +187,13 @@
 	if((added_slots|removed_slots) & (HIDEJUMPSUIT|HIDEEARS|HIDEHAIR|HIDESNOUT|HIDEMUTWINGS|HIDEANTENNAE))
 		update_body()
 
-/// Returns the helmet if an air tank compatible helmet is equipped.
-/mob/living/carbon/proc/can_breathe_helmet()
-	if (astype(head, /obj/item/clothing)?.clothing_flags & HEADINTERNALS)
-		return head
-
-/// Returns the mask if an air tank compatible mask is equipped.
-/mob/living/carbon/proc/can_breathe_mask()
-	if (astype(wear_mask, /obj/item/clothing)?.clothing_flags & MASKINTERNALS)
-		return wear_mask
-
 /// Returns the tube if a breathing tube is equipped.
 /mob/living/carbon/proc/can_breathe_tube()
 	return get_organ_slot(ORGAN_SLOT_BREATHING_TUBE)
 
 /// Returns the object that allows us to breathe internals - tube implant, mask or helmet
 /mob/living/carbon/proc/can_breathe_internals()
-	return can_breathe_tube() || can_breathe_mask() || can_breathe_helmet()
+	return can_breathe_tube()
 
 /// Returns truthy if air tank is open and mob lacks apparatus, or if the tank moved away from the mob.
 /mob/living/carbon/proc/invalid_internals()

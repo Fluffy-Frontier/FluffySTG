@@ -37,7 +37,6 @@
 	GLOB.gutlunch_count++
 	if(greyscale_config)
 		set_greyscale(colors = list(pick(possible_colors)))
-	AddElement(/datum/element/ai_retaliate)
 	if(can_breed)
 		add_breeding_component()
 
@@ -164,7 +163,7 @@
 	)
 
 /mob/living/basic/mining/gutlunch/grub/proc/ready_to_grow()
-	return (stat == CONSCIOUS)
+	return (!IS_UNCONSCIOUS_OR_CRIT(src))
 
 /mob/living/basic/mining/gutlunch/grub/proc/determine_growth_path()
 	var/final_type = prob(50) ? /mob/living/basic/mining/gutlunch/warrior : /mob/living/basic/mining/gutlunch/milk

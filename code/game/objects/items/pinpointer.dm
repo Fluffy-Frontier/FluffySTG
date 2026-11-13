@@ -15,8 +15,8 @@
 	throw_range = 7
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 5, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 2.5)
 	sound_vary = TRUE
-	pickup_sound = SFX_GENERIC_DEVICE_PICKUP
-	drop_sound = SFX_GENERIC_DEVICE_DROP
+	pickup_sound = /datum/sound_effect/generic_device_pickup
+	drop_sound = /datum/sound_effect/generic_device_drop
 	/// Is the pinpointer on?
 	var/active = FALSE
 	///The thing we're searching for
@@ -111,6 +111,7 @@
 	worn_icon_state = "pinpointer_crew"
 	custom_price = PAYCHECK_CREW * 6
 	custom_premium_price = PAYCHECK_CREW * 6
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 1.5, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 0.75, /datum/material/gold = HALF_SHEET_MATERIAL_AMOUNT)
 	/// The mob that the pinpointer is owned by.
 	var/pinpointer_owner = null
 	/// Do we find people even if their suit sensors are turned off

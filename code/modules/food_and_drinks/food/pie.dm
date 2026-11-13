@@ -16,7 +16,7 @@
 
 /obj/item/food/pie/make_processable()
 	if (slice_type)
-		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, yield, table_required = TRUE, screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, yield, table_required = TRUE, screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/pieslice
 	name = "pie slice"
@@ -81,7 +81,7 @@
 	if(can_splat_on)
 		victim.adjust_eye_blur(2 SECONDS)
 	victim.visible_message(span_warning("[victim] is creamed by [src]!"), span_userdanger("You've been creamed by [src]!"))
-	playsound(victim, SFX_DESECRATION, 50, TRUE)
+	playsound(victim, /datum/sound_effect/desecration, 50, TRUE)
 
 /obj/item/food/pie/cream/nostun
 	stunning = FALSE
@@ -503,7 +503,7 @@
 	icon_state = "bacid_pie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 18,
-		/datum/reagent/consumable/liquidelectricity/enriched = 18
+		/datum/reagent/consumable/liquidelectricity = 18
 	)
 	tastes = list("battery acid" = 2, "electricity" = 2, "a cyber world" = 2)
 	foodtypes = GRAIN|DAIRY|TOXIC
@@ -518,7 +518,7 @@
 	icon_state = "bacid_pie_slice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4.5,
-		/datum/reagent/consumable/liquidelectricity/enriched = 4.5
+		/datum/reagent/consumable/liquidelectricity = 4.5
 	)
 	tastes = list("battery acid" = 1, "electricity" = 1, "a cyber world" = 1)
 	foodtypes = TOXIC

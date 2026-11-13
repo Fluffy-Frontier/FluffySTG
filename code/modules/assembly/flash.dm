@@ -5,6 +5,7 @@
 	desc = "A powerful and versatile flashbulb device, with applications ranging from disorienting attackers to acting as visual receptors in robot production."
 	icon = 'icons/obj/devices/flash.dmi'
 	icon_state = "flash"
+	worn_icon_state = "flash"
 	inhand_icon_state = "flashtool"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
@@ -186,7 +187,7 @@
 
 	if(flash_result != FLASH_COMPLETED) //If the behavior was overwritten, we just skip the flashy stunny part and go with the override behavior instead
 		if(issilicon(flashed))
-			if(flashed.is_blind())
+			if(!istype(flashed, /mob/living/silicon/robot/model/syndicate) || flashed.is_blind())
 				var/flash_duration = rand(8,12) SECONDS
 				flashed.Paralyze(flash_duration)
 				flashed.set_temp_blindness_if_lower(flash_duration)
@@ -317,11 +318,11 @@
 	if (.)
 		new /obj/effect/temp_visual/borgflash(get_turf(src))
 
-/obj/item/assembly/flash/cyborg/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
-	return
+/obj/item/assembly/flash/cyborg/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	return ITEM_INTERACT_BLOCKING
 
 /obj/item/assembly/flash/cyborg/screwdriver_act(mob/living/user, obj/item/I)
-	return
+	return ITEM_INTERACT_BLOCKING
 
 /obj/item/assembly/flash/memorizer
 	name = "memorizer"
@@ -332,14 +333,31 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 
 /obj/item/assembly/flash/handheld //this is now the regular pocket flashes
+	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 7.5, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 7.5)
 
 /obj/item/assembly/flash/armimplant
 	name = "photon projector"
 	desc = "A high-powered photon projector implant normally used for lighting purposes, but also doubles as a flashbulb weapon. Self-repair protocols fix the flashbulb if it ever burns out."
+	light_range = 7
+	light_on = FALSE
 	var/flashcd = 20
 	var/overheat = 0
 	//Wearef to our arm
 	var/datum/weakref/arm
+
+/obj/item/assembly/flash/armimplant/Initialize(mapload)
+	. = ..()
+	if(!istype(loc, /obj/item/organ/cyberimp/arm/toolkit))
+		return INITIALIZE_HINT_QDEL
+	arm = WEAKREF(loc)
+
+/obj/item/assembly/flash/armimplant/equipped(mob/user, slot, initial = FALSE)
+	. = ..()
+	set_light_on(TRUE)
+
+/obj/item/assembly/flash/armimplant/dropped(mob/user, silent)
+	. = ..()
+	set_light_on(FALSE)
 
 /obj/item/assembly/flash/armimplant/burn_out()
 	var/obj/item/organ/cyberimp/arm/toolkit/flash/real_arm = arm.resolve()

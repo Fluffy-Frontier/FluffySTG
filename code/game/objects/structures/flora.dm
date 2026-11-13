@@ -49,47 +49,50 @@
 	/// Flags for the flora to determine what kind of sound to play when it gets hit
 	var/flora_flags = NONE
 
-/obj/structure/flora/attackby(obj/item/used_item, mob/living/user, list/modifiers, list/attack_modifiers)
+/obj/structure/flora/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(user.combat_mode)
-		return ..()
+		return NONE
+
 	if(flags_1 & HOLOGRAM_1)
 		balloon_alert(user, "it goes right through!")
-		return ..()
-	if(can_uproot && used_item.tool_behaviour == TOOL_SHOVEL)
+		return ITEM_INTERACT_BLOCKING
+
+	if(can_uproot && tool.tool_behaviour == TOOL_SHOVEL)
 		if(uprooted)
 			user.visible_message(span_notice("[user] starts to replant [src]..."),
-				span_notice("You start to replant [src]..."))
+								span_notice("You start to replant [src]..."))
 		else
 			user.visible_message(span_notice("[user] starts to uproot [src]..."),
-				span_notice("You start to uproot [src]..."))
-		used_item.play_tool_sound(src, 50)
+								span_notice("You start to uproot [src]..."))
+		tool.play_tool_sound(src, 50)
 		if(!do_after(user, harvest_time, src))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(uprooted)
 			user.visible_message(span_notice("[user] replants [src]."),
-				span_notice("You replant [src]."))
+								span_notice("You replant [src]."))
 			replant(user)
 		else
 			user.visible_message(span_notice("[user] uproots [src]."),
-				span_notice("You uproot [src]."))
+								span_notice("You uproot [src]."))
 			uproot(user)
-		used_item.play_tool_sound(src, 50)
-		return
+		tool.play_tool_sound(src, 50)
+		return ITEM_INTERACT_SUCCESS
 
-	if(!can_harvest(user, used_item))
-		return ..()
+	if(!can_harvest(user, tool))
+		return NONE
 
 	user.visible_message(span_notice("[user] starts to [harvest_verb] [src]..."),
-		span_notice("You start to [harvest_verb] [src] with [used_item]..."))
-	play_attack_sound(used_item.force)
-	if(!do_after(user, harvest_time * used_item.toolspeed, src))
-		return
-	visible_message(span_notice("[user] [harvest_verb][harvest_verb_suffix] [src]."),
-		ignored_mobs = list(user))
-	play_attack_sound(used_item.force)
+						span_notice("You start to [harvest_verb] [src] with [tool]..."))
+	play_attack_sound(tool.force)
+	if(!do_after(user, harvest_time * tool.toolspeed, src))
+		return ITEM_INTERACT_BLOCKING
 
+	visible_message(span_notice("[user] [harvest_verb][harvest_verb_suffix] [src]."),
+					span_notice("You [harvest_verb] [src]."))
+	play_attack_sound(tool.force)
 	if(harvest(user))
 		after_harvest(user)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/structure/flora/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -119,13 +122,13 @@
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	var/use_default_sound = TRUE //Because I don't wanna do unnecessary bitflag checks in a single if statement, while also allowing for multiple sounds to be played
 	if(flora_flags & FLORA_HERBAL)
-		playsound(src, SFX_CRUNCHY_BUSH_WHACK, 50, vary = FALSE)
+		playsound(src, /datum/sound_effect/crunchy_bush_whack, 50, vary = FALSE)
 		use_default_sound = FALSE
 	if(flora_flags & FLORA_WOODEN)
-		playsound(src, SFX_TREE_CHOP, 50, vary = FALSE)
+		playsound(src, /datum/sound_effect/tree_chop, 50, vary = FALSE)
 		use_default_sound = FALSE
 	if(flora_flags & FLORA_STONE)
-		playsound(src, SFX_ROCK_TAP, 50, vary = FALSE)
+		playsound(src, /datum/sound_effect/rock_tap, 50, vary = FALSE)
 		use_default_sound = FALSE
 	if(use_default_sound)
 		return ..()
@@ -287,6 +290,9 @@
  *********/
 //Can *you* speak their language?
 
+/// The amount of extra range (in tiles) given to trees upon falling.
+#define TREE_FALL_EXTRARANGE 5
+
 /obj/structure/flora/tree
 	name = "tree"
 	desc = "A large tree."
@@ -321,13 +327,15 @@
 /obj/structure/flora/tree/harvest(mob/living/user, product_amount_multiplier)
 	. = ..()
 	var/turf/my_turf = get_turf(src)
-	playsound(my_turf, 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
+	if(has_gravity(my_turf)) // If a tree falls in the forest, it makes a sound unless it doesn't have gravity.
+		playsound(my_turf, 'sound/effects/meteorimpact.ogg', 100 , FALSE, extrarange = TREE_FALL_EXTRARANGE)
 	var/obj/structure/flora/tree/stump/new_stump = new stump_type(my_turf) // NOVA EDIT CHANGE - Variable tree stumps - ORIGINAL: var/obj/structure/flora/tree/stump/new_stump = new(my_turf)
 	new_stump.name = "[name] stump"
 
 /obj/structure/flora/tree/uproot(mob/living/user)
 	..()
-	playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
+	if(has_gravity(get_turf(src)))
+		playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, extrarange = TREE_FALL_EXTRARANGE)
 
 /obj/structure/flora/tree/stump
 	name = "stump"
@@ -540,6 +548,8 @@
 	. = ..()
 	icon_state = "palm[rand(1,2)]"
 	update_appearance()
+
+#undef TREE_FALL_EXTRARANGE
 
 /*********
  * Grass *

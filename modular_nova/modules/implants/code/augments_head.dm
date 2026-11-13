@@ -21,6 +21,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	aug_icon = 'modular_nova/modules/implants/icons/implants_onmob.dmi'
 	aug_overlay = "sandy"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 3, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 2, /datum/material/gold = SHEET_MATERIAL_AMOUNT * 2)
 
 /obj/item/organ/cyberimp/sensory_enhancer/proc/vomit_blood()
 	owner.spray_blood(owner.dir, 2)
@@ -80,7 +81,7 @@
 
 /obj/item/qani_laaca_telegraph/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/can_shatter, /obj/effect/decal/cleanable/glass, 1, SFX_SHATTER)
+	AddElement(/datum/element/can_shatter, /obj/effect/decal/cleanable/glass, 1, /datum/sound_effect/shatter)
 	transform = transform.Scale(0.75, 0.75)
 
 /datum/action/cooldown/sensory_enhancer/overcharge
@@ -120,6 +121,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	aug_icon = 'modular_nova/modules/implants/icons/implants_onmob.dmi'
 	aug_overlay = "hackerman"
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 5, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 3, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 2, /datum/material/gold = SHEET_MATERIAL_AMOUNT * 2)
 
 /datum/action/cooldown/spell/pointed/hackerman_deck
 	name = "Activate Ranged Hacking"

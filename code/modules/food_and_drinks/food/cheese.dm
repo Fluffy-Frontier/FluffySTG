@@ -59,7 +59,7 @@
 	AddComponent(/datum/component/food_storage)
 
 /obj/item/food/cheese/wheel/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/cheese/wedge, 5, 3 SECONDS, table_required = TRUE, screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/cheese/wedge, 5, 3 SECONDS, table_required = TRUE, screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/cheese/wheel/make_bakeable()
 	AddComponent(/datum/component/bakeable, /obj/item/food/baked_cheese, rand(20 SECONDS, 25 SECONDS), TRUE, TRUE)
@@ -118,8 +118,7 @@
 	rat_heal = 35
 	crafting_complexity = FOOD_COMPLEXITY_2
 
-/obj/item/food/cheese/cheese_curds/Initialize(mapload)
-	. = ..()
+/obj/item/food/cheese/cheese_curds/make_dryable()
 	AddElement(/datum/element/dryable,  /obj/item/food/cheese/firm_cheese)
 
 /obj/item/food/cheese/firm_cheese
@@ -132,7 +131,7 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cheese/firm_cheese/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/cheese/firm_cheese_slice, 3, 3 SECONDS, screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/cheese/firm_cheese_slice, 3, 3 SECONDS, screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/cheese/firm_cheese_slice
 	name = "firm cheese slice"

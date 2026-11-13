@@ -80,7 +80,7 @@
 	flavour_text = "Ch'yea. You came here, like, on spring break, hopin' to pick up some bangin' hot chicks, y'knaw?"
 	spawner_job_path = /datum/job/beach_bum
 	outfit = /datum/outfit/beachbum
-	allow_custom_character = GHOSTROLE_ALLOW_OTHER
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 
 /obj/effect/mob_spawn/ghost_role/human/beach/lifeguard
 	you_are_text = "You're a spunky lifeguard!"
@@ -89,7 +89,7 @@
 	outfit = /datum/outfit/beachbum/lifeguard
 	allow_custom_character = NONE
 
-/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard/special(mob/living/carbon/human/lifeguard, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard/special(mob/living/carbon/human/lifeguard, mob/mob_possessor, apply_prefs)
 	. = ..()
 	lifeguard.gender = FEMALE
 	lifeguard.update_body()
@@ -198,8 +198,7 @@
 /obj/structure/ash_walker_eggshell/Destroy()
 	if(!egg)
 		return ..()
-	var/mob/living/carbon/human/yolk = new(get_turf(src))
-	yolk.set_species(/datum/species/lizard/ashwalker)
+	var/mob/living/carbon/human/yolk = new(get_turf(src), /datum/species/lizard/ashwalker)
 	yolk.fully_replace_character_name(null, yolk.generate_random_mob_name(TRUE))
 	yolk.underwear = "Nude"
 	yolk.equipOutfit(/datum/outfit/ashwalker)//this is an authentic mess we're making
@@ -239,7 +238,7 @@
 		to_chat(user, span_warning("You have exhausted your usefulness to the Necropolis."))
 	return FALSE
 
-/obj/effect/mob_spawn/ghost_role/human/ash_walker/special(mob/living/carbon/human/spawned_human, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/ash_walker/special(mob/living/carbon/human/spawned_human, mob/mob_possessor, apply_prefs)
 	. = ..()
 	spawned_human.fully_replace_character_name(null, spawned_human.generate_random_mob_name(TRUE))
 	to_chat(spawned_human, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Invade the strange structure of the outsiders if you must. Do not cause unnecessary destruction, as littering the wastes with ugly wreckage is certain to not gain you favor. Glory to the Necropolis!</b>")
@@ -292,7 +291,7 @@
 	deletes_on_zero_uses_left = FALSE
 	allow_custom_character = ALL
 
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/special(mob/living/new_spawn, mob/mob_possessor)
+/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/special(mob/living/new_spawn, mob/mob_possessor, apply_prefs)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 

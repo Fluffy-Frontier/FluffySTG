@@ -119,8 +119,6 @@
 /datum/movespeed_modifier/tgmc_alien_sleeping
 	multiplicative_slowdown = 8
 
-/mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
-	return get_armor_rating(type)
 
 /datum/armor/tgmc_xeno
 	acid = 100

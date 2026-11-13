@@ -18,8 +18,11 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	limb_integrity = 0 // disabled for most exo-suits
+	bodyshapes_with_variations = BODYSHAPE_CERULEAN
+	/// what color will be given to the flippers of fem physique ceruleans? FLIPPERS autogenerates
+	var/cerulean_flipper_palette = NO_FLIPPERS
 
-/obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE, file2use = null, mutant_styles = NONE) // NOVA EDIT CHANGE - TAURS AND TESHIS - ORIGINAL: /obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
+/obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, bodyshape = NONE)
 	. = ..()
 	if(isinhands)
 		return
@@ -27,7 +30,7 @@
 	if(damaged_clothes)
 		//. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]") // NOVA EDIT REMOVAL
 		// NOVA EDIT ADDITION BEGIN
-		var/damagefile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'modular_nova/master_files/icons/mob/64x32_item_damage.dmi' : 'icons/effects/item_damage.dmi'
+		var/damagefile2use = (bodyshape & BODYSHAPE_TAUR) ? 'modular_nova/master_files/icons/mob/64x32_item_damage.dmi' : 'icons/effects/item_damage.dmi'
 		. += mutable_appearance(damagefile2use, "damaged[blood_overlay_type]")
 		//NOVA EDIT ADDITION END
 
@@ -35,18 +38,17 @@
 	if(!ishuman(wearer) || !wearer.w_uniform)
 		return
 	var/obj/item/clothing/under/undershirt = wearer.w_uniform
-	if(!istype(undershirt) || !LAZYLEN(undershirt.attached_accessories))
+	if(!istype(undershirt))
 		return
+	for(var/obj/item/clothing/accessory/accessory as anything in undershirt.attached_accessories)
+		if (accessory.above_suit)
+			. += accessory.generate_accessory_overlay(undershirt)
 
-	var/obj/item/clothing/accessory/displayed = undershirt.attached_accessories[1]
-	if(displayed.above_suit && undershirt.accessory_overlay)
-		. += undershirt.modify_accessory_overlay() // NOVA EDIT CHANGE - ORIGINAL: . += undershirt.accessory_overlay
-
-/obj/item/clothing/suit/separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file, mutant_styles) // NOVA EDIT CHANGE - ORIGINAL: separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file)
+/obj/item/clothing/suit/separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file, bodyshape = NONE)
 	. = ..()
 	if (isinhands)
 		return
-	var/blood_overlay = get_blood_overlay(blood_overlay_type, mutant_styles) // NOVA EDIT CHANGE - ORIGINAL: var/blood_overlay = get_blood_overlay(blood_overlay_type)
+	var/blood_overlay = get_blood_overlay(blood_overlay_type, bodyshape)
 	if (blood_overlay)
 		. += blood_overlay
 
@@ -57,5 +59,5 @@
 		M.update_worn_oversuit()
 
 /obj/item/clothing/suit/generate_digitigrade_icons(icon/base_icon, greyscale_colors)
-	var/icon/legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "oversuit_worn")
-	return replace_icon_legs(base_icon, legs)
+	var/icon/new_legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "oversuit_worn")
+	return apply_icon_mask(base_icon, LEGS_MASK, new_legs)

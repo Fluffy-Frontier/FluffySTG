@@ -17,6 +17,7 @@
 /datum/mod_theme/syndicate/deepspace
 	name = "deepspace"
 	default_skin = "deepspace"
+	armor_type = /datum/armor/mod_theme_security
 	ui_theme = "syndicate"
 	variants = list(
 		"deepspace" = list(
@@ -42,14 +43,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -77,14 +76,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -112,14 +109,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -147,14 +142,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -164,6 +157,7 @@
 /datum/mod_theme/elite/admiral
 	name = "admiral"
 	default_skin = "admiral"
+	armor_type = /datum/armor/mod_theme_safeguard
 	variants = list(
 		"admiral" = list(
 			MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/obj/clothing/modsuit/mod_clothing.dmi',
@@ -187,14 +181,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -220,14 +212,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -259,14 +249,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -294,14 +282,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -331,14 +317,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -364,14 +348,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -443,14 +425,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -458,8 +438,8 @@
 	)
 
 /datum/mod_theme/voskhod
-	name = "refitted voskhod"
-	desc = "A Heliostatic Coalition standard-issue heavy duty suit, designed for fortified positions operation and humanitarian aid."
+	name = "voskhod"
+	desc = "A Heliostatic Coalition standard-issue armored suit, designed for active mobile combat."
 	extended_desc = "A more expensive, yet more versatile replacement of the dated Voskhod powered armor, designed by the Magellanic Economic Corporate Union researchers \
 		in collaboration with and for the needs of the Heliostatic Coalition. An efficient implementation of mixed exoskeletons in between and underneath its armor plating \
 		allows for an unprecedented level of protection through an overly abundant use of durathread-backed plasteel plating; and the remnant materials of its predecessor allow for \
@@ -470,8 +450,8 @@
 		and a niche amongst the rimworld population."
 	default_skin = "voskhod"
 	armor_type = /datum/armor/mod_theme_voskhod
-	complexity_max = DEFAULT_MAX_COMPLEXITY //Five of which is occupied by the in-builts, thus it's closer to 10
-	charge_drain = DEFAULT_CHARGE_DRAIN * 1.5
+	slowdown_deployed = 0.45 //Faintly faster than Security
+	charge_drain = DEFAULT_CHARGE_DRAIN * 1.25
 	inbuilt_modules = list(
 		/obj/item/mod/module/status_readout/operational/voskhod,
 		/obj/item/mod/module/auto_doc,
@@ -511,14 +491,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -528,10 +506,10 @@
 /datum/armor/mod_theme_voskhod
 	melee = 30
 	bullet = 40
-	laser = 20
-	energy = 30
-	bomb = 30
-	bio = 30
+	laser = 35
+	energy = 50
+	bomb = 40
+	bio = 100
 	fire = 80
 	acid = 85
 	wound = 20
@@ -585,14 +563,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -666,14 +642,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -701,14 +675,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -736,14 +708,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -775,14 +745,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -810,14 +778,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -845,14 +811,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),
@@ -947,14 +911,12 @@
 			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
 			),
 			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
 				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
 				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
 			),

@@ -125,17 +125,15 @@
 	/// Cyclelinking for airlocks that aren't on the same x or y coord as the target.
 	var/closeOtherId
 	var/obj/machinery/door/airlock/closeOther
-	var/list/obj/machinery/door/airlock/close_others = list()
+	var/list/obj/machinery/door/airlock/close_others
 	var/obj/item/electronics/airlock/electronics
 	COOLDOWN_DECLARE(shockCooldown)
 	/// Any papers pinned to the airlock
 	var/obj/item/note
 	/// The seal on the airlock
 	var/obj/item/seal
-	var/abandoned = FALSE
 	/// Controls if the door closes quickly or not. FALSE = the door autocloses in 1.5 seconds, TRUE = 8 seconds - see autoclose_in()
 	var/normalspeed = TRUE
-	var/cutAiWire = FALSE
 	var/autoname = FALSE
 	var/doorOpen = 'sound/machines/airlock/airlock.ogg'
 	var/doorClose = 'sound/machines/airlock/airlockclose.ogg'
@@ -229,10 +227,8 @@
 /obj/machinery/door/airlock/proc/update_other_id()
 	for(var/obj/machinery/door/airlock/Airlock as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/door/airlock))
 		if(Airlock.closeOtherId == closeOtherId && Airlock != src)
-			if(!(Airlock in close_others))
-				close_others += Airlock
-			if(!(src in Airlock.close_others))
-				Airlock.close_others += src
+			LAZYOR(close_others, Airlock)
+			LAZYOR(Airlock.close_others, src)
 
 /obj/machinery/door/airlock/proc/cyclelinkairlock()
 	if (cyclelinkedairlock)
@@ -322,8 +318,8 @@
 	if(close_others) //remove this airlock from the list of every linked airlock
 		closeOtherId = null
 		for(var/obj/machinery/door/airlock/otherlock as anything in close_others)
-			otherlock.close_others -= src
-		close_others.Cut()
+			LAZYREMOVE(otherlock.close_others, src)
+		LAZYNULL(close_others)
 	QDEL_NULL(note)
 	QDEL_NULL(seal)
 	var/datum/atom_hud/data/diagnostic/diag_hud = GLOB.huds[DATA_HUD_DIAGNOSTIC]
@@ -574,12 +570,18 @@
 	else
 		icon_state = "[base_icon_state]closed"
 
-/* NOVA EDIT REMOVAL - AESTHETICS - OVERWRITTEN IN modular_nova/modules/aesthetics/airlock/code/airlock.dm
 /obj/machinery/door/airlock/update_overlays()
 	. = ..()
+	// NOVA EDIT ADDITION START - AESTHETICS - guard against being deleted mid-update, or having no overlays file at all
+	if(QDELETED(src))
+		return
+	if(isnull(overlays_file))
+		return
+	// NOVA EDIT ADDITION END
 
 	var/frame_state
-	var/light_state
+	var/light_state = AIRLOCK_LIGHT_POWERON // NOVA EDIT CHANGE - AESTHETICS - ORIGINAL: var/light_state
+	var/pre_light_color // NOVA EDIT ADDITION - AESTHETICS - drives the real light source below, not just the icon overlay
 	if(machine_stat & MAINT) // in the process of being emagged
 		frame_state = AIRLOCK_FRAME_CLOSED
 	else switch(airlock_state)
@@ -587,30 +589,81 @@
 			frame_state = AIRLOCK_FRAME_CLOSED
 			if(locked)
 				light_state = AIRLOCK_LIGHT_BOLTS
+				pre_light_color = AIRLOCK_BOLTS_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
 			else if(emergency)
 				light_state = AIRLOCK_LIGHT_EMERGENCY
+				pre_light_color = AIRLOCK_EMERGENCY_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
 			else if(has_active_reta_access())
 				light_state = AIRLOCK_LIGHT_RETA
+				pre_light_color = AIRLOCK_EMERGENCY_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
+			// NOVA EDIT ADDITION START - AESTHETICS - fire alarm / engineering override light states (see modular_nova/modules/airlock_override)
+			else if(fire_active)
+				light_state = AIRLOCK_LIGHT_FIRE
+				pre_light_color = AIRLOCK_FIRE_LIGHT_COLOR
+			else if(engineering_override)
+				light_state = AIRLOCK_LIGHT_ENGINEERING
+				pre_light_color = AIRLOCK_ENGINEERING_LIGHT_COLOR
+			else
+				pre_light_color = AIRLOCK_POWERON_LIGHT_COLOR
+			// NOVA EDIT ADDITION END
 		if(AIRLOCK_DENY)
 			frame_state = AIRLOCK_FRAME_CLOSED
 			light_state = AIRLOCK_LIGHT_DENIED
+			pre_light_color = AIRLOCK_DENY_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
 		if(AIRLOCK_CLOSING)
 			frame_state = AIRLOCK_FRAME_CLOSING
 			light_state = AIRLOCK_LIGHT_CLOSING
+			pre_light_color = AIRLOCK_ACCESS_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
 		if(AIRLOCK_OPEN)
 			frame_state = AIRLOCK_FRAME_OPEN
+			// NOVA EDIT ADDITION START - AESTHETICS - tg doesn't show a status light while the door is open, we do
+			if(locked)
+				light_state = AIRLOCK_LIGHT_BOLTS
+				pre_light_color = AIRLOCK_BOLTS_LIGHT_COLOR
+			else if(emergency)
+				light_state = AIRLOCK_LIGHT_EMERGENCY
+				pre_light_color = AIRLOCK_EMERGENCY_LIGHT_COLOR
+			else if (has_active_reta_access())
+				light_state = AIRLOCK_LIGHT_RETA
+				pre_light_color = AIRLOCK_EMERGENCY_LIGHT_COLOR
+			else if(fire_active)
+				light_state = AIRLOCK_LIGHT_FIRE
+				pre_light_color = AIRLOCK_FIRE_LIGHT_COLOR
+			else if(engineering_override)
+				light_state = AIRLOCK_LIGHT_ENGINEERING
+				pre_light_color = AIRLOCK_ENGINEERING_LIGHT_COLOR
+			else
+				pre_light_color = AIRLOCK_POWERON_LIGHT_COLOR
+			light_state += "_open"
+			// NOVA EDIT ADDITION END
 		if(AIRLOCK_OPENING)
 			frame_state = AIRLOCK_FRAME_OPENING
 			light_state = AIRLOCK_LIGHT_OPENING
+			pre_light_color = AIRLOCK_ACCESS_LIGHT_COLOR // NOVA EDIT ADDITION - AESTHETICS
 
 	. += get_airlock_overlay(frame_state, icon, src, em_block = TRUE)
 	if(airlock_material)
 		. += get_airlock_overlay("[airlock_material]_[frame_state]", overlays_file, src, em_block = TRUE)
 	else
-		. += get_airlock_overlay("fill_[frame_state]", icon, src, em_block = TRUE)
+		. += get_airlock_overlay("fill_[frame_state + fill_state_suffix]", icon, src, em_block = TRUE) // NOVA EDIT CHANGE - AESTHETICS - ORIGINAL: . += get_airlock_overlay("fill_[frame_state]", icon, src, em_block = TRUE)
 
-	if(feedback && hasPower() && light_state)
+	if(feedback && hasPower() && has_environment_lights) // NOVA EDIT CHANGE - AESTHETICS - ORIGINAL: if(feedback && hasPower() && light_state)
 		. += get_airlock_overlay("lights_[light_state]", overlays_file, src, em_block = FALSE)
+		// NOVA EDIT ADDITION START - AESTHETICS - emissive glow, plus an actual light source to match
+		. += emissive_appearance(overlays_file, "lights_[light_state]", src, alpha = src.alpha)
+
+		if(multi_tile && filler)
+			filler.set_light(l_range = AIRLOCK_LIGHT_RANGE, l_power = AIRLOCK_LIGHT_POWER, l_color = pre_light_color, l_on = TRUE)
+
+		set_light(l_range = AIRLOCK_LIGHT_RANGE, l_power = AIRLOCK_LIGHT_POWER, l_color = pre_light_color, l_on = TRUE)
+	else
+		set_light(l_on = FALSE)
+		// NOVA EDIT ADDITION END
+
+	// NOVA EDIT ADDITION START - AESTHETICS - greyscale accent color overlay
+	if(greyscale_accent_color)
+		. += get_airlock_overlay("[frame_state]_accent", overlays_file, src, em_block = TRUE, state_color = greyscale_accent_color)
+	// NOVA EDIT ADDITION END
 
 	if(panel_open)
 		. += get_airlock_overlay("panel_[frame_state][security_level ? "_protected" : null]", overlays_file, src, em_block = TRUE)
@@ -657,7 +710,6 @@
 					floorlight.pixel_w = -32
 					floorlight.pixel_z = 0
 			. += floorlight
-*/
 
 /obj/machinery/door/airlock/run_animation(animation, force_type = DEFAULT_DOOR_CHECKS)
 	if(animation == DOOR_DENY_ANIMATION)
@@ -669,7 +721,7 @@
 
 /obj/machinery/door/airlock/animation_effects(animation, force_type = DEFAULT_DOOR_CHECKS)
 	if(force_type == BYPASS_DOOR_CHECKS)
-		playsound(src, forcedOpen, 30, TRUE) //NOVA EDIT CHANGE - AESTHETICS - ORIGINAL: playsound(src, soundin = 'sound/machines/airlock/airlockforced.ogg', vol = 30, vary = TRUE)
+		playsound(src, forced_open_sound, 30, TRUE) //NOVA EDIT CHANGE - AESTHETICS - ORIGINAL: playsound(src, soundin = 'sound/machines/airlock/airlockforced.ogg', vol = 30, vary = TRUE)
 		return
 
 	switch(animation)
@@ -680,8 +732,9 @@
 			use_energy(50 JOULES)
 			playsound(src, soundin = doorClose, vol = 30, vary = TRUE)
 		if(DOOR_DENY_ANIMATION)
-			if(feedback)
+			if(feedback && COOLDOWN_FINISHED(src, denied_sound_cd)) // NOVA EDIT CHANGE - ORIGINAL: if(feedback)
 				playsound(src, soundin = doorDeni, vol = 50, vary = FALSE, extrarange = 3)
+				COOLDOWN_START(src, denied_sound_cd, 0.49 SECONDS) // NOVA EDIT ADDITION - Ensures the door buzz sound can't be overlapped.
 			addtimer(CALLBACK(src, PROC_REF(handle_deny_end)), AIRLOCK_DENY_ANIMATION_TIME)
 
 /obj/machinery/door/airlock/proc/handle_deny_end()
@@ -803,7 +856,7 @@
 
 			return CONTEXTUAL_SCREENTIP_SET
 		if (TOOL_WELDER)
-			context[SCREENTIP_CONTEXT_RMB] = "Weld shut"
+			context[SCREENTIP_CONTEXT_RMB] = welded ? "Unweld" : "Weld shut"
 
 			if (panel_open)
 				switch (security_level)
@@ -955,18 +1008,17 @@
 
 /obj/machinery/door/airlock/wirecutter_act(mob/living/user, obj/item/tool)
 	if(panel_open && security_level == AIRLOCK_SECURITY_PLASTEEL)
-		. = ITEM_INTERACT_SUCCESS  // everything after this shouldn't result in attackby
 		if(hasPower() && shock(user, 60)) // Protective grille of wiring is electrified
-			return .
+			return ITEM_INTERACT_BLOCKING
 		to_chat(user, span_notice("You start cutting through the outer grille."))
 		if(!tool.use_tool(src, user, 10, volume=100))
-			return .
+			return ITEM_INTERACT_BLOCKING
 		if(!panel_open)  // double check it wasn't closed while we were trying to snip
-			return .
+			return ITEM_INTERACT_BLOCKING
 		user.visible_message(span_notice("[user] cut through [src]'s outer grille."),
 							span_notice("You cut through [src]'s outer grille."))
 		security_level = AIRLOCK_SECURITY_PLASTEEL_O
-		return .
+		return ITEM_INTERACT_SUCCESS
 	if(note)
 		if(IsReachableBy(user))
 			user.visible_message(span_notice("[user] cuts down [note] from [src]."), span_notice("You remove [note] from [src]."))
@@ -1088,85 +1140,98 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/door/airlock/proc/try_reinforce(mob/user, obj/item/stack/sheet/material, amt_required, new_security_level)
+	if(!HAS_SILICON_ACCESS(user) && isElectrified() && shock(user, 75))
+		return ITEM_INTERACT_BLOCKING
 	if(material.get_amount() < amt_required)
 		to_chat(user, span_warning("You need at least [amt_required] sheets of [material] to reinforce [src]."))
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	to_chat(user, span_notice("You start reinforcing [src]."))
 	if(!do_after(user, 2 SECONDS, src))
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	if(!panel_open || !material.use(amt_required))
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	user.visible_message(span_notice("[user] reinforces [src] with [material]."),
 						span_notice("You reinforce [src] with [material]."))
 	security_level = new_security_level
 	update_appearance()
-	return TRUE
+	return ITEM_INTERACT_SUCCESS
 
-/obj/machinery/door/airlock/attackby(obj/item/C, mob/user, list/modifiers, list/attack_modifiers)
-	if(!HAS_SILICON_ACCESS(user))
-		if(isElectrified() && (C.obj_flags & CONDUCTS_ELECTRICITY) && shock(user, 75))
-			return
+/obj/machinery/door/airlock/attacked_by(obj/item/attacking_item, mob/living/user, list/modifiers, list/attack_modifiers)
+	if(!HAS_SILICON_ACCESS(user) && isElectrified() && (attacking_item.obj_flags & CONDUCTS_ELECTRICITY) && shock(user, 75))
+		return ATTACK_FAILED
+	return ..()
+
+/obj/machinery/door/airlock/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	add_fingerprint(user)
 
-	if(is_wire_tool(C) && panel_open)
+	if(is_wire_tool(tool) && panel_open)
 		attempt_wire_interaction(user)
-		return
-	else if(panel_open && security_level == AIRLOCK_SECURITY_NONE && istype(C, /obj/item/stack/sheet))
-		if(istype(C, /obj/item/stack/sheet/iron))
-			return try_reinforce(user, C, 2, AIRLOCK_SECURITY_IRON)
+		return ITEM_INTERACT_SUCCESS
 
-		else if(istype(C, /obj/item/stack/sheet/plasteel))
-			if(!try_reinforce(user, C, 2, AIRLOCK_SECURITY_PLASTEEL))
-				return FALSE
+	if(panel_open && security_level == AIRLOCK_SECURITY_NONE && istype(tool, /obj/item/stack/sheet))
+		if(istype(tool, /obj/item/stack/sheet/iron))
+			return try_reinforce(user, tool, 2, AIRLOCK_SECURITY_IRON)
+
+		if(istype(tool, /obj/item/stack/sheet/plasteel))
+			if(try_reinforce(user, tool, 2, AIRLOCK_SECURITY_PLASTEEL) & ITEM_INTERACT_BLOCKING)
+				return ITEM_INTERACT_BLOCKING
 			modify_max_integrity(max_integrity * AIRLOCK_INTEGRITY_MULTIPLIER)
 			damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_R
 			update_appearance()
-			return TRUE
+			return ITEM_INTERACT_SUCCESS
 
-	else if(istype(C, /obj/item/pai_cable))
-		var/obj/item/pai_cable/cable = C
+		return ..()
+
+	if(istype(tool, /obj/item/pai_cable))
+		var/obj/item/pai_cable/cable = tool
 		cable.plugin(src, user)
-	else if(istype(C, /obj/item/airlock_painter))
-		change_paintjob(C, user)
-	else if(istype(C, /obj/item/door_seal)) //adding the seal
-		var/obj/item/door_seal/airlockseal = C
+		return ITEM_INTERACT_SUCCESS
+
+	if(istype(tool, /obj/item/airlock_painter))
+		change_paintjob(tool, user)
+		return ITEM_INTERACT_SUCCESS
+
+	if(istype(tool, /obj/item/door_seal)) //adding the seal
+		var/obj/item/door_seal/airlockseal = tool
 		if(!density)
 			to_chat(user, span_warning("[src] must be closed before you can seal it!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(seal)
 			to_chat(user, span_warning("[src] has already been sealed!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		user.visible_message(span_notice("[user] begins sealing [src]."), span_notice("You begin sealing [src]."))
 		playsound(src, 'sound/items/tools/jaws_pry.ogg', 30, TRUE)
 		if(!do_after(user, airlockseal.seal_time, target = src))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(!density)
 			to_chat(user, span_warning("[src] must be closed before you can seal it!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(seal)
 			to_chat(user, span_warning("[src] has already been sealed!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(airlockseal, src))
 			to_chat(user, span_warning("For some reason, you can't attach [airlockseal]!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		playsound(src, 'sound/machines/airlock/airlockforced.ogg', 30, TRUE)
 		user.visible_message(span_notice("[user] finishes sealing [src]."), span_notice("You finish sealing [src]."))
 		seal = airlockseal
 		modify_max_integrity(max_integrity * AIRLOCK_SEAL_MULTIPLIER)
 		update_appearance()
+		return ITEM_INTERACT_SUCCESS
 
-	else if(istype(C, /obj/item/paper) || istype(C, /obj/item/photo))
+	if(istype(tool, /obj/item/paper) || istype(tool, /obj/item/photo))
 		if(note)
 			to_chat(user, span_warning("There's already something pinned to this airlock! Use wirecutters to remove it."))
-			return
-		if(!user.transferItemToLoc(C, src))
-			to_chat(user, span_warning("For some reason, you can't attach [C]!"))
-			return
-		user.visible_message(span_notice("[user] pins [C] to [src]."), span_notice("You pin [C] to [src]."))
-		note = C
+			return ITEM_INTERACT_BLOCKING
+		if(!user.transferItemToLoc(tool, src))
+			to_chat(user, span_warning("For some reason, you can't attach [tool]!"))
+			return ITEM_INTERACT_BLOCKING
+		user.visible_message(span_notice("[user] pins [tool] to [src]."), span_notice("You pin [tool] to [src]."))
+		note = tool
 		update_appearance()
-	else
-		return ..()
+		return ITEM_INTERACT_SUCCESS
+
+	return ..()
 
 
 /obj/machinery/door/airlock/try_to_weld(obj/item/weldingtool/W, mob/living/user)
@@ -1288,7 +1353,7 @@
 			to_chat(user, span_warning("You need to be wielding [tool] to do that!"))
 			return
 
-		INVOKE_ASYNC(src, density ? PROC_REF(open) : PROC_REF(close), BYPASS_DOOR_CHECKS)
+		INVOKE_ASYNC(src, density ? PROC_REF(open) : PROC_REF(close), BYPASS_DOOR_CHECKS, user)
 		return
 
 	if(!forced)
@@ -1323,12 +1388,12 @@
 	if(check_electrified && shock(user, 100))
 		return
 
-	open(BYPASS_DOOR_CHECKS)
+	open(BYPASS_DOOR_CHECKS, user)
 	take_damage(AIRLOCK_PRY_DAMAGE, BRUTE, 0, 0) // Enough to sometimes spark
-	if(density && !open(BYPASS_DOOR_CHECKS))
+	if(density && !open(BYPASS_DOOR_CHECKS, user))
 		to_chat(user, span_warning("Despite your attempts, [src] refuses to open."))
 
-/obj/machinery/door/airlock/open(forced = DEFAULT_DOOR_CHECKS)
+/obj/machinery/door/airlock/open(forced = DEFAULT_DOOR_CHECKS, mob/living/opener)
 	if(cycle_pump && !operating && !welded && !seal && locked && density)
 		cycle_pump.airlock_act(src)
 		return FALSE // The rest will be handled by the pump
@@ -1365,6 +1430,8 @@
 				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), BYPASS_DOOR_CHECKS)
 
 	SEND_SIGNAL(src, COMSIG_AIRLOCK_OPEN, forced)
+	if (opener)
+		SEND_SIGNAL(opener, COMSIG_MOB_OPENED_AIRLOCK, forced)
 	set_airlock_state(AIRLOCK_OPENING, animated = TRUE, force_type = forced)
 	var/transparent_delay = animation_segment_delay(AIRLOCK_OPENING_TRANSPARENT)
 	sleep(transparent_delay)
@@ -1422,6 +1489,11 @@
 	if(!dangerous_close)
 		for(var/turf/checked_turf in locs)
 			for(var/atom/movable/blocking in checked_turf)
+				var/sigreturn = SEND_SIGNAL(blocking, COMSIG_MOVABLE_BLOCKING_AIRLOCK, src, forced, force_crush)
+				if(sigreturn & AIRLOCK_BLOCK_FORCE_CRUSH)
+					dangerous_close = TRUE
+					continue
+
 				if(blocking.density && blocking != src)
 					autoclose_in(DOOR_CLOSE_WAIT)
 					return FALSE
@@ -1877,7 +1949,7 @@
 	else if(!density)
 		close()
 	else
-		open()
+		open(opener = user)
 
 /**
  * Generates the airlock's wire layout based on the current area the airlock resides in.
@@ -2491,7 +2563,7 @@
 			new /obj/effect/temp_visual/cult/sac(loc)
 			var/atom/throwtarget
 			throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(L, src)))
-			SEND_SOUND(L, sound(SFX_HALLUCINATION_TURN_AROUND,0,1,50))
+			SEND_SOUND(L, sound(/datum/sound_effect/hallucination_turn_around,0,1,50))
 			flash_color(L, flash_color=COLOR_CULT_RED, flash_time=20)
 			L.Paralyze(40)
 			L.throw_at(throwtarget, 5, 1)
@@ -2616,8 +2688,10 @@
 
 // set_density on both open and close procs has a check and return builtin.
 
-/obj/machinery/door/airlock/instant/open(forced = DEFAULT_DOOR_CHECKS)
+/obj/machinery/door/airlock/instant/open(forced = DEFAULT_DOOR_CHECKS, mob/living/opener)
 	SEND_SIGNAL(src, COMSIG_AIRLOCK_OPEN, forced)
+	if (opener)
+		SEND_SIGNAL(opener, COMSIG_MOB_OPENED_AIRLOCK, forced)
 	operating = TRUE
 	set_density(FALSE)
 	set_airlock_state(AIRLOCK_OPEN, animated = FALSE)

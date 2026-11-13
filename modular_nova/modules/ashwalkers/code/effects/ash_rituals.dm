@@ -129,23 +129,6 @@
 		/obj/item/clothing/neck/necklace/translator,
 	)
 
-/// Skeleton Key
-/datum/ash_ritual/summon_key
-	name = "Summon Skeleton Key"
-	desc = "Summons a key that opens the chests from fallen tendrils."
-	required_components = list(
-		"north" = /obj/item/stack/sheet/bone,
-		"south" = /obj/item/stack/sheet/bone,
-		"east" = /obj/item/stack/sheet/bone,
-		"west" = /obj/item/stack/sheet/bone,
-	)
-	consumed_components = list(
-		/obj/item/stack/sheet/bone,
-	)
-	ritual_success_items = list(
-		/obj/item/skeleton_key,
-	)
-
 /// THIS IS A KNOIF
 /datum/ash_ritual/summon_cursed_knife
 	name = "Summon Cursed Ash Knife"
@@ -397,7 +380,7 @@
 	var/list/asked_voters = list()
 
 	for(var/mob/living/carbon/human/poll_human in range(2, src_turf))
-		if(poll_human.stat != CONSCIOUS) //must be conscious
+		if(IS_UNCONSCIOUS_OR_CRIT(poll_human)) //must be conscious
 			continue
 
 		if(!poll_human.mind.has_antag_datum(/datum/antagonist/ashwalker)) //must be an ashwalker

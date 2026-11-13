@@ -9,7 +9,6 @@
 /obj/item/ammo_casing/c357/peacemaker
 	name = ".357 Peacemaker bullet casing"
 	desc = "A .357 Peacemaker bullet casing."
-	caliber = CALIBER_357
 	projectile_type = /obj/projectile/bullet/a357/peacemaker
 
 /obj/projectile/bullet/a357/peacemaker
@@ -25,7 +24,6 @@
 
 /datum/design/a357/peacemaker
 	name = "Speed Loader (.357 Peacemaker)"
-	id = "a357PM"
 	build_type = AUTOLATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2,
@@ -44,6 +42,7 @@
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2)
 
 
 /obj/item/clothing/head/hats/sus_bowler

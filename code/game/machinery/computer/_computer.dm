@@ -1,6 +1,6 @@
 /obj/machinery/computer
 	name = "computer"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = MAP_SWITCH('icons/obj/machines/computer.dmi', 'icons/obj/fluff/map_previews.dmi')
 	icon_state = "computer"
 	density = TRUE
 	max_integrity = 200
@@ -22,6 +22,7 @@
 	var/authenticated = FALSE
 	/// Will projectiles be able to pass over this computer?
 	var/projectiles_pass_chance = 65
+	generate_map_preview = TRUE
 
 /datum/armor/machinery_computer
 	fire = 40
@@ -167,7 +168,7 @@
 	//NOVA EDIT ADDITION BEGIN - AESTHETICS
 	if(world.time > next_clicksound && isliving(user))
 		next_clicksound = world.time + rand(50, 150)
-		playsound(src, SFX_KEYBOARD, 40)
+		playsound(src, /datum/sound_effect/keyboard_clicks, 40)
 	//NOVA EDIT END
 	. = ..()
 	update_use_power(ACTIVE_POWER_USE)
@@ -176,7 +177,7 @@
 	SHOULD_CALL_PARENT(TRUE)
 	. = ..()
 	if(!issilicon(ui.user))
-		playsound(src, SFX_KEYBOARD_CLICKS, 10, TRUE, FALSE)
+		playsound(src, /datum/sound_effect/keyboard_clicks, 10, TRUE, FALSE)
 
 /obj/machinery/computer/ui_close(mob/user)
 	SHOULD_CALL_PARENT(TRUE)

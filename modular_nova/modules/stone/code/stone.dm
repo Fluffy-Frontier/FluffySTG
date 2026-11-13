@@ -14,8 +14,8 @@
 	source = null
 	walltype = /turf/closed/wall/mineral/stone
 	stairs_type = /obj/structure/stairs/stone
-	drop_sound = SFX_BRICK_DROP
-	pickup_sound = SFX_BRICK_PICKUP
+	drop_sound = /datum/sound_effect/brick_drop
+	pickup_sound = /datum/sound_effect/brick_pickup
 
 GLOBAL_LIST_INIT(stone_recipes, list (
 	new/datum/stack_recipe("stone brick wall", /turf/closed/wall/mineral/stone, 5, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
@@ -67,16 +67,17 @@ GLOBAL_LIST_INIT(stone_recipes, list (
 	. = ..()
 	. += span_notice("With a <b>chisel</b> or even a <b>pickaxe</b> of some kind, you could cut this into <b>blocks</b>.")
 
-/obj/item/stack/stone/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if((attacking_item.tool_behaviour != TOOL_MINING) && !(istype(attacking_item, /obj/item/chisel)))
+/obj/item/stack/stone/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if((tool.tool_behaviour != TOOL_MINING) && !(istype(tool, /obj/item/chisel)))
 		return ..()
 	playsound(src,  'sound/effects/pickaxe/picaxe1.ogg', 50, TRUE)
 	balloon_alert_to_viewers("cutting...")
 	if(!do_after(user, 5 SECONDS, target = src))
 		balloon_alert_to_viewers("stopped cutting")
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	new /obj/item/stack/sheet/mineral/stone(get_turf(src), amount)
 	qdel(src)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/item/stack/tile/mineral/stone
 	name = "stone tile"

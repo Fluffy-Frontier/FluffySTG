@@ -51,7 +51,7 @@
 		to_chat(user, span_warning("It's welded, it won't budge!"))
 		balloon_alert(user, "failed!")
 		return FALSE
-	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, door, timed_action_flags = NONE, progress = TRUE))
+	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, door, timed_action_flags = NONE, show_progress = TRUE))
 		balloon_alert(user, "failed!")
 		do_sparks(2, TRUE, door)
 		return FALSE
@@ -62,11 +62,11 @@
 	return TRUE
 
 /obj/item/multitool/fock/proc/hack_air_alarm(obj/machinery/airalarm/airalarm, mob/living/user)
-	playsound(src, SFX_SPARKS, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	playsound(src, /datum/sound_effect/sparks, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	balloon_alert(user, "overriding...")
 	do_sparks(2, TRUE, airalarm)
 	visible_message(span_warning("Sparks fly out of [airalarm]!"))
-	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, airalarm, timed_action_flags = NONE, progress = TRUE))
+	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, airalarm, timed_action_flags = NONE, show_progress = TRUE))
 		balloon_alert(user, "failed!")
 		do_sparks(1, TRUE, airalarm)
 		return FALSE
@@ -80,11 +80,11 @@
 	return TRUE
 
 /obj/item/multitool/fock/proc/hack_apc(obj/machinery/power/apc/apc, mob/living/user)
-	playsound(src, SFX_SPARKS, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	playsound(src, /datum/sound_effect/sparks, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	balloon_alert(user, "overriding...")
 	do_sparks(2, TRUE, apc)
 	visible_message(span_warning("Sparks fly out of [apc]!"))
-	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, apc, timed_action_flags = NONE, progress = TRUE))
+	if(!do_after(user, rand(FOCK_JACKING_SPEED_LOWER, FOCK_JACKING_SPEED_UPPER) SECONDS, apc, timed_action_flags = NONE, show_progress = TRUE))
 		balloon_alert(user, "failed!")
 		do_sparks(1, TRUE, apc)
 		return FALSE

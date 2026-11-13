@@ -19,27 +19,27 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	armour_penetration = 100
-	damage_coeff = list(BRUTE = 0.7, BURN = 0.6, TOX = 0.7, STAMINA = 0, OXY = 0.7)
+	physiology = list(BRUTE = 0.7, BURN = 0.6, TOX = 0.7, STAMINA = 0, OXY = 0.7)
 
 /mob/living/basic/guardian/gravitokinetic
 	armour_penetration = 25
 	melee_damage_lower = 20
 	melee_damage_upper = 20
-	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
+	physiology = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
 
 /mob/living/basic/guardian/gaseous
 	armour_penetration = 20
-	damage_coeff = list(BRUTE = 0.9, BURN = 0.45, TOX = 0.75, STAMINA = 0, OXY = 0)
+	physiology = list(BRUTE = 0.9, BURN = 0.45, TOX = 0.75, STAMINA = 0, OXY = 0)
 
 /mob/living/basic/guardian/explosive
 	armour_penetration = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
-	damage_coeff = list(BRUTE = 0.55, BURN = 0.55, TOX = 0.55, STAMINA = 0.55, OXY = 0.55)
+	physiology = list(BRUTE = 0.55, BURN = 0.55, TOX = 0.55, STAMINA = 0.55, OXY = 0.55)
 
 /mob/living/basic/guardian/dextrous
 	range = 30
-	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
+	physiology = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
 
 /mob/living/basic/guardian/dextrous/Initialize(mapload, datum/guardian_fluff/theme)
 	. = ..()
@@ -49,7 +49,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	armour_penetration = 25
-	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
+	physiology = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/guardian
 	destroy_objects = TRUE

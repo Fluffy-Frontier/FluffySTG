@@ -3,6 +3,7 @@
 /obj/item/fireaxe/energy
 	icon = 'modular_nova/master_files/icons/obj/energy_axe.dmi'
 	icon_state = "energy_axe0"
+	inhand_icon_state = "energy_axe0"
 	base_icon_state = "energy_axe"
 	worn_icon_state = "energy_axe"
 	lefthand_file = 'modular_nova/master_files/icons/mob/energyaxe_lefthand.dmi'
@@ -24,12 +25,13 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(energy_wield), override = TRUE)
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(energy_unwield), override = TRUE)
-	AddComponent(/datum/component/two_handed, force_unwielded = 10, force_wielded = 33, icon_wielded = "[base_icon_state]1", wieldsound = 'sound/items/weapons/saberon.ogg', unwieldsound = 'sound/items/weapons/saberoff.ogg')
+	AddComponent(/datum/component/two_handed, force_unwielded = 10, force_wielded = 33, update_icon_state = TRUE, wieldsound = 'sound/items/weapons/saberon.ogg', unwieldsound = 'sound/items/weapons/saberoff.ogg')
 
 /obj/item/fireaxe/energy/proc/energy_wield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
 	hitsound = 'sound/items/weapons/blade1.ogg'
+	inhand_icon_state = "[base_icon_state]1"
 	START_PROCESSING(SSobj, src)
 	set_light_on(TRUE)
 
@@ -38,6 +40,7 @@
 /obj/item/fireaxe/energy/proc/energy_unwield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
-	hitsound = SFX_SWING_HIT
+	hitsound = /datum/sound_effect/swing_hit
+	inhand_icon_state = "[base_icon_state]0"
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)

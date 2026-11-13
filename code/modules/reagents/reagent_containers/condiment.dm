@@ -25,7 +25,7 @@
 
 /obj/item/reagent_containers/condiment/update_icon_state()
 	. = ..()
-	if(reagents.reagent_list.len)
+	if(length(reagents.reagent_list))
 		if(icon_preempty)
 			icon_state = icon_preempty
 			icon_preempty = null
@@ -36,7 +36,7 @@
 		icon_state = icon_empty
 	return ..()
 
-/obj/item/reagent_containers/condiment/suicide_act(mob/living/carbon/user)
+/obj/item/reagent_containers/condiment/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!"))
 	return OXYLOSS
 
@@ -251,6 +251,16 @@
 	lefthand_file = 'icons/mob/inhands/items/drinks_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/drinks_righthand.dmi'
 	list_reagents = list(/datum/reagent/consumable/cornmeal = 30)
+	fill_icon_thresholds = null
+
+/obj/item/reagent_containers/condiment/korta_flour
+	name = "korta flour sack"
+	desc = "A big bag of lizards' favorite korta nut flour. Made in Tiriza!"
+	icon_state = "korta_flour"
+	inhand_icon_state = "carton"
+	lefthand_file = 'icons/mob/inhands/items/drinks_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items/drinks_righthand.dmi'
+	list_reagents = list(/datum/reagent/consumable/korta_flour = 30)
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/condiment/bbqsauce

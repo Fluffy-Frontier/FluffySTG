@@ -21,7 +21,7 @@
 
 /obj/item/food/cake/make_processable()
 	if (slice_type)
-		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Slice", sound_to_play = /datum/sound_effect/knife_slice)
 
 /obj/item/food/cakeslice
 	icon = 'icons/obj/food/piecake.dmi'
@@ -302,7 +302,7 @@
 		/datum/reagent/consumable/sprinkles = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 		/datum/reagent/consumable/pwr_game = 10,
-		/datum/reagent/consumable/liquidelectricity/enriched = 10,
+		/datum/reagent/consumable/liquidelectricity = 10,
 	)
 	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
 	slice_type = /obj/item/food/cakeslice/birthday/energy
@@ -333,7 +333,7 @@
 		/datum/reagent/consumable/sprinkles = 2,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/consumable/pwr_game = 2,
-		/datum/reagent/consumable/liquidelectricity/enriched = 2,
+		/datum/reagent/consumable/liquidelectricity = 2,
 	)
 	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
 	crafting_complexity = FOOD_COMPLEXITY_4

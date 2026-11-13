@@ -60,7 +60,7 @@ SUBSYSTEM_DEF(dynamic)
 	var/antag_events_enabled = TRUE
 
 /datum/controller/subsystem/dynamic/fire(resumed)
-	if(!COOLDOWN_FINISHED(src, midround_cooldown) || EMERGENCY_PAST_POINT_OF_NO_RETURN)
+	if(!COOLDOWN_FINISHED(src, midround_cooldown) || !EMERGENCY_IDLE_OR_RECALLED)
 		return
 
 	if(COOLDOWN_FINISHED(src, light_ruleset_start))
@@ -744,7 +744,7 @@ SUBSYSTEM_DEF(dynamic)
 			data += "\]\n"
 		else
 			data += "blacklisted_roles = \[\]\n"
-		if(!istype(ruleset, /datum/dynamic_ruleset/latejoin) && !istype(ruleset, /datum/dynamic_ruleset/midround/from_living))
+		if(!istype(ruleset, /datum/dynamic_ruleset/latejoin))
 			if(islist(ruleset.min_antag_cap))
 				for(var/ruleset_min_antag_cap in ruleset.min_antag_cap)
 					data += "min_antag_cap.[ruleset_min_antag_cap] = [ruleset.min_antag_cap[ruleset_min_antag_cap]]\n"
