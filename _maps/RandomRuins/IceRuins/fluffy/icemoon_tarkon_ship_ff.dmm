@@ -1,0 +1,5285 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/turf_decal/vg_decals/atmos/oxygen,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/turf/open/floor/engine/o2,
+/area/ruin/tarkon_ship/atmos)
+"af" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"an" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"av" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/machinery/washing_machine,
+/obj/structure/towel_bin{
+	pixel_x = 1;
+	pixel_y = 14
+	},
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"aA" = (
+/obj/structure/marker_beacon/teal,
+/obj/effect/turf_decal/stripes/blue,
+/obj/effect/turf_decal/stripes/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/cerulean,
+/obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"aB" = (
+/obj/machinery/modular_computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"aE" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 4
+	},
+/obj/structure/marker_beacon/bronze,
+/obj/machinery/fax/tarkon,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"aJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/marker_beacon/indigo,
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"aV" = (
+/obj/machinery/atmospherics/miner/nitrogen,
+/turf/open/floor/engine/n2,
+/area/ruin/tarkon_ship/atmos)
+"aY" = (
+/obj/machinery/rnd/destructive_analyzer,
+/obj/effect/turf_decal/trimline/purple/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"be" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/sink/directional/west,
+/obj/structure/mirror/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"bh" = (
+/obj/item/toy/plush/lizard_plushie/greyscale{
+	name = "Tarkon lizard plushie"
+	},
+/obj/item/clothing/head/utility/welding/hat{
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"bz" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"bD" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "cargoup"
+	},
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/tarkon_ship/mainhall)
+"bE" = (
+/turf/open/floor/engine/n2,
+/area/ruin/tarkon_ship/atmos)
+"bJ" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"bM" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"bS" = (
+/obj/effect/turf_decal/loading_area,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_corner,
+/area/ruin/tarkon_ship/mainhall)
+"bU" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"bZ" = (
+/obj/machinery/power/shuttle_engine/propulsion{
+	dir = 8
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"cj" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"cl" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"cw" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
+	dir = 8
+	},
+/turf/open/floor/engine/n2,
+/area/ruin/tarkon_ship/atmos)
+"cA" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/monitored/incinerator_input,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"cB" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
+	pixel_x = 4
+	},
+/obj/machinery/rnd/server/tarkon,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"cL" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/suit_storage_unit/engine,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"cP" = (
+/obj/structure/table/reinforced/ctf,
+/obj/machinery/reagentgrinder{
+	pixel_x = 6;
+	pixel_y = 13
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"cU" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"cW" = (
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/computer/operating,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"cX" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/trimline/brown/end,
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/obj/structure/sign/warning/no_smoking/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"db" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/machinery/door/window/survival_pod/left/directional/west,
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"dc" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"df" = (
+/obj/machinery/computer/cargo/express/ghost/tarkon{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"di" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/machinery/portable_atmospherics/canister/anesthetic_mix,
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"dn" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"dq" = (
+/obj/machinery/smartfridge/chemistry/virology/preloaded,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"dx" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 5
+	},
+/obj/machinery/computer/crew,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"dy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"dB" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/mainhall)
+"eb" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"ef" = (
+/obj/machinery/light/directional/west,
+/obj/structure/sign/poster/contraband/ff_contest/nobody/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"eo" = (
+/obj/structure/table/optable,
+/obj/effect/turf_decal/tile/dark/full,
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/structure/marker_beacon/cerulean,
+/obj/machinery/light/directional/north,
+/obj/item/defibrillator/loaded{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/machinery/vitals_reader/advanced/directional/north,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"ep" = (
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/bathroom{
+	name = "Restroom"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"er" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"ev" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"eB" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"eE" = (
+/obj/structure/railing,
+/turf/open/floor/iron/stairs/old{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"eJ" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "tarkonrecycle"
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"eK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/rnd)
+"eU" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"eX" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/rnd)
+"eY" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"eZ" = (
+/obj/structure/table/reinforced/ctf,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/reagentgrinder{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/cup/beaker/large,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"fc" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"fk" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/closet,
+/obj/item/clothing/under/tarkon/com,
+/obj/item/storage/backpack/satchel/cap,
+/obj/item/storage/backpack/messenger/cap,
+/obj/item/storage/backpack/duffelbag/captain,
+/obj/item/clothing/head/utility/welding/hat,
+/obj/item/blueprints/tarkon,
+/obj/item/card/id/away/shiptarkonrobo,
+/obj/item/circuitboard/machine/rdserver/tarkon,
+/obj/item/circuitboard/computer/tarkon_driver,
+/obj/item/circuitboard/machine/protolathe/tarkon,
+/obj/item/circuitboard/machine/circuit_imprinter,
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"fl" = (
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"fn" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"fr" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/turf/open/floor/engine/plasma,
+/area/ruin/tarkon_ship/atmos)
+"ft" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"fx" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/recharge_station,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"fF" = (
+/obj/machinery/door/poddoor{
+	id = "windowscover4"
+	},
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/medbay)
+"fM" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"fP" = (
+/obj/structure/marker_beacon/cerulean,
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"fR" = (
+/obj/machinery/firealarm/directional/north,
+/obj/structure/dresser,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"fX" = (
+/obj/machinery/power/turbine/turbine_outlet{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"gl" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"gq" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"gB" = (
+/obj/machinery/shower/directional/west,
+/obj/effect/turf_decal/stripes/end{
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"gG" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/dark_blue/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/bridge)
+"gL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/machinery/vending/clothing{
+	onstation = 0;
+	all_products_free = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"gP" = (
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"gW" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/green/line,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"hl" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"hm" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"hA" = (
+/obj/machinery/computer/rdconsole/unlocked,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"hB" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"hI" = (
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"hK" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/bridge)
+"hW" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/corner,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"hX" = (
+/turf/closed/wall/r_wall/plastitanium/syndicate,
+/area/ruin/tarkon_ship/atmos)
+"ie" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/shower/directional/south,
+/obj/structure/curtain/cloth,
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"ih" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"ik" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Cryo"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"il" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/full,
+/obj/item/construction/rcd/arcd/mattermanipulator,
+/obj/structure/fireaxecabinet/directional/north,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"ip" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/table,
+/obj/item/serviette_pack{
+	pixel_y = 6;
+	pixel_x = 7
+	},
+/obj/item/serviette_used{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"iy" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/machinery/button/door/directional/north{
+	pixel_x = 9;
+	pixel_y = 43;
+	id = "windowscover3";
+	name = "Blast Doors"
+	},
+/obj/machinery/light_switch/directional/north{
+	pixel_y = 35;
+	name = "Light"
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"iz" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/medbay)
+"iH" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"iK" = (
+/obj/structure/closet/secure_closet/tarkon/engi,
+/obj/item/circuitboard/machine/powerator/tarkon,
+/obj/item/circuitboard/computer/tarkon_driver,
+/obj/item/circuitboard/computer/atmos_control/tarkon/plasma_tank,
+/obj/item/circuitboard/computer/atmos_control/tarkon/oxygen_tank,
+/obj/item/circuitboard/computer/atmos_control/tarkon/incinerator,
+/obj/item/circuitboard/computer/atmos_control/tarkon/nitrogen_tank,
+/obj/item/circuitboard/computer/atmos_control/tarkon/mix_tank,
+/obj/item/circuitboard/computer/atmos_control/tarkon/carbon_tank,
+/obj/item/circuitboard/machine/tank_compressor,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/machine/bluespace_miner,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"iL" = (
+/obj/machinery/suit_storage_unit/industrial/tarkon,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"iQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"iS" = (
+/obj/machinery/firealarm/directional/east,
+/obj/structure/cable,
+/turf/open/floor/iron/smooth_corner{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/mainhall)
+"iY" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/trimline/red/end{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/borg_fancy_2/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"jc" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/rnd)
+"jk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/structure/disposalpipe/segment,
+/obj/structure/rack,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"jx" = (
+/obj/effect/turf_decal/trimline/purple/corner,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/rnd)
+"jy" = (
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"kc" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"kg" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 6
+	},
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"ki" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"ku" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"kv" = (
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"kw" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
+	dir = 4
+	},
+/turf/open/floor/engine/plasma,
+/area/ruin/tarkon_ship/atmos)
+"kx" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/rnd)
+"kA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/sign/poster/contraband/rush_propaganda/directional/south,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
+	pixel_x = 4
+	},
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"kO" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/trash/garbage{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"kP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"kS" = (
+/obj/structure/flora/rock/icy/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"kT" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/effect/turf_decal/vg_decals/atmos/plasma,
+/turf/open/floor/engine/plasma,
+/area/ruin/tarkon_ship/atmos)
+"kW" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/rnd)
+"li" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/spacecash/c200{
+	pixel_y = 14
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/item/storage/belt/utility/full,
+/obj/item/card/id/departmental_budget/tarkon,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/obj/item/stamp/granted{
+	pixel_y = 8;
+	pixel_x = 12
+	},
+/obj/item/stamp/denied{
+	pixel_y = 2;
+	pixel_x = 12
+	},
+/obj/item/encryptionkey/headset_cargo/tarkon{
+	pixel_x = -10;
+	pixel_y = 14
+	},
+/obj/item/encryptionkey/headset_cargo/tarkon{
+	pixel_x = -10;
+	pixel_y = 14
+	},
+/obj/item/encryptionkey/headset_cargo/tarkon{
+	pixel_x = -10;
+	pixel_y = 14
+	},
+/obj/item/encryptionkey/headset_cargo/tarkon{
+	pixel_x = -10;
+	pixel_y = 14
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"lp" = (
+/obj/effect/spawner/random/entertainment/money_medium{
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/stamp/tarkon{
+	pixel_y = 11;
+	pixel_x = -7
+	},
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/blue,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"lx" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/item/stack/cable_coil,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"lz" = (
+/obj/machinery/door/poddoor{
+	id = "windowscover2"
+	},
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/mainhall)
+"lF" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"lU" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/structure/ore_box,
+/obj/structure/sign/warning/doors/directional/north,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"lV" = (
+/obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/stripes/box,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"mk" = (
+/obj/machinery/autolathe,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"ml" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/item/kirbyplants/random,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"mn" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/trimline/purple/line,
+/obj/machinery/button/door/directional/south{
+	id = "windowscover1";
+	name = "Blast Doors"
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"mo" = (
+/obj/machinery/vending/medical{
+	all_products_free = 1
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 6
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"mp" = (
+/obj/structure/table/reinforced/ctf,
+/obj/machinery/microwave,
+/obj/structure/sign/poster/contraband/grey_tide/directional/north,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"ms" = (
+/obj/effect/turf_decal/bot/left,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"mw" = (
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = -30
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/cargo{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"mG" = (
+/obj/machinery/power/turbine/core_rotor{
+	mapping_id = "tarkon_turbine";
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"mV" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"nb" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/vending/hydronutrients{
+	pixel_x = -6;
+	all_products_free = 1
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/rnd)
+"nd" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"nk" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"nl" = (
+/obj/effect/turf_decal/stripes/blue,
+/obj/effect/turf_decal/tile/dark/full,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"nm" = (
+/obj/machinery/suit_storage_unit/mining,
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"ns" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"nw" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/status_display/department_balance/tarkon/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"nG" = (
+/obj/effect/turf_decal/stripes/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark/full,
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/machinery/defibrillator_mount/directional/north,
+/obj/machinery/anesthetic_machine{
+	pixel_x = 10
+	},
+/obj/machinery/iv_drip{
+	pixel_x = -10
+	},
+/obj/item/tank/internals/anesthetic,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"nN" = (
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = -30
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/captain{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/sign/poster/official/mining/directional/north,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"nU" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/bot/right,
+/turf/open/floor/iron/smooth_half,
+/area/ruin/tarkon_ship/mainhall)
+"od" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"oj" = (
+/obj/machinery/door/airlock/external/glass{
+	name = "Turbine Maintenance Door"
+	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"om" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"oo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/trimline/blue/corner{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/medbay)
+"oq" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"or" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airalarm/all_access,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"oE" = (
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/conveyor{
+	id = "tarkonrecycle";
+	dir = 8
+	},
+/obj/machinery/recycler{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"oQ" = (
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"oS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 8
+	},
+/obj/effect/turf_decal/vg_decals/department/med,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"oV" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden,
+/obj/machinery/light/directional/east,
+/obj/structure/sign/poster/contraband/ff_contest/cursed_love/directional/east,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"oW" = (
+/obj/machinery/seed_extractor,
+/obj/machinery/button/door/directional/north{
+	id = "windowscover2";
+	name = "Blast Doors"
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"pd" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/closet/cabinet,
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"pf" = (
+/obj/effect/turf_decal/vg_decals/atmos/nitrogen,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/turf/open/floor/engine/n2,
+/area/ruin/tarkon_ship/atmos)
+"pk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/light/directional/west,
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/trimline/red/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/red/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"pl" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/stairs/old{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"pq" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"px" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/machinery/announcement_system,
+/obj/structure/cable,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"pO" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/green/line,
+/obj/structure/table,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"qb" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/tarkon_ship/atmos)
+"qc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"qh" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"qu" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 4
+	},
+/obj/structure/marker_beacon/bronze,
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/card/id/advanced/shiptarkon,
+/obj/item/card/id/advanced/shiptarkon,
+/obj/item/card/id/advanced/shiptarkon,
+/obj/item/card/id/advanced/shiptarkon,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"qv" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light_switch/directional/north{
+	pixel_y = 32;
+	name = "Light"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"qC" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/button/door/directional/north{
+	id = "cargodown";
+	req_access = list("tarkon");
+	name = "Tarkon Horizon Gate"
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/tarkon_ship/mainhall)
+"qE" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/button/door/directional/west{
+	id = "bridge1";
+	name = "Blast Doors"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"qF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = 30
+	},
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/med{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"qH" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/obj/item/bedsheet/cosmos/double{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"qJ" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"qR" = (
+/obj/machinery/sleeper/syndie/fullupgrade/nt{
+	name = "\improper Tarkon sleeper"
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 5
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/medbay)
+"rd" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate");
+	pixel_x = -4
+	},
+/turf/open/floor/grass,
+/area/ruin/tarkon_ship/mainhall)
+"rm" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/light/directional/north,
+/turf/open/floor/grass,
+/area/ruin/tarkon_ship/mainhall)
+"rn" = (
+/obj/structure/cable,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/smooth_corner{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"rs" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/brick_half{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/bridge)
+"rx" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/medbay)
+"rz" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"rL" = (
+/obj/structure/table/reinforced,
+/obj/item/mmi/posibrain/sphere,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"rO" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 9
+	},
+/obj/machinery/button/door/directional/west{
+	id = "windowscover4";
+	name = "Blast Doors"
+	},
+/obj/structure/sink/directional/east,
+/turf/open/floor/iron/dark/brick_corner,
+/area/ruin/tarkon_ship/medbay)
+"rU" = (
+/obj/machinery/light/directional/south,
+/obj/structure/sign/warning/secure_area/directional/south{
+	sign_change_name = "Warning - Tarkon Authority"
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/tarkon_ship/mainhall)
+"rX" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 15
+	},
+/obj/structure/sign/poster/official/moth_meth/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"so" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/mutadone,
+/obj/effect/turf_decal/trimline/purple/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"st" = (
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"sA" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"sE" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/machinery/door/window/survival_pod/left/directional/east,
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"sQ" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/computer/turbine_computer{
+	dir = 1;
+	mapping_id = "tarkon_turbine"
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"sT" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/machinery/cryopod{
+	dir = 8
+	},
+/obj/machinery/computer/cryopod/directional/east,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/sign/poster/official/moth_delam/directional/north,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"sZ" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"ti" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/trimline/brown/end{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/obj/structure/sign/warning/no_smoking/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"tl" = (
+/mob/living/basic/cockroach,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"tq" = (
+/obj/machinery/mineral/ore_redemption/offstation{
+	input_dir = 4;
+	output_dir = 8;
+	req_access = list("tarkon")
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/right/directional/north,
+/obj/machinery/door/window/right/directional/south,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"tu" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/marker_beacon/indigo,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"tF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/pattern_4,
+/area/ruin/tarkon_ship/medbay)
+"tI" = (
+/obj/machinery/door/airlock/command{
+	name = "Captain Apartment";
+	id_tag = "cptdrm"
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"tJ" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"tO" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"tW" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/obj/machinery/door/poddoor{
+	id = "bridge1"
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/bridge)
+"ug" = (
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 10
+	},
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"uh" = (
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"uk" = (
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"uy" = (
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = -30
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/sci{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"uC" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor/vest/marine,
+/obj/item/clothing/head/helmet/marine{
+	pixel_y = 7
+	},
+/obj/item/gun/ballistic/automatic/m6pdw{
+	pixel_x = -4;
+	pixel_y = 6
+	},
+/obj/item/gun/ballistic/automatic/m6pdw{
+	pixel_x = 4
+	},
+/obj/item/gun/ballistic/automatic/m6pdw{
+	pixel_x = -2;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/item/ammo_box/magazine/c35sol_pistol,
+/obj/machinery/door/window/brigdoor/right/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"uG" = (
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"uI" = (
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/bin,
+/obj/structure/sign/poster/official/no_erp/directional/north,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"uR" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/turf/open/floor/iron/dark/pattern_4,
+/area/ruin/tarkon_ship/medbay)
+"vj" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
+"vm" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/security/glass{
+	name = "Security Office"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"vo" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"vx" = (
+/obj/structure/lattice,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"vz" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("tarkon");
+	pixel_x = -4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"vC" = (
+/obj/effect/spawner/random/structure/crate_loot,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"vH" = (
+/obj/effect/turf_decal/trimline/blue/line,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/medbay)
+"vM" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/fruit_bowl/directional/east,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"vP" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_corner,
+/area/ruin/tarkon_ship/bridge)
+"vR" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"wc" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"wi" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 9
+	},
+/obj/machinery/computer/camera_advanced,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"wj" = (
+/obj/machinery/door/poddoor{
+	id = "cargodown"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/tarkon_ship/mainhall)
+"wq" = (
+/obj/machinery/door/poddoor{
+	id = "cargoup"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/tarkon_ship/mainhall)
+"wt" = (
+/obj/structure/closet,
+/obj/item/pickaxe/mini,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/clothing/mask/gas/explorer,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/gps/mining,
+/obj/item/storage/bag/ore,
+/obj/item/storage/belt/mining,
+/obj/item/gun/energy/recharge/kinetic_accelerator,
+/obj/item/gun/energy/recharge/resonant_system,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"wu" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/emergency/turret/mag_fed/hoplite/pre_filled{
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/emergency/turret/mag_fed/hoplite/pre_filled,
+/obj/machinery/door/window/brigdoor/right/directional/west,
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"wx" = (
+/obj/machinery/chem_master,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"wy" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"wE" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"wJ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/rnd)
+"wK" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"wO" = (
+/obj/machinery/rnd/production/circuit_imprinter,
+/obj/effect/turf_decal/trimline/purple/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"wP" = (
+/obj/machinery/button/door/directional/west{
+	id = "cargodown";
+	req_access = list("tarkon");
+	name = "Gate"
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"wX" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"xi" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/dolphin/directional/north,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"xo" = (
+/obj/machinery/light/directional/west,
+/obj/structure/sign/warning/engine_safety/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"xp" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"xt" = (
+/obj/structure/lattice,
+/obj/structure/sign/warning/fire/directional/east,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"xv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/rnd)
+"xB" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"xR" = (
+/obj/machinery/power/shuttle_engine/huge{
+	dir = 8
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"xT" = (
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"xU" = (
+/obj/structure/chair/comfy/beige{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"yb" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
+/obj/machinery/button/ignition/incinerator/tarkon,
+/obj/machinery/button/door/incinerator_vent_atmos_main{
+	pixel_x = -8;
+	pixel_y = 9;
+	req_one_access = list("tarkon");
+	id = "turbine1"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/tarkon_ship/atmos)
+"yf" = (
+/obj/effect/turf_decal/bot/right,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"yg" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 4
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"yt" = (
+/obj/effect/turf_decal/vg_decals/department/cargo,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"yx" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"yC" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/tarkon_ship/atmos)
+"yG" = (
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"yJ" = (
+/obj/machinery/atmospherics/miner/oxygen,
+/turf/open/floor/engine/o2,
+/area/ruin/tarkon_ship/atmos)
+"yM" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/mob/living/basic/mothroach,
+/obj/structure/bed/dogbed,
+/obj/effect/mapping_helpers/mob_buckler,
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"yP" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 6
+	},
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"yU" = (
+/obj/structure/decorative/shelf/crates,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"yZ" = (
+/obj/machinery/mecha_part_fabricator{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/machinery/light_switch/directional/north{
+	pixel_y = 35;
+	pixel_x = 11;
+	name = "Light"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"zb" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/bridge)
+"zg" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"zu" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"zK" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/tarkon_ship/atmos)
+"zN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"zS" = (
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"zU" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"zV" = (
+/obj/machinery/computer/camera_advanced/xenobio{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"zW" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/junction/flip{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"zY" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/machinery/airalarm/directional/east{
+	pixel_y = 18
+	},
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"Ac" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/basic/cockroach,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Ah" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/turf/open/floor/grass,
+/area/ruin/tarkon_ship/mainhall)
+"Ai" = (
+/obj/effect/turf_decal/stripes/blue,
+/obj/effect/turf_decal/stripes/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark/full,
+/obj/item/healthanalyzer/advanced,
+/obj/structure/table/reinforced/ctf,
+/obj/machinery/light/directional/east,
+/obj/item/surgery_tray/full,
+/obj/structure/sign/poster/contraband/jovial/directional/east,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/tarkon_ship/medbay)
+"AH" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/vg_decals/department/mining,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"AM" = (
+/obj/machinery/door/poddoor{
+	id = "bridge1"
+	},
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/bridge)
+"AP" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/medbay)
+"Bg" = (
+/obj/machinery/power/port_gen/pacman/super{
+	name = "\improper emergency power generator";
+	time_per_sheet = 40
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Bh" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Bw" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate");
+	pixel_x = -4
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/turf/open/floor/grass,
+/area/ruin/tarkon_ship/mainhall)
+"BA" = (
+/obj/structure/flora/grass/both/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"BG" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"BI" = (
+/obj/machinery/door/airlock/atmos/glass{
+	name = "Atmospherics Center"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"BL" = (
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"BO" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"BU" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/junction/flip{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"BV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/closet/cabinet,
+/obj/structure/sign/poster/contraband/ff_contest/lust_fish/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"BW" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/green/line,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Cc" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Cm" = (
+/mob/living/basic/alien/maid/barmaid,
+/obj/structure/chair/comfy/beige,
+/obj/structure/sign/poster/contraband/lusty_xenomorph/directional/north,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Cp" = (
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"CE" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/smooth_edge{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"CH" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"CK" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/medbay)
+"CQ" = (
+/obj/machinery/firealarm/directional/north,
+/obj/structure/table/reinforced,
+/obj/item/holosign_creator/atmos,
+/obj/item/pipe_dispenser{
+	pixel_y = 8
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"CU" = (
+/obj/machinery/door/poddoor{
+	id = "windowscover1"
+	},
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/rnd)
+"Ds" = (
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 8
+	},
+/area/ruin/tarkon_ship/mainhall)
+"DF" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/trimline/red/end,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"DQ" = (
+/obj/machinery/computer/order_console/mining{
+	forced_express = 1
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"DR" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/computer/atmos_alert{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"DS" = (
+/obj/structure/tank_dispenser,
+/obj/structure/sign/poster/official/moth_hardhat/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Eg" = (
+/obj/effect/turf_decal/bot/left,
+/obj/structure/closet/crate/cargo,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/item/storage/medkit/regular{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/storage/medkit/brute,
+/obj/item/storage/medkit/fire{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/flatpacked_machine,
+/obj/item/circuitboard/machine/quantum_server,
+/obj/item/circuitboard/computer/order_console/bitrunning,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Er" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Et" = (
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_corner,
+/area/ruin/tarkon_ship/mainhall)
+"Ez" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/vending/hydroseeds{
+	pixel_x = -16;
+	all_products_free = 1
+	},
+/obj/machinery/vending/dinnerware{
+	pixel_x = 5;
+	all_products_free = 1
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/rnd)
+"EB" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"EL" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/obj/machinery/camera/directional/north,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"EQ" = (
+/obj/machinery/power/turbine/inlet_compressor{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"ER" = (
+/obj/machinery/atmospherics/components/binary/pump/off/general{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"Ff" = (
+/obj/item/storage/bag/xeno,
+/obj/item/storage/box/monkeycubes/syndicate{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/monkeycubes/syndicate{
+	pixel_y = 5
+	},
+/obj/item/slime_extract/grey{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/slime_extract/grey{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/slime_extract/grey{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/structure/closet/crate/secure/science,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Fg" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/iron/smooth_half,
+/area/ruin/tarkon_ship/mainhall)
+"Fi" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction/flip{
+	dir = 2
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Fk" = (
+/obj/structure/lattice/catwalk,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"Fm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/status_display/department_balance/tarkon/directional/south,
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"Fs" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/vg_decals/department/mining,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"Fw" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/button/door/directional/south{
+	id = "trkbin1";
+	name = "Door Bolts";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"FJ" = (
+/obj/structure/cable,
+/obj/machinery/portable_atmospherics/canister/bz,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"FP" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/vending/autodrobe{
+	onstation = 0;
+	all_products_free = 1
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"FR" = (
+/obj/machinery/conveyor{
+	id = "tarkonrecycle";
+	dir = 8
+	},
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/trash/garbage{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/moth_epi/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"FX" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/spawner/random/trash/garbage{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/canister/plasma,
+/obj/structure/sign/poster/contraband/clown/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Gt" = (
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 10
+	},
+/obj/structure/sign/poster/official/carwo_grenade/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"GA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"GF" = (
+/obj/machinery/suit_storage_unit/industrial/tarkon,
+/obj/structure/sign/warning/doors/directional/south,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"GX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"Hc" = (
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Hk" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/airlock/research{
+	name = "Developement Center"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Hp" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/turf/open/water/hot_spring/icemoon,
+/area/icemoon/underground/explored)
+"Hu" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"Hx" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/bot_white,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"HA" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/airlock/command{
+	name = "Command Reception"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"HD" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/marker_beacon/bronze,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_edge{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"HL" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/rnd)
+"HP" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"HU" = (
+/obj/structure/marker_beacon/bronze,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/smooth_half,
+/area/ruin/tarkon_ship/mainhall)
+"Im" = (
+/obj/machinery/door/airlock/external/glass{
+	name = "Hangar Access"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/cable,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"In" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/structure/curtain/cloth,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Io" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/xeno)
+"Iu" = (
+/obj/machinery/cryo_cell{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/brick_half{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/medbay)
+"IB" = (
+/obj/structure/flora/rock/pile/icy/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"IC" = (
+/obj/machinery/power/shuttle_engine/large{
+	dir = 8
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"IH" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/button/door/directional/south{
+	id = "cargoup";
+	req_access = list("tarkon");
+	name = "Tarkon Horizon Gate"
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/tarkon_ship/mainhall)
+"IN" = (
+/obj/structure/flora/grass/both/style_random,
+/obj/structure/lattice,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"IS" = (
+/obj/structure/chair/comfy/beige{
+	dir = 1
+	},
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Jh" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/monkeycubes{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/storage/box/monkeycubes{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 6
+	},
+/obj/structure/sign/poster/official/ian/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Jp" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_corner,
+/area/ruin/tarkon_ship/rnd)
+"Js" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/rnd)
+"Jw" = (
+/obj/machinery/computer/pandemic,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"Jx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
+	dir = 8
+	},
+/turf/open/floor/engine/o2,
+/area/ruin/tarkon_ship/atmos)
+"Jy" = (
+/obj/structure/table/reinforced/ctf,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"JA" = (
+/obj/machinery/door/poddoor{
+	id = "windowscover3"
+	},
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"JD" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"JO" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/light/directional/east,
+/obj/structure/sign/poster/contraband/ff_contest/melty_mel/directional/east,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"JU" = (
+/obj/structure/cable,
+/obj/structure/sign/poster/contraband/bountyhunters/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"JZ" = (
+/obj/effect/turf_decal/trimline/dark_blue/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/bridge)
+"Kb" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/status_display/department_balance/tarkon/directional/east,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Ke" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/atmos)
+"Kj" = (
+/obj/structure/reagent_dispensers/fueltank/large,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Kl" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/item/reagent_containers/cup/beaker/meta,
+/obj/item/reagent_containers/cup/beaker/meta,
+/obj/item/reagent_containers/cup/beaker/meta,
+/obj/machinery/chem_mass_spec,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"KA" = (
+/obj/machinery/chem_dispenser,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"KB" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"KC" = (
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/bluespace_crystal,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 10
+	},
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 5
+	},
+/obj/structure/closet/crate/cargo,
+/obj/structure/railing,
+/obj/item/stack/sheet/mineral/gold{
+	amount = 25
+	},
+/obj/item/stack/sheet/mineral/silver{
+	amount = 25
+	},
+/obj/item/stack/sheet/mineral/titanium{
+	amount = 30
+	},
+/obj/effect/turf_decal/bot/left,
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/mainhall)
+"KD" = (
+/obj/machinery/modular_computer/preset/command{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"KF" = (
+/obj/machinery/igniter/incinerator_tarkon,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"KG" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/suit_storage_unit/industrial/hauler,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"KK" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/airlock/research{
+	name = "Xenobiology Center"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/xeno)
+"KT" = (
+/obj/machinery/portable_atmospherics/canister/nitrous_oxide,
+/obj/effect/turf_decal/bot_white,
+/obj/machinery/light/directional/west,
+/obj/structure/sign/poster/contraband/ff_contest/slay_them/directional/west,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"KW" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/mainhall)
+"KZ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/tarkon_ship/atmos)
+"Lf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = 30
+	},
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/frstoff{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"Ln" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Lq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/atmos)
+"LC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"LF" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/turf_decal/bot_white,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"LO" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/line,
+/turf/open/floor/iron/dark/brick_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/medbay)
+"LP" = (
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/table/wood/fancy/blue,
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"Ml" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Mp" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/plaque/static_plaque/golden/captain{
+	pixel_y = 28;
+	name = "Tarkon Colonial Ship ICV-7 Horizon";
+	desc = "The ICV-7 Horizon was founded in 2462."
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Mu" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/medbay)
+"My" = (
+/obj/structure/rack,
+/obj/item/turret_assembly/hoplite,
+/obj/item/turret_assembly/cerberus{
+	pixel_y = -5
+	},
+/obj/machinery/door/window/brigdoor/right/directional/west,
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"ME" = (
+/obj/machinery/button/door/directional/west{
+	id = "cargoup";
+	req_access = list("tarkon");
+	name = "Gate"
+	},
+/turf/open/floor/iron/smooth_corner,
+/area/ruin/tarkon_ship/mainhall)
+"MH" = (
+/obj/item/storage/part_replacer/cargo,
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/full,
+/obj/structure/fireaxecabinet/mechremoval/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"ML" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"MW" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/bodycontainer/morgue,
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 10
+	},
+/obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/medbay)
+"Ne" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/vg_decals/department/sci,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Nn" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"Nu" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"Nx" = (
+/obj/structure/table/reinforced,
+/obj/item/construction/rcd/tarkon,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"NO" = (
+/obj/structure/marker_beacon/bronze,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/pattern_4,
+/area/ruin/tarkon_ship/medbay)
+"NU" = (
+/obj/machinery/piratepad/ghostpad/tarkon,
+/obj/effect/turf_decal/stripes/box,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/tarkon_ship/mainhall)
+"NX" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/effect/turf_decal/trimline/purple/line,
+/obj/item/experi_scanner,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Oa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Or" = (
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = -30
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/engi{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"Ou" = (
+/obj/machinery/door/airlock/atmos/glass{
+	name = "Atmospherics Center"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Oy" = (
+/obj/machinery/dna_scannernew,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"OC" = (
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"OK" = (
+/turf/open/floor/engine/o2,
+/area/ruin/tarkon_ship/atmos)
+"OS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/department/cargo,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"OW" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Pb" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/green/line,
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Pj" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "cargodown"
+	},
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/tarkon_ship/mainhall)
+"Po" = (
+/obj/machinery/atmospherics/miner/plasma,
+/turf/open/floor/engine/plasma,
+/area/ruin/tarkon_ship/atmos)
+"PD" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/airlock/medical{
+	name = "Medical Block"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"PV" = (
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/structure/sign/poster/contraband/lusty_xenomorph/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"PW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Qg" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/brown/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/obj/structure/marker_beacon/bronze,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Qh" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/green/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"Qj" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/biogenerator,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"Qm" = (
+/obj/machinery/modular_computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"QA" = (
+/obj/machinery/vending/drugs{
+	all_products_free = 1
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/heart/directional/north,
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/medbay)
+"QE" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/bot_white,
+/obj/structure/sign/poster/official/moth_piping/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"QL" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"QV" = (
+/obj/machinery/light/directional/north,
+/obj/structure/sign/warning/secure_area/directional/north{
+	sign_change_name = "Warning - Tarkon Authority"
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/tarkon_ship/mainhall)
+"Rd" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Ru" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/obj/structure/holosign/barrier/atmos/sturdy,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"Rw" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Rx" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"RG" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"RS" = (
+/turf/closed/wall/mineral/titanium/shielded,
+/area/ruin/tarkon_ship/mainhall)
+"RW" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/machinery/chem_heater/withbuffer,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"RY" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/structure/chair/comfy/beige,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"Si" = (
+/obj/structure/closet/crate/engineering,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Sr" = (
+/obj/machinery/door/poddoor/incinerator_atmos_main{
+	id = "turbine1"
+	},
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"St" = (
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Sy" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"SB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"SD" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/green/line,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/ruin/tarkon_ship/mainhall)
+"SE" = (
+/obj/machinery/dna_infuser,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/lizard/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"SI" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/smooth_half,
+/area/ruin/tarkon_ship/mainhall)
+"SL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/medbay)
+"SM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"SS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airalarm/all_access,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"SX" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Tb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Td" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Tw" = (
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"TL" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"TW" = (
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Ux" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/general/visible{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"Uy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/button/door/directional/south{
+	id = "trkbin2";
+	name = "Door Bolts";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"UN" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/disposaloutlet{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"UP" = (
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airalarm/all_access,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/bridge)
+"UV" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"UX" = (
+/obj/machinery/rnd/production/protolathe/tarkon,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airalarm/all_access,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Vf" = (
+/obj/machinery/flatpacker,
+/obj/effect/turf_decal/trimline/purple/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Vo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"Vt" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"VC" = (
+/obj/machinery/jukebox/no_access,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"VQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/closet/generic/wall/empty{
+	pixel_x = 30
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/effect/mob_spawn/ghost_role/human/shiptarkon/sec{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/ruin/tarkon_ship/mainhall)
+"VR" = (
+/obj/machinery/computer/piratepad_control/ghostpad/tarkon{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"VU" = (
+/obj/structure/sign/warning/biohazard/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"VV" = (
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 10
+	},
+/obj/machinery/computer/atmos_alert{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/bridge)
+"Wb" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/dark/brick_corner{
+	dir = 4
+	},
+/area/ruin/tarkon_ship/rnd)
+"Wg" = (
+/obj/structure/closet/cabinet,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/item/bedsheet/qm/double,
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"Wk" = (
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/tarkon_ship/atmos)
+"Wr" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/obj/item/bedsheet/cosmos/double{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/sign/poster/contraband/ff_contest/skrell_it/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"WA" = (
+/obj/machinery/door/airlock{
+	name = "Cabin 1";
+	id_tag = "trkbin1"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"WG" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"WO" = (
+/obj/machinery/door/airlock{
+	name = "Cabin 2";
+	id_tag = "trkbin2"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall/dorm)
+"WS" = (
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"Xc" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/atmos)
+"Xm" = (
+/obj/effect/turf_decal/trimline/purple/line,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+"Xw" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/marker_beacon/bronze,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"Xy" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/button/door/directional/north{
+	pixel_y = 32;
+	pixel_x = -9;
+	id = "cptdrm";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
+	pixel_x = 4
+	},
+/turf/open/floor/wood/wood_11,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"XC" = (
+/obj/machinery/oven/range,
+/obj/machinery/light/directional/east,
+/obj/structure/sign/poster/contraband/double_rainbow/directional/north,
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"XG" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/vg_decals/department/cargo,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"XU" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"XX" = (
+/obj/structure/closet/crate/secure/trashcart,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/xeno)
+"Yd" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/brick_half,
+/area/ruin/tarkon_ship/medbay)
+"Yk" = (
+/obj/structure/bed/double,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/light_switch/directional/east{
+	name = "Light"
+	},
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/carpet/green,
+/area/ruin/tarkon_ship/mainhall/capdorm)
+"Yt" = (
+/obj/machinery/firealarm/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/atmos)
+"YC" = (
+/obj/structure/closet/radiation,
+/obj/item/clothing/suit/utility/radiation,
+/turf/open/floor/plating/reinforced,
+/area/ruin/tarkon_ship/atmos)
+"YV" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/corner,
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"YW" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 10
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/medbay)
+"YY" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"Ze" = (
+/obj/machinery/griddle,
+/obj/machinery/light_switch/directional/north{
+	pixel_y = 32;
+	name = "Light"
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/tarkon_ship/mainhall)
+"Zp" = (
+/turf/closed/wall/mineral/titanium/nodiagonal/shielded,
+/area/ruin/tarkon_ship/xeno)
+"Zt" = (
+/obj/machinery/door/airlock/external/glass{
+	name = "Hangar Access"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/ruin/tarkon_ship/mainhall)
+"ZI" = (
+/turf/open/floor/engine,
+/area/ruin/tarkon_ship/mainhall)
+"ZM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/department/sec,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/mainhall)
+"ZN" = (
+/obj/machinery/computer/dna_console,
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/tarkon_ship/rnd)
+
+(1,1,1) = {"
+fl
+BA
+fl
+fl
+IB
+fl
+fl
+fl
+BA
+fl
+fl
+IB
+bU
+fl
+BA
+fl
+IB
+fl
+fl
+fl
+BA
+fl
+fl
+kS
+fl
+"}
+(2,1,1) = {"
+IB
+kS
+fl
+Xw
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+vx
+Xw
+fl
+BA
+IB
+"}
+(3,1,1) = {"
+fl
+BA
+fl
+vx
+BA
+IB
+xt
+fl
+fl
+xR
+IN
+xt
+fl
+xt
+vx
+fl
+fl
+xR
+xt
+IB
+fl
+vx
+fl
+fl
+fl
+"}
+(4,1,1) = {"
+fl
+Xw
+vx
+xt
+fl
+IC
+KZ
+fl
+fl
+fl
+vx
+KZ
+uh
+KZ
+IN
+fl
+fl
+fl
+KZ
+fl
+IC
+xt
+vx
+Xw
+BA
+"}
+(5,1,1) = {"
+IB
+vx
+fl
+KZ
+fl
+fl
+KZ
+fl
+fl
+fl
+yg
+KZ
+Sr
+KZ
+yg
+fl
+fl
+fl
+KZ
+fl
+fl
+KZ
+fl
+vx
+fl
+"}
+(6,1,1) = {"
+fl
+vx
+bZ
+KZ
+Wk
+Wk
+Wk
+Wk
+Wk
+Wk
+yC
+KZ
+fX
+KZ
+yC
+Wk
+Wk
+Wk
+Wk
+Wk
+Wk
+KZ
+bZ
+vx
+fl
+"}
+(7,1,1) = {"
+fl
+vx
+Wk
+KZ
+KZ
+KZ
+KZ
+KZ
+KZ
+KZ
+yC
+KZ
+mG
+oj
+bJ
+wc
+sQ
+KZ
+KZ
+KZ
+KZ
+KZ
+Wk
+vx
+IB
+"}
+(8,1,1) = {"
+BA
+vx
+KZ
+KZ
+Nx
+DS
+dc
+ef
+WS
+rX
+Bg
+KZ
+EQ
+KZ
+hX
+SM
+wy
+KT
+QE
+kw
+Po
+KZ
+KZ
+vx
+fl
+"}
+(9,1,1) = {"
+fl
+vx
+KZ
+KZ
+il
+zN
+WS
+WS
+WS
+WS
+YC
+KZ
+uh
+RG
+Ru
+SM
+DR
+Hx
+LF
+fr
+kT
+KZ
+KZ
+vx
+BA
+"}
+(10,1,1) = {"
+kS
+vx
+Lq
+CQ
+Kj
+WS
+WS
+Ac
+WS
+WS
+PW
+KZ
+KF
+cA
+yb
+ER
+ku
+Sy
+kP
+Ux
+zg
+lV
+Lq
+vx
+fl
+"}
+(11,1,1) = {"
+fl
+Fk
+Lq
+cL
+WS
+WS
+WG
+WS
+WS
+WS
+WS
+hX
+KZ
+KZ
+hX
+Xc
+Hu
+kP
+BL
+BL
+eJ
+oE
+Lq
+Fk
+fl
+"}
+(12,1,1) = {"
+bU
+fl
+Lq
+fx
+BL
+BL
+BL
+XU
+Tb
+Sy
+kP
+BL
+xo
+Yt
+BL
+tO
+dy
+XU
+BL
+kP
+kO
+FR
+Lq
+IB
+bU
+"}
+(13,1,1) = {"
+fl
+Ke
+Lq
+px
+JU
+bz
+FJ
+cj
+qb
+oV
+SX
+OC
+zu
+zu
+ML
+JO
+zK
+Ln
+iK
+gB
+FX
+UN
+Lq
+Ke
+fl
+"}
+(14,1,1) = {"
+fl
+Lq
+Lq
+Lq
+Lq
+Lq
+Lq
+fM
+BI
+Lq
+bE
+pf
+xp
+ab
+OK
+Lq
+Ou
+Rw
+Lq
+Lq
+Lq
+Lq
+Lq
+Lq
+fl
+"}
+(15,1,1) = {"
+BA
+eU
+qH
+Fw
+eU
+RS
+fc
+hW
+cX
+Lq
+aV
+cw
+xp
+Jx
+yJ
+Lq
+ti
+Qg
+RS
+qh
+ml
+lp
+yM
+qh
+BA
+"}
+(16,1,1) = {"
+fl
+eU
+BV
+tu
+WA
+gl
+gl
+UV
+RS
+dB
+dB
+dB
+dB
+dB
+dB
+dB
+RS
+dn
+LC
+tI
+qc
+LP
+xU
+qh
+fl
+"}
+(17,1,1) = {"
+IB
+eU
+eU
+eU
+eU
+uI
+nd
+qJ
+dB
+av
+In
+dB
+nN
+mw
+Or
+uy
+dB
+BU
+yx
+qh
+Xy
+Nn
+kA
+qh
+fl
+"}
+(18,1,1) = {"
+fl
+eU
+Wr
+Uy
+eU
+fR
+SB
+om
+ep
+GA
+HP
+dB
+xi
+Vo
+KB
+nk
+ik
+YY
+FP
+qh
+fk
+aJ
+Fm
+qh
+BA
+"}
+(19,1,1) = {"
+BA
+eU
+pd
+tu
+WO
+zY
+QL
+gq
+dB
+ie
+be
+dB
+sT
+Lf
+qF
+VQ
+dB
+YY
+gL
+qh
+Wg
+Yk
+ki
+qh
+fl
+"}
+(20,1,1) = {"
+fl
+wK
+eU
+eU
+eU
+eU
+RS
+iH
+RS
+dB
+dB
+dB
+dB
+dB
+dB
+dB
+RS
+dn
+RS
+qh
+qh
+qh
+qh
+od
+fl
+"}
+(21,1,1) = {"
+bU
+rU
+dB
+dB
+DQ
+wt
+dB
+xB
+Hc
+Eg
+KG
+ZI
+ZI
+ZI
+VR
+NU
+Hc
+vR
+dB
+wt
+DQ
+dB
+dB
+QV
+bU
+"}
+(22,1,1) = {"
+fl
+cl
+bD
+ME
+GX
+yt
+Zt
+AH
+iQ
+yf
+KC
+ZI
+KW
+ZI
+bS
+zS
+zS
+Fs
+Zt
+yt
+GX
+wP
+wj
+vj
+IB
+"}
+(23,1,1) = {"
+fl
+bh
+bD
+HU
+Rx
+ns
+tq
+zU
+uG
+ms
+nU
+ZI
+ZI
+ZI
+Fg
+Oa
+uG
+mk
+dB
+lU
+Rx
+SI
+Pj
+fn
+BA
+"}
+(24,1,1) = {"
+BA
+eY
+wq
+iS
+EB
+XG
+Im
+AH
+cU
+lF
+HD
+Nu
+eb
+Nu
+CE
+lF
+cU
+Fs
+Im
+OS
+EB
+rn
+Pj
+eB
+fl
+"}
+(25,1,1) = {"
+bU
+IH
+dB
+dB
+nm
+GF
+dB
+lx
+jk
+ev
+Er
+Fi
+YV
+Kb
+or
+Cc
+df
+li
+dB
+iL
+nm
+dB
+dB
+qC
+bU
+"}
+(26,1,1) = {"
+fl
+BA
+AP
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mu
+Mp
+an
+Zp
+Zp
+Zp
+Zp
+Zp
+Zp
+Zp
+Zp
+Zp
+Io
+fl
+fl
+"}
+(27,1,1) = {"
+IB
+fl
+fl
+fF
+di
+rO
+Iu
+MW
+Kl
+wx
+Mu
+ft
+JD
+Zp
+Cp
+zV
+VU
+St
+uk
+Cp
+vC
+JA
+fl
+BA
+fl
+"}
+(28,1,1) = {"
+fl
+kS
+BA
+fF
+tJ
+Yd
+uR
+vH
+RY
+KA
+iz
+hm
+bM
+BG
+Ff
+Cp
+Td
+Cp
+Td
+tl
+uk
+JA
+fl
+fl
+xT
+"}
+(29,1,1) = {"
+BA
+fl
+fl
+Mu
+AP
+CK
+tF
+LO
+sE
+RW
+Mu
+hm
+ih
+Zp
+iy
+mV
+Cp
+Cp
+Cp
+yU
+Io
+Zp
+fl
+IB
+fl
+"}
+(30,1,1) = {"
+fl
+BA
+fl
+AP
+Mu
+QA
+NO
+oo
+pq
+YW
+PD
+oS
+hB
+KK
+hl
+wE
+Cp
+Cp
+Cp
+uk
+Zp
+Io
+fl
+BA
+fl
+"}
+(31,1,1) = {"
+BA
+fl
+BA
+fl
+Mu
+qR
+rx
+SL
+kc
+mo
+Mu
+hm
+CH
+Zp
+EL
+Rd
+Cp
+Td
+Si
+Io
+Zp
+fl
+fl
+fl
+xT
+"}
+(32,1,1) = {"
+fl
+fl
+bU
+fl
+AP
+Mu
+nG
+aA
+db
+dq
+Mu
+qv
+bM
+Zp
+ip
+Cp
+Cp
+Cp
+vC
+Zp
+Io
+fl
+bU
+kS
+fl
+"}
+(33,1,1) = {"
+fl
+BA
+fl
+fl
+fl
+Mu
+eo
+nl
+RY
+Jw
+Mu
+SS
+bM
+Zp
+Cm
+Td
+st
+XX
+VC
+Zp
+fl
+BA
+fl
+fl
+fl
+"}
+(34,1,1) = {"
+BA
+fl
+fl
+IB
+fl
+Mu
+cW
+Ai
+af
+cP
+Mu
+ft
+JD
+Zp
+Zp
+BG
+Zp
+Zp
+Io
+Zp
+fl
+fl
+fl
+BA
+fl
+"}
+(35,1,1) = {"
+xT
+IB
+fl
+fl
+fl
+AP
+Mu
+Mu
+Mu
+Mu
+Mu
+nw
+Tw
+Js
+MH
+jy
+PV
+Gt
+Js
+kW
+fl
+IB
+fl
+xT
+IB
+"}
+(36,1,1) = {"
+fl
+kS
+fl
+BA
+fl
+fl
+dB
+iY
+pk
+DF
+vm
+ZM
+bM
+Js
+UX
+Jp
+Wb
+wO
+Js
+BA
+fl
+BA
+fl
+fl
+fl
+"}
+(37,1,1) = {"
+BA
+fl
+fl
+fl
+bU
+fl
+dB
+wu
+My
+uC
+dB
+zW
+Ne
+Hk
+er
+eX
+eK
+NX
+Js
+fl
+bU
+fl
+kS
+BA
+fl
+"}
+(38,1,1) = {"
+fl
+BA
+IB
+BA
+fl
+BA
+dB
+dB
+dB
+dB
+dB
+pl
+eE
+Js
+yZ
+wJ
+kx
+Vf
+Js
+IB
+BA
+fl
+xT
+fl
+fl
+"}
+(39,1,1) = {"
+fl
+fl
+fl
+BA
+fl
+fl
+lz
+rm
+Et
+ug
+Ah
+Qh
+Pb
+nb
+rL
+HL
+jc
+aY
+CU
+fl
+fl
+fl
+BA
+fl
+fl
+"}
+(40,1,1) = {"
+fl
+xT
+fl
+fl
+kS
+fl
+lz
+rd
+Ds
+oQ
+Bw
+Bh
+BW
+Ez
+hA
+xv
+jx
+yG
+CU
+fl
+kS
+fl
+fl
+BA
+fl
+"}
+(41,1,1) = {"
+fl
+fl
+fl
+xT
+fl
+fl
+RS
+dB
+oW
+hI
+eZ
+Bh
+gW
+Js
+cB
+TW
+mn
+Js
+kW
+fl
+BA
+fl
+BA
+fl
+IB
+"}
+(42,1,1) = {"
+BA
+fl
+fl
+fl
+fl
+BA
+fl
+dB
+Ze
+Vt
+Jy
+Ml
+SD
+Js
+SE
+vz
+Xm
+Js
+fl
+xT
+fl
+fl
+fl
+fl
+fl
+"}
+(43,1,1) = {"
+fl
+fl
+xT
+fl
+BA
+bU
+fl
+dB
+mp
+TL
+TL
+Bh
+pO
+Js
+ZN
+IS
+so
+Js
+BA
+bU
+IB
+fl
+fl
+xT
+BA
+"}
+(44,1,1) = {"
+fl
+fl
+fl
+BA
+fl
+fl
+BA
+dB
+XC
+vM
+Qj
+oq
+kg
+Js
+Oy
+OW
+Jh
+Js
+fl
+fl
+fl
+wX
+Hp
+fl
+bU
+"}
+(45,1,1) = {"
+fl
+xT
+BA
+fl
+IB
+fl
+fl
+RS
+dB
+dB
+dB
+HA
+dB
+Js
+Js
+Js
+Js
+kW
+fl
+BA
+wX
+kv
+kv
+Hp
+fl
+"}
+(46,1,1) = {"
+fl
+fl
+fl
+fl
+xT
+BA
+IB
+fl
+tW
+wi
+qE
+vP
+hK
+UP
+sA
+VV
+AM
+fl
+kS
+fl
+sZ
+fP
+kv
+vo
+xT
+"}
+(47,1,1) = {"
+fl
+BA
+fl
+fl
+fl
+fl
+bU
+BA
+AM
+dx
+aE
+gG
+rs
+JZ
+qu
+yP
+AM
+BA
+bU
+IB
+sZ
+fP
+gP
+fl
+bU
+"}
+(48,1,1) = {"
+fl
+fl
+kS
+fl
+BA
+fl
+BA
+fl
+zb
+AM
+zb
+Qm
+KD
+aB
+zb
+AM
+zb
+fl
+fl
+wX
+kv
+kv
+vo
+BA
+kS
+"}
+(49,1,1) = {"
+fl
+fl
+xT
+fl
+fl
+xT
+fl
+fl
+kS
+fl
+zb
+AM
+AM
+AM
+zb
+fl
+fl
+fl
+xT
+BO
+rz
+vo
+fl
+xT
+BA
+"}
+(50,1,1) = {"
+BA
+fl
+fl
+BA
+fl
+fl
+xT
+BA
+bU
+fl
+BA
+fl
+fl
+fl
+BA
+IB
+bU
+BA
+fl
+bU
+fl
+BA
+bU
+fl
+xT
+"}
