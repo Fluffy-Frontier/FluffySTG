@@ -289,12 +289,12 @@
 
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/rubbershot
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/rubber)
-
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/magnum_buckshot
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/magnum)
 	access = ACCESS_WEAPONS
 	access_view = ACCESS_WEAPONS
-
+*/ // FLUFFY FRONTIER REMOVAL END
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/express_buckshot
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/express)
 	access = ACCESS_WEAPONS
@@ -302,12 +302,12 @@
 
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/hunter_slug
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/hunter)
-
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/flechettes
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/flechette)
 	access = ACCESS_WEAPONS
 	access_view = ACCESS_WEAPONS
-
+*/ // FLUFFY FRONTIER REMOVAL END
 /datum/supply_pack/companies/mags_and_ammo/vitezstvi/shot_shells/hornet_nest
 	contains = list(/obj/item/ammo_box/advanced/s12gauge/beehive)
 

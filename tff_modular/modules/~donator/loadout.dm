@@ -197,3 +197,8 @@
 	name = "Nanotrasen 'Kitty' Replica Greatcoat"
 	item_path = /obj/item/clothing/neck/cloak/meowcloak
 	ckeywhitelist = list("yaqapi", "sutulayapsina", "kiritikuno12")
+
+/datum/loadout_item/neck/paddedsec
+	name = "Vanguard Cloak"
+	item_path = /obj/item/clothing/suit/hooded/cloak/paddedsec
+	ckeywhitelist = list("IamHyddra")
