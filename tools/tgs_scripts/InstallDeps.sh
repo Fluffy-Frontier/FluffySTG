@@ -37,7 +37,8 @@ fi
 # install cargo if needed
 if ! [ -x "$has_cargo" ]; then
 	echo "Installing rust..."
-	curl https://sh.rustup.rs -sSf | sh -s -- -y
+	# FLUFFY FRONTIER EDIT - я хз какой ебобо придумал что нужно всегда ставить последнюю версию раста но последняя версия не может скомпилировать мявтонин, так что будет так. ORIGINAL: curl https://sh.rustup.rs -sSf | sh -s -- -y
+	curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain 1.99.1
 	. ~/.profile
 fi
 
