@@ -144,3 +144,23 @@
 /datum/greyscale_config/meowcloak/worn
 	name = "Meowcloak (Worn)"
 	icon_file = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+
+/obj/item/clothing/suit/hooded/cloak/paddedsec
+	name = "Vanguard cloak"
+	desc = "A meticulously handcrafted cloak that is lined with subtle pockets always filled with some medicine. Oddly enough, you always feel comfortable regardless of the weather."
+	icon_state = "paddedsec"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/paddedsec
+	body_parts_covered = CHEST|GROIN|ARMS
+	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK
+	supports_variations_flags = NONE
+
+/obj/item/clothing/head/hooded/cloakhood/paddedsec
+	name = "Vanguard cloak hood"
+	desc = "A meticulously handcrafted cloak that is lined with subtle pockets always filled with some medicine. Oddly enough, you always feel comfortable regardless of the weather."
+	icon_state = "paddedsechood"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	flags_inv = null
+	supports_variations_flags = NONE
