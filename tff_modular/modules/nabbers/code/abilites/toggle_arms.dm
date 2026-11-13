@@ -61,7 +61,7 @@
 		if(stored_handcuffs)
 			stored_handcuffs.forceMove(stored_handcuffs.drop_location())
 			stored_handcuffs = null
-		for(var/obj/item/held in owner.held_items)
+		for(var/obj/item/held in owner.get_held_items())
 			if(istype(held, /obj/item/melee/nabber_blade))
 				qdel(held)
 		UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
@@ -147,7 +147,7 @@
 			stored_handcuffs.forceMove(stored_handcuffs.drop_location())
 			stored_handcuffs = null
 		nabber.Stun(5 SECONDS)
-		for(var/obj/item/held in nabber.held_items)
+		for(var/obj/item/held in nabber.get_held_items())
 			if(istype(held, /obj/item/melee/nabber_blade))
 				qdel(held)
 		button_icon_state = "arms_on"
@@ -160,7 +160,7 @@
 		return FALSE
 
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
-	for(var/obj/item/held in nabber.held_items)
+	for(var/obj/item/held in nabber.get_held_items())
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
@@ -186,7 +186,7 @@
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 	nabber.balloon_alert(nabber, "lose hand!")
 	nabber.Stun(5 SECONDS)
-	for(var/obj/item/held in nabber.held_items)
+	for(var/obj/item/held in nabber.get_held_items())
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
