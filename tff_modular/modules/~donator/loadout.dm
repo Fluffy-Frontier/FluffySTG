@@ -201,4 +201,4 @@
 /datum/loadout_item/neck/paddedsec
 	name = "Vanguard Cloak"
 	item_path = /obj/item/clothing/suit/hooded/cloak/paddedsec
-	ckeywhitelist = list("IamHyddra")
+	ckeywhitelist = list("IamHyddra", "napaslavandos", "blackrainman")

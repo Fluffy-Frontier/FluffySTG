@@ -155,6 +155,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK
 	supports_variations_flags = NONE
+	hood_up_affix = ""
 
 /obj/item/clothing/head/hooded/cloakhood/paddedsec
 	name = "Vanguard cloak hood"
@@ -162,5 +163,5 @@
 	icon_state = "paddedsechood"
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
-	flags_inv = null
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	supports_variations_flags = NONE
