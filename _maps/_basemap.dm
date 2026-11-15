@@ -24,9 +24,6 @@
 	#include "map_files\oceanpubby\oceanpubby.dmm"
 	#include "map_files\NorthStar\north_star.dmm"
 	// NOVA EDIT ADDITION END
-	// FLUFFY FRONTIER ADDITION START
-	#include "map_files\NSSJourney\NSSJourney.dmm"
-	// FLUFFY FRONTIER ADDITION END
 #endif
 #ifdef ALL_TEMPLATES
 	#include "templates.dm"
