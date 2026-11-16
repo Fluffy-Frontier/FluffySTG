@@ -152,15 +152,10 @@
 	item_path = /obj/item/clothing/suit/jacket/leather/futuristic
 	ckeywhitelist = list("PhenyaMomota", "Deadsec17", "Lafrien", "Iajret", "Vishenka0704")
 
-/datum/loadout_item/neck/voidarr_cape
-	name = "Voidarr Personel cape"
-	item_path = /obj/item/clothing/neck/voidarr_cape
-	ckeywhitelist = list("Smol42", "Sage4or")
-
-/datum/loadout_item/neck/smoltrenchcoat
-	name = "Secure Trenchcoat"
-	item_path = /obj/item/clothing/neck/smoltrenchcoat
-	ckeywhitelist = list("Smol42")
+/datum/loadout_item/neck/smolcoat
+	name = "Elegant Greatcoat"
+	item_path = /obj/item/clothing/neck/smolcoat
+	ckeywhitelist = list("Smol42", "Weirdbutton")
 
 /datum/loadout_item/neck/mousecloak
 	name = "Winter Assault Jacket"
