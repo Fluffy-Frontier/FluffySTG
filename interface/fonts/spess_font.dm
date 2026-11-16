@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/spessfont
 	name = "Spess Font"
-	font_family = 'interface/fonts/SpessFont.ttf'
+	font_family = 'tff_modular/master_files/interface/fonts/SpessFontRus.ttf' // FLUFFY FRONTIER EDIT. ORIGINAL: font_family = 'interface/fonts/SpessFont.ttf'
 
 /// For icon overlays
 /// Spess Font 6pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)
