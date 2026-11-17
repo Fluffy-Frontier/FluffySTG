@@ -56,8 +56,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
-/obj/item/food/surimi/Initialize(mapload)
-	. = ..()
+/obj/item/food/surimi/make_dryable()
 	AddElement(/datum/element/dryable, /obj/item/food/kamaboko)
 
 /obj/item/food/kamaboko
@@ -239,6 +238,24 @@
 	foodtypes = MEAT | GRAIN | PINEAPPLE | FRUIT | VEGETABLES | EGG
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
+	custom_materials = list(/datum/material/meat = MEATDISH_MATERIAL_AMOUNT)
+
+/obj/item/food/bowled/hua_mulan_congee
+	name = "\improper Hua Mulan congee"
+	desc = "Nobody is quite sure why this smiley bowl of rice porridge with eggs and bacon is named after a mythological Chinese figure- \
+		it's just sorta what it's always been called."
+	icon = 'icons/obj/food/martian.dmi'
+	icon_state = "hua_mulan_congee"
+	trash_type = /obj/item/reagent_containers/cup/bowl
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+		/datum/reagent/consumable/nutriment/protein = 6,
+	)
+	tastes = list("bacon" = 1, "eggs" = 1)
+	foodtypes = MEAT|GRAIN|FRIED|EGG
+	w_class = WEIGHT_CLASS_SMALL
+	crafting_complexity = FOOD_COMPLEXITY_4
 	custom_materials = list(/datum/material/meat = MEATDISH_MATERIAL_AMOUNT)
 
 /obj/item/food/salad/ikareis
@@ -1369,7 +1386,7 @@
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "pickled_voltvine"
 	food_reagents = list(
-		/datum/reagent/consumable/liquidelectricity/enriched = 4,
+		/datum/reagent/consumable/liquidelectricity = 4,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("sour radish" = 1)
@@ -1384,7 +1401,7 @@
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "volt_fish"
 	food_reagents = list(
-		/datum/reagent/consumable/liquidelectricity/enriched = 6,
+		/datum/reagent/consumable/liquidelectricity = 6,
 		/datum/reagent/consumable/nutriment/protein = 4,
 	)
 	tastes = list("fish" = 1, "sour pear" = 1)
@@ -1399,7 +1416,7 @@
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "sprout_bowl"
 	food_reagents = list(
-		/datum/reagent/consumable/liquidelectricity/enriched = 8,
+		/datum/reagent/consumable/liquidelectricity = 8,
 		/datum/reagent/consumable/nutriment/protein = 4,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)

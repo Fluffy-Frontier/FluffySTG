@@ -16,7 +16,7 @@
 		child_hugger.forceMove(get_turf(src))
 		if(istype(child_hugger, child_path))
 			if(kill)
-				child_hugger.Die()
+				child_hugger.die()
 			else
 				if(!child_hugger.ProximityLeap(leap_range))
 					return_timer = addtimer(CALLBACK(src, PROC_REF(return_child)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_DELETE_ME)

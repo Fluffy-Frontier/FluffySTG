@@ -3606,7 +3606,7 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/medical/syndicate{
 	onstation = 0;
-	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/mmi/syndie/interdyne=3);
+	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/brain_processor/organic/syndie/interdyne=3);
 	extended_inventory = 1;
 	color = "#adadcd";
 	light_color = "#adadcd";
@@ -6784,10 +6784,7 @@
 	pixel_x = -2;
 	pixel_y = 0
 	},
-/obj/item/modular_computer/pda/assistant{
-	pixel_x = 6;
-	pixel_y = 0
-	},
+/obj/item/modular_computer/pda/crew/assistant,
 /obj/structure/bed/double,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)

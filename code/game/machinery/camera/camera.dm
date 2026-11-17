@@ -435,8 +435,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/xray, 0)
 		for(var/turf/seen as anything in see)
 			if(check_lower)
 				var/turf/below = seen
-				while(below && istransparentturf(below))
-					below = GET_TURF_BELOW(below)
+				// A transparent turf can be the bottom zlevel
+				while(istransparentturf(below) && (below = GET_TURF_BELOW(below)))
 					see += RANGE_TURFS(1, below)
 			if(check_higher)
 				var/turf/above = GET_TURF_ABOVE(seen)
@@ -462,10 +462,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/xray, 0)
 
 /obj/machinery/camera/update_remote_sight(mob/living/user)
 	user.set_invis_see(SEE_INVISIBLE_LIVING) //can't see ghosts through cameras
+	user.lighting_cutoff = LIGHTING_CUTOFF_VISIBLE
+	user.lighting_color_cutoffs = list(0, 0, 0)
 	if(isXRay())
-		user.add_sight(SEE_TURFS|SEE_MOBS|SEE_OBJS)
+		user.set_sight(SEE_TURFS|SEE_MOBS|SEE_OBJS)
 	else
-		user.clear_sight(SEE_TURFS|SEE_MOBS|SEE_OBJS)
+		user.set_sight(SEE_TURFS)
 	return TRUE
 
 ///Called when the camera starts being watched on a camera console.

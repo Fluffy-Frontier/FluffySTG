@@ -136,7 +136,7 @@
 //BUCKLE HOOKS
 /obj/machinery/mounted_machine_gun/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
 	playsound(src,'sound/vehicles/mecha/mechmove01.ogg', 50, TRUE)
-	for(var/obj/item/iterating_item in buckled_mob.held_items)
+	for(var/obj/item/iterating_item in buckled_mob.get_held_items())
 		if(istype(iterating_item, /obj/item/gun_control))
 			qdel(iterating_item)
 	if(istype(buckled_mob))
@@ -182,15 +182,15 @@
 		return
 	remove_ammo_box(user)
 
-/obj/machinery/mounted_machine_gun/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+/obj/machinery/mounted_machine_gun/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
-	if(!istype(attacking_item, ammo_box_type))
+	if(!istype(tool, ammo_box_type))
 		return
 	if(ammo_box)
 		balloon_alert(user, "already loaded!")
 		return
-	ammo_box = attacking_item
-	attacking_item.forceMove(src)
+	ammo_box = tool
+	tool.forceMove(src)
 	playsound(src, 'modular_nova/modules/mounted_machine_gun/sound/insert_ammobox.ogg', 100)
 	balloon_alert(user, "ammo box inserted!")
 
@@ -211,7 +211,7 @@
 /obj/machinery/mounted_machine_gun/proc/register_user(mob/living/user_to_buckle)
 	current_user = user_to_buckle
 
-	for(var/hand_item in user_to_buckle.held_items)
+	for(var/hand_item in user_to_buckle.get_hand_slots())
 		var/obj/item/item = hand_item
 		if(istype(item))
 			if(user_to_buckle.dropItemToGround(item))

@@ -7,11 +7,10 @@
 	to_chat(src, span_notice("You can ventcrawl! Use alt+click on vents to quickly travel about the station."))
 
 /mob/living/carbon/human/notify_ventcrawler_on_login()
-	if(!ismonkey(src))
+	if(!HAS_TRAIT(src, TRAIT_LESSER_HUMANOID))
 		return ..()
 	if(!istype(head, /obj/item/clothing/head/helmet/monkey_sentience)) //don't notify them about ventcrawling if they're wearing the sentience helmet, because they can't ventcrawl with it on, and if they take it off they'll no longer be in control of the mob.
 		return ..()
-
 
 
 /// Checks if the mob is able to enter the vent, and provides feedback if they are unable to.
@@ -25,7 +24,7 @@
 		return
 	if(!HAS_TRAIT(src, TRAIT_VENTCRAWLER_NUDE) && !HAS_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS))
 		return
-	if(stat)
+	if(IS_UNCONSCIOUS_OR_CRIT(src))
 		if(provide_feedback)
 			to_chat(src, span_warning("You must be conscious to do this!"))
 		return
@@ -46,7 +45,7 @@
 			to_chat(src, span_warning("You can't vent crawl while buckled!"))
 		return
 	if(iscarbon(src) && required_nudity)
-		if(length(get_equipped_items(INCLUDE_POCKETS|INCLUDE_HELD)))
+		if(length(get_equipped_items(INCLUDE_POCKETS|INCLUDE_HELD)) || has_status_effect(/datum/status_effect/cuffed_item))
 			if(provide_feedback)
 				to_chat(src, span_warning("You can't crawl around in the ventilation ducts with items!"))
 			return
@@ -134,11 +133,13 @@
 	if(!isnull(ai_controller) && isnull(client)) // we don't care about pipe vision if we have an AI controller with no client (typically means we are clientless).
 		return
 
+	update_sight()
+
 	// Take away all the pipe images if we're not doing anything with em
 	if(isnull(client) || !HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING) || !istype(loc, /obj/machinery/atmospherics) || !(movement_type & VENTCRAWLING))
 		for(var/image/current_image in pipes_shown)
 			client.images -= current_image
-		pipes_shown.len = 0
+		LAZYNULL(pipes_shown)
 		pipetracker = null
 		for(var/atom/movable/screen/plane_master/lighting as anything in hud_used.get_true_plane_masters(LIGHTING_PLANE))
 			lighting.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, "#4d4d4d")
@@ -161,10 +162,11 @@
 	if(full_refresh)
 		for(var/image/current_image in pipes_shown)
 			client.images -= current_image
-		pipes_shown.len = 0
+		LAZYCLEARLIST(pipes_shown)
 		pipetracker = null
 
 	if(!pipetracker)
+		LAZYINITLIST(pipes_shown)
 		pipetracker = new()
 
 	var/turf/our_turf = get_turf(src)

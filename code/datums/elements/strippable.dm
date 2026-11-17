@@ -36,6 +36,9 @@
 /datum/element/strippable/proc/mouse_drop_onto(datum/source, atom/over, mob/user)
 	SIGNAL_HANDLER
 
+	if(SEND_SIGNAL(source, COMSIG_MOB_STRIP_MENU_OPEN, over, user) & COMPONENT_BLOCK_STRIP_MENU_OPEN)
+		return
+
 	if (user == source)
 		return
 	if (over != user)
@@ -56,12 +59,6 @@
 
 	if (!isnull(should_strip_proc_path) && !call(source, should_strip_proc_path)(user))
 		return
-
-	// Snowflake for mob scooping
-	if (isliving(source))
-		var/mob/living/mob = source
-		if (mob.can_be_held && (user.grab_state == GRAB_AGGRESSIVE) && (user.pulling == source))
-			return
 
 	var/datum/strip_menu/strip_menu = LAZYACCESS(strip_menus, source)
 
@@ -167,7 +164,7 @@
 	if(ishuman(source) && !is_silent) //NOVA EDIT ADDITION - THIEVING GLOVES ORIGINAL if(ishuman(source))
 		var/mob/living/carbon/human/victim_human = source
 		if(victim_human.key && !victim_human.client) // AKA braindead
-			if(victim_human.stat <= SOFT_CRIT && LAZYLEN(victim_human.afk_thefts) <= AFK_THEFT_MAX_MESSAGES)
+			if(!IS_UNCONSCIOUS(victim_human) && LAZYLEN(victim_human.afk_thefts) <= AFK_THEFT_MAX_MESSAGES)
 				var/list/new_entry = list(list(user.name, "tried unequipping your [item.name]", world.time))
 				LAZYADD(victim_human.afk_thefts, new_entry)
 
@@ -188,6 +185,7 @@
  * Returns a list of alternate actions that can be performed on this strippable_item.
  * All string keys in the list must be inside tgui\packages\tgui\interfaces\StripMenu.tsx
  * You can also return null if there are no alternate actions.
+ * The item is null when the slot is empty.
  */
 /datum/strippable_item/proc/get_alternate_actions(atom/source, mob/user, obj/item/item)
 	RETURN_TYPE(/list)
@@ -197,6 +195,15 @@
 	if(item)
 		SEND_SIGNAL(item, COMSIG_ITEM_GET_STRIPPABLE_ALT_ACTIONS, source, user, alt_actions)
 	return alt_actions
+
+/**
+ * Returns an assoc list of alternate action keys to base64 icons shown in place of the action's default icon.
+ * You can also return null to keep the default icons.
+ * The item is null when the slot is empty.
+ */
+/datum/strippable_item/proc/get_alternate_action_icons(atom/source, mob/user, obj/item/item)
+	RETURN_TYPE(/list)
+	return null
 
 /**
  * Performs an alternate action on this strippable_item.
@@ -265,7 +272,7 @@
 		return FALSE
 
 	var/mob/mob_source = source
-	mob_source.equip_to_slot(equipping, item_slot)
+	mob_source.equip_to_slot(equipping, item_slot) // We check if conditions are valid in the above proc
 
 	return finish_equip_mob(equipping, source, user)
 
@@ -310,7 +317,7 @@
 
 /// A utility function for `/datum/strippable_item`s to start unequipping an item from a mob.
 /proc/start_unequip_mob(obj/item/item, mob/source, mob/user, strip_delay, hidden = FALSE)
-	if (!do_after(user, (strip_delay || item.strip_delay) * (HAS_TRAIT(user, TRAIT_STICKY_FINGERS) ? THIEVING_GLOVES_STRIP_SLOWDOWN : NORMAL_STRIP_SLOWDOWN), source, interaction_key = REF(item), hidden = hidden)) // NOVA EDIT CHANGE - ORIGINAL: if (!do_after(user, strip_delay || item.strip_delay, source, interaction_key = REF(item), hidden = hidden))
+	if (!do_after(user, (strip_delay || item.strip_delay) * (HAS_TRAIT(user, TRAIT_STICKY_FINGERS) ? THIEVING_GLOVES_STRIP_SLOWDOWN : NORMAL_STRIP_SLOWDOWN), source, interaction_key = REF(item), timed_action_flags = (hidden ? HIDE_INTERACTION : NONE))) // NOVA EDIT CHANGE - ORIGINAL: if (!do_after(user, strip_delay || item.strip_delay, source, interaction_key = REF(item), timed_action_flags = (hidden ? HIDE_INTERACTION : NONE)))
 		return FALSE
 
 	return TRUE
@@ -379,16 +386,19 @@
 			continue
 
 		var/obj/item/item = item_data.get_item(owner)
-		if (isnull(item) || (HAS_TRAIT(item, TRAIT_NO_STRIP) || HAS_TRAIT(item, TRAIT_EXAMINE_SKIP)))
+		if (!isnull(item) && (HAS_TRAIT(item, TRAIT_NO_STRIP) || HAS_TRAIT(item, TRAIT_EXAMINE_SKIP)))
 			items[strippable_key] = result
 			continue
 
 		LAZYINITLIST(result)
 
-		result["icon"] = icon2base64(icon(item.icon, item.icon_state, frame = 1))
-		result["name"] = item.name
+		if (!isnull(item))
+			result["icon"] = item.icon
+			result["icon_state"] = item.icon_state
+			result["name"] = item.name
 		result["alternate"] = item_data.get_alternate_actions(owner, user, item)
 		list_clear_nulls(result["alternate"])
+		result["alternate_icons"] = item_data.get_alternate_action_icons(owner, user, item)
 		var/static/list/already_cried = list()
 		if(length(result["alternate"]) > 3 && !(type in already_cried))
 			stack_trace("Too many alternate actions for [type]! Only three are supported at the moment! This will look bad!")

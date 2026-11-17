@@ -188,7 +188,7 @@
 	item_path = /obj/item/clothing/suit/hooded/cloak/urscloak
 	ckeywhitelist = list("BCFiks")
 
-/datum/loadout_item/neck/urscloak
+/datum/loadout_item/neck/tattered_cloak
 	name = "Tattered cloak"
 	item_path = /obj/item/clothing/neck/cloak/tattered_cloak
 	ckeywhitelist = list("IamHyddra")

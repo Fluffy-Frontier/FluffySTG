@@ -4,20 +4,14 @@ import { FeatureDropdownInput } from '../../dropdowns';
 
 export const antag_opt_in_status_pref: FeatureChoiced = {
   name: 'Be Antagonist Target',
-  /* // FLUFFY FRONTIER EDIT START - ORIGNIAL:
   description:
-    'This is for objective targetting and OOC consent.\
-    By extension, picking "Round Remove" will allow you to be round removed in applicable situations, even by non-antagonists. \
-    Enabling any non-ghost antags \
-    (revenant, abductor contractor, etc.) will force your opt-in to be, \
-    at minimum, "Temporarily Inconvenience".',
-  */
-  description:
-    'This is for objective targetting and OOC consent.\
-    By extension, picking "Round Remove" will allow you to be round removed in applicable situations. \
-    Enabling any non-ghost antags \
-    (revenant, abductor contractor, etc.) will force your opt-in to be, \
-    at minimum, "Kill".',
-  // FLUFFY FRONTIER EDIT END
+    'This modifies how the Dynamic targeting system selects you as a target. \
+    No will prevent you from being a target for antagonist objectives. \
+    Inconvenience will make you a target for antagonist objectives that are usually not lethal. \
+    Kill will make you a target for all lethal antagonist objectives. \
+    Round Remove will make you a target for round removal. \
+    Enabling any non-ghost antagonists (Revenant, Contractor, etc.) \
+    will force your opt-in to be, at minimum, \
+    "Inconvenience".',
   component: FeatureDropdownInput,
 };

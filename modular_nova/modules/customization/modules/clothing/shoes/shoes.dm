@@ -50,7 +50,10 @@
 
 /obj/item/clothing/shoes/high_heels/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/heel1.ogg' = 1, 'modular_nova/master_files/sound/effects/heel2.ogg' = 1), 50)
+	AddComponent(/datum/component/squeak, list(
+		'modular_nova/master_files/sound/effects/heel1.ogg' = 1,
+		'modular_nova/master_files/sound/effects/heel2.ogg' = 1,
+	), 50, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = SOUND_FALLOFF_EXPONENT)
 
 /obj/item/clothing/shoes/fancy_heels
 	name = "fancy heels"
@@ -67,7 +70,10 @@
 
 /obj/item/clothing/shoes/fancy_heels/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/heel1.ogg' = 1, 'modular_nova/master_files/sound/effects/heel2.ogg' = 1), 50)
+	AddComponent(/datum/component/squeak, list(
+		'modular_nova/master_files/sound/effects/heel1.ogg' = 1,
+		'modular_nova/master_files/sound/effects/heel2.ogg' = 1,
+	), 50, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = SOUND_FALLOFF_EXPONENT)
 
 /obj/item/clothing/shoes/jungleboots
 	name = "jungle boots"
@@ -130,6 +136,7 @@
 	desc = "A pair of typical Nanotrasen-issue combat jackboots, long enough to reach the wearer's knee. Most commonly worn by commanding officers."
 	icon = MODULAR_SHOES_ICON
 	worn_icon = MODULAR_SHOES_WORN_ICON
+	alternate_worn_layer = UNDER_UNIFORM_LAYER
 	icon_state = "kneeboots"
 
 /obj/item/clothing/shoes/jackboots/timbs
@@ -208,7 +215,10 @@
 
 /obj/item/clothing/shoes/pink_clown_heels/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/heel1.ogg' = 1, 'modular_nova/master_files/sound/effects/heel2.ogg' = 1), 50)
+	AddComponent(/datum/component/squeak, list(
+		'modular_nova/master_files/sound/effects/heel1.ogg' = 1,
+		'modular_nova/master_files/sound/effects/heel2.ogg' = 1,
+	), 50, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = SOUND_FALLOFF_EXPONENT)
 
 /obj/item/clothing/shoes/colorable_laceups
 	name = "laceup shoes"
@@ -267,6 +277,7 @@
 	post_init_icon_state = "knee_boots"
 	greyscale_config = /datum/greyscale_config/knee_boots
 	greyscale_config_worn = /datum/greyscale_config/knee_boots/worn
+	greyscale_config_worn_digi =/datum/greyscale_config/knee_boots/worn/digi
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/shoes/sport_boots
@@ -503,6 +514,18 @@
 	icon_state = "/obj/item/clothing/shoes/fancy_heels/darkgrey"
 	greyscale_colors = "#46464d"
 	flags_1 = null
+
+/obj/item/clothing/shoes/fancy_heels/sandals
+	name = "high-heeled sandals"
+	desc = "A pair of fancy high-heeled sandals that are much smaller on your feet."
+	greyscale_colors = "#252525"
+	icon = 'icons/map_icons/clothing/shoes.dmi'
+	icon_state = "/obj/item/clothing/shoes/fancy_heels/sandals"
+	post_init_icon_state = "highheel_sandals"
+	greyscale_config = /datum/greyscale_config/heeledsandals
+	greyscale_config_worn = /datum/greyscale_config/heeledsandals/worn
+	greyscale_config_worn_digi = /datum/greyscale_config/heeledsandals/worn/digi
+	flags_1 = IS_PLAYER_COLORABLE_1
 
 #undef MODULAR_SHOES_ICON
 #undef MODULAR_SHOES_WORN_ICON

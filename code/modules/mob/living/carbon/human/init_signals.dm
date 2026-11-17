@@ -23,9 +23,9 @@
 	update_mob_height()
 	// Toggle passtable
 	if(HAS_TRAIT(src, TRAIT_DWARF))
-		passtable_on(src, TRAIT_DWARF)
+		ADD_TRAIT(src, TRAIT_PASSTABLE, TRAIT_DWARF)
 	else
-		passtable_off(src, TRAIT_DWARF)
+		REMOVE_TRAIT(src, TRAIT_PASSTABLE, TRAIT_DWARF)
 
 /// Gaining or losing [TRAIT_TOO_TALL] updates our height
 /mob/living/carbon/human/proc/on_tootall_trait(datum/source)
@@ -66,7 +66,7 @@
 		span_warning("[changed] falls out of your pockets!"),
 		vision_distance = COMBAT_MESSAGE_RANGE,
 	)
-	playsound(src, SFX_RUSTLE, 50, TRUE, -5, frequency = 0.8)
+	playsound(src, /datum/sound_effect/rustle, 50, TRUE, -5, frequency = 0.8)
 
 /mob/living/carbon/human/proc/husk_trait_toggle(datum/source)
 	SIGNAL_HANDLER
