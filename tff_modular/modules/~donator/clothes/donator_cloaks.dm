@@ -62,45 +62,29 @@
 	icon_state = "romontesque_haori"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	resistance_flags = FIRE_PROOF
-/datum/atom_skin/voidarr_cape
-	abstract_type = /datum/atom_skin/voidarr_cape
-/datum/atom_skin/voidarr_cape/snow
-	preview_name = "snow"
-	new_icon_state = "smol42_voidarr_cape_snow"
-	new_worn_icon = "smol42_voidarr_cape_snow"
-/obj/item/clothing/neck/voidarr_cape
-	name = "Voidarr personel cape"
-	desc = "Garment fit for Voidarr workforce, darker than the void of stars, as though woven from the very shadow that falleth betwixt dusk and dawn. The cape doth glisten faintly, upon its length, there lieth a subtle sprinkling of moondust."
+
+/datum/atom_skin/smolcoat
+	abstract_type = /datum/atom_skin/smolcoat
+
+/datum/atom_skin/smolcoat/b
+	preview_name = "Elegant Greatcoat"
+	new_icon_state = "smol42_coat_B"
+
+/datum/atom_skin/smolcoat/a
+	preview_name = "Elegant Robe"
+	new_icon_state = "smol42_coat_A"
+
+/obj/item/clothing/neck/smolcoat
+	name = "Elegant Greatcoat"
+	desc = "A heavy greatcoat with tactical design, oversized pockets, sturdy buttons and a high collar."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
-	icon_state = "smol42_voidarr_cape"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	icon_state = "smol42_coat_B"
+	body_parts_covered = CHEST|ARMS
 	resistance_flags = FIRE_PROOF
-/obj/item/clothing/neck/voidarr_cape/setup_reskins()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/voidarr_cape)
-/datum/atom_skin/smoltrenchcoat
-	abstract_type = /datum/atom_skin/smoltrenchcoat
-/datum/atom_skin/smoltrenchcoat/white
-	preview_name = "white"
-	new_icon_state = "smol42_trenchcoat_white"
-	new_worn_icon = "smol42_trenchcoat_white"
-/datum/atom_skin/smoltrenchcoat/tin
-	preview_name = "tin"
-	new_icon_state = "smol42_trenchcoat_tin"
-	new_worn_icon = "smol42_trenchcoat_tin"
-/datum/atom_skin/smoltrenchcoat/blue
-	preview_name = "blue"
-	new_icon_state = "smol42_trenchcoat_blue"
-	new_worn_icon = "smol42_trenchcoat_blue"
 
-/obj/item/clothing/neck/smoltrenchcoat
-	name = "Secure Trenchcoat"
-	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
-	icon_state = "smol42_trenchcoat"
-	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/neck/smoltrenchcoat/setup_reskins()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/smoltrenchcoat)
+/obj/item/clothing/neck/smolcoat/setup_reskins()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/smolcoat)
 
 /obj/item/clothing/neck/mousecloak
 	name = "Winter assault cloak"
