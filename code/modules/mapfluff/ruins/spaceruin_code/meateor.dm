@@ -11,7 +11,7 @@
 /// Tiger cultist corpse but with an exit wound
 /obj/effect/mob_spawn/corpse/human/tigercultist/perforated
 
-/obj/effect/mob_spawn/corpse/human/tigercultist/perforated/special(mob/living/carbon/human/spawned_human, mob/mob_possessor)
+/obj/effect/mob_spawn/corpse/human/tigercultist/perforated/special(mob/living/carbon/human/spawned_human, mob/mob_possessor, apply_prefs)
 	. = ..()
 
 	var/obj/item/bodypart/chest/their_chest = spawned_human.get_bodypart(BODY_ZONE_CHEST)
@@ -84,6 +84,7 @@
 		/obj/item/organ/monster_core/regenerative_core = 3,
 		/obj/item/organ/monster_core/rush_gland = 3,
 		/obj/item/organ/tongue/carp = 3,
+		/obj/item/organ/fangs/carp = 3,
 		/obj/item/organ/alien/acid = 2,
 		/obj/item/organ/alien/resinspinner = 2,
 		/obj/item/organ/eyes/night_vision/goliath = 2,
@@ -95,11 +96,12 @@
 	. = ..()
 	stored_organ = pick_weight(allowed_organs)
 
-/obj/structure/meateor_fluff/flesh_pod/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if (attacking_item.get_sharpness() & SHARP_EDGED)
-		cut_open(user)
-		return
-	return ..()
+/obj/structure/meateor_fluff/flesh_pod/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if (!(tool.get_sharpness() & SHARP_EDGED))
+		return NONE
+
+	cut_open(user)
+	return ITEM_INTERACT_SUCCESS
 
 /// Cut the pod open and destroy it
 /obj/structure/meateor_fluff/flesh_pod/proc/cut_open(mob/user)

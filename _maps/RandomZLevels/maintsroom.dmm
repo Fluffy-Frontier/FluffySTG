@@ -776,7 +776,7 @@
 	},
 /obj/item/clothing/neck/cross,
 /obj/item/clothing/mask/gas/nightlight,
-/obj/item/gun/ballistic/revolver/cowboy,
+/obj/item/gun/ballistic/revolver/syndicate/cowboy,
 /obj/item/storage/backpack/tinypakc,
 /obj/effect/light_emitter/fake_outdoors,
 /obj/item/storage/belt/holster,
@@ -897,7 +897,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/caves/maintsroom)
 "dd" = (
-/mob/living/basic/evilborgs/evilborg/peace{
+/mob/living/basic/evilborgs/evilborg/bigguy{
 	faction = list("hostile","cult")
 	},
 /turf/open/floor/circuit/red/off,
@@ -2628,7 +2628,7 @@
 "iw" = (
 /obj/effect/spawner/random/trash/box,
 /mob/living/basic/mouse/rat,
-/obj/item/relic,
+/obj/item/assembly/relic,
 /turf/open/floor/plating/rust,
 /area/awaymission/caves/maintsroom)
 "ix" = (
@@ -2639,10 +2639,7 @@
 	},
 /area/awaymission/caves/maintsroom)
 "iy" = (
-/turf/open/floor/plating{
-	icon_state = "wall_thermite";
-	name = "melted wall"
-	},
+/turf/open/floor/plating/melted,
 /area/awaymission/caves/maintsroom)
 "iz" = (
 /obj/structure/frame/computer{
@@ -2795,7 +2792,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/effect/spawner/random/food_or_drink/keg,
 /turf/open/floor/wood,
 /area/awaymission/caves/maintsroom)
 "jd" = (
@@ -3127,7 +3124,7 @@
 	},
 /obj/structure/closet/crate/engineering/electrical,
 /obj/item/stock_parts/capacitor/adv,
-/obj/item/relic,
+/obj/item/assembly/relic,
 /turf/open/floor/plating/rust,
 /area/awaymission/caves/maintsroom)
 "kn" = (
@@ -3430,7 +3427,7 @@
 "lf" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/spawner/random/structure/crate,
-/obj/item/relic,
+/obj/item/assembly/relic,
 /turf/open/floor/iron,
 /area/awaymission/caves/maintsroom)
 "lg" = (
@@ -3443,6 +3440,11 @@
 	spawn_scatter_radius = 1
 	},
 /turf/open/floor/plating/rust,
+/area/awaymission/caves/maintsroom)
+"lh" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/item/grenade/stingbang/mega,
+/turf/open/floor/plating,
 /area/awaymission/caves/maintsroom)
 "li" = (
 /obj/effect/spawner/random/structure/girder,
@@ -3814,7 +3816,7 @@
 /area/awaymission/caves/maintsroom)
 "mx" = (
 /obj/structure/lattice/catwalk/mining,
-/obj/structure/closet/crate/goldcrate{
+/obj/structure/closet/crate/goldcrate/stocked{
 	name = "Bait?"
 	},
 /obj/item/upgradescroll,
@@ -4268,9 +4270,7 @@
 	dir = 4;
 	id = "abandoned_kitchen"
 	},
-/obj/structure/displaycase/forsale/kitchen{
-	pixel_y = 8
-	},
+/obj/structure/tipjar/prefilled,
 /turf/open/floor/plating,
 /area/awaymission/caves/maintsroom)
 "nV" = (
@@ -5657,6 +5657,11 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/awaymission/caves/maintsroom)
+"sN" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/structure/foamedmetal,
+/turf/open/floor/plating,
+/area/awaymission/caves/maintsroom)
 "sO" = (
 /mob/living/basic/bot/secbot/grievous{
 	faction = list("hostile","cult")
@@ -6040,7 +6045,7 @@
 /obj/machinery/door/airlock/multi_tile/public/glass,
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/pod/dark,
+/turf/open/floor/mineral/plastitanium/pod/dark,
 /area/awaymission/caves/maintsroom)
 "ug" = (
 /obj/structure/disposalpipe/segment,
@@ -6303,8 +6308,6 @@
 /area/awaymission/caves/maintsroom)
 "vb" = (
 /obj/structure/rack,
-/obj/item/borg/sight/hud/med,
-/obj/item/borg/sight/hud/med,
 /obj/machinery/camera/xray/directional/south,
 /turf/open/floor/iron/smooth,
 /area/awaymission/caves/maintsroom)
@@ -6916,7 +6919,7 @@
 /area/awaymission/caves/maintsroom)
 "xg" = (
 /obj/structure/fans/tiny,
-/turf/open/floor/pod/dark,
+/turf/open/floor/mineral/plastitanium/pod/dark,
 /area/awaymission/caves/maintsroom)
 "xh" = (
 /obj/structure/flora/tree/palm,
@@ -7017,7 +7020,7 @@
 /obj/item/toy/plush/narplush,
 /obj/item/soulstone,
 /obj/item/clothing/head/costume/crown/fancy,
-/obj/item/relic/lavaland,
+/obj/item/assembly/relic/lavaland,
 /turf/open/floor/engine/cult,
 /area/awaymission/caves/maintsroom)
 "xx" = (
@@ -7125,9 +7128,8 @@
 /turf/open/floor/plating,
 /area/awaymission/caves/maintsroom)
 "xV" = (
-/turf/open/floor/plating{
-	icon_state = "foam_plating"
-	},
+/obj/structure/foamedmetal,
+/turf/open/floor/plating/foam,
 /area/awaymission/caves/maintsroom)
 "xW" = (
 /obj/structure/chair/stool/directional/west,
@@ -7328,7 +7330,7 @@
 /turf/open/misc/grass/jungle,
 /area/awaymission/caves/maintsroom)
 "yF" = (
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/effect/spawner/random/food_or_drink/keg,
 /obj/item/clothing/head/costume/festive,
 /obj/machinery/camera/xray/directional/north,
 /turf/open/floor/plating,
@@ -8658,7 +8660,7 @@
 "Dl" = (
 /obj/structure/table,
 /obj/item/food/grown/wheat,
-/obj/item/food/grown/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
 /obj/item/food/grown/citrus/orange,
 /obj/item/food/grown/grapes,
 /obj/item/food/grown/cocoapod,
@@ -9108,7 +9110,7 @@
 /obj/item/clothing/neck/stethoscope,
 /obj/item/biopsy_tool,
 /obj/effect/spawner/random/contraband/narcotics,
-/obj/item/relic,
+/obj/item/assembly/relic,
 /turf/open/floor/plating/rust,
 /area/awaymission/caves/maintsroom)
 "EP" = (
@@ -9139,7 +9141,6 @@
 /area/awaymission/caves/maintsroom)
 "ES" = (
 /obj/structure/table/reinforced,
-/obj/item/ai_module/reset/purge,
 /turf/open/floor/circuit/red/anim,
 /area/awaymission/caves/maintsroom)
 "EU" = (
@@ -9452,7 +9453,7 @@
 /turf/open/floor/plating,
 /area/awaymission/caves/maintsroom)
 "FT" = (
-/mob/living/basic/evilborgs/evilborg/protect{
+/mob/living/basic/evilborgs/evilborg/dogstrong{
 	faction = list("hostile","cult")
 	},
 /turf/open/floor/circuit/green,
@@ -9929,7 +9930,7 @@
 /area/awaymission/caves/maintsroom)
 "HC" = (
 /obj/effect/spawner/random/trash/box,
-/obj/item/relic/lavaland,
+/obj/item/assembly/relic/lavaland,
 /turf/open/floor/plating/rust,
 /area/awaymission/caves/maintsroom)
 "HD" = (
@@ -10364,7 +10365,7 @@
 /area/awaymission/caves/maintsroom)
 "Jg" = (
 /obj/effect/spawner/random/structure/crate,
-/obj/item/relic,
+/obj/item/assembly/relic,
 /turf/open/floor/plating,
 /area/awaymission/caves/maintsroom)
 "Jh" = (
@@ -12454,7 +12455,7 @@
 "Qi" = (
 /obj/structure/lattice/catwalk/mining,
 /obj/item/forging/reagent_weapon/sword,
-/obj/structure/closet/crate/goldcrate{
+/obj/structure/closet/crate/goldcrate/stocked{
 	name = "Bait"
 	},
 /obj/item/disk/design_disk/cleric_mace,
@@ -12951,9 +12952,9 @@
 /area/awaymission/caves/maintsroom)
 "RE" = (
 /obj/structure/table/reinforced,
-/obj/item/aiupgrade/surveillance_upgrade,
-/obj/item/malf_upgrade,
-/obj/item/mmi/posibrain,
+/obj/item/ai_module/upgrade/surveillance,
+/obj/item/ai_module/combat,
+/obj/item/brain_processor/positronic,
 /turf/open/floor/circuit/red/anim,
 /area/awaymission/caves/maintsroom)
 "RF" = (
@@ -14340,8 +14341,8 @@
 /obj/item/knife/kitchen,
 /obj/item/storage/box/mousetraps,
 /obj/structure/broken_flooring/pile,
-/obj/item/food/grown/parsnip,
-/obj/item/food/grown/parsnip,
+/obj/item/food/grown/carrotlike/parsnip,
+/obj/item/food/grown/carrotlike/parsnip,
 /obj/item/food/cheese/wedge,
 /turf/open/floor/plating/rust,
 /area/awaymission/caves/maintsroom)
@@ -15131,10 +15132,7 @@
 	},
 /area/awaymission/caves/maintsroom)
 "Zn" = (
-/obj/item/grenade/stingbang/mega,
-/turf/open/floor/plating{
-	icon_state = "foam_plating"
-	},
+/turf/open/floor/plating/foam,
 /area/awaymission/caves/maintsroom)
 "Zo" = (
 /obj/effect/turf_decal/weather/snow,
@@ -18595,7 +18593,7 @@ uG
 uG
 Yg
 xV
-ED
+sN
 ED
 bO
 uG
@@ -18810,7 +18808,7 @@ Lf
 By
 hr
 ED
-qt
+lh
 Zn
 xV
 qt

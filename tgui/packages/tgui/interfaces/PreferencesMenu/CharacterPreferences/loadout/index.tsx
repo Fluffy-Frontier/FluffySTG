@@ -31,8 +31,7 @@ import { LoadoutModifyDimmer } from './ModifyPanel';
 export function LoadoutPage(props) {
   const serverData = useServerPrefs();
   const loadout_tabs = serverData?.loadout.loadout_tabs || [];
-  /* NOVA EDIT CHANGE - Original: const { data } = useBackend<LoadoutManagerData>();
-  const { erp_pref } = data; */
+  /* NOVA EDIT CHANGE - Original: const { data } = useBackend<LoadoutManagerData>(); */
   const erp_pref = useBackend<LoadoutManagerData>().data.erp_pref;
 
   const [searchLoadout, setSearchLoadout] = useState('');
@@ -381,7 +380,7 @@ function LoadoutSelectedItem(props: LoadoutSelectedItemProps) {
         <ItemIcon item={item} scale={1} />
       </Stack.Item>
       <Stack.Item width="55%">{item.name}</Stack.Item>
-      {item.buttons.length ? (
+      {item.buttons.length || item.reskins?.length ? (
         <Stack.Item>
           <Button
             color="none"

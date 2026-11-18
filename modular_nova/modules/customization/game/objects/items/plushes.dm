@@ -133,14 +133,6 @@
 	attack_verb_simple = list("cuddle", "squeak")
 	squeak_override = list('modular_nova/modules/customization/game/objects/items/sound/deerplush.ogg' = 1)
 
-/obj/item/toy/plush/nova/securifox
-	name = "securifox slushie"
-	desc = "An NT security branded fox plush. Wait. If it has more than one tail, doesn't that make it a kitsune? And why does it look so smug?"
-	icon_state = "plush_dee"
-	attack_verb_continuous = list("geckers", "boops", "nuzzles")
-	attack_verb_simple = list("gecker", "boop", "nuzzle")
-	squeak_override = list('sound/vehicles/mecha/justice_shield_broken.ogg' = 1)
-
 /obj/item/toy/plush/nova/towa
 	name = "tiny overwatch"
 	desc = "It invokes a certain comfort knowing its on your side when the chips are down."
@@ -231,3 +223,21 @@
 	icon_state = "plushie_expie"
 	attack_verb_continuous = list("whines at", "claws")
 	attack_verb_simple = list("whine at", "claw")
+
+/obj/item/toy/plush/nova/robotics_shark
+	name = "wireshark"
+	desc = "Some say they're related to Ticipy. They've been to many different station's ports. They're a filter-feeder."
+	lefthand_file = 'modular_nova/master_files/icons/mob/inhands/plushes_lefthand.dmi'
+	righthand_file = 'modular_nova/master_files/icons/mob/inhands/plushes_righthand.dmi'
+	icon_state = "robotics_shark"
+	inhand_icon_state = "robotics_shark"
+	attack_verb_continuous = list(
+		"captures",
+		"filters",
+		"multicasts",
+	)
+	attack_verb_simple = list(
+		"capture",
+		"filter",
+		"multicast",
+	)

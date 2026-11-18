@@ -46,6 +46,8 @@
 	/// The sound this obj makes when something is unbuckled from it
 	var/unbuckle_sound = null
 
+	var/generate_map_preview = FALSE
+
 	uses_integrity = TRUE
 
 /obj/vv_edit_var(vname, vval)
@@ -60,7 +62,8 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 /obj/Initialize(mapload)
 	. = ..()
 
-	check_on_table()
+	if(anchored_tabletop_offset)
+		check_on_table()
 
 	if (id_tag)
 		GLOB.objects_by_id_tag[id_tag] = src
@@ -275,8 +278,9 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 
 /// If we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 /obj/proc/can_be_unfasten_wrench(mob/user, silent)
-	if(!(isfloorturf(loc) || isindestructiblefloor(loc)) && !anchored)
-		to_chat(user, span_warning("[src] needs to be on the floor to be secured!"))
+	if(!is_anchorable_floor(loc) && !anchored)
+		if(!silent)
+			to_chat(user, span_warning("[src] needs to be on the floor to be secured!"))
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -304,7 +308,6 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 		return CANT_UNFASTEN
 	to_chat(user, span_notice("You [anchored ? "un" : ""]secure [src]."))
 	set_anchored(!anchored)
-	check_on_table()
 	playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 	return SUCCESSFUL_UNFASTEN
 
@@ -318,15 +321,19 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 
 /// Adjusts the vertical pixel_z offset when the object is anchored on a tile with table
 /obj/proc/check_on_table()
-	if(anchored_tabletop_offset == 0)
-		return
-	if(istype(src, /obj/structure/table))
-		return
-
 	if(anchored && locate(/obj/structure/table) in loc)
 		pixel_z = anchored_tabletop_offset
 	else
 		pixel_z = initial(pixel_z)
+
+/obj/structure/table/check_on_table()
+	return
+
+/obj/set_anchored(anchorvalue)
+	. = ..()
+	if(isnull(.) || !anchored_tabletop_offset)
+		return
+	check_on_table()
 
 /obj/apply_single_mat_effect(datum/material/material, mat_amount, multiplier)
 	. = ..()

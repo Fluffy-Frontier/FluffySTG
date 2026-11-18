@@ -279,6 +279,7 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 10, \
 		force_wielded = 18, \
+		update_icon_state = TRUE, \
 	)
 	AddComponent(
 		/datum/component/butchering, \
@@ -291,10 +292,6 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 		owner.visible_message(span_danger("[owner] parries [attack_text] with [src]!"))
 		return TRUE
 	return FALSE
-
-/obj/item/nullrod/vibro/update_icon_state()
-	icon_state = inhand_icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]"
-	return ..()
 
 // God Hand - Cannot be dropped. Does burn damage.
 
@@ -313,7 +310,7 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	hitsound = 'sound/items/weapons/sear.ogg'
 	damtype = BURN
 	attack_verb_continuous = list("punches", "cross counters", "pummels")
-	attack_verb_simple = list(SFX_PUNCH, "cross counter", "pummel")
+	attack_verb_simple = list(/datum/sound_effect/punch, "cross counter", "pummel")
 	menu_description = "An undroppable god hand dealing burn damage. Disappears if the arm holding it is cut off."
 
 /obj/item/nullrod/godhand/Initialize(mapload)
@@ -344,7 +341,7 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	. = ..()
 	AddComponent(/datum/component/walking_aid)
 
-/obj/item/nullrod/staff/worn_overlays(mutable_appearance/standing, isinhands)
+/obj/item/nullrod/staff/worn_overlays(mutable_appearance/standing, isinhands, icon_file, bodyshape = NONE)
 	. = ..()
 	if(isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_icon, MOB_SHIELD_LAYER)
@@ -523,7 +520,10 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	attack_verb_continuous = list("whips", "lashes")
 	attack_verb_simple = list("whip", "lash")
 	hitsound = 'sound/items/weapons/chainhit.ogg'
-	menu_description = "A whip. Deals extra damage to vampires. Fits in pockets. Can be worn on the belt."
+	menu_description = "A whip forged from silver. Deals extra damage to vampires. Fits in pockets. Can be worn on the belt."
+	material_flags = MATERIAL_EFFECTS
+	custom_materials = list(/datum/material/silver = SHEET_MATERIAL_AMOUNT * 3, /datum/material/iron = SHEET_MATERIAL_AMOUNT)
+	material_slots = list(/datum/material_slot/weapon_head = /datum/material/silver, /datum/material_slot/handle = /datum/material/iron)
 
 // Atheist's Fedora - Wear it on your head. No melee damage, massive throw force.
 
@@ -614,7 +614,7 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	block_sound = 'sound/items/weapons/genhit.ogg'
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	hitsound = SFX_SWING_HIT
+	hitsound = /datum/sound_effect/swing_hit
 	attack_verb_continuous = list("smashes", "slams", "whacks", "thwacks")
 	attack_verb_simple = list("smash", "slam", "whack", "thwack")
 	icon = 'icons/obj/weapons/staff.dmi'
@@ -632,12 +632,9 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 14, \
 		force_wielded = 18, \
+		update_icon_state = TRUE, \
 	)
 	AddComponent(/datum/component/walking_aid)
-
-/obj/item/nullrod/bostaff/update_icon_state()
-	icon_state = inhand_icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]"
-	return ..()
 
 /obj/item/nullrod/bostaff/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(attack_type == PROJECTILE_ATTACK || attack_type == LEAP_ATTACK || attack_type == OVERWHELMING_ATTACK)
@@ -935,7 +932,7 @@ GLOBAL_LIST_INIT(nullrod_variants, init_nullrod_variants())
 	/// And now we'll deal with sneak attack damage modifiers.
 
 	// If our target is also unconscious for some reason, we get even more damage. Coup de grace, motherfucker.
-	if(HAS_TRAIT(living_target, TRAIT_KNOCKEDOUT))
+	if(IS_UNCONSCIOUS(living_target))
 		sneak_attack_dice += roll("1d6")
 		new /obj/effect/temp_visual/crit(get_turf(living_target))
 

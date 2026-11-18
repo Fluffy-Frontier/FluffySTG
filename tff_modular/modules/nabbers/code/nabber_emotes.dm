@@ -1,5 +1,7 @@
-/datum/species/nabber/get_scream_sound(mob/living/carbon/human/nabber)
-	return 'tff_modular/modules/nabbers/sounds/nabberscream.ogg'
+/obj/item/organ/tongue/nabber/get_tongue_emote_sound(datum/source, key, list/sounds)
+	. = ..()
+	if(key == "scream")
+		return 'tff_modular/modules/nabbers/sounds/nabberscream.ogg'
 
 /datum/laugh_type/nabber
 	name = "Ascent Laugh"

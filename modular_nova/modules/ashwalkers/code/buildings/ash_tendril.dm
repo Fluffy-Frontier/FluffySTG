@@ -2,25 +2,25 @@
 #define MEGAFAUNA_MEAT_AMOUNT 20
 
 //this is for revitalizing/preserving regen cores
-/obj/structure/lavaland/ash_walker/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if(!istype(attacking_item, /obj/item/organ/monster_core/regenerative_core))
+/obj/structure/lavaland/ash_walker/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!istype(tool, /obj/item/organ/monster_core/regenerative_core))
 		return ..()
 
 	if(!user.mind.has_antag_datum(/datum/antagonist/ashwalker))
 		balloon_alert(user, "must be an ashwalker!")
-		return
+		return ITEM_INTERACT_BLOCKING
 
-	var/obj/item/organ/monster_core/regenerative_core/regen_core = attacking_item
+	var/obj/item/organ/monster_core/regenerative_core/regen_core = tool
 
 	if(!regen_core.decay_timer)
 		balloon_alert(user, "organ already revitalized!")
-		return
+		return ITEM_INTERACT_BLOCKING
 	if(!regen_core.preserve())
 		balloon_alert(user, "organ decayed!")
-		return
+		return ITEM_INTERACT_BLOCKING
 	playsound(src, 'sound/effects/magic/demon_consume.ogg', 50, TRUE)
 	balloon_alert_to_viewers("[src] revitalizes [regen_core]!")
-	return
+	return ITEM_INTERACT_SUCCESS
 
 //this is for logging the destruction of the tendril
 /obj/structure/lavaland/ash_walker/Destroy()
@@ -90,7 +90,7 @@
 //this is the nova override
 /obj/structure/lavaland/ash_walker/consume()
 	for(var/mob/living/viewable_living in view(src, 1)) //Only for corpse right next to/on same tile
-		if(!viewable_living.stat)
+		if(!IS_UNCONSCIOUS_OR_CRIT(viewable_living))
 			continue
 
 		viewable_living.unequip_everything()
@@ -125,10 +125,7 @@
 
 		for(var/mob/living/living_observers in view(src, 5))
 			if(living_observers.mind?.has_antag_datum(/datum/antagonist/ashwalker))
-				living_observers.add_mood_event("oogabooga", /datum/mood_event/sacrifice_good)
-
-			else
-				living_observers.add_mood_event("oogabooga", /datum/mood_event/sacrifice_bad)
+				living_observers.add_mood_event("tendril sacrifice", /datum/mood_event/sacrifice_good)
 
 		ashies.sacrifices_made++
 

@@ -1,6 +1,6 @@
 /datum/mutation/shock
 	name = "Shock Touch"
-	desc = "The affected can channel excess electricity through their hands without shocking themselves, allowing them to shock others. Mostly harmless! Mostly... "
+	desc = "The subject gains the ability to channel excess ambient electricity through their hands, allowing them to shock others in a mostly harmless manner."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
@@ -84,7 +84,7 @@
 
 /datum/mutation/lay_on_hands
 	name = "Mending Touch"
-	desc = "The affected can lay their hands on other people to transfer a small amount of their injuries to themselves."
+	desc = "The subject gains the ability to lay their hands on others to transfer a small amount of their injuries to themselves."
 	quality = POSITIVE
 	locked = FALSE
 	difficulty = 16
@@ -401,9 +401,9 @@
 		if(ishuman(human_smiter))
 			human_smiter.force_say()
 			if(evil_smite)
-				human_smiter.say("in [possible_deity]'s dark name, I COMMAND YOU TO PERISH!!!", forced = "compelled by the power of their deity")
+				INVOKE_ASYNC(human_smiter, TYPE_PROC_REF(/atom/movable, say), "in [possible_deity]'s dark name, I COMMAND YOU TO PERISH!!!", forced = "compelled by the power of their deity")
 			else
-				human_smiter.say("By [possible_deity]'s might, I SMITE YOU!!!", forced = "compelled by the power of their deity")
+				INVOKE_ASYNC(human_smiter, TYPE_PROC_REF(/atom/movable, say), "By [possible_deity]'s might, I SMITE YOU!!!", forced = "compelled by the power of their deity")
 		our_smite_multiplier *= divine_champion ? 5 : 1 //good luck surviving this if they're a chap
 
 	if(evil_smite)

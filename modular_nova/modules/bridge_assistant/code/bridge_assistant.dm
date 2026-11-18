@@ -3,6 +3,7 @@
 	spawn_positions = 1
 	job_flags = STATION_JOB_FLAGS | JOB_ANTAG_PROTECTED
 	nova_stars_only = TRUE
+	tgui_icon = FA_ICON_MUG_HOT
 
 	outfit = /datum/outfit/job/bridge_assistant
 	plasmaman_outfit = /datum/outfit/job/bridge_assistant/plasmaman
@@ -43,7 +44,8 @@
 	. = ..()
 	//give em a waistcoat
 	var/obj/item/clothing/under/undersuit = user.w_uniform
-	undersuit.attach_accessory(new /obj/item/clothing/accessory/waistcoat(user))
+	if(istype(undersuit))
+		undersuit.attach_accessory(new /obj/item/clothing/accessory/waistcoat(user))
 
 /datum/outfit/job/bridge_assistant/plasmaman
 	name = "Bridge Officer (Plasmaman)"
@@ -85,6 +87,7 @@
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshapes_with_variations = NONE
 	gets_cropped_on_taurs = FALSE
 
 /obj/item/clothing/neck/bowtie/green

@@ -1,9 +1,9 @@
-/obj/structure/spawner/lavaland
+/mob/living/basic/mining/tendril
 	/// whether it has a curse attached to it
 	var/cursed = FALSE
 
-/obj/structure/spawner/lavaland/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if(istype(attacking_item, /obj/item/cursed_dagger))
+/mob/living/basic/mining/tendril/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/cursed_dagger))
 		playsound(get_turf(src), 'sound/effects/magic/demon_attack1.ogg', 50, TRUE)
 		cursed = !cursed
 		if(cursed)
@@ -18,11 +18,11 @@
 			living_user.adjust_fire_loss(100)
 
 		to_chat(user, span_warning("The knife sears your hand!"))
-		return
+		return ITEM_INTERACT_SUCCESS
 
 	return ..()
 
-/obj/structure/spawner/lavaland/Destroy()
+/mob/living/basic/mining/tendril/Destroy()
 	if(cursed)
 		for(var/mob/living/carbon/human/selected_human in range(7))
 			if(is_species(selected_human, /datum/species/lizard/ashwalker))

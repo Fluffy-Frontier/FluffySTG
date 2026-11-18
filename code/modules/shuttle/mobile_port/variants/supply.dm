@@ -51,6 +51,26 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	port_direction = EAST
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 
+/obj/docking_port/mobile/supply/Initialize(mapload)
+	. = ..()
+	// Apply speed traits to each shuttle, including ones loaded after roundstart.
+	if(HAS_TRAIT(SSstation, STATION_TRAIT_QUICK_SHUTTLE))
+		callTime *= 0.5
+		RegisterSignal(SSstation, SIGNAL_REMOVETRAIT(STATION_TRAIT_QUICK_SHUTTLE), PROC_REF(on_speed_trait_removed))
+	if(HAS_TRAIT(SSstation, STATION_TRAIT_SLOW_SHUTTLE))
+		callTime *= 1.5
+		RegisterSignal(SSstation, SIGNAL_REMOVETRAIT(STATION_TRAIT_SLOW_SHUTTLE), PROC_REF(on_speed_trait_removed))
+
+// Undo only the applied modifier when an admin reverts the trait in the lobby.
+/obj/docking_port/mobile/supply/proc/on_speed_trait_removed(datum/source, removed_trait)
+	SIGNAL_HANDLER
+	switch(removed_trait)
+		if(STATION_TRAIT_QUICK_SHUTTLE)
+			callTime /= 0.5
+		if(STATION_TRAIT_SLOW_SHUTTLE)
+			callTime /= 1.5
+	UnregisterSignal(source, SIGNAL_REMOVETRAIT(removed_trait))
+
 /obj/docking_port/mobile/supply/register()
 	. = ..()
 	SSshuttle.supply = src
@@ -145,10 +165,17 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/list/empty_turfs = list()
 	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
 		for(var/turf/open/floor/shuttle_turf in shuttle_area.get_turfs_from_all_zlevels())
-			if(shuttle_turf.is_blocked_turf())
+			if(turf_is_occupied(shuttle_turf)) // NOVA EDIT CHANGE - Enhanced checks that a turf is unavailable - ORIGINAL: if(shuttle_turf.is_blocked_turf())
 				continue
 			empty_turfs += shuttle_turf
 
+	// NOVA EDIT ADDITION START - Providing feedback, and safety
+	if(!length(empty_turfs))
+		announce_rejection()
+		return // there can now be zero empty turfs to go around
+	if(length(empty_turfs) < 11)
+		announce_overcrowding()
+	// NOVA EDIT ADDITION END
 	//quickly and greedily handle chef's grocery runs first, there are a few reasons why this isn't attached to the rest of cargo...
 	//but the biggest reason is that the chef requires produce to cook and do their job, and if they are using this system they
 	//already got let down by the botanists. So to open a new chance for cargo to also screw them over any more than is necessary is bad.
@@ -234,7 +261,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 			var/obj/structure/closet/crate = spawning_order.generate(pick_n_take(empty_turfs))
 			crate.name += " - #[spawning_order.id]"
 
-		SSblackbox.record_feedback("nested tally", "cargo_imports", 1, list("[spawning_order.pack.get_cost()]", "[spawning_order.pack.name]", "[spawning_order.orderer_rank]"))
+		SSblackbox.record_feedback("nested tally", "cargo_imports", 1, list("[spawning_order.pack.get_cost()]", "[spawning_order.pack.name]"))
+		SSblackbox.record_feedback("nested tally", "cargo_imports_by_rank", 1, list("[spawning_order.pack.name]", "[spawning_order.orderer_rank]"))
 		var/from_whom = paying_for_this?.account_holder || "nobody (department order)"
 
 		investigate_log("Order #[spawning_order.id] ([spawning_order.pack.name], placed by [key_name(spawning_order.orderer_ckey)]), paid by [from_whom] has shipped.", INVESTIGATE_CARGO)
@@ -254,13 +282,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		var/buyer = buying_account.account_holder
 
 		if(buying_account_orders.len > GOODY_FREE_SHIPPING_MAX) // no free shipping, send a crate
-			var/obj/structure/closet/crate/secure/owned/our_crate = new /obj/structure/closet/crate/secure/owned(pick_n_take(empty_turfs))
-			our_crate.buyer_account = buying_account
-			/// NOVA EDIT ADDITION START - FIXES COMMAND BUDGET CASES BEING UNOPENABLE
-			if(istype(our_crate.buyer_account, /datum/bank_account/department))
-				our_crate.department_purchase = TRUE
-				our_crate.department_account = our_crate.buyer_account
-			/// NOVA EDIT ADDITION END
+			var/obj/structure/closet/crate/secure/our_crate = new /obj/structure/closet/crate/secure(pick_n_take(empty_turfs))
+			our_crate.AddComponent(/datum/component/locked_to_account, buying_account)
 			our_crate.name = "goody crate - purchased by [buyer]"
 			miscboxes[buyer] = our_crate
 		else //free shipping in a case
@@ -273,11 +296,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 				our_case.department_account = our_case.buyer_account
 			/// NOVA EDIT ADDITION END
 			miscboxes[buyer].name = "goody case - purchased by [buyer]"
-		misc_contents[buyer] = list()
 
 		for(var/datum/supply_order/our_order as anything in buying_account_orders)
 			for (var/item in our_order.pack.contains)
-				misc_contents[buyer] += item
+				LAZYADD(misc_contents[buyer], item)
 			misc_costs[buyer] += our_order.pack.cost
 			misc_order_num[buyer] = "[misc_order_num[buyer]]#[our_order.id] "
 
@@ -327,11 +349,11 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	if(report.exported_atoms.len)
 		investigate_log("contents sold for [cargo_budget.account_balance - presale_points] [MONEY_NAME]. Contents: [report.exported_atoms.Join(",")]. Message: [msg]", INVESTIGATE_CARGO)
 
-/*
-	Generates a box of mail depending on our exports and imports.
-	Applied in the cargo shuttle sending/arriving, by building the crate if the round is ready to introduce mail based on the economy subsystem.
-	Then, fills the mail crate with mail, by picking applicable crew who can receive mail at the time to sending.
-*/
+/**
+ * Generates a box of mail depending on our exports and imports.
+ * Applied in the cargo shuttle sending/arriving, by building the crate if the round is ready to introduce mail based on the economy subsystem.
+ * Then, fills the mail crate with mail, by picking applicable crew who can receive mail at the time to sending.
+ */
 /obj/docking_port/mobile/supply/proc/create_mail()
 	//Early return if there's no mail waiting to prevent taking up a slot. We also don't send mails on sundays or holidays.
 	if(!SSeconomy.mail_waiting || SSeconomy.mail_blocked || SSsecurity_level.current_security_level.disables_mail)
@@ -341,10 +363,11 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/list/empty_turfs = list()
 	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
 		for(var/turf/open/floor/shuttle_floor in shuttle_area.get_turfs_from_all_zlevels())
-			if(shuttle_floor.is_blocked_turf())
+			if(turf_is_occupied(shuttle_floor)) // NOVA EDIT CHANGE - Enhanced checks that a turf is unavailable - ORIGINAL: if(shuttle_floor.is_blocked_turf())
 				continue
 			empty_turfs += shuttle_floor
 
+	if (!length(empty_turfs)) { return } // NOVA EDIT ADDITION - There can now be zero empty turfs to go around
 	new /obj/structure/closet/crate/mail/economy(pick(empty_turfs))
 
 /// Takes a supply pack, returns the amount we currently have on order (or OVER_ORDER_LIMIT if we are over the hardcap on orders of this type)

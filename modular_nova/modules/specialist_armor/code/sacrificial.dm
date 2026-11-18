@@ -69,13 +69,13 @@
 
 	AddComponent(/datum/component/clothing_damaged_by_bullets)
 
-/obj/item/clothing/head/helmet/sf_sacrificial/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+/obj/item/clothing/head/helmet/sf_sacrificial/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
 
-	if(!(istype(attacking_item, /obj/item/sacrificial_face_shield)))
+	if(!(istype(tool, /obj/item/sacrificial_face_shield)))
 		return
 
-	add_face_shield(user, attacking_item)
+	add_face_shield(user, tool)
 
 /obj/item/clothing/head/helmet/sf_sacrificial/Destroy()
 	QDEL_NULL(face_shield)
@@ -114,7 +114,7 @@
 	flags_cover = initial(flags_cover)
 
 	if(break_it)
-		playsound(src, SFX_SHATTER, 70, TRUE)
+		playsound(src, /datum/sound_effect/shatter, 70, TRUE)
 		new /obj/effect/decal/cleanable/glass(drop_location(src))
 		qdel(face_shield)
 		face_shield = null // just to be safe

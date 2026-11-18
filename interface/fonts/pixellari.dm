@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/pixellari
 	name = "Pixellari"
-	font_family = 'interface/fonts/Pixellari.ttf'
+	font_family = 'tff_modular/master_files/interface/fonts/PixCyrillic.ttf' // FLUFFY FRONTIER EDIT. ORIGINAL: font_family = 'interface/fonts/Pixellari.tff'
 
 /// For icon overlays
 /// Pixellari 12pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)

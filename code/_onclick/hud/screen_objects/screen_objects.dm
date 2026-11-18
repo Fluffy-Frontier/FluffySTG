@@ -114,19 +114,20 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	name = "swap hand"
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
-/atom/movable/screen/swap_hand/Click()
+/atom/movable/screen/swap_hand/Click(location, control, params)
 	// At this point in client Click() code we have passed the 1/10 sec check and little else
 	// We don't even know if it's a middle click
-	if(world.time <= usr.next_move)
-		return 1
+	. = TRUE // but we're definitely handling this click
 
-	if(usr.incapacitated)
-		return 1
+	if(!ismob(usr))
+		return
 
-	if(ismob(usr))
-		var/mob/M = usr
-		M.swap_hand()
-	return 1
+	if(world.time <= usr.next_move || usr.incapacitated)
+		return
+
+	var/list/modifiers = params2list(params)
+	var/cycle_dir = modifiers[SHIFT_CLICK] ? NORTH : WEST
+	usr.cycle_hand(cycle_dir, FALSE)
 
 /atom/movable/screen/navigate
 	name = "navigate"
@@ -219,10 +220,13 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 
 /atom/movable/screen/inventory/MouseEntered(location, control, params)
 	. = ..()
-	add_overlays()
+	if (usr == hud?.mymob)
+		add_overlays()
 
 /atom/movable/screen/inventory/MouseExited()
 	..()
+	if (usr != hud?.mymob)
+		return
 	cut_overlay(object_overlay)
 	QDEL_NULL(object_overlay)
 
@@ -260,6 +264,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 /atom/movable/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/hud/screen_gen.dmi', "blocked")
+	var/static/mutable_appearance/shield_overlay = mutable_appearance('icons/hud/screen_gen.dmi', "shielding")
 	var/held_index = 0
 	interaction_flags_atom = NONE //so dragging objects into hands icon don't skip adjacency & other checks
 
@@ -273,17 +278,25 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	if(!hud?.mymob)
 		return
 
+	if(!held_index)
+		return // ?
+
+	if(held_index == hud.mymob.active_hand_index || held_index == hud.mymob.get_inactive_hand_index())
+		if(held_index == hud.mymob.active_hand_index)
+			. += IS_LEFT_INDEX(held_index) ? "lhandactive" : "rhandactive"
+
+		// Display that this item is blocking attacks
+		var/obj/item/held_item = hud.mymob.get_item_for_held_index(held_index)
+		if(!isclothing(held_item) && held_item?.block_chance)
+			. += shield_overlay
+
 	if(iscarbon(hud.mymob))
 		var/mob/living/carbon/C = hud.mymob
 		if(C.handcuffed)
 			. += handcuff_overlay
 
-		if(held_index)
-			if(!C.has_hand_for_held_index(held_index))
-				. += blocked_overlay
-
-	if(held_index == hud.mymob.active_hand_index)
-		. += IS_LEFT_INDEX(held_index) ? "lhandactive" : "rhandactive"
+		if(!C.has_hand_for_held_index(held_index))
+			. += blocked_overlay
 
 /atom/movable/screen/inventory/hand/Click(location, control, params)
 	// At this point in client Click() code we have passed the 1/10 sec check and little else
@@ -325,6 +338,28 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	storage.hide_contents(usr)
 	return TRUE
 
+/atom/movable/screen/storage_up
+	name = "go up a storage level"
+	plane = ABOVE_HUD_PLANE
+	icon = 'icons/hud/screen_midnight.dmi'
+	icon_state = "storage_up"
+	mouse_over_pointer = MOUSE_HAND_POINTER
+	hud_group_key = HUD_GROUP_STORAGE
+
+/atom/movable/screen/storage_up/Initialize(mapload, datum/hud/hud_owner, new_master)
+	. = ..()
+	master_ref = WEAKREF(new_master)
+
+/atom/movable/screen/storage_up/Click()
+	var/datum/storage/storage = master_ref?.resolve()
+	if(!storage)
+		return
+	var/datum/storage/up_storage = storage.parent.loc?.atom_storage
+	if(!up_storage)
+		return
+	up_storage.open_storage(usr)
+	return TRUE
+
 /atom/movable/screen/drop
 	name = "drop"
 	icon = 'icons/hud/screen_midnight.dmi'
@@ -332,7 +367,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
 /atom/movable/screen/drop/Click()
-	if(usr.stat == CONSCIOUS)
+	if(!IS_UNCONSCIOUS_OR_CRIT(usr))
 		usr.dropItemToGround(usr.get_active_held_item())
 
 /atom/movable/screen/combattoggle
@@ -597,14 +632,14 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	SetInvisibility(INVISIBILITY_ABSTRACT, INVISIBILITY_SOURCE_SLEEP_HUD_BUTTON)
 
 /atom/movable/screen/sleep/Click()
-	if(!isliving(usr) || HAS_TRAIT(usr, TRAIT_KNOCKEDOUT))
+	if(!isliving(usr) || IS_UNCONSCIOUS(usr))
 		return
 	if(!usr.client?.prefs.read_preference(/datum/preference/toggle/remove_double_click))
 		flick("[base_icon_state]_flick", src)
 		return
 
 	var/tgui_answer = tgui_alert(usr, "You sure you want to sleep for a while?", "Sleeping", list("Yes", "No"))
-	if(tgui_answer == "Yes" && !HAS_TRAIT(usr, TRAIT_KNOCKEDOUT))
+	if(tgui_answer == "Yes" && !IS_UNCONSCIOUS(usr))
 		var/mob/living/L = usr
 		L.Sleeping(400)
 
@@ -971,6 +1006,9 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	var/list/current_animated = LAZYLISTDUPLICATE(animated_zones)
 
 	for(var/part_zone, body_part_untyped in owner.get_bodyparts_by_zones())
+		// I hate that we "allow" support for more than 2 hands in the codebase
+		if(!limbs[part_zone])
+			continue
 		var/icon_key = 0
 		var/obj/item/bodypart/body_part = body_part_untyped
 		var/list/overridable_key = list(icon_key)
@@ -1146,8 +1184,8 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	if(!istype(hungry))
 		return
 
-	if(!ishuman(hungry) || CONFIG_GET(flag/disable_human_mood))
-		screen_loc = ui_mood // Slot in where mood normally is if mood is disabled
+	if(isnull(hungry.mob_mood))
+		screen_loc = ui_mood // Slot in where mood normally is if mood is not here (we arent a human)
 
 	// Burger next to the bar
 	food_image = image(icon = food_icon, icon_state = food_icon_state, pixel_x = -5)
@@ -1167,7 +1205,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 	if(!istype(hungry))
 		return
 
-	if(HAS_TRAIT(hungry, TRAIT_NOHUNGER) || !hungry.get_organ_slot(ORGAN_SLOT_STOMACH))
+	if(HAS_TRAIT(hungry, TRAIT_NOHUNGER) || (ishuman(hungry) && !hungry.get_organ_slot(ORGAN_SLOT_STOMACH)))
 		fullness = NUTRITION_LEVEL_FED
 		state = HUNGER_STATE_FINE
 		return
@@ -1327,6 +1365,37 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen) // I hate this place
 
 #define FORMAT_XENOBIO_HUD_MAPTEXT(text_to_use) MAPTEXT_SPESSFONT("<span style='color: [COLOR_WHITE]; text-align: center; line-height: 1.9; '>[text_to_use]</span>")
 #define POTION_DROP_SPEED 5 DECISECONDS
+
+/atom/movable/screen/slime_power
+	name = "Power Level"
+	desc = "How much electricity they are generating. The higher this is, the stronger your attacks are."
+	icon_state = "slime_display"
+	base_icon_state = "slime_display"
+	screen_loc = ui_slime_powerlevel
+	maptext_x = 1
+	maptext_y = 8
+
+/atom/movable/screen/slime_power/Click(location, control, params)
+	. = ..()
+	to_chat(usr, span_notice("Shows you how much electricity they are generating. The higher this is, the higher chance you will strike with overwhelming electrical force."))
+
+/atom/movable/screen/slime_power/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	update_maptext()
+
+/atom/movable/screen/slime_power/update_icon_state()
+	. = ..()
+	icon_state = base_icon_state
+	var/mob/living/basic/slime/slime_owner = hud.mymob
+	if(istype(slime_owner) && slime_owner.powerlevel >= 7)
+		icon_state += "_shock"
+
+/atom/movable/screen/slime_power/proc/update_maptext()
+	var/mob/living/basic/slime/slime_owner = hud.mymob
+	if(!istype(slime_owner))
+		return
+	maptext = FORMAT_XENOBIO_HUD_MAPTEXT("[slime_owner.powerlevel]/[SLIME_MAX_POWER]")
+	update_appearance(UPDATE_ICON)
 
 /// Used to show how many monkeys & slimes are in the console
 /atom/movable/screen/xenobio_console

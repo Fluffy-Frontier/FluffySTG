@@ -138,7 +138,7 @@ GLOBAL_DATUM_INIT(combat_indicator_vis, /obj/effect/overlay/indicator/combat, ne
  */
 
 /mob/living/proc/user_toggle_combat_indicator()
-	if(stat != CONSCIOUS)
+	if(IS_UNCONSCIOUS_OR_CRIT(src))
 		return
 	set_combat_indicator(!combat_indicator) // Set CI status to whatever is the opposite of the current status.
 
@@ -212,7 +212,6 @@ GLOBAL_DATUM_INIT(combat_indicator_vis, /obj/effect/overlay/indicator/combat, ne
 
 /datum/emote/living/surrender
 	message = "drops to the floor and raises their hands defensively! They surrender%s!"
-	stat_allowed = SOFT_CRIT
 
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
