@@ -96,6 +96,8 @@
 		START_PROCESSING(SSmachines, src)
 		update_appearance(UPDATE_ICON)
 
+	AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/rbmk2), only_root_path = TRUE))
+
 	SSair.start_processing_machine(src)
 
 /obj/machinery/power/rbmk2/update_icon_state()
@@ -401,6 +403,9 @@
 
 	return TRUE
 
+/obj/machinery/power/rbmk2/proc/get_health_percent()
+	return atom_integrity/max_integrity * 100
+
 /obj/machinery/power/rbmk2/RefreshParts()
 	. = ..()
 
@@ -436,7 +441,7 @@
 	var/list/data = list()
 	// Progress Bars
 	data["criticality"] = criticality
-	data["health_percent"] = (atom_integrity/max_integrity)*100
+	data["health_percent"] = get_health_percent()
 
 	// Used to display the current rod pressure
 	data["rod_mix_pressure"] = stored_rod?.air_contents.return_pressure() || 0
