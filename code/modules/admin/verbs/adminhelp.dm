@@ -647,7 +647,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/Retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
 	if(new_title)
-		name = new_title
+		name = sanitize(copytext_char(new_title, 1, 100))
 		//not saying the original name cause it could be a long ass message
 		var/msg = "Ticket [TicketHref("#[id]")] titled [name] by [key_name_admin(usr)]"
 		message_admins(msg)

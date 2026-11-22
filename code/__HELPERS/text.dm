@@ -268,6 +268,10 @@
 		return
 
 	var/trimmed = trim(value, MAX_NAME_LEN)
+
+	if(findtext(trimmed, "<") || findtext(trimmed, ">") || findtext(trimmed, "\n") || findtext(trimmed, "\t"))
+		return
+
 	if(!filter_name_ic(trimmed)) // Contains IC chat prohibited words
 		return
 
