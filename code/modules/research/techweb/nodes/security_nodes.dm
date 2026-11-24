@@ -99,11 +99,11 @@
 	description = "Energy-based weaponry designed for both lethal and non-lethal applications."
 	prerequisite_nodes = list(/datum/techweb_node/riot_supression)
 	unlocked_designs = list(
-		/// Fluffy Frontier Add Start
+		// FLUFFY FRONTIER ADDITION START
 		/datum/design/stunrevolver,
 		/datum/design/ioncarbine,
 		/datum/design/temp_gun,
-		/// Fluffy Frontier Add End
+		// FLUFFY FRONTIER ADDITION END
 		/datum/design/cargo_weapon/ion_carbine,
 		/datum/design/cargo_weapon/temp_gun,
 		/datum/design/cargo_weapon/tesla_cannon,
