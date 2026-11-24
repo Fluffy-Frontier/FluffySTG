@@ -99,6 +99,11 @@
 	description = "Energy-based weaponry designed for both lethal and non-lethal applications."
 	prerequisite_nodes = list(/datum/techweb_node/riot_supression)
 	unlocked_designs = list(
+		/// Fluffy Frontier Add Start
+		/datum/design/stunrevolver,
+		/datum/design/ioncarbine,
+		/datum/design/temp_gun,
+		/// Fluffy Frontier Add End
 		/datum/design/cargo_weapon/ion_carbine,
 		/datum/design/cargo_weapon/temp_gun,
 		/datum/design/cargo_weapon/tesla_cannon,
@@ -112,6 +117,10 @@
 	description = "So advanced, even engineers are baffled by its operational principles."
 	prerequisite_nodes = list(/datum/techweb_node/electric_weapons)
 	unlocked_designs = list(
+		/// Fluffy Frontier Add Start
+		/datum/design/xray,
+		/datum/design/ioncarbine,
+		/// Fluffy Frontier Add End
 		/datum/design/c38_flare,
 		/datum/design/c38_flare_mag,
 		/datum/design/cargo_weapon/advanced_egun,
