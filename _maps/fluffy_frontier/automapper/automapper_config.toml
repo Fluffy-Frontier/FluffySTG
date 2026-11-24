@@ -17,7 +17,7 @@
 
 #UNREG=_maps/nova/automapper/templates/metastation/metastation_armory.dmm
 # Metastation Armory
-[templates.metastation_armory]
+[templates.metastation_armory_elasgun]
 map_files = ["metastation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "MetaStation.dmm"
@@ -26,7 +26,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/deltastation/deltastation_armory.dmm
 # Deltastation Armorys
-[templates.deltastation_armory]
+[templates.deltastation_armory_elasgun]
 map_files = ["deltastation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "DeltaStation2.dmm"
@@ -35,7 +35,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/icebox/icebox_armory_middle.dmm
 # Icebox Armory Middle
-[templates.icebox_armory_middle]
+[templates.icebox_armory_middle_elasgun]
 map_files = ["icebox_armory_middle_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "IceBoxStation.dmm"
@@ -44,7 +44,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/tramstation/tramstation_armory.dmm
 # Tramstation Armory
-[templates.tramstation_armory]
+[templates.tramstation_armory_elasgun]
 map_files = ["tramstation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "tramstation.dmm"
@@ -53,7 +53,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/nebulastation/nebulastation_armory.dmm
 # Nebulastation Armory
-[templates.nebulastation_armory]
+[templates.nebulastation_armory_elasgun]
 map_files = ["nebulastation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "NebulaStation.dmm"
@@ -62,7 +62,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/catwalkstation/catwalkstation_armory.dmm
 #Catwalkstation Armory
-[templates.catwalkstation_armory]
+[templates.catwalkstation_armory_elasgun]
 map_files = ["catwalkstation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "CatwalkStation_2023.dmm"
@@ -71,7 +71,7 @@ trait_name = "Station"
 
 #UNREG=_maps/nova/automapper/templates/kilostation/kilostation_armory.dmm
 #Kilostation Armory
-[templates.kilostation_armory]
+[templates.kilostation_armory_elasgun]
 map_files = ["kilostation_armory_elasgun.dmm"]
 directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
 required_map = "KiloStation.dmm"
