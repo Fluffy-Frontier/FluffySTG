@@ -100,7 +100,8 @@
 	prerequisite_nodes = list(/datum/techweb_node/riot_supression)
 	unlocked_designs = list(
 		// FLUFFY FRONTIER ADDITION START
-		/datum/design/stunrevolver,
+		/datum/design/teslacannon,
+		/datum/design/photon_cannon,
 		/datum/design/ioncarbine,
 		/datum/design/temp_gun,
 		// FLUFFY FRONTIER ADDITION END
@@ -119,7 +120,7 @@
 	unlocked_designs = list(
 		/// Fluffy Frontier Add Start
 		/datum/design/xray,
-		/datum/design/ioncarbine,
+		/datum/design/nuclear_gun,
 		/// Fluffy Frontier Add End
 		/datum/design/c38_flare,
 		/datum/design/c38_flare_mag,

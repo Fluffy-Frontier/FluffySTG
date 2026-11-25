@@ -183,7 +183,7 @@
 	)
 
 
-/datum/design/stunrevolver
+/datum/design/teslacannon
 	name = "Tesla Cannon Part Kit (Lethal)"
 	desc = "The kit for a high-tech cannon that fires internal, reusable bolt cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
 	build_type = PROTOLATHE | AWAY_LATHE
