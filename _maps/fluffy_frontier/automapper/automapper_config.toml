@@ -15,3 +15,66 @@
 # Вместо template_name вставьте название шаблона, которое идёт после "templates."
 # Данный коммент-тег ОБЯЗАТЕЛЬНО должен быть в начале отдельной строкой.
 
+#UNREG=metastation_armory
+# Metastation Armory
+[templates.metastation_armory_elasgun]
+map_files = ["metastation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "MetaStation.dmm"
+coordinates = [101, 170, 1]
+trait_name = "Station"
+
+#UNREG=deltastation_armory
+# Deltastation Armorys
+[templates.deltastation_armory_elasgun]
+map_files = ["deltastation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "DeltaStation2.dmm"
+coordinates = [210, 130, 1]
+trait_name = "Station"
+
+#UNREG=icebox_armory_middle
+# Icebox Armory Middle
+[templates.icebox_armory_middle_elasgun]
+map_files = ["icebox_armory_middle_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "IceBoxStation.dmm"
+coordinates = [104, 178, 2]
+trait_name = "Station"
+
+#UNREG=tramstation_armory
+# Tramstation Armory
+[templates.tramstation_armory_elasgun]
+map_files = ["tramstation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "tramstation.dmm"
+coordinates = [70, 162, 2]
+trait_name = "Station"
+
+#UNREG=nebulastation_armory
+# Nebulastation Armory
+[templates.nebulastation_armory_elasgun]
+map_files = ["nebulastation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "NebulaStation.dmm"
+coordinates = [161, 116, 1]
+trait_name = "Station"
+
+#UNREG=catwalkstation_armory
+#Catwalkstation Armory
+[templates.catwalkstation_armory_elasgun]
+map_files = ["catwalkstation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "CatwalkStation_2023.dmm"
+coordinates = [64, 131, 2]
+trait_name = "Station"
+
+#UNREG=kilostation_armory
+#Kilostation Armory
+[templates.kilostation_armory_elasgun]
+map_files = ["kilostation_armory_elasgun.dmm"]
+directory = "_maps/fluffy_frontier/automapper/automapper_templates/"
+required_map = "KiloStation.dmm"
+coordinates = [80, 77, 1]
+trait_name = "Station"
+
