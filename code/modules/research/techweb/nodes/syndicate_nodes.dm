@@ -4,7 +4,9 @@
 	node_flags = parent_type::node_flags | TECHWEB_NODE_HIDDEN
 	prerequisite_nodes = list(/datum/techweb_node/exp_tools, /datum/techweb_node/exotic_ammo)
 	unlocked_designs = list(
-		/datum/design/largecrossbow, // FLUFFY FRONTIER ADD
+		// FLUFFY FRONTIER ADDITION START
+		/datum/design/largecrossbow,
+		// FLUFFY FRONTIER ADDITION END
 		/datum/design/ai_cam_upgrade,
 		/datum/design/board/advanced_camera,
 		/datum/design/borg_syndicate_module,

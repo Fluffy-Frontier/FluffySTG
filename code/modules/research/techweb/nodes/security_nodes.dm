@@ -118,10 +118,10 @@
 	description = "So advanced, even engineers are baffled by its operational principles."
 	prerequisite_nodes = list(/datum/techweb_node/electric_weapons)
 	unlocked_designs = list(
-		/// Fluffy Frontier Add Start
+		// FLUFFY FRONTIER ADDITION START
 		/datum/design/xray,
 		/datum/design/nuclear_gun,
-		/// Fluffy Frontier Add End
+		// FLUFFY FRONTIER ADDITION END
 		/datum/design/c38_flare,
 		/datum/design/c38_flare_mag,
 		/datum/design/cargo_weapon/advanced_egun,
