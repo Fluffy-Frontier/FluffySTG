@@ -131,7 +131,6 @@
 	name = "Tesla Cannon"
 	result = /obj/item/gun/energy/tesla_cannon
 	reqs = list(
-		/obj/item/assembly/signaler/anomaly/flux = 1,
 		/obj/item/weaponcrafting/gunkit/tesla = 1,
 	)
 	time = 10 SECONDS
@@ -142,7 +141,6 @@
 	name = "Photon Cannon"
 	result = /obj/item/gun/energy/photon
 	reqs = list(
-		/obj/item/assembly/signaler/anomaly/flux = 1,
 		/obj/item/weaponcrafting/gunkit/photon = 1,
 	)
 	time = 10 SECONDS
