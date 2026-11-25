@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(testing_global_profiler, list("_PROFILE_NAME" = "Global"))
 		else
 			if(include_link)
 				. += "<a href='byond://?priv_msg=[ckey]'>"
-			. += key
+			. += html_encode(key)
 		if(!C)
 			. += "\[DC\]"
 
@@ -256,11 +256,11 @@ GLOBAL_LIST_INIT(testing_global_profiler, list("_PROFILE_NAME" = "Global"))
 	if(include_name)
 		if(M)
 			if(M.real_name)
-				. += "/([M.real_name])"
+				. += "/([html_encode(M.real_name)])"
 			else if(M.name)
-				. += "/([M.name])"
+				. += "/([html_encode(M.name)])"
 		else if(fallback_name)
-			. += "/([fallback_name])"
+			. += "/([html_encode(fallback_name)])"
 
 	return .
 
