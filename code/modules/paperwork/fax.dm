@@ -129,6 +129,14 @@ GLOBAL_VAR_INIT(fax_autoprinting, FALSE)
 	visible_to_network = FALSE
 	return ..()
 
+// FLUFFY FRONTIER ADDITION START
+/obj/machinery/fax/admin/receive(obj/item/loaded, sender_name)
+	. = ..()
+	if(istype(loaded, /obj/item/paper))
+		var/obj/item/paper/loaded_paper = loaded
+		loaded_paper.request_state = FALSE
+// FLUFFY FRONTIER ADDITION END
+
 /obj/machinery/fax/Initialize(mapload)
 	. = ..()
 	if (!fax_id)
