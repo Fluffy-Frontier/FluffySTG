@@ -9,7 +9,7 @@
 	health = 300
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
-	melee_damage_upper = 35
+	melee_damage_upper = 40
 	alien_speed = 3
 
 	armor_type = /datum/armor/tgmc_xeno/queen
@@ -67,7 +67,7 @@
 	name = "Deafening Screech"
 	desc = "Let out a screech so deafeningly loud that anything with the ability to hear around you will likely be incapacitated for a short time."
 	button_icon_state = "screech"
-	cooldown_time = 3 MINUTES
+	cooldown_time = 2.5 MINUTES
 
 /datum/action/cooldown/alien/tgmc/queen_screech/Activate()
 	. = ..()

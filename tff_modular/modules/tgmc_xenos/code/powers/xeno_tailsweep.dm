@@ -5,7 +5,7 @@
 	name = "Crushing Tail Sweep"
 	desc = "Throw back attackers with a sweep of your tail, likely breaking some bones in the process."
 	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
-	cooldown_time = 60 SECONDS
+	cooldown_time = 30 SECONDS
 	aoe_radius = 1
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "crush_tail"

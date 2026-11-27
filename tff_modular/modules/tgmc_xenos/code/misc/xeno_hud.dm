@@ -23,13 +23,13 @@
 		else
 			amount = CEILING((health / maxHealth) * 100, 10)
 		if(amount == 0)
-			amount = -1 //don't want the 'zero health' icon when we are crit
+			amount = -1 //don't want the 'zero health' icon when we are in crit
 
-	set_hud_image_state(XENO_HUD, "xenohealth[amount]", 32, -32)
+	set_hud_image_state(XENO_HUD, 'tff_modular/modules/tgmc_xenos/icons/xeno_hud.dmi', "xenohealth[amount]", 32, -32)
 
 /mob/living/carbon/alien/adult/tgmc/proc/xeno_hud_set_plasma()
 	var/amount = 0
 	if((stat != DEAD) && (get_max_plasma() > 0))
 		amount = round(getPlasma() * 100 / get_max_plasma(), 10)
 
-	set_hud_image_state(XENOPLASMA_HUD, "plasma[amount]", 32, -32)
+	set_hud_image_state(XENOPLASMA_HUD, 'tff_modular/modules/tgmc_xenos/icons/xeno_hud.dmi', "plasma[amount]", 32, -32)

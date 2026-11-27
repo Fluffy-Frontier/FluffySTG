@@ -61,6 +61,7 @@
 	plasma_rate = 7.5
 
 /obj/item/organ/alien/plasmavessel/tgmc/large/queen
+	max_plasma = 750
 	plasma_rate = 10
 
 /obj/item/organ/alien/plasmavessel/tgmc/small

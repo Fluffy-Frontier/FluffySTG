@@ -154,6 +154,33 @@
 	particle_holder.pixel_x = fire_offset_x
 	particle_holder.pixel_y = fire_offset_y
 
+/mob/living/carbon/alien/adult/tgmc/update_held_items()
+	. = ..()
+	remove_overlay(HANDS_LAYER)
+	var/list/hands = list()
+	var/obj/item/l_hand = get_item_for_held_index(1)
+	if(l_hand)
+		var/itm_state = l_hand.inhand_icon_state
+		if(!itm_state)
+			itm_state = l_hand.icon_state
+		var/mutable_appearance/l_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_l", -HANDS_LAYER)
+		if(l_hand.blocks_emissive != EMISSIVE_BLOCK_NONE)
+			l_hand_item.overlays += emissive_blocker(l_hand_item.icon, l_hand_item.icon_state, src, alpha = l_hand_item.alpha)
+		hands += l_hand_item
+
+	var/obj/item/r_hand = get_item_for_held_index(2)
+	if(r_hand)
+		var/itm_state = r_hand.inhand_icon_state
+		if(!itm_state)
+			itm_state = r_hand.icon_state
+		var/mutable_appearance/r_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_r", -HANDS_LAYER)
+		if(r_hand.blocks_emissive != EMISSIVE_BLOCK_NONE)
+			r_hand_item.overlays += emissive_blocker(r_hand_item.icon, r_hand_item.icon_state, src, alpha = r_hand_item.alpha)
+		hands += r_hand_item
+
+	overlays_standing[HANDS_LAYER] = hands
+	apply_overlay(HANDS_LAYER)
+
 /mob/living/carbon/alien/adult/tgmc/prepare_data_huds()
 	. = ..()
 	xeno_hud_set_plasma()

@@ -3,6 +3,7 @@
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/tgmc
 	name = "TGMC Alien Infestation"
 	config_tag = "XenomorphTGMC"
+	preview_antag_datum = /datum/antagonist/xeno/tgmc
 	ruleset_flags = parent_type::ruleset_flags | RULESET_VARIATION
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/tgmc/create_ruleset_body()
@@ -10,3 +11,7 @@
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/tgmc/announce_xenos()
 	priority_announce("Unusual, highly active unidentified biological signatures detected boarding [station_name()]. All personnel must report irregular movement through maintenance corridors and environmental systems. Maintain vigilance and monitor for breaches.", "Lifesign Alert", ANNOUNCER_ALIENS)
+
+
+/datum/antagonist/xeno/tgmc
+	name = "\improper TGMC Xeno"

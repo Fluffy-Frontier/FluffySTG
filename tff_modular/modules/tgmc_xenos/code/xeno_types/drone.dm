@@ -22,6 +22,8 @@
 	maptext_height = 32
 	maptext_width = 32
 
+	can_hold_facehuggers = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
