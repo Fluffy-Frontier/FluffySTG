@@ -27,7 +27,7 @@
 
 	var/acid_amount = affected_mob.reagents.get_reagent_amount(/datum/reagent/toxin/acid/fluacid)
 	if(acid_amount > 35)
-		if(SPT_PROB(7, seconds_per_tick))
+		if(SPT_PROB(5, seconds_per_tick))
 			update_stage(stage - 1)
 			to_chat(affected_mob, span_notice("You can feel the movement in your body becoming weaker."))
 			if(stage < 1)
@@ -39,16 +39,16 @@
 	switch(stage)
 		if(1)
 			if(SPT_PROB(1, seconds_per_tick))
-				spread()
+				spread(seconds_per_tick)
 		if(2)
 			if(SPT_PROB(1, seconds_per_tick))
-				spread()
+				spread(seconds_per_tick)
 		if(3)
 			if(SPT_PROB(1.5, seconds_per_tick))
-				spread()
+				spread(seconds_per_tick)
 		if(4)
 			if(SPT_PROB(2, seconds_per_tick))
-				spread()
+				spread(seconds_per_tick)
 
 	parasite_effect(seconds_per_tick)
 
@@ -80,7 +80,7 @@
 				to_chat(affected_mob, span_danger("Your liver aches terribly. Something is eating it from inside!"))
 			try_destroy_organ(seconds_per_tick)
 
-/datum/disease/organ_parasite/proc/spread()
+/datum/disease/organ_parasite/proc/spread(seconds_per_tick)
 	if(!affected_mob || !next_disease_type)
 		return
 
