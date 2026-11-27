@@ -1439,13 +1439,13 @@
 				continue
 
 			var/obj/item/paper/object_to_print = locate(href_list["print_fax"])
-			if(!istype(loaded_paper))
+			if(!istype(object_to_print))
 				fax.receive(object_to_print, href_list["sender_name"])
 				return
 
-			var/obj/item/paper/paper_to_print = object_to_print.copy(loaded_paper.type)
-			object_to_print.transfer_fingerprints_to(loaded_paper)
-			object_to_print.transfer_fibers_to(loaded_paper)
+			var/obj/item/paper/paper_to_print = object_to_print.copy(object_to_print.type)
+			object_to_print.transfer_fingerprints_to(object_to_print)
+			object_to_print.transfer_fibers_to(object_to_print)
 			fax.receive(paper_to_print, href_list["sender_name"])
 			return
 		// FLUFFY FRONTIER EDIT END
