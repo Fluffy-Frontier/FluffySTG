@@ -1432,12 +1432,23 @@
 		if(!check_rights(R_ADMIN))
 			return
 
-		for(var/obj/machinery/fax/admin/FAX as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/fax/admin))
-			if(FAX.fax_id != href_list["destination"])
+		// FLUFFY FRONTIER EDIT START
+		var/destination = href_list["destination"]
+		for(var/obj/machinery/fax/admin/fax as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/fax/admin))
+			if(fax.fax_id != destination)
 				continue
-			FAX.receive(locate(href_list["print_fax"]), href_list["sender_name"])
-			return
 
+			var/obj/item/paper/object_to_print = locate(href_list["print_fax"])
+			if(!istype(object_to_print))
+				fax.receive(object_to_print, href_list["sender_name"])
+				return
+
+			var/obj/item/paper/paper_to_print = object_to_print.copy(object_to_print.type)
+			object_to_print.transfer_fingerprints_to(object_to_print)
+			object_to_print.transfer_fibers_to(object_to_print)
+			fax.receive(paper_to_print, href_list["sender_name"])
+			return
+		// FLUFFY FRONTIER EDIT END
 	else if(href_list["play_internet"])
 		if(!check_rights(R_SOUND))
 			return

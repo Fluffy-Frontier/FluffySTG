@@ -239,12 +239,18 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 			if (request.req_type != REQUEST_FAX)
 				to_chat(usr, "Request doesn't have a paper to print.", confidential = TRUE)
 				return TRUE
-			for(var/obj/machinery/fax/admin/FAX as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/fax/admin))
-				if(FAX.fax_id != request.additional_information["destination_id"])
+			for(var/obj/machinery/fax/admin/fax as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/fax/admin))
+				if(fax.fax_id != request.additional_information["destination_id"])
 					continue
 				var/obj/item/paper/request_message = request.additional_information["paper"]
 				var/sender_name = request.additional_information["sender_name"]
-				FAX.receive(request_message, sender_name)
+				// FLUFFY FRONTIER EDIT START
+				var/obj/item/paper/request_copy = request_message.copy(request_message.type)
+				request_message.transfer_fingerprints_to(request_copy)
+				request_message.transfer_fibers_to(request_copy)
+
+				fax.receive(request_copy, sender_name)
+				// FLUFFY FRONTIER EDIT END
 				return TRUE
 		if ("play")
 			if(request.req_type != REQUEST_INTERNET_SOUND)
