@@ -85,9 +85,9 @@
 		return
 
 	if(spread_done)
-    	if(SPT_PROB(15, seconds_per_tick))
-    	    affected_mob.emote("scream")
-    	return
+		if(SPT_PROB(15, seconds_per_tick))
+			affected_mob.emote("scream")
+		return
 
 	for(var/datum/disease/existing_disease as anything in affected_mob.diseases)
 		if(existing_disease.type == next_disease_type)
