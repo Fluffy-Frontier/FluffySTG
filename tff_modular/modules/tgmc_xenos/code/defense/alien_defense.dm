@@ -31,4 +31,8 @@
 	. = ..()
 	adjust_fire_loss(seconds_per_tick * TGMC_XENO_FIRESTACK_DAMAGE)
 
+/mob/living/carbon/alien/adult/tgmc/get_worn_armor_value(obj/item/bodypart/def_zone, damage_type)
+	return get_armor_rating(damage_type)
+
+
 #undef TGMC_XENO_FIRESTACK_DAMAGE

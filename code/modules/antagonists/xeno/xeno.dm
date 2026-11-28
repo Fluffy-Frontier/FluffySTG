@@ -154,6 +154,12 @@
 /mob/living/carbon/alien/mind_initialize()
 	..()
 	if(!mind.has_antag_datum(/datum/antagonist/xeno))
+		// FLUFFY FRONTIER ADDITION START
+		if(istgmcalien(src))
+			mind.add_antag_datum(/datum/antagonist/xeno/tgmc)
+			mind.set_assigned_role(SSjob.get_job_type(/datum/job/xenomorph))
+			return
+		// FLUFFY FRONTIER ADDITION END
 		if(GLOB.communications_controller.xenomorph_egg_delivered && istype(get_area(src), GLOB.communications_controller.captivity_area))
 			mind.add_antag_datum(/datum/antagonist/xeno/captive)
 		else

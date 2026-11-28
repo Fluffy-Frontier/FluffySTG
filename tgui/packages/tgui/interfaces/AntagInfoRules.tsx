@@ -249,6 +249,57 @@ export const Rules = (props) => {
           </Stack.Item>
         </Stack>
       );
+    case 'Xenomorph':
+      return (
+        <Stack vertical>
+          <Stack.Item bold>Special Rules:</Stack.Item>
+          <Stack.Item>
+            {
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#ксеноморфы">
+                Special Rules and Metaprotections!
+              </a>
+            }
+          </Stack.Item>
+        </Stack>
+      );
+    case 'TGMC Xeno':
+      return (
+        <Stack vertical>
+          <Stack.Item bold>Special Rules:</Stack.Item>
+          <Stack.Item>
+            {
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#ксеноморфы">
+                Special Rules and Metaprotections!
+              </a>
+            }
+          </Stack.Item>
+          <Stack.Item bold>Несколько важных моментов</Stack.Item>
+          <Stack.Item>
+            <ul>
+              <li>
+                По умолчанию скорость регенариции ХП и Плазмы очень маленькая,
+                даже на вашей резине. Чтобы лечиться быстрее - используйте Rest
+                в вербах или в правой нижней части экрана.
+              </li>
+              <li>Всего в игре 3 тира ксенов:</li>
+              <ol>
+                <li>Дрон, Руня, Дефендер и Сентинел</li>
+                <li>Претор, Равагер, Крашер и Спиттер</li>
+                <li>Королева</li>
+              </ol>
+              <li>
+                Каждый из ксенов 2 и 3 тира может быть только в 1 экземпляре (То
+                есть может быть 1 Претор и 1 Рава, но не могут быть 2 Преторов)
+              </li>
+              <li>
+                Если к яйцам королевы в радиус 3 тайлов подойдет подходящий для
+                заражения хост - оно автоматически выпустил хаггера в него. Вы
+                можете использовать это как ловушки!
+              </li>
+            </ul>
+          </Stack.Item>
+        </Stack>
+      );
     default:
       return (
         <Stack vertical>

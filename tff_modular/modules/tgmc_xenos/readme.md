@@ -22,6 +22,8 @@ Additions:
 - code/modules/vehicles/mecha/\_mecha.dm: `/obj/vehicle/sealed/mecha/proc/melee_attack_effect()`
 - code/datums/hud.dm: `GLOBAL_LIST_INIT(trait_to_hud)` && `GLOBAL_ALIST_INIT(huds)`
 - code/\_\_DEFINES/atom_hud.dm: `XENO_HUD` && `XENOPLASMA_HUD` && `DATA_HUD_XENO`
+- code\modules\antagonists\xeno\xeno.dm: `/mob/living/carbon/alien/mind_initialize()`
+- tgui\packages\tgui\interfaces\AntagInfoRules.tsx
 
 ## Defines
 

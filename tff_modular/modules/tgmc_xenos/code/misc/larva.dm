@@ -31,6 +31,7 @@
 // То же самое, но для эмбриона ларвочки
 /obj/item/organ/body_egg/alien_embryo/tgmc
 	larva_path = /mob/living/carbon/alien/larva/tgmc
+	growth_time = 45 SECONDS
 
 
 // Наша собственная ларвочка. Крутая!
