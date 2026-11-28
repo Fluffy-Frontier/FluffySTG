@@ -11,7 +11,7 @@
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/praetorian
 
-	armor_type = /datum/armor/tgmc_xeno/ravager
+	armor_type = /datum/armor/tgmc_xeno/drone
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large,
@@ -22,8 +22,6 @@
 	maptext_height = 32
 	maptext_width = 32
 
-	can_hold_facehuggers = TRUE
-
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
@@ -31,7 +29,7 @@
 	)
 	grant_actions_by_list(innate_actions)
 
-/datum/armor/tgmc_xeno/ravager
+/datum/armor/tgmc_xeno/drone
 	bomb = 10
 	bullet = 30
 	energy = 30
